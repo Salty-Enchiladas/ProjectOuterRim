@@ -24,6 +24,9 @@ public class FireMissile : MonoBehaviour {
     // Use this for initialization
     void Start () {
         hasTarget = false;
+        missile1Img = GameObject.Find("M1b");
+        missile2Img = GameObject.Find("M2b");
+        missile3Img = GameObject.Find("M3b");
     }
 	
 	// Update is called once per frame

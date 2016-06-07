@@ -1,0 +1,34 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class ChooseShipButton : MonoBehaviour {
+
+    public GameObject shipContainer;
+
+    ShipWrangler _shipWrangler;
+
+	// Use this for initialization
+	void Start () {
+        _shipWrangler = shipContainer.GetComponent<ShipWrangler>();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
+    public void NextShip()
+    {
+        _shipWrangler.NextSelection();
+    }
+
+    public void PreviousShip()
+    {
+        _shipWrangler.PreviousSelection();
+    }
+
+    public void Play()
+    {
+        PlayerPrefs.SetString("Ship", _shipWrangler.CurrentShip.name);
+    }
+}

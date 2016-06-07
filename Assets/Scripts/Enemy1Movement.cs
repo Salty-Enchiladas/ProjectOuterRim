@@ -13,6 +13,7 @@ public class Enemy1Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Player");
+
         enemyZClamp = Random.Range(2f, 5f);
         enemyXPos = Random.Range(-0.5f, 0.5f);
         lerpSpeed = Random.Range(0.5f, 2.5f);
