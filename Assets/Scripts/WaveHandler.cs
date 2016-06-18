@@ -3,26 +3,29 @@ using System.Collections;
 
 public class WaveHandler : MonoBehaviour
 {
-    public GameObject imperialFleet;
     public float spawnRate;
-    public Transform[] spawnPoints;
     public float difficultyTimer;
+    public string enemyPoolName;
+    public Transform[] spawnPoints;    
 
     GameObject player;
-    string[] enemyTypes = { "defender", "interceptor", "fighter" };   
+    string[] enemyTypes = { "defender", "interceptor", "fighter" };
+    bool increasingDifficulty;
+    bool spawning;
+
+    ObjectPooling enemyObject;
 
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("Spawn", 1f, spawnRate);
-        InvokeRepeating("IncreaseDifficulty", 15f, difficultyTimer);       
         player = GameObject.Find("Player");
+        enemyObject = GameObject.Find(enemyPoolName).GetComponent<ObjectPooling>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        HandleDifficulty();
     }
 
     bool CheckWave(GameObject[] wave)
@@ -44,43 +47,52 @@ public class WaveHandler : MonoBehaviour
         return result;
     }
 
-    void Spawn()
+    IEnumerator Spawn()
     {
-        GameObject obj = ChooseEnemy("interceptor");     //enemyTypes[(int)Random.Range(0, 3)]
-        Transform spawn = ChooseSpawn();        
-
-        if (obj == null)
+        if (!spawning)
         {
-            return;
-        }
+            spawning = true;
 
-        obj.transform.position = spawn.position;
-        obj.transform.rotation = spawn.rotation;
-        obj.SetActive(true);
+            yield return new WaitForSeconds(spawnRate);
+
+            GameObject obj = enemyObject.GetPooledObject();     //ChooseEnemy("interceptor")           enemyTypes[(int)Random.Range(0, 3)]
+            Transform spawn = ChooseSpawn();
+
+            if (obj == null)
+            {
+                yield return new WaitForSeconds(0f);
+            }
+
+            obj.transform.position = spawn.position;
+            obj.transform.rotation = spawn.rotation;
+            obj.SetActive(true);
+
+            spawning = false;
+        }
     }
 
-    GameObject ChooseEnemy(string enemyType)
-    {
-        GameObject enemy;
+    //GameObject ChooseEnemy(string enemyType)
+    //{
+    //    GameObject enemy;
 
-        switch(enemyType)
-        {
-            case "defender":
-                enemy = EnemyDefenderPooling.current.GetPooledObject();
-                break;
-            case "interceptor":
-                enemy = EnemyInterceptorPooling.current.GetPooledObject();
-                break;
-            case "fighter":
-                enemy = EnemyFighterPooling.current.GetPooledObject();
-                break;
-            default:
-                enemy = null;
-                break;
-        }
+    //    switch(enemyType)
+    //    {
+    //        case "defender":
+    //            enemy = EnemyDefenderPooling.current.GetPooledObject();
+    //            break;
+    //        case "interceptor":
+    //            enemy = EnemyInterceptorPooling.current.GetPooledObject();
+    //            break;
+    //        case "fighter":
+    //            enemy = EnemyFighterPooling.current.GetPooledObject();
+    //            break;
+    //        default:
+    //            enemy = null;
+    //            break;
+    //    }
 
-        return enemy;
-    }
+    //    return enemy;
+    //}
 
     Transform ChooseSpawn()
     {
@@ -90,8 +102,20 @@ public class WaveHandler : MonoBehaviour
         return spawnPoints[spawnPoint];
     }
 
-    void IncreaseDifficulty()
+    void HandleDifficulty()
     {
-        spawnRate = spawnRate - 0.1f;
+        StartCoroutine(Spawn());
+        StartCoroutine(IncreaseSpawning());
+    }
+
+    IEnumerator IncreaseSpawning()
+    {
+        if (!increasingDifficulty && spawnRate > 0.1f)
+        {
+            increasingDifficulty = true;
+            yield return new WaitForSeconds(difficultyTimer);
+            spawnRate = spawnRate - 0.1f;
+            increasingDifficulty = false;
+        }
     }
 }

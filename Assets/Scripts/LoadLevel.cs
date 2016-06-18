@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour {
 
@@ -17,6 +18,6 @@ public class LoadLevel : MonoBehaviour {
 
     public void LevelLoad()
     {
-        Application.LoadLevel(levelName);
+        SceneManager.LoadScene(levelName);
     }
 }
