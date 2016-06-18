@@ -3,17 +3,21 @@ using System.Collections;
 
 public class Enemy1Fire : MonoBehaviour {
 
-    public float fireFreq;
     public GameObject enemyLaser;
-    float lastShot;
+    public float fireFreq;        
     public float minFreq;
     public float maxFreq;
     public float difficultyTimer;
+    public string laserPoolName;
+
     float lastDifficultyIncrease;
+    float lastShot;
+
+    ObjectPooling laserObject;
 
     void Start()
     {
-        
+        laserObject = GameObject.Find(laserPoolName).GetComponent<ObjectPooling>();
     }
 
 	// Update is called once per frame
@@ -33,7 +37,7 @@ public class Enemy1Fire : MonoBehaviour {
     void Fire()
     {
         lastShot = Time.time;
-        GameObject obj = EnemyLaserPooling.current.GetPooledObject();
+        GameObject obj = laserObject.GetPooledObject();
 
         if (obj == null)
         {
