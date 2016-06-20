@@ -35,6 +35,6 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         transform.position += new Vector3(moveX, moveY, 0f);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -50f, 50f), Mathf.Clamp(transform.position.y, -25f, 25f), Mathf.Clamp(transform.position.z, 0f, 0f));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -100f, 100f), Mathf.Clamp(transform.position.y, -25f, 25f), Mathf.Clamp(transform.position.z, 0f, 0f));
     }
 }
