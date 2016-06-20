@@ -19,7 +19,7 @@ public class WaveHandler : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        enemyObject = GameObject.Find(enemyPoolName).GetComponent<ObjectPooling>();
+        //enemyObject = GameObject.Find(enemyPoolName).GetComponent<ObjectPooling>();
     }
 
     // Update is called once per frame
@@ -55,12 +55,12 @@ public class WaveHandler : MonoBehaviour
 
             yield return new WaitForSeconds(spawnRate);
 
-            GameObject obj = enemyObject.GetPooledObject();     //ChooseEnemy("interceptor")           enemyTypes[(int)Random.Range(0, 3)]
+            GameObject obj = ChooseEnemy("interceptor");     //ChooseEnemy("interceptor")    enemyObject.GetPooledObject()       enemyTypes[(int)Random.Range(0, 3)]
             Transform spawn = ChooseSpawn();
 
             if (obj == null)
             {
-                yield return new WaitForSeconds(0f);
+                yield break;
             }
 
             obj.transform.position = spawn.position;
@@ -71,28 +71,28 @@ public class WaveHandler : MonoBehaviour
         }
     }
 
-    //GameObject ChooseEnemy(string enemyType)
-    //{
-    //    GameObject enemy;
+    GameObject ChooseEnemy(string enemyType)
+    {
+        GameObject enemy;
 
-    //    switch(enemyType)
-    //    {
-    //        case "defender":
-    //            enemy = EnemyDefenderPooling.current.GetPooledObject();
-    //            break;
-    //        case "interceptor":
-    //            enemy = EnemyInterceptorPooling.current.GetPooledObject();
-    //            break;
-    //        case "fighter":
-    //            enemy = EnemyFighterPooling.current.GetPooledObject();
-    //            break;
-    //        default:
-    //            enemy = null;
-    //            break;
-    //    }
+        switch (enemyType)
+        {
+            case "defender":
+                enemy = EnemyDefenderPooling.current.GetPooledObject();
+                break;
+            case "interceptor":
+                enemy = EnemyInterceptorPooling.current.GetPooledObject();
+                break;
+            case "fighter":
+                enemy = EnemyFighterPooling.current.GetPooledObject();
+                break;
+            default:
+                enemy = null;
+                break;
+        }
 
-    //    return enemy;
-    //}
+        return enemy;
+    }
 
     Transform ChooseSpawn()
     {

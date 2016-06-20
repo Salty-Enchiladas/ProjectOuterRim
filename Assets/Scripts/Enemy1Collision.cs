@@ -9,9 +9,12 @@ public class Enemy1Collision : MonoBehaviour {
 
     public GameObject player;
 
+    PlayerScore _playerScore;
+
     void Start()
     {
         player = GameObject.Find("Player");
+        _playerScore = player.GetComponent<PlayerScore>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -21,7 +24,7 @@ public class Enemy1Collision : MonoBehaviour {
             col.gameObject.SetActive(false);
             gameObject.SetActive(false);
 
-            player.GetComponent<PlayerScore>().score += 1000;
+            _playerScore.score += 1000;
 
             Instantiate(explosion, transform.position, transform.rotation);
             Instantiate(explosionSound, transform.position, transform.rotation);

@@ -14,6 +14,7 @@ public class PlayerCollision : MonoBehaviour {
     public Text livesText;
     public int playerHealth = 3;
     public int playerLives = 3;
+    public int healthScore;
     public string gameOverScene;
 
     PlayerScore playerScoreOBJ;
@@ -60,7 +61,7 @@ public class PlayerCollision : MonoBehaviour {
 
     IEnumerator CheckScore()
     {
-        if (playerScoreOBJ.score % 50000 == 0 && playerScoreOBJ.score != 0)
+        if (playerScoreOBJ.score % healthScore == 0 && playerScoreOBJ.score != 0)
         {
             playerHealth++;
 

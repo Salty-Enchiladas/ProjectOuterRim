@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Enemy1Fire : MonoBehaviour {
 
-    public GameObject enemyLaser;
     public float fireFreq;        
     public float minFreq;
     public float maxFreq;
