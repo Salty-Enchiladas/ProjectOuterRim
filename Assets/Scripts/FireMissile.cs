@@ -24,6 +24,12 @@ public class FireMissile : MonoBehaviour {
     // Use this for initialization
     void Start () {
         hasTarget = false;
+        missile1Img = GameObject.Find("M1b");
+        missile2Img = GameObject.Find("M2b");
+        missile3Img = GameObject.Find("M3b");
+
+        noTarget = GameObject.Find("NoTarget");
+        noTarget.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -103,16 +109,19 @@ public class FireMissile : MonoBehaviour {
 
     IEnumerator FlashNoTarget()
     {
-        noTarget.SetActive(true);
-        yield return new WaitForSeconds(0.15f);
-        noTarget.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
-        noTarget.SetActive(true);
-        yield return new WaitForSeconds(0.15f);
-        noTarget.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
-        noTarget.SetActive(true);
-        yield return new WaitForSeconds(0.15f);
-        noTarget.SetActive(false);
+        if (!noTarget.activeInHierarchy)
+        {
+            noTarget.SetActive(true);
+            yield return new WaitForSeconds(0.15f);
+            noTarget.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            noTarget.SetActive(true);
+            yield return new WaitForSeconds(0.15f);
+            noTarget.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            noTarget.SetActive(true);
+            yield return new WaitForSeconds(0.15f);
+            noTarget.SetActive(false);
+        }
     }
 }

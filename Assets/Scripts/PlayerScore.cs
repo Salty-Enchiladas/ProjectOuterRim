@@ -6,12 +6,18 @@ public class PlayerScore : MonoBehaviour {
 
     public int score;
     public int highScore;
+    GameObject _scoreText;
+    GameObject _highScoreText;
     public Text scoreText;
     public Text highScoreText;
 
 	// Use this for initialization
 	void Start () {
         highScore = PlayerPrefs.GetInt("HighScore");
+        _highScoreText = GameObject.Find("HighScoreText");
+        highScoreText = _highScoreText.GetComponent<Text>();
+        _scoreText = GameObject.Find("ScoreText");
+        scoreText = _scoreText.GetComponent<Text>();
 	}
 	
 	// Update is called once per frame

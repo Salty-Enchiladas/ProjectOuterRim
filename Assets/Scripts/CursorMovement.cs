@@ -63,7 +63,11 @@ public class CursorMovement : MonoBehaviour {
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.zero);
 
-        if (hit.collider.tag == "Button")
+        if (hit.collider == null)
+        {
+            return;
+        }
+        else if (hit.collider.tag == "Button")
         {
             ExecuteEvents.Execute(hit.collider.gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
         }

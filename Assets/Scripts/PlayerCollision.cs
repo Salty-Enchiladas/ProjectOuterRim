@@ -14,13 +14,26 @@ public class PlayerCollision : MonoBehaviour {
     public Text livesText;
     public int playerHealth = 3;
     public int playerLives = 3;
+    public int healthScore;
     public string gameOverScene;
 
     PlayerScore playerScoreOBJ;
 
+    GameObject _livesText;
+
     void Start()
     {
         playerScoreOBJ = gameObject.GetComponent<PlayerScore>();
+
+        healthBar1 = GameObject.Find("HealthBar1");
+        healthBar2 = GameObject.Find("HealthBar2");
+        healthBar3 = GameObject.Find("HealthBar3");
+        damageIndicatorIMG = GameObject.Find("HitEffect");
+        damageIndicatorIMG.SetActive(false);
+
+        _livesText = GameObject.Find("LivesText");
+        livesText = _livesText.GetComponent<Text>();
+
         StartCoroutine(CheckScore());
     }
 
@@ -48,7 +61,7 @@ public class PlayerCollision : MonoBehaviour {
 
     IEnumerator CheckScore()
     {
-        if (playerScoreOBJ.score % 50000 == 0 && playerScoreOBJ.score != 0)
+        if (playerScoreOBJ.score % healthScore == 0 && playerScoreOBJ.score != 0)
         {
             playerHealth++;
 

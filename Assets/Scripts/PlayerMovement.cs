@@ -25,11 +25,11 @@ public class PlayerMovement : MonoBehaviour {
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, horizontalTurnAngle);
         }
 
-        if (Input.GetAxis("Vertical") != 0 && invertVertical)           //inverted vertical movement
+        if (invertVertical)           //inverted vertical movement
         {
 			moveY = -(Input.GetAxis("Vertical") * Time.deltaTime * (playerSpeed / 2));
         }
-        else if (Input.GetAxis("Vertical") != 0 && !invertVertical)     //normal vertical movement
+        else if (!invertVertical)     //normal vertical movement
         {
             moveY = Input.GetAxis("Vertical") * Time.deltaTime * (playerSpeed / 2);
         }
