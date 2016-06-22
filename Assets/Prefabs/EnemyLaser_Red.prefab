@@ -13,7 +13,7 @@ GameObject:
   - 54: {fileID: 5421978}
   - 136: {fileID: 13622660}
   m_Layer: 0
-  m_Name: EnemyX-WingLaser
+  m_Name: EnemyLaser_Red
   m_TagString: Enemy Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

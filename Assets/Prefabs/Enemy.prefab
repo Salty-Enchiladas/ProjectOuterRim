@@ -278,10 +278,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireFreq: 1
-  enemyLaser: {fileID: 122096, guid: d26e12d6c3fa9e54c84f83d6d01ac905, type: 2}
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 20
+  difficultyTimer: 10
+  laserPoolName: EnemyLasers
 --- !u!114 &11426670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,10 +325,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireFreq: 1
-  enemyLaser: {fileID: 122096, guid: d26e12d6c3fa9e54c84f83d6d01ac905, type: 2}
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 20
+  difficultyTimer: 10
+  laserPoolName: EnemyLasers
 --- !u!114 &11489650
 MonoBehaviour:
   m_ObjectHideFlags: 1

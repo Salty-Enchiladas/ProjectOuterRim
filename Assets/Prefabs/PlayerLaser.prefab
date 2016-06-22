@@ -13,7 +13,7 @@ GameObject:
   - 54: {fileID: 5421978}
   - 136: {fileID: 13653032}
   m_Layer: 0
-  m_Name: PlayerTIELaser
+  m_Name: PlayerLaser
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
