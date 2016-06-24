@@ -328,7 +328,7 @@ MonoBehaviour:
       tileSize: 0.5
       noiseSpeed: -1
     lightsOptions:
-      lights: 1
+      lights: 0
       lightsRange: 6
       lightsIntensityMultiplyer: 10
       renderMode: 0
@@ -704,7 +704,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: arcs.Array.data[0].lightsOptions.lights
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}

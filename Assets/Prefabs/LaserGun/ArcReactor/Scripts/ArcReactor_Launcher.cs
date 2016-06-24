@@ -214,10 +214,6 @@ public class ArcReactor_Launcher : MonoBehaviour {
 		if (Physics.Raycast(transform.position,transform.forward,out hit,Distance,layers.value))		
 		{
 			end.position = hit.point;
-			if(hit.transform.tag == "Player")
-			{
-				Application.LoadLevel("GameOver");
-			}
 			//endObj = hit.transform.gameObject;
 		}
 		else		

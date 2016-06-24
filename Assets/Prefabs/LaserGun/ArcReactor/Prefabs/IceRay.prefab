@@ -374,7 +374,7 @@ MonoBehaviour:
   elapsedTime: 0
   playBackward: 0
   freeze: 0
-  sizeMultiplier: 1
+  sizeMultiplier: 20
   interpolation: 1
   easeInOutOptions:
     useEaseInOut: 1

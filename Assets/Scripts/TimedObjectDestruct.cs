@@ -13,6 +13,6 @@ public class TimedObjectDestruct : MonoBehaviour {
     IEnumerator WaitTime()
     {
         yield return new WaitForSeconds(timeOut);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
