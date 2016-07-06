@@ -9,7 +9,7 @@ public class LaserMovement : MonoBehaviour {
 	void Update () {
         transform.Translate(0, 0, laserSpeed * Time.deltaTime);
 
-        if (transform.position.z > 60 || transform.position.z < -50)
+        if (Time.time >= 5f) //transform.position.z > 1000|| transform.position.z < -1000
         {
             gameObject.SetActive(false);
         }

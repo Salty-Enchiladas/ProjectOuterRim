@@ -10,6 +10,9 @@ TagManager:
   - Enemy Laser
   - Enemy
   - Button
+  - Bullet
+  - Gun
+  - Destructable Piece
   layers:
   - Default
   - TransparentFX

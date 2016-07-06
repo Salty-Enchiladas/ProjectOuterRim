@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &199062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 461408}
+  - 33: {fileID: 3345626}
+  - 23: {fileID: 2365386}
+  m_Layer: 0
+  m_Name: DeathDisk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461408
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13443, y: 100.73232, z: 6616.017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!23 &2365386
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199062}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8185fb39d62d11a4b8cc30f9bd4aa173, type: 2}
+  - {fileID: 2100000, guid: 19e044be1ae97064ea1a7cc296ad9d54, type: 2}
+  - {fileID: 2100000, guid: 19e044be1ae97064ea1a7cc296ad9d54, type: 2}
+  - {fileID: 2100000, guid: 1b887299de8ea3745a97b2f9bb0d140e, type: 2}
+  - {fileID: 2100000, guid: 7199b9e3539e4364aad44a2f3109ee0c, type: 2}
+  - {fileID: 2100000, guid: 4c9190c1af6fe5043ab93a9faefda111, type: 2}
+  - {fileID: 2100000, guid: 92572149204a9d241ac2bb140e4fb223, type: 2}
+  - {fileID: 2100000, guid: 7199b9e3539e4364aad44a2f3109ee0c, type: 2}
+  - {fileID: 2100000, guid: 9a3f2d055f246354b9b23396fb1b98cb, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3345626
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199062}
+  m_Mesh: {fileID: 4300000, guid: b03e02a3a4f47db45802a15edb9036b1, type: 3}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 199062}
+  m_IsPrefabParent: 1
