@@ -8,21 +8,27 @@ public class PlayerMovement : MonoBehaviour {
     public float moveX;
     public float moveY;
     public float moveZ;
-
+    public float xClamp;
+    public float yClamp;
     public bool invertVertical;
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         horizontalTurnAngle = -(Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed * 50) * 20;
         horizontalTurnAngle = Mathf.Clamp(horizontalTurnAngle, -45f, 45f);
-        moveX = Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed;
-        
+
+        moveX = Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed;        
         moveZ = Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed;
 
         if (Input.GetAxis("Horizontal") != 0)
         {
             transform.Rotate(Vector3.forward, horizontalTurnAngle);
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, horizontalTurnAngle);
+        }
+        else
+        {
+            transform.Rotate(Vector3.forward, 0f);
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0f);
         }
 
         if (invertVertical)           //inverted vertical movement
@@ -35,6 +41,6 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         transform.position += new Vector3(moveX, moveY, 0f);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -50f, 50f), Mathf.Clamp(transform.position.y, -25f, 25f), Mathf.Clamp(transform.position.z, 0f, 0f));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -xClamp, xClamp), Mathf.Clamp(transform.position.y, -yClamp, yClamp), Mathf.Clamp(transform.position.z, 0f, 0f));
     }
 }

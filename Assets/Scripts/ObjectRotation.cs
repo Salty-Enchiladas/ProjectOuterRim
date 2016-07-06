@@ -12,6 +12,6 @@ public class ObjectRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        transform.Rotate(Vector3.up * speed * Time.deltaTime, Space.World);
+        transform.Rotate(transform.up * speed * Time.deltaTime, Space.World);
 	}
 }

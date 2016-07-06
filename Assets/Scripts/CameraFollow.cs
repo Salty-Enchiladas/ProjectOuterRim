@@ -5,6 +5,7 @@ public class CameraFollow : MonoBehaviour {
 
     public GameObject player;
     public float cameraSpeed;
+    public Vector3 cameraOffset;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,6 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z - 0.75f), Time.deltaTime * cameraSpeed);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + cameraOffset.x, player.transform.position.y + cameraOffset.y, player.transform.position.z + cameraOffset.z), Time.deltaTime * cameraSpeed);
 	}
 }
