@@ -1,10 +1,13 @@
-﻿// Elementals 1.1.5
+﻿// 2D Sky
+// Version: 1.1.6
+// Unity 4.7.1 or higher and Unity 5.3.4 or higher compatilble, see more info in Readme.txt file.
 //
-// Author:	Gold Experience Team (http://www.ge-team.com)
-// Details:	https://www.assetstore.unity3d.com/en/#!/content/11158
-// Support:	geteamdev@gmail.com
+// Author:				Gold Experience Team (http://www.ge-team.com)
 //
-// Please direct any bugs/comments/suggestions to support e-mail.
+// Unity Asset Store:	https://www.assetstore.unity3d.com/en/#!/content/11158
+// GE Store:			http://www.ge-team.com/store/en/products/elementals/
+//
+// Please direct any bugs/comments/suggestions to support e-mail (geteamdev@gmail.com).
 
 #region Namespaces
 

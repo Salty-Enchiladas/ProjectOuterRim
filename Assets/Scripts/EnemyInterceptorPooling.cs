@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class EnemyInterceptorPooling : MonoBehaviour {
+public class EnemyInterceptorPooling : MonoBehaviour 
+{
 
     public static EnemyInterceptorPooling current;
     public GameObject pooledObject;

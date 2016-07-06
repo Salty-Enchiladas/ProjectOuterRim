@@ -1,12 +1,15 @@
 ﻿// GUI Animator FREE
-// Version: 0.9.95
-// Compatilble: Unity 4.6.9 or higher and Unity 5.3.2 or higher, more info in Readme.txt file.
+// Version: 1.0.1
+// Unity 4.7.1 or higher and Unity 5.3.4 or higher compatilble, see more info in Readme.txt file.
 //
-// Author:	Gold Experience Team (http://www.ge-team.com)
-// Details:	https://www.assetstore.unity3d.com/en/#!/content/28709
-// Support:	geteamdev@gmail.com
+// Author:				Gold Experience Team (http://www.ge-team.com)
 //
-// Please direct any bugs/comments/suggestions to support e-mail.
+// Unity Asset Store:					https://www.assetstore.unity3d.com/en/#!/content/58843
+// GE Store:							http://www.ge-team.com/store/en/products/gui-animator-free/
+// Full version on Unity Asset Store:	https://www.assetstore.unity3d.com/en/#!/content/28709
+// Full version on GE Store:			http://www.ge-team.com/store/en/products/gui-animator-for-unity-ui/
+//
+// Please direct any bugs/comments/suggestions to geteamdev@gmail.com
 
 #region Namespaces
 
@@ -18,13 +21,12 @@ using UnityEngine.UI;
 #endregion
 
 // ######################################################################
-// Demo class
+// GUIAnimatorFREEDemo class
 // This class shows buttons and it plays Move-In and Move-Out animations when user pressed the buttons.
 // ######################################################################
 
-public class Demo : MonoBehaviour
+public class GUIAnimatorFREEDemo : MonoBehaviour
 {
-
 
 	// ########################################
 	// MonoBehaviour functions
@@ -76,11 +78,11 @@ public class Demo : MonoBehaviour
 		// Show GUI button when ready
 		if (m_WaitTimeCount <= 0)
 		{
-			Rect rect = new Rect((Screen.width - 100) / 2, (Screen.height - 50) / 2, 100, 50);
+			Rect rect = new Rect((Screen.width - 100) / 2, (Screen.height - 50) / 2, 250, 50);
 			// Show MoveIn button
 			if (m_ShowMoveInButton == true)
 			{
-				if (GUI.Button(rect, "MoveIn"))
+				if (GUI.Button(rect, "Play In-animations then Idle-animations"))
 				{
 					// Play MoveIn animations
 					GUIAnimSystemFREE.Instance.MoveIn(this.transform, true);
@@ -90,7 +92,7 @@ public class Demo : MonoBehaviour
 			// Show MoveOut button
 			else
 			{
-				if (GUI.Button(rect, "MoveOut"))
+				if (GUI.Button(rect, "Play Out-animations"))
 				{
 					// Play MoveOut animations
 					GUIAnimSystemFREE.Instance.MoveOut(this.transform, true);

@@ -1,12 +1,15 @@
 // GUI Animator FREE
-// Version: 0.9.95
-// Compatilble: Unity 4.6.9 or higher and Unity 5.3.2 or higher, more info in Readme.txt file.
+// Version: 1.0.1
+// Compatilble: Unity 4.7.1 or higher and Unity 5.3.4 or higher, more info in Readme.txt file.
 //
 // Author:	Gold Experience Team (http://www.ge-team.com)
-// Details:	https://www.assetstore.unity3d.com/en/#!/content/28709
-// Support:	geteamdev@gmail.com
 //
-// Please direct any bugs/comments/suggestions to support e-mail.
+// Unity Asset Store:					https://www.assetstore.unity3d.com/en/#!/content/58843
+// GE Store:							http://www.ge-team.com/store/en/products/gui-animator-free/
+// Full version on Unity Asset Store:	https://www.assetstore.unity3d.com/en/#!/content/28709
+// Full version on GE Store:			http://www.ge-team.com/store/en/products/gui-animator-for-unity-ui/
+//
+// Please direct any bugs/comments/suggestions to geteamdev@gmail.com
 
 
 // ######################################################################
@@ -67,6 +70,9 @@ class GA_FREE_JS_Demo00 extends MonoBehaviour {
 		yield WaitForSeconds(Delay/2);
 
 		// Load next demo scene
-		Application.LoadLevel("GA FREE JS - Demo00 (960x600px)");
+		// Unity 5.3 or higher uses SceneManager.LoadScene instead of Application.LoadLevel,
+		// see http://docs.unity3d.com/Manual/UpgradeGuide53.html
+		// and http://docs.unity3d.com/530/Documentation/ScriptReference/SceneManagement.SceneManager.html
+		SceneManagement.SceneManager.LoadScene("GA FREE JS - Demo00 (960x600px)");
     }
 }

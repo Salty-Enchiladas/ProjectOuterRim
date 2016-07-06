@@ -1,12 +1,15 @@
 ﻿// GUI Animator FREE
-// Version: 0.9.95
-// Compatilble: Unity 4.6.9 or higher and Unity 5.3.2 or higher, more info in Readme.txt file.
+// Version: 1.0.1
+// Unity 4.7.1 or higher and Unity 5.3.4 or higher compatilble, see more info in Readme.txt file.
 //
-// Author:	Gold Experience Team (http://www.ge-team.com)
-// Details:	https://www.assetstore.unity3d.com/en/#!/content/28709
-// Support:	geteamdev@gmail.com
+// Author:				Gold Experience Team (http://www.ge-team.com)
 //
-// Please direct any bugs/comments/suggestions to support e-mail.
+// Unity Asset Store:					https://www.assetstore.unity3d.com/en/#!/content/58843
+// GE Store:							http://www.ge-team.com/store/en/products/gui-animator-free/
+// Full version on Unity Asset Store:	https://www.assetstore.unity3d.com/en/#!/content/28709
+// Full version on GE Store:			http://www.ge-team.com/store/en/products/gui-animator-for-unity-ui/
+//
+// Please direct any bugs/comments/suggestions to geteamdev@gmail.com
 
 #region Namespaces
 

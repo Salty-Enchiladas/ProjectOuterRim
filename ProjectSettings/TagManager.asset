@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Button
   - Bullet
+  - Gun
+  - Destructable Piece
   layers:
   - Default
   - TransparentFX
