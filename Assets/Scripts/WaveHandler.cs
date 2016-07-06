@@ -19,7 +19,7 @@ public class WaveHandler : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        //enemyObject = GameObject.Find(enemyPoolName).GetComponent<ObjectPooling>();
+        enemyObject = GameObject.Find(enemyPoolName).GetComponent<ObjectPooling>();
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class WaveHandler : MonoBehaviour
 
             yield return new WaitForSeconds(spawnRate);
 
-            GameObject obj = ChooseEnemy("interceptor");     //ChooseEnemy("interceptor")    enemyObject.GetPooledObject()       enemyTypes[(int)Random.Range(0, 3)]
+            GameObject obj = enemyObject.GetPooledObject();     //ChooseEnemy("interceptor")    enemyObject.GetPooledObject()       enemyTypes[(int)Random.Range(0, 3)]
             Transform spawn = ChooseSpawn();
 
             if (obj == null)
