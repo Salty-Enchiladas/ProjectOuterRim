@@ -36,11 +36,11 @@ public class FireMissile : MonoBehaviour {
 	void Update () {
         FindEnemy();
 
-        if ((Input.GetButtonDown("Fire2") || (Input.GetAxis("Missile")) != 0) && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0)
+        if ((Input.GetButtonDown("Fire2") || (Input.GetAxis("Secondary")) != 0) && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0)
         {
             Missile();
         }
-        else if ((Input.GetButtonDown("Fire2") || (Input.GetAxis("Missile")) != 0) && !hasTarget)
+        else if ((Input.GetButtonDown("Fire2") || (Input.GetAxis("Secondary")) != 0) && !hasTarget)
         {
             StartCoroutine(FlashNoTarget());
         }

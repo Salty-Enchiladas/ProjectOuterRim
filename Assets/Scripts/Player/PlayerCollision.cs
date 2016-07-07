@@ -14,7 +14,7 @@ public class PlayerCollision : MonoBehaviour {
     public Text livesText;
     public int playerHealth = 3;
     public int playerLives = 3;
-    public int healthScore;
+    public int healthScore = 100000;
     public string gameOverScene;
 
     PlayerScore playerScoreOBJ;
@@ -23,7 +23,7 @@ public class PlayerCollision : MonoBehaviour {
 
     void Start()
     {
-        playerScoreOBJ = gameObject.GetComponent<PlayerScore>();
+        playerScoreOBJ = transform.parent.GetComponent<PlayerScore>();
 
         healthBar1 = GameObject.Find("HealthBar1");
         healthBar2 = GameObject.Find("HealthBar2");

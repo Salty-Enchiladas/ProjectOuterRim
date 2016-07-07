@@ -5,13 +5,19 @@ public class WaveHandler : MonoBehaviour
 {
     public float spawnRate;
     public float difficultyTimer;
+    public float objSpawnMinX;
+    public float objSpawnMaxX;
+    public float objSpawnMinY;
+    public float objSpawnMaxY;
+    public float objSpawnZ;
     public string enemyPoolName;
-    public Transform[] spawnPoints;    
+    //public Transform[] spawnPoints;    
 
     GameObject player;
     string[] enemyTypes = { "defender", "interceptor", "fighter" };
     bool increasingDifficulty;
     bool spawning;
+    Vector3 objectSpawn;
 
     ObjectPooling enemyObject;
 
@@ -56,15 +62,17 @@ public class WaveHandler : MonoBehaviour
             yield return new WaitForSeconds(spawnRate);
 
             GameObject obj = enemyObject.GetPooledObject();     //ChooseEnemy("interceptor")    enemyObject.GetPooledObject()       enemyTypes[(int)Random.Range(0, 3)]
-            Transform spawn = ChooseSpawn();
+            //Transform spawn = ChooseSpawn();
 
             if (obj == null)
             {
                 yield break;
             }
-
-            obj.transform.position = spawn.position;
-            obj.transform.rotation = spawn.rotation;
+            print(player.name);
+            objectSpawn = new Vector3(Random.Range(objSpawnMinX, objSpawnMaxX), Random.Range(objSpawnMinY, objSpawnMaxY), player.transform.position.z + objSpawnZ);
+            
+            obj.transform.position = objectSpawn;
+            obj.transform.rotation = Quaternion.identity;
             obj.SetActive(true);
 
             spawning = false;
@@ -94,13 +102,14 @@ public class WaveHandler : MonoBehaviour
         return enemy;
     }
 
-    Transform ChooseSpawn()
-    {
-        int i = spawnPoints.Length;
-        int spawnPoint = (int)Random.Range(0f, i - 1);
+    //Transform ChooseSpawn()
+    //{
+    //    Transform spawnPoint;
+    //    objectSpawn = new Vector3(Random.Range(player.transform.position.x + objSpawnMinX, player.transform.position.x + objSpawnMaxX), Random.Range(player.transform.position.y + objSpawnMinY, player.transform.position.y + objSpawnMaxY), player.transform.position.z + objSpawnZ);
+    //    spawnPoint.position = objectSpawn;
 
-        return spawnPoints[spawnPoint];
-    }
+    //    return spawnPoint;
+    //}
 
     void HandleDifficulty()
     {

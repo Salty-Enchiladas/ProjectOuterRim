@@ -25,7 +25,7 @@ public class Enemy1Movement : MonoBehaviour {
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -50f, 50f),
                                          Mathf.Clamp(transform.position.y, player.transform.position.y - enemyYClamp, player.transform.position.y + enemyYClamp),
-                                         Mathf.Clamp(transform.position.z, player.transform.position.z + enemyZClamp, 125f));
+                                         Mathf.Clamp(transform.position.z, player.transform.position.z + enemyZClamp, transform.position.z + (enemyZClamp + 500)));
 
         if (player.transform.position.z + enemyZClamp < transform.position.z)        //move towards player
         {
