@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WaveHandler : MonoBehaviour
 {
@@ -71,28 +72,28 @@ public class WaveHandler : MonoBehaviour
         }
     }
 
-    GameObject ChooseEnemy(string enemyType)
-    {
-        GameObject enemy;
+    //GameObject ChooseEnemy(string enemyType)
+    //{
+    //    GameObject enemy;
 
-        switch (enemyType)
-        {
-            case "defender":
-                enemy = EnemyDefenderPooling.current.GetPooledObject();
-                break;
-            case "interceptor":
-                enemy = EnemyInterceptorPooling.current.GetPooledObject();
-                break;
-            case "fighter":
-                enemy = EnemyFighterPooling.current.GetPooledObject();
-                break;
-            default:
-                enemy = null;
-                break;
-        }
+    //    switch (enemyType)
+    //    {
+    //        case "defender":
+    //            enemy = EnemyDefenderPooling.current.GetPooledObject();
+    //            break;
+    //        case "interceptor":
+    //            enemy = EnemyInterceptorPooling.current.GetPooledObject();
+    //            break;
+    //        case "fighter":
+    //            enemy = EnemyFighterPooling.current.GetPooledObject();
+    //            break;
+    //        default:
+    //            enemy = null;
+    //            break;
+    //    }
 
-        return enemy;
-    }
+    //    return enemy;
+    //}
 
     Transform ChooseSpawn()
     {
