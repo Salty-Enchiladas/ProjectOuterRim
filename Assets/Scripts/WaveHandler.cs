@@ -6,6 +6,8 @@ public class WaveHandler : MonoBehaviour
 {
     public float spawnRate;
     public float difficultyTimer;
+    public int spawnCap;
+    public int enemyCount;
     public string enemyPoolName;
     public Transform[] spawnPoints;    
 

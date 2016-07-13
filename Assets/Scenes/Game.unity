@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 172330, guid: a407ec5e72b5406468151c5235458891, type: 2}
   pooledAmount: 1000
-  willGrow: 1
+  willGrow: 0
   pooledObjects: []
 --- !u!1 &18774381
 GameObject:
@@ -353,10 +353,11 @@ GameObject:
   - 114: {fileID: 555410809}
   - 114: {fileID: 555410811}
   - 114: {fileID: 555410813}
+  - 114: {fileID: 555410814}
   - 82: {fileID: 555410812}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: Game Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,6 +508,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c53b336b957e20c4f912bc941483ea6b, type: 3}
   - {fileID: 8300000, guid: e2d98d31c2cc41c4297e884ed869f592, type: 3}
   source: {fileID: 555410812}
+--- !u!114 &555410814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555410808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abda5454f2a22dc4b81b53edffb28350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeTag: Node
 --- !u!4 &704496527 stripped
 Transform:
   m_PrefabParentObject: {fileID: 432486, guid: bf30135c9bc1cac43a181358dd2afc11, type: 2}

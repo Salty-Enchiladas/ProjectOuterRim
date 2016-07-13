@@ -82,18 +82,24 @@ public class NodeControl : MonoBehaviour {
 	{
 		//Can I see the exit
 		float exitDistance = Vector3.Distance(startPos, targetPos);
-		if (exitDistance > .7f)
-			exitDistance -= .7f;
+
+        if (exitDistance > .7f)
+        {
+            exitDistance -= .7f;
+        }
+
 		if (!Physics.Raycast(startPos, targetPos - startPos, exitDistance))
 		{
 			List<Vector3> path = new List<Vector3>();
 			path.Add(startPos);
 			path.Add(targetPos);
+
 			return path;
 		}
 		
 		GameObject[] nodes = GameObject.FindGameObjectsWithTag(nodeTag);
 		List<Point> points = new List<Point>();
+
 		foreach (GameObject node in nodes)
 		{
 			Point currNode = new Point(node.transform.position);
@@ -108,13 +114,16 @@ public class NodeControl : MonoBehaviour {
 			foreach (Point point2 in points)
 			{
 				float distance = Vector3.Distance(point.GetPos(), point2.GetPos());
+
 				if (!Physics.Raycast(point.GetPos(), point2.GetPos() - point.GetPos(), distance))
 				{
 					//Debug.DrawRay(point.GetPos(), point2.GetPos() - point.GetPos(), Color.white, 1);
 					point.AddConnectedPoint(point2);
 				}
 			}
+
 			float distance2 = Vector3.Distance(targetPos, point.GetPos());
+
 			if (!Physics.Raycast(targetPos, point.GetPos() - targetPos, distance2))
 			{
 				//Debug.DrawRay(targetPos, point.GetPos() - targetPos, Color.white, 1);
@@ -126,6 +135,7 @@ public class NodeControl : MonoBehaviour {
 		foreach (Point point in points)
 		{
 			float distance = Vector3.Distance(startPos, point.GetPos());
+
 			if (!Physics.Raycast(startPos, point.GetPos() - startPos, distance))
 			{
 				//Debug.DrawRay(startPos, point.GetPos() - startPos, Color.white, 1);
@@ -158,7 +168,8 @@ public class NodeControl : MonoBehaviour {
 							potentialPoint.AddPotentialPrevPoint(point);
 							foundConnections.Add(potentialPoint);
 							potentialPoint.SetScore(Vector3.Distance(startPos, potentialPoint.GetPos()) + Vector3.Distance(targetPos, potentialPoint.GetPos()));
-						} else if (potentialPoint.GetState() == 'e')
+						} 
+                        else if (potentialPoint.GetState() == 'e')
 						{
 							//Found the exit
 							foundEnd = true;
@@ -168,6 +179,7 @@ public class NodeControl : MonoBehaviour {
 					point.SetState('c');
 				}
 			}
+
 			foreach (Point connection in foundConnections)
 			{
 				connection.SetState('o');
@@ -175,6 +187,7 @@ public class NodeControl : MonoBehaviour {
 				float lowestScore = 0;
 				Point bestPrevPoint = null;
 				bool first = true;
+
 				foreach (Point prevPoints in connection.GetPotentialPrevPoints())
 				{
 					if (first)
@@ -182,7 +195,8 @@ public class NodeControl : MonoBehaviour {
 						lowestScore = prevPoints.GetScore();
 						bestPrevPoint = prevPoints;
 						first = false;
-					} else
+					} 
+                    else
 					{
 						if (lowestScore > prevPoints.GetScore())
 						{
@@ -209,9 +223,11 @@ public class NodeControl : MonoBehaviour {
 				Point currPoint = point;
 				List<Point> route = new List<Point>();
 				route.Add(endPoint);
+
 				while(tracing)
 				{
 					route.Add(currPoint);
+
 					if (currPoint.GetState() == 's')
 					{
 						if (firstRoute)
@@ -219,7 +235,8 @@ public class NodeControl : MonoBehaviour {
 							shortestRoute = route;
 							lowestScore = score;
 							firstRoute = false;
-						} else
+						} 
+                        else
 						{
 							if (lowestScore > score)
 							{
@@ -237,12 +254,15 @@ public class NodeControl : MonoBehaviour {
 			
 			shortestRoute.Reverse();
 			List<Vector3> path = new List<Vector3>();
+
 			foreach (Point point in shortestRoute)
 			{
 				path.Add(point.GetPos());
 			}
+
 			return path;
-		} else
+		} 
+        else
 		{
 			return null;
 		}

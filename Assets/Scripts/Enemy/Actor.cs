@@ -2,67 +2,96 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Actor : MonoBehaviour {
-	
+public class Actor : MonoBehaviour 
+{
+    public bool DebugMode;
+    public float speed;
+    public GameObject player;
+
 	enum State
 	{
 		IDLE,
 		MOVING,
 	}
+
+    State state = State.IDLE;
 	
-	float m_speed;
-	float m_speed_multi = 10;
-	public bool DebugMode;
+	float m_speed_multi = 50;
+    float OldTime = 0;
+    float checkTime = 0;
+    float elapsedTime = 0;
 	
 	bool onNode = true;
+    bool recalculating;
+
 	Vector3 m_target = new Vector3(0, 0, 0);
 	Vector3 currNode;
+
 	int nodeIndex;
+
 	List<Vector3> path = new List<Vector3>();
+
 	NodeControl control;
-	State state = State.IDLE;
-	float OldTime = 0;
-	float checkTime = 0;
-	float elapsedTime = 0;
+    WaveHandler _waveHandler;	
 	
 	void Awake()
 	{
-		GameObject cam = GameObject.FindGameObjectWithTag("MainCamera");
-		control = (NodeControl)cam.GetComponent(typeof(NodeControl));
+		GameObject gameManager = GameObject.FindGameObjectWithTag("Game Manager");
+        control = (NodeControl)gameManager.GetComponent(typeof(NodeControl));
+        _waveHandler = gameManager.GetComponent<WaveHandler>();
+        player = GameObject.Find("Player");
+        //speed *= Time.deltaTime;
 	}
+
+    void Start()
+    {
+        _waveHandler.enemyCount++;
+        player = GameObject.Find("Player");
+        MoveOrder(player.transform.position);
+    }
+
+    void OnDisable()
+    {
+        ChangeState(State.IDLE);
+    }
+
+    void FixedUpdate()
+    {
+        StartCoroutine(RecalculateMove());
+    }
 	
 	void Update () 
 	{
-		m_speed = Time.deltaTime * m_speed_multi;
+		speed = Time.deltaTime * m_speed_multi;
 		elapsedTime += Time.deltaTime;
 		
 		if (elapsedTime > OldTime)
 		{
 			switch (state)
 			{
-			case State.IDLE:
-				break;
+			    case State.IDLE:
+				    break;
 				
-			case State.MOVING:
-				OldTime = elapsedTime + 0.01f;
+			    case State.MOVING:
+				    OldTime = elapsedTime + 0.01f;
 
-				if (elapsedTime > checkTime)
-				{
-					checkTime = elapsedTime + 1;
-					SetTarget();
-				}
+				    if (elapsedTime > checkTime)
+				    {
+					    checkTime = elapsedTime + 1;
+					    SetTarget();
+				    }
 				
-				if (path != null)
-				{
-					if (onNode)
-					{
-						onNode = false;
-						if (nodeIndex < path.Count)
-							currNode = path[nodeIndex];
-					} else
-						MoveToward();
-				}
-				break;
+				    if (path != null)
+				    {
+					    if (onNode)
+					    {
+						    onNode = false;
+						    if (nodeIndex < path.Count)
+							    currNode = path[nodeIndex];
+					    } else
+						    MoveToward();
+				    }
+				    break;
 			}
 		}
 	}
@@ -80,9 +109,18 @@ public class Actor : MonoBehaviour {
 		Vector3 newPos = transform.position;
 
 		float Xdistance = newPos.x - currNode.x;
-		if (Xdistance < 0) Xdistance -= Xdistance*2;
+
+        if (Xdistance < 0)
+        {
+            Xdistance -= Xdistance * 2;
+        }
+
 		float Ydistance = newPos.z - currNode.z;
-		if (Ydistance < 0) Ydistance -= Ydistance*2;
+
+        if (Ydistance < 0)
+        {
+            Ydistance -= Ydistance * 2;
+        }
 	
 		if ((Xdistance < 0.1 && Ydistance < 0.1) && m_target == currNode) //Reached target
 		{
@@ -97,9 +135,9 @@ public class Actor : MonoBehaviour {
 		/***Move toward waypoint***/
 		Vector3 motion = currNode - newPos;
 		motion.Normalize();
-		newPos += motion * m_speed;
+		newPos += motion * speed;
 		
-		transform.position = newPos;
+		transform.position = Vector3.Lerp(transform.position, newPos, speed);
 	}
 	
 	private void SetTarget()
@@ -120,4 +158,20 @@ public class Actor : MonoBehaviour {
 	{
 		state = newState;
 	}
+
+    IEnumerator RecalculateMove()
+    {
+        if (!recalculating)
+        {
+            recalculating = true;
+            yield return new WaitForSeconds(0.25f);
+            MoveOrder(player.transform.position);
+            recalculating = false;
+        }
+    }
+
+    void CallRecalculateMove()
+    {
+        StartCoroutine(RecalculateMove());
+    }
 }

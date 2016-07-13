@@ -10,11 +10,13 @@ public class Enemy1Collision : MonoBehaviour {
     public GameObject player;
 
     PlayerScore _playerScore;
+    WaveHandler _waveHandler;
 
     void Start()
     {
         player = GameObject.Find("Player");
         _playerScore = player.GetComponent<PlayerScore>();
+        _waveHandler = GameObject.Find("Game Manager").GetComponent<WaveHandler>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -23,6 +25,8 @@ public class Enemy1Collision : MonoBehaviour {
         {
             col.gameObject.SetActive(false);
             gameObject.SetActive(false);
+
+            _waveHandler.enemyCount--;
 
             _playerScore.score += 1000;
 

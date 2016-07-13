@@ -10,6 +10,8 @@ TagManager:
   - Enemy Laser
   - Enemy
   - Button
+  - Game Manager
+  - Node
   layers:
   - Default
   - TransparentFX
