@@ -11,7 +11,11 @@ public class CursorMovement : MonoBehaviour {
     float moveX;
     float moveY;
 
-    Camera mainCam;    
+    bool isCursorOver;
+
+    Camera mainCam;
+
+    GameObject currentButton;
 
     string[] joysticks;    
 
@@ -28,9 +32,23 @@ public class CursorMovement : MonoBehaviour {
 
         MoveCursor();
 
-        if (Input.GetButtonUp("Submit"))
-        {            
-            Click();
+        OnCursorExit(currentButton);
+
+        Ray ray = Camera.main.ScreenPointToRay(transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.tag == "Button")
+            {
+                currentButton = hit.collider.gameObject;
+                
+                OnCursorOver(currentButton);
+
+                if (Input.GetButtonUp("Submit") || Input.GetMouseButtonUp(0))
+                {
+                    Click();
+                }
+            }
         }
 	}
 
@@ -61,15 +79,41 @@ public class CursorMovement : MonoBehaviour {
 
     void Click()
     {
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.zero);
+        //RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.zero);
 
-        if (hit.collider == null)
+        Ray ray = Camera.main.ScreenPointToRay(transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
         {
-            return;
+            if (hit.collider == null)
+            {
+                return;
+            }
+            else if (hit.collider.tag == "Button")
+            {
+                hit.collider.gameObject.GetComponent<IsButton>().ButtonFunction();
+
+
+                //ExecuteEvents.Execute(hit.collider.gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+            }
         }
-        else if (hit.collider.tag == "Button")
+    }
+
+    void OnCursorOver(GameObject button)
+    {
+        if (!isCursorOver)
         {
-            ExecuteEvents.Execute(hit.collider.gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+            isCursorOver = true;
+            button.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        }
+    }
+
+    void OnCursorExit(GameObject button)
+    {
+        if (isCursorOver)
+        {
+            isCursorOver = false;
+            button.transform.localScale = new Vector3(2f, 2f, 2f);
         }
     }
 }
