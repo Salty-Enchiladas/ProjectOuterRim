@@ -40,8 +40,8 @@ public class CursorMovement : MonoBehaviour {
         {
             if (joysticks[0] != "")
             {
-                moveX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-                moveY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+                moveX = Input.GetAxis("HorizontalRightStick") * speed * Time.deltaTime;
+                moveY = Input.GetAxis("VerticalRightStick") * speed * Time.deltaTime;
 
                 transform.position += new Vector3(moveX, moveY, 0f);
                 transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, Screen.width), Mathf.Clamp(transform.position.y, 0, Screen.height), mainCam.nearClipPlane);
