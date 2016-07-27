@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LaserMovement : MonoBehaviour {
-
+public class LaserMovement : MonoBehaviour 
+{
     public float laserSpeed;
     public float laserRange;
     GameObject player;
@@ -14,11 +14,14 @@ public class LaserMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+       // transform.Translate(0, 0, laserSpeed * Time.deltaTime);
+        Vector2 cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.LookAt(-cursor);
         transform.Translate(0, 0, laserSpeed * Time.deltaTime);
 
         if (transform.position.z > player.transform.position.z + laserRange || transform.position.z < player.transform.position.z - (laserRange / 2))
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }

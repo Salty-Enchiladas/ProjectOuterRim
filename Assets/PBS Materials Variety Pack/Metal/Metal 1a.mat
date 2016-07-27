@@ -109,11 +109,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.5
+        second: 0.596
       data:
         first:
           name: _BumpScale
-        second: 0.5
+        second: 0.45
       data:
         first:
           name: _OcclusionStrength
