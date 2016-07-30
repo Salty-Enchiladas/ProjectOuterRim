@@ -107,8 +107,11 @@ public class WaveHandler : MonoBehaviour
 
     void HandleDifficulty()
     {
-        StartCoroutine(Spawn());
-        StartCoroutine(IncreaseSpawning());
+        if (enemyCount != spawnCap)
+        {
+            StartCoroutine(Spawn());
+            StartCoroutine(IncreaseSpawning());
+        }
     }
 
     IEnumerator IncreaseSpawning()

@@ -16,7 +16,7 @@ public class Enemy1Collision : MonoBehaviour {
     {
         player = GameObject.Find("Player");
         _playerScore = player.GetComponent<PlayerScore>();
-        _waveHandler = GameObject.Find("Game Manager").GetComponent<WaveHandler>();
+        _waveHandler = GameObject.Find("GameManager").GetComponent<WaveHandler>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -29,6 +29,7 @@ public class Enemy1Collision : MonoBehaviour {
             _waveHandler.enemyCount--;
 
             _playerScore.score += 1000;
+            _playerScore.UpdateScore();
 
             Instantiate(explosion, transform.position, transform.rotation);
             Instantiate(explosionSound, transform.position, transform.rotation);

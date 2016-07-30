@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
-public class FireMissile : MonoBehaviour {
-
+public class FireMissile : MonoBehaviour
+{
     public GameObject missile;
     public GameObject missile1Img;
     public GameObject missile2Img;
@@ -13,16 +12,17 @@ public class FireMissile : MonoBehaviour {
 
     public float missileRechargeLength;
     public float missileCooldown;
-    
+
     public int missileCount;
-    public int missileMax;    
+    public int missileMax;
 
-    float lastShot;
+    private float lastShot;
 
-    bool hasTarget;
+    private bool hasTarget;
 
     // Use this for initialization
-    void Start () {
+    private void Start()
+    {
         hasTarget = false;
         missile1Img = GameObject.Find("M1b");
         missile2Img = GameObject.Find("M2b");
@@ -31,12 +31,16 @@ public class FireMissile : MonoBehaviour {
         noTarget = GameObject.Find("NoTarget");
         noTarget.SetActive(false);
     }
-	
-	// Update is called once per frame
-	void Update () {
-        FindEnemy();
 
-        if ((Input.GetButtonDown("Fire2") || (Input.GetAxis("Missile")) != 0) && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0)
+    // Update is called once per frame
+    private void Update()
+    {
+        if (Input.GetButtonDown("XB LockOn"))
+        {
+            FindEnemy();
+        }
+
+        if ((Input.GetButtonDown("Fire2") || Input.GetAxis("Missile") != 0) && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0)
         {
             Missile();
         }
@@ -52,27 +56,31 @@ public class FireMissile : MonoBehaviour {
                 missile2Img.SetActive(true);
                 missile3Img.SetActive(true);
                 break;
+
             case 2:
                 missile1Img.SetActive(true);
                 missile2Img.SetActive(true);
                 missile3Img.SetActive(false);
                 break;
+
             case 1:
                 missile1Img.SetActive(true);
                 missile2Img.SetActive(false);
                 missile3Img.SetActive(false);
                 break;
+
             case 0:
                 missile1Img.SetActive(false);
                 missile2Img.SetActive(false);
                 missile3Img.SetActive(false);
                 break;
+
             default:
                 break;
         }
     }
 
-    void Missile()
+    private void Missile()
     {
         lastShot = Time.time;
         Instantiate(missile, transform.position, transform.rotation);
@@ -82,32 +90,33 @@ public class FireMissile : MonoBehaviour {
             StartCoroutine(MissileRecharge(missileRechargeLength));
         }
     }
-    
-    void FindEnemy()
+
+    private void FindEnemy()
     {
         target = GameObject.FindGameObjectWithTag("Enemy");
-        if(target == null)
-        {
-            hasTarget = false;            
-        }
-        else if(!target.activeInHierarchy)
+
+        if (target == null)
         {
             hasTarget = false;
         }
-        else if(target.activeInHierarchy)
+        else if (!target.activeInHierarchy)
+        {
+            hasTarget = false;
+        }
+        else if (target.activeInHierarchy)
         {
             target.GetComponent<EnemyState>().isTarget = true;
             hasTarget = true;
         }
     }
 
-    IEnumerator MissileRecharge(float _missileRechargeLength)
+    private IEnumerator MissileRecharge(float _missileRechargeLength)
     {
         yield return new WaitForSeconds(_missileRechargeLength);
         missileCount++;
     }
 
-    IEnumerator FlashNoTarget()
+    private IEnumerator FlashNoTarget()
     {
         if (!noTarget.activeInHierarchy)
         {

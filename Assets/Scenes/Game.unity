@@ -375,6 +375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRate: 1.5
   difficultyTimer: 15
+  spawnCap: 1000
+  enemyCount: 0
   enemyPoolName: EnemyCubes
   spawnPoints:
   - {fileID: 93553509}
