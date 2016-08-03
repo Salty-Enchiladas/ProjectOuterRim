@@ -70,8 +70,8 @@ public class Actor : MonoBehaviour
 
     private void Start()
     {
-        enemyZClamp = Random.Range(100f, 225f);
-        enemyXPos = Random.Range(-50f, 50f);
+        enemyZClamp = Random.Range(500f, 725f);
+        enemyXPos = Random.Range(-300f, 300f);
         lerpSpeed = Random.Range(0.5f, 2.5f);
 
         _waveHandler.enemyCount++;

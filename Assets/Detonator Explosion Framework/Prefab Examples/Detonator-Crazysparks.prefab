@@ -46,13 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4007f1233a9b74fa9be42583fafba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 10
+  size: 20
   color: {r: 1, g: 0.423, b: 0, a: 0.42352942}
   explodeOnStart: 1
   duration: 3
   detail: 1
   upwardsBias: 0
-  destroyTime: 7
+  destroyTime: 5
   useWorldSpace: 1
   direction: {x: 0, y: 0, z: 0}
   fireballAMaterial: {fileID: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
   autoCreateFireball: 1
   autoCreateSparks: 1
   autoCreateShockwave: 1
-  autoCreateSmoke: 1
+  autoCreateSmoke: 0
   autoCreateGlow: 1
   autoCreateLight: 1
   autoCreateForce: 1
@@ -88,7 +88,7 @@ MonoBehaviour:
   on: 1
   detonatorControlled: 1
   startSize: 1
-  size: 1.12
+  size: 20
   explodeDelayMin: 0
   explodeDelayMax: 0
   startDuration: 2
@@ -103,7 +103,7 @@ MonoBehaviour:
   startForce: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   startVelocity: {x: 0, y: 0, z: 0}
-  velocity: {x: 600, y: 50, z: 600}
+  velocity: {x: 50, y: 20, z: 50}
   detailThreshold: 0
   sparksMaterial: {fileID: 0}
 --- !u!1002 &11400003

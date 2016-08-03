@@ -992,11 +992,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c03dddf5aadf04d899f0b68b0787e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 3
+  playerSpeed: 50
+  forwardSpeed: 0
   horizontalTurnAngle: 0
   moveX: 0
   moveY: 0
   moveZ: 0
+  clampX: 0
+  clampY: 0
+  thrusterRampUpRate: 0
+  thrusterRampDownRate: 0
+  thrusterCooldown: 0
   invertVertical: 0
 --- !u!114 &11468764
 MonoBehaviour:

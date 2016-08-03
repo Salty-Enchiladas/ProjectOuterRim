@@ -34,13 +34,15 @@ public class FireMissile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        FindEnemy();
-
-        if ((Input.GetButtonDown("Fire2") || (Input.GetAxis("Secondary")) != 0) && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0)
+         if (Input.GetButtonDown("Fire2"))
+         {
+             FindEnemy();
+         }
+        if ((Input.GetButtonUp("Fire2") && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0))   // || (Input.GetAxis("Secondary")) != 0)
         {
             Missile();
         }
-        else if ((Input.GetButtonDown("Fire2") || (Input.GetAxis("Secondary")) != 0) && !hasTarget)
+        else if ((Input.GetButtonDown("Fire2") && !hasTarget))   // || (Input.GetAxis("Secondary")) != 0)
         {
             StartCoroutine(FlashNoTarget());
         }
@@ -85,10 +87,11 @@ public class FireMissile : MonoBehaviour {
     
     void FindEnemy()
     {
+        print(GameObject.FindGameObjectWithTag("Enemy"));
         target = GameObject.FindGameObjectWithTag("Enemy");
         if(target == null)
         {
-            hasTarget = false;            
+            hasTarget = false;
         }
         else if(!target.activeInHierarchy)
         {

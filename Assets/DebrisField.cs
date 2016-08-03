@@ -52,7 +52,7 @@ public class DebrisField : MonoBehaviour
             objectSpawn = new Vector3(Random.Range(objSpawnMinX, objSpawnMaxX), Random.Range(objSpawnMinY, objSpawnMaxY), player.transform.position.z + objSpawnZ);
             obj.transform.position = objectSpawn;
             obj.transform.localScale = sizes[Random.Range(0, sizes.Length)];
-            obj.GetComponent<Destructable>().sploded = true;
+           // obj.GetComponent<Destructable>().sploded = true;
             obj.SetActive(true);
             spawning = false;
         }

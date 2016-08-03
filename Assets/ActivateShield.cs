@@ -8,7 +8,7 @@ public class ActivateShield : MonoBehaviour
 
 	void Update () 
     {
-        if (Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonUp("Fire3"))
         {
             if (!onCooldown)
             {
