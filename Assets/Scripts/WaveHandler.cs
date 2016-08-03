@@ -11,6 +11,8 @@ public class WaveHandler : MonoBehaviour
     public float objSpawnMaxY;
     public float objSpawnZ;
     public string enemyPoolName;
+    public int spawnCap;
+    public int enemyCount;
     //public Transform[] spawnPoints;    
 
     GameObject player;
@@ -113,8 +115,11 @@ public class WaveHandler : MonoBehaviour
 
     void HandleDifficulty()
     {
-        StartCoroutine(Spawn());
-        StartCoroutine(IncreaseSpawning());
+        if (enemyCount != spawnCap)
+        {
+            StartCoroutine(Spawn());
+            StartCoroutine(IncreaseSpawning());
+        }
     }
 
     IEnumerator IncreaseSpawning()
