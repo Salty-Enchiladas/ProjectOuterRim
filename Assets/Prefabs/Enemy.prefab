@@ -36,6 +36,7 @@ GameObject:
   - 65: {fileID: 6595306}
   - 65: {fileID: 6542938}
   - 114: {fileID: 11440764}
+  - 114: {fileID: 11472212}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -329,11 +330,24 @@ MonoBehaviour:
   recalcDelay: 2
   enemyZClamp: 0
   enemyXPos: 0
-  centerX: 25
+  centerX: 500
   centerY: 0
-  centerZ: 25
-  maneuverRadius: 50
+  centerZ: 500
+  maneuverRadius: 250
   player: {fileID: 0}
+  DebugMode: 1
+  m_speed_multi: 750
+--- !u!114 &11472212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b9a4f32b8a87942a22ccf9ed000357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   DebugMode: 0
 --- !u!114 &11479564
 MonoBehaviour:

@@ -12,17 +12,21 @@ public class ActivatePlayerShip : MonoBehaviour {
 	void Start () {
         if (!debugMode)
         {
-            for (int i = 0; i < shipPrefabs.Length; i++)
+            if (PlayerPrefs.GetString("Ship") == "")
             {
-                if (PlayerPrefs.GetString("Ship") == "")
+                player = Instantiate(shipPrefabs[0], Vector3.zero, Quaternion.identity) as GameObject;
+                player.name = "Player";
+            }
+            else
+            {
+                for (int i = 0; i < shipPrefabs.Length; i++)
                 {
-                    player = Instantiate(shipPrefabs[0], Vector3.zero, Quaternion.identity) as GameObject;
-                    player.name = "Player";
-                }
-                else if (shipPrefabs[i].name == PlayerPrefs.GetString("Ship"))
-                {
-                    player = Instantiate(shipPrefabs[i], Vector3.zero, Quaternion.identity) as GameObject;
-                    player.name = "Player";
+                
+                    if (shipPrefabs[i].name == PlayerPrefs.GetString("Ship"))
+                    {
+                        player = Instantiate(shipPrefabs[i], Vector3.zero, Quaternion.identity) as GameObject;
+                        player.name = "Player";
+                    }
                 }
             }
         }

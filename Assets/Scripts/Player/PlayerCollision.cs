@@ -29,6 +29,7 @@ public class PlayerCollision : MonoBehaviour {
         healthBar2 = GameObject.Find("HealthBar2");
         healthBar3 = GameObject.Find("HealthBar3");
         damageIndicatorIMG = GameObject.Find("HitEffect");
+        print(damageIndicatorIMG);
         damageIndicatorIMG.SetActive(false);
 
         _livesText = GameObject.Find("LivesText");

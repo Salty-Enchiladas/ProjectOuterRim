@@ -27,7 +27,7 @@ public class Actor : MonoBehaviour
 
     private State state = State.IDLE;
 
-    private float m_speed_multi = 40;
+    public float m_speed_multi = 40;
     private float OldTime = 0;
     private float checkTime = 0;
     private float elapsedTime = 0;
@@ -51,6 +51,10 @@ public class Actor : MonoBehaviour
     private NodeControl control;
     private WaveHandler _waveHandler;
 
+    float _centerX;
+    float _centerY;
+    float _centerZ;
+
     private void Awake()
     {
         GameObject gameManager = GameObject.FindGameObjectWithTag("Game Manager");
@@ -58,12 +62,16 @@ public class Actor : MonoBehaviour
         _waveHandler = gameManager.GetComponent<WaveHandler>();
         player = GameObject.Find("Player");
         //speed *= Time.deltaTime;
+
+        _centerX = centerX;
+        _centerY = centerY;
+        _centerZ = centerZ;
     }
 
     private void Start()
     {
-        enemyZClamp = Random.Range(2f, 5f);
-        enemyXPos = Random.Range(-0.5f, 0.5f);
+        enemyZClamp = Random.Range(100f, 225f);
+        enemyXPos = Random.Range(-50f, 50f);
         lerpSpeed = Random.Range(0.5f, 2.5f);
 
         _waveHandler.enemyCount++;
@@ -186,9 +194,9 @@ public class Actor : MonoBehaviour
                         this.transform.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 2)));
                     }
 
-                    centerX = 0;
-                    centerY = 0;
-                    centerZ = 0;
+                    centerX = _centerX;
+                    centerY = _centerY;
+                    centerZ = _centerZ;
 
                     break;
             }
