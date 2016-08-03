@@ -21,13 +21,5 @@ public class MissileMovement : MonoBehaviour {
     {
         transform.LookAt(target.transform);
         transform.Translate(Vector3.forward * missileSpeed * Time.deltaTime);
-        //Vector3 targetDir = target.transform.position - transform.position;
-
-        //target.transform.position -= transform.position * missileSpeed * Time.deltaTime;
-
-        if (transform.position.z > 60 || transform.position.z < -50)
-        {
-            Destroy(gameObject);
-        }
     }
 }

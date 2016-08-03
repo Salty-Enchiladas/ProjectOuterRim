@@ -58,8 +58,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -10398.555, y: 380.67194, z: -3285.542}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children:
   - {fileID: 452374}
   m_Father: {fileID: 0}
@@ -70,9 +70,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179700}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5000001, w: 0.49999994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.6}
+  m_LocalScale: {x: 2, y: 0.1, z: 0}
   m_Children:
   - {fileID: 473024}
   m_Father: {fileID: 450494}
@@ -121,7 +121,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157060}
-  m_Mesh: {fileID: 4300000, guid: b2426dd2e4a425a4d9ea7998a2517a11, type: 3}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5421978
 Rigidbody:
   m_ObjectHideFlags: 1
