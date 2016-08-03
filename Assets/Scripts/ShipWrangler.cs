@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShipWrangler : MonoBehaviour {
-
+public class ShipWrangler : MonoBehaviour 
+{
     public GameObject[] ships;
     public int currentShip;
 

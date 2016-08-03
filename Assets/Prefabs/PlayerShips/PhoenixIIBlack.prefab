@@ -35,7 +35,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &107428
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,13 +46,16 @@ GameObject:
   - 4: {fileID: 431894}
   - 114: {fileID: 11428184}
   - 114: {fileID: 11428076}
+  - 114: {fileID: 11410056}
+  - 114: {fileID: 11463756}
+  - 114: {fileID: 11437934}
   m_Layer: 0
   m_Name: PhoenixIIBlack
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &108098
 GameObject:
   m_ObjectHideFlags: 1
@@ -206,7 +209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &131132
 GameObject:
   m_ObjectHideFlags: 1
@@ -469,7 +472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &175982
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &190426
 GameObject:
   m_ObjectHideFlags: 1
@@ -613,7 +616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &410352
 Transform:
   m_ObjectHideFlags: 1
@@ -2194,6 +2197,29 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11410056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c03dddf5aadf04d899f0b68b0787e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 200
+  forwardSpeed: 100
+  horizontalTurnAngle: 0
+  moveX: 0
+  moveY: 0
+  moveZ: 0
+  clampX: 500
+  clampY: 500
+  thrusterRampUpRate: 100
+  thrusterRampDownRate: 200
+  thrusterCooldown: 15
+  invertVertical: 0
 --- !u!114 &11415652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2205,7 +2231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a27be2ab39c5b248adb1f836e58d59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldHealth: 3
+  startingHealth: 3
+  currentHealth: 0
 --- !u!114 &11418796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2259,7 +2286,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107428}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 858aa75149d6e784b9de0b3c49359ebb, type: 3}
   m_Name: 
@@ -2311,6 +2338,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 472320}
+--- !u!114 &11437934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107428}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8babec90da9c3204d84236923aea272c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 131046, guid: b4242f6dc5cac4f4dbb72400c621f5d5, type: 2}
+  explosionSound: {fileID: 120490, guid: f82ea5538fd401f4eb21454798f86e7b, type: 2}
+  healthBar1: {fileID: 0}
+  healthBar2: {fileID: 0}
+  healthBar3: {fileID: 0}
+  damageIndicatorIMG: {fileID: 0}
+  livesText: {fileID: 0}
+  playerHealth: 9
+  playerLives: 3
+  healthScore: 100000
+  shieldScore: 300000
+  gameOverScene: GameOver
 --- !u!114 &11443110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2352,6 +2402,21 @@ MonoBehaviour:
   ballLightningSpawn: {fileID: 150010}
   scaleAmount: {x: 0.5, y: 0.5, z: 0.5}
   coolDown: 3
+--- !u!114 &11463756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0291340b8e052964e998249cbfa16c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  highScore: 0
+  scoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
 --- !u!114 &11466174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2471,10 +2536,10 @@ MonoBehaviour:
   healthBar3: {fileID: 0}
   damageIndicatorIMG: {fileID: 0}
   livesText: {fileID: 0}
-  playerHealth: 9
-  playerLives: 3
+  playerHealth: 500
+  playerLives: 500
   healthScore: 100000
-  shieldScore: 300000
+  shieldScore: 150000
   gameOverScene: GameOver
 --- !u!114 &11493044
 MonoBehaviour:

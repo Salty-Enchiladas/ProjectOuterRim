@@ -3,14 +3,20 @@ using System.Collections;
 
 public class Shield : MonoBehaviour 
 {
-    public int shieldHealth;
+    public int startingHealth;
+    public int currentHealth;
 
+    void Start()
+    {
+        currentHealth = startingHealth;
+    }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy Laser")
+        if (other.tag == "EnemyLaser")
         {
-            shieldHealth--;
-            if (shieldHealth == 0)
+            print("You were hit!");
+            currentHealth--;
+            if (currentHealth == 0)
             {
                 transform.parent.GetComponent<ActivateShield>().ShieldDestroyed();
             }

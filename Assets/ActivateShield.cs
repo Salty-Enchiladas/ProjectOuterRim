@@ -12,6 +12,7 @@ public class ActivateShield : MonoBehaviour
         {
             if (!onCooldown)
             {
+                shield.GetComponent<Shield>().currentHealth = shield.GetComponent<Shield>().startingHealth;
                 shield.SetActive(true);
             }
         }

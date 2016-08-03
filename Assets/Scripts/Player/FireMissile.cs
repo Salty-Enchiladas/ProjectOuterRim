@@ -33,7 +33,8 @@ public class FireMissile : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
         FindEnemy();
 
         if ((Input.GetButtonDown("Fire2") || (Input.GetAxis("Secondary")) != 0) && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0)
