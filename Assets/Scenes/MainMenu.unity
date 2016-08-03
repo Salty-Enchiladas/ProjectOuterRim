@@ -2079,18 +2079,6 @@ CanvasRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 107428, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
   m_PrefabInternal: {fileID: 2096088712}
---- !u!114 &891600951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 891600950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858aa75149d6e784b9de0b3c49359ebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: -4
 --- !u!4 &891600952 stripped
 Transform:
   m_PrefabParentObject: {fileID: 431894, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
@@ -3973,49 +3961,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 431894, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 431894, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 431894, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 107428, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 118638, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 104238, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 172384, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 196074, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 181826, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11448230, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11418946, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-    - {fileID: 5433482, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
-    - {fileID: 11488280, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
   m_IsPrefabParent: 0

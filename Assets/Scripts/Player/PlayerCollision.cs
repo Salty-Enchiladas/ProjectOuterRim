@@ -15,10 +15,11 @@ public class PlayerCollision : MonoBehaviour {
     public int playerHealth = 3;
     public int playerLives = 3;
     public int healthScore = 100000;
+    public int shieldScore = 300000;
     public string gameOverScene;
 
     PlayerScore playerScoreOBJ;
-
+    bool shieldActive;
     GameObject _livesText;
 
     void Start()
@@ -77,8 +78,11 @@ public class PlayerCollision : MonoBehaviour {
         {
             CheckHealth();
             yield return new WaitForSeconds(0f);
-        }        
-
+        }
+        if (playerScoreOBJ.score % shieldScore == 0 && playerScoreOBJ.score != 0)
+        {
+            transform.parent.GetComponent<ActivateShield>().onCooldown = false;
+        }
         StartCoroutine(CheckScore());
     }
 
@@ -131,14 +135,17 @@ public class PlayerCollision : MonoBehaviour {
 
     void LoseLife()
     {
-        playerLives--;
+        if (!shieldActive)
+        {
+            playerLives--;
 
-        healthBar1.SetActive(true);
-        healthBar2.SetActive(true);
-        healthBar3.SetActive(true);
+            healthBar1.SetActive(true);
+            healthBar2.SetActive(true);
+            healthBar3.SetActive(true);
 
-        Instantiate(explosion, transform.position, transform.rotation);
-        Instantiate(explosionSound, transform.position, transform.rotation);
+            Instantiate(explosion, transform.position, transform.rotation);
+            Instantiate(explosionSound, transform.position, transform.rotation);
+        }
     }
 
     void GainLife()
