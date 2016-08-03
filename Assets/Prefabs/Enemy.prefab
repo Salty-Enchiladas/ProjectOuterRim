@@ -35,6 +35,7 @@ GameObject:
   - 23: {fileID: 2390188}
   - 65: {fileID: 6595306}
   - 65: {fileID: 6542938}
+  - 114: {fileID: 11440764}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -303,7 +304,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172330}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbfad040697473441b9d862451c398ef, type: 3}
   m_Name: 
@@ -313,6 +314,27 @@ MonoBehaviour:
   enemyYClamp: 50
   enemyZClamp: 100
   enemyXPos: 0
+--- !u!114 &11440764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4009d5516f523bc46beafaa09c6670e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 35
+  recalcDelay: 2
+  enemyZClamp: 0
+  enemyXPos: 0
+  centerX: 25
+  centerY: 0
+  centerZ: 25
+  maneuverRadius: 50
+  player: {fileID: 0}
+  DebugMode: 0
 --- !u!114 &11479564
 MonoBehaviour:
   m_ObjectHideFlags: 1

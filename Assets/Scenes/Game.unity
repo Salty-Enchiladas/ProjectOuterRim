@@ -343,9 +343,10 @@ GameObject:
   - 114: {fileID: 555410814}
   - 114: {fileID: 555410813}
   - 82: {fileID: 555410812}
+  - 114: {fileID: 555410815}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: Game Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,6 +370,8 @@ MonoBehaviour:
   objSpawnMaxY: 450
   objSpawnZ: 6500
   enemyPoolName: EnemyCubes
+  spawnCap: 1000
+  enemyCount: 0
 --- !u!4 &555410810
 Transform:
   m_ObjectHideFlags: 0
@@ -394,7 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugMode: 0
   shipPrefabs:
-  - {fileID: 152716, guid: 23948bdeda8e9f14bb20070e9607a378, type: 2}
+  - {fileID: 107428, guid: 18a3cc3dd8e097943aa97a1856bc18fa, type: 2}
   - {fileID: 118852, guid: c9955e2eed121594aac31264c108864e, type: 2}
   - {fileID: 137100, guid: c68aeb523797b2547b71f29200bb460b, type: 2}
   - {fileID: 196352, guid: 5bbd9e7d84877c940a812ec20fa91b04, type: 2}
@@ -520,6 +523,18 @@ MonoBehaviour:
   - {x: 30, y: 30, z: 30}
   - {x: 40, y: 40, z: 40}
   - {x: 50, y: 50, z: 50}
+--- !u!114 &555410815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555410808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa14e5b8137f0ea4c841f8695fe62c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeTag: Node
 --- !u!1 &568474987
 GameObject:
   m_ObjectHideFlags: 0

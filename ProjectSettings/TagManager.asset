@@ -10,6 +10,10 @@ TagManager:
   - Enemy Laser
   - Enemy
   - Button
+  - Destructable Piece
+  - Gun
+  - Bullet
+  - Game Manager
   layers:
   - Default
   - TransparentFX
