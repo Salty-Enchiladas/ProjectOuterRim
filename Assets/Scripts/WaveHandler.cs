@@ -70,7 +70,7 @@ public class WaveHandler : MonoBehaviour
             {
                 yield break;
             }
-            print(player.name);
+            
             objectSpawn = new Vector3(Random.Range(objSpawnMinX, objSpawnMaxX), Random.Range(objSpawnMinY, objSpawnMaxY), player.transform.position.z + objSpawnZ);
             
             obj.transform.position = objectSpawn;

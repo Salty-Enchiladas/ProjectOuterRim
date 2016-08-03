@@ -23,16 +23,16 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetButton("Thrusters"))
-        {
-            StartCoroutine(TurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncrease());
-        }
+        //if (Input.GetButton("Thrusters"))
+        //{
+        //    StartCoroutine(TurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncrease());
+        //}
 
         horizontalTurnAngle = -(Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed * 50) * 20;
         horizontalTurnAngle = Mathf.Clamp(horizontalTurnAngle, -45f, 45f);
         moveX = Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed;
 
-        moveZ = Time.deltaTime * forwardSpeed;
+        //moveZ = Time.deltaTime * forwardSpeed;
 
         if (Input.GetAxis("Horizontal") != 0)
         {

@@ -120,7 +120,7 @@ public class Actor : MonoBehaviour
         //    StartCoroutine(RecalculateMove());
         //}
 
-        if(maneuverTimer >= (Mathf.PI * 2) - 0.2f)
+        if(maneuverTimer >= ((5 * Mathf.PI) / 3))
         {
             hasChosenAction = false;
             maneuverTimer = 0;

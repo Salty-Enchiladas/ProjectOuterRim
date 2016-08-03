@@ -14,6 +14,7 @@ TagManager:
   - Gun
   - Bullet
   - Game Manager
+  - Node
   layers:
   - Default
   - TransparentFX
