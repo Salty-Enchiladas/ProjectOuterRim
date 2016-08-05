@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerCollision : MonoBehaviour {
@@ -101,7 +100,7 @@ public class PlayerCollision : MonoBehaviour {
     {
         if (playerLives == 0)
         {
-            SceneManager.LoadScene(gameOverScene);
+            Application.LoadLevel(gameOverScene);
         }
         else
         {

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class IsButton : MonoBehaviour
 {
@@ -85,7 +84,7 @@ public class IsButton : MonoBehaviour
     {
         if (play)
         {
-            SceneManager.LoadScene("Game");
+            Application.LoadLevel("Game");
         }
         else if (options)
         {
