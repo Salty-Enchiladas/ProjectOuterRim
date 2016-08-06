@@ -24,6 +24,8 @@ public class Enemy1Collision : MonoBehaviour {
             col.gameObject.SetActive(false);
             gameObject.SetActive(false);
 
+            GameObject.Find("GameManager").GetComponent<WaveHandler>().enemyCount--;
+
             _playerScore.score += 1000;
 
             Instantiate(explosion, transform.position, transform.rotation);

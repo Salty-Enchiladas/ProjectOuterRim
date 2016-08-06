@@ -87,7 +87,6 @@ public class FireMissile : MonoBehaviour {
     
     void FindEnemy()
     {
-        print(GameObject.FindGameObjectWithTag("Enemy"));
         target = GameObject.FindGameObjectWithTag("Enemy");
         if(target == null)
         {
