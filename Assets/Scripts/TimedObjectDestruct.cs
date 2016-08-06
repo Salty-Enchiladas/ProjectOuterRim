@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TimedObjectDestruct : MonoBehaviour {
+public class TimedObjectDestruct : MonoBehaviour
+{
 
     public float timeOut;
 

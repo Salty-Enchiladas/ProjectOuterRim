@@ -15,6 +15,9 @@ TagManager:
   - Bullet
   - Game Manager
   - Node
+  - Missile
+  - Shield
+  - Meteor
   layers:
   - Default
   - TransparentFX

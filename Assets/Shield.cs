@@ -5,6 +5,7 @@ public class Shield : MonoBehaviour
 {
     public int startingHealth;
     public int currentHealth;
+    public GameObject meteorExplosionPrefab;
 
     void Start()
     {
@@ -20,6 +21,12 @@ public class Shield : MonoBehaviour
             {
                 transform.parent.GetComponent<ActivateShield>().ShieldDestroyed();
             }
+        }
+        else if (other.tag == "Meteor")
+        {
+            transform.parent.GetComponent<ActivateShield>().ShieldDestroyed();
+            Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
+            other.gameObject.SetActive(false);
         }
     }
 }

@@ -64,7 +64,7 @@ GameObject:
   - 82: {fileID: 8281104}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Laser
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

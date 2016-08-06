@@ -18,7 +18,7 @@ public class LaserMovement : MonoBehaviour {
 
         if (transform.position.z > player.transform.position.z + laserRange || transform.position.z < player.transform.position.z - (laserRange / 2))
         {
-            gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 }

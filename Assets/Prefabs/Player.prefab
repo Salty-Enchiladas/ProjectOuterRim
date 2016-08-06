@@ -134,7 +134,6 @@ GameObject:
   - 65: {fileID: 6558334}
   - 65: {fileID: 6557378}
   - 136: {fileID: 13615430}
-  - 114: {fileID: 11449520}
   - 114: {fileID: 11471326}
   m_Layer: 0
   m_Name: Player
@@ -961,26 +960,6 @@ MonoBehaviour:
   missileCooldown: 3
   missileCount: 3
   missileMax: 3
---- !u!114 &11449520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e28fc85be90fe499c2a5b06bac5eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 131046, guid: b4242f6dc5cac4f4dbb72400c621f5d5, type: 2}
-  explosionSound: {fileID: 120490, guid: 51d0a860ef5ae3648ab4c58a9b6e4179, type: 2}
-  healthBar1: {fileID: 0}
-  healthBar2: {fileID: 0}
-  healthBar3: {fileID: 0}
-  damageIndicatorIMG: {fileID: 0}
-  livesText: {fileID: 0}
-  playerHealth: 3
-  playerLives: 3
 --- !u!114 &11464840
 MonoBehaviour:
   m_ObjectHideFlags: 1
