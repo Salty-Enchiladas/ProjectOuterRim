@@ -23,6 +23,7 @@ public class Actor : MonoBehaviour
         MOVING,
         ATTACK,
         MANEUVER,
+        STRAFE,
     }
 
     private State state = State.IDLE;
@@ -39,6 +40,7 @@ public class Actor : MonoBehaviour
     private bool recalculating;
     private bool startManeuver;
     private bool hasChosenAction;
+    private bool ceasedFire;
 
     private Vector3 m_target = new Vector3(0, 0, 0);
     private Vector3 currNode;
@@ -51,9 +53,11 @@ public class Actor : MonoBehaviour
     private NodeControl control;
     private WaveHandler _waveHandler;
 
-    float _centerX;
-    float _centerY;
-    float _centerZ;
+    private float _centerX;
+    private float _centerY;
+    private float _centerZ;
+
+    private Transform lookAtPoint;      //The point that the ship looks at during the maneuver state
 
     private void Awake()
     {
@@ -61,18 +65,19 @@ public class Actor : MonoBehaviour
         control = (NodeControl)gameManager.GetComponent(typeof(NodeControl));
         _waveHandler = gameManager.GetComponent<WaveHandler>();
         player = GameObject.Find("Player");
-        //speed *= Time.deltaTime;
 
         _centerX = centerX;
         _centerY = centerY;
         _centerZ = centerZ;
+
+        lookAtPoint = transform.FindChild("LookAtPoint");
     }
 
     private void Start()
     {
-        enemyZClamp = Random.Range(500f, 725f);
-        enemyXPos = Random.Range(-300f, 300f);
-        lerpSpeed = Random.Range(0.5f, 2.5f);
+        enemyZClamp = Random.Range(700f, 1000f);
+        enemyXPos = Random.Range(-250f, 250f);
+        lerpSpeed = Random.Range(0.1f, 0.5f);
 
         _waveHandler.enemyCount++;
         player = GameObject.Find("Player");
@@ -81,7 +86,6 @@ public class Actor : MonoBehaviour
 
     private void OnDisable()
     {
-        ChangeState(State.IDLE);
         startManeuver = true;
     }
 
@@ -96,40 +100,35 @@ public class Actor : MonoBehaviour
             {
                 hasChosenAction = true;
                 randomInt = Random.Range(0, 2);
-                
+
                 if (randomInt == 0)
                 {
                     ChangeState(State.ATTACK);
                 }
-                else
+                else //if (randomInt == 1)
                 {
                     ChangeState(State.MANEUVER);
                 }
+                //else
+                //{
+                //    if (transform.position.y < player.transform.position.y)
+                //    {
+                //        hasChosenAction = false;
+                //    }
+                //    else
+                //    {
+                //        ChangeState(State.STRAFE);
+                //    }
+                //}
             }
         }
-
-        //if (state == State.MANEUVER)
-        //{
-        //    if (startManeuver)
-        //    {
-        //        startManeuver = false;
-        //        centerX += transform.position.x;
-        //        centerY = transform.position.y;
-        //        centerZ += transform.position.z;
-        //    }
-        //}
     }
 
     private void FixedUpdate()
     {
-        
-        //if (state != State.ATTACK && state != State.MANEUVER)
-        //{
-        //    StartCoroutine(RecalculateMove());
-        //}
-
-        if(maneuverTimer >= ((5 * Mathf.PI) / 3))
+        if (maneuverTimer >= ((5 * Mathf.PI) / 3))
         {
+            ChangeState(State.MOVING);
             hasChosenAction = false;
             maneuverTimer = 0;
         }
@@ -143,6 +142,11 @@ public class Actor : MonoBehaviour
 
                 case State.MOVING:
                     OldTime = elapsedTime + 0.01f;
+
+                    if (ceasedFire)
+                    {
+                        GetComponentInChildren<Enemy1Fire>().canFire = true;
+                    }
 
                     transform.LookAt(player.transform);
 
@@ -176,6 +180,13 @@ public class Actor : MonoBehaviour
                 case State.MANEUVER:
                     OldTime = elapsedTime + 0.01f;
 
+                    if (!ceasedFire)
+                    {
+                        GetComponentInChildren<Enemy1Fire>().canFire = false;
+                    }
+
+                    transform.LookAt(lookAtPoint);
+
                     maneuverTimer += Time.deltaTime;
                     maneuverAngle = maneuverTimer;
 
@@ -185,13 +196,15 @@ public class Actor : MonoBehaviour
 
                     if (transform.position.x > player.transform.position.x)
                     {
+                        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
                         //Maneuver to the right of the player
-                        this.transform.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 2)));
+                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * 2.5f);
                     }
                     else if (transform.position.x < player.transform.position.x)
                     {
+                        lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
                         //Maneuver to the left of the player
-                        this.transform.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 2)));
+                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * 2.5f);
                     }
 
                     centerX = _centerX;
@@ -199,9 +212,32 @@ public class Actor : MonoBehaviour
                     centerZ = _centerZ;
 
                     break;
+
+                case State.STRAFE:
+                    print("strafe");
+                    OldTime = elapsedTime + 0.01f;
+
+                    transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(0f, 20f, 20f), Time.deltaTime * 1f);
+
+                    if (transform.position.z > player.transform.position.z + 250)
+                    {
+                        transform.LookAt(player.transform);
+                        GetComponentInChildren<Enemy1Fire>().fireFreq = 0.01f;
+                    }
+                    else if(transform.position.z <= player.transform.position.z + 250)
+                    {
+                        transform.rotation = Quaternion.identity;
+
+                        if (transform.position.z < player.transform.position.z - 150)
+                        {
+                            gameObject.SetActive(false);
+                        }
+                    }
+
+                    break;
             }
         }
-    }    
+    }
 
     private void MoveToward()
     {

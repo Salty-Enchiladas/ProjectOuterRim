@@ -8,6 +8,7 @@ public class Enemy1Fire : MonoBehaviour {
     public float maxFreq;
     public float difficultyTimer;
     public string laserPoolName;
+    public bool canFire;
 
     float lastDifficultyIncrease;
     float lastShot;
@@ -21,15 +22,19 @@ public class Enemy1Fire : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        fireFreq = Random.Range(minFreq, maxFreq);
-        if (Time.time > lastShot + fireFreq)
+        if (canFire)
         {
-            Fire();
-        }
+            fireFreq = Random.Range(minFreq, maxFreq);
 
-        if(Time.time > lastDifficultyIncrease + difficultyTimer && minFreq > 1)
-        {
-            StartCoroutine(IncreaseDificulty(difficultyTimer));
+            if (Time.time > lastShot + fireFreq)
+            {
+                Fire();
+            }
+
+            if (Time.time > lastDifficultyIncrease + difficultyTimer && minFreq > 1)
+            {
+                StartCoroutine(IncreaseDificulty(difficultyTimer));
+            }
         }
     }
 

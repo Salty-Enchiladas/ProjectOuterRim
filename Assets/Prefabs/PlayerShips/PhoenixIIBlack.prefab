@@ -2311,16 +2311,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  forwardSpeed: 100
+  forwardSpeed: 0
   horizontalTurnAngle: 0
   moveX: 0
   moveY: 0
   moveZ: 0
-  clampX: 500
-  clampY: 500
-  thrusterRampUpRate: 100
-  thrusterRampDownRate: 200
-  thrusterCooldown: 15
+  clampX: 1000
+  clampY: 1000
+  thrusterRampUpRate: 0
+  thrusterRampDownRate: 0
+  thrusterCooldown: 0
   invertVertical: 0
 --- !u!114 &11437298
 MonoBehaviour:
@@ -2399,7 +2399,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149122}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d094c80dd0fe6147bd32d5068dbbbd2, type: 3}
   m_Name: 

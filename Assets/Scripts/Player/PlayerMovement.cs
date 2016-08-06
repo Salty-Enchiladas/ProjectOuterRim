@@ -32,16 +32,22 @@ public class PlayerMovement : MonoBehaviour {
         horizontalTurnAngle = Mathf.Clamp(horizontalTurnAngle, -45f, 45f);
         moveX = Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed;
 
+        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, Mathf.Clamp(transform.rotation.z, -horizontalTurnAngle, horizontalTurnAngle), 0f);
+
         //moveZ = Time.deltaTime * forwardSpeed;
 
         if (Input.GetAxis("Horizontal") != 0)
         {
             transform.Rotate(Vector3.forward, horizontalTurnAngle);
-            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, horizontalTurnAngle);
+            //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, horizontalTurnAngle);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, new Quaternion(0f, 0f, horizontalTurnAngle, 0f), Time.deltaTime * 2.5f);
+            
         }
         if (Input.GetAxis("Horizontal") == 0)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0f);
+            transform.Rotate(Vector3.forward, 0f);
+            //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0f);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * 2.5f);
         }
         if (invertVertical)           //inverted vertical movement
         {

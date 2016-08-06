@@ -118,7 +118,7 @@ public class WaveHandler : MonoBehaviour
         if (enemyCount != spawnCap)
         {
             StartCoroutine(Spawn());
-            StartCoroutine(IncreaseSpawning());
+            //StartCoroutine(IncreaseSpawning());
         }
     }
 
