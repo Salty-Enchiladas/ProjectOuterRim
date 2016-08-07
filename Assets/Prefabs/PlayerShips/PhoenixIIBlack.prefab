@@ -607,7 +607,7 @@ GameObject:
   - 114: {fileID: 11438708}
   m_Layer: 0
   m_Name: Red Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2368,6 +2368,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   currentHealth: 0
+  meteorExplosionPrefab: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a,
+    type: 2}
 --- !u!114 &11443110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2527,6 +2529,8 @@ MonoBehaviour:
   healthBar2: {fileID: 0}
   healthBar3: {fileID: 0}
   damageIndicatorIMG: {fileID: 0}
+  meteorExplosionPrefab: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a,
+    type: 2}
   livesText: {fileID: 0}
   playerHealth: 9
   playerLives: 3

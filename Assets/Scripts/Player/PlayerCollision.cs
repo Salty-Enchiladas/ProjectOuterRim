@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class PlayerCollision : MonoBehaviour {
+public class PlayerCollision : MonoBehaviour
+{
 
     public GameObject explosion;
     public GameObject explosionSound;
@@ -11,6 +12,7 @@ public class PlayerCollision : MonoBehaviour {
     public GameObject healthBar2;
     public GameObject healthBar3;
     public GameObject damageIndicatorIMG;
+    public GameObject meteorExplosionPrefab;
     public Text livesText;
     public int playerHealth = 3;
     public int playerLives = 3;
@@ -57,6 +59,13 @@ public class PlayerCollision : MonoBehaviour {
             }
 
             CheckHealth();
+        }
+
+        else if (col.gameObject.tag == "Meteor")
+        {
+            LoseLife();
+            Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
+            col.gameObject.SetActive(false);
         }
     }
 
