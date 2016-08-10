@@ -6,6 +6,7 @@ public class ObjectPooling : MonoBehaviour {
 
     public GameObject pooledObject;
     public int pooledAmount;
+    public float waitTime = 0.001f;
     public bool willGrow = true;
 
     public List<GameObject> pooledObjects;
@@ -16,9 +17,10 @@ public class ObjectPooling : MonoBehaviour {
 
         for (int i = 0; i < pooledAmount; i++)
         {
-            GameObject obj = (GameObject)Instantiate(pooledObject);
-            obj.SetActive(false);
-            pooledObjects.Add(obj);
+            StartCoroutine(InstantiatePool(waitTime));
+            //GameObject obj = (GameObject)Instantiate(pooledObject);
+            //obj.SetActive(false);
+            //pooledObjects.Add(obj);
         }
 	}
 	
@@ -40,11 +42,22 @@ public class ObjectPooling : MonoBehaviour {
         if (willGrow)
         {
             GameObject obj = (GameObject)Instantiate(pooledObject);
+            obj.transform.parent = transform;
             pooledObjects.Add(obj);
             return obj;
         }
 
         return null;
+    }
+
+    IEnumerator InstantiatePool(float waitTime)
+    {
+        GameObject obj = (GameObject)Instantiate(pooledObject);
+        obj.transform.parent = transform;
+        obj.SetActive(false);
+        pooledObjects.Add(obj);
+
+        yield return new WaitForSeconds(waitTime);
     }
 }
 

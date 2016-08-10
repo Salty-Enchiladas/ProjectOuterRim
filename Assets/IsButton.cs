@@ -85,7 +85,7 @@ public class IsButton : MonoBehaviour
     {
         if (play)
         {
-            SceneManager.LoadScene("Game");
+            gameObject.GetComponent<LoadTargetScreenButton>().LoadSceneNum();
         }
         else if (options)
         {
