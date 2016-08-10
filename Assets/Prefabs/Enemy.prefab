@@ -938,7 +938,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876fde79dbfeca6499e6783a6dadd083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireFreq: 1
+  startFireFreq: 4
+  fireFreq: 4
   minFreq: 5
   maxFreq: 8
   difficultyTimer: 10
@@ -986,16 +987,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 35
-  recalcDelay: 2
+  recalcDelay: 1.5
   enemyZClamp: 0
   enemyXPos: 0
   centerX: 2000
   centerY: 0
-  centerZ: 2000
-  maneuverRadius: 2000
+  centerZ: 2500
+  maneuverRadius: 2750
   player: {fileID: 0}
   DebugMode: 1
-  m_speed_multi: 1000
+  m_speed_multi: 800
 --- !u!114 &11457850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1030,7 +1031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876fde79dbfeca6499e6783a6dadd083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireFreq: 1
+  startFireFreq: 4
+  fireFreq: 4
   minFreq: 5
   maxFreq: 8
   difficultyTimer: 10
@@ -1079,7 +1081,7 @@ SphereCollider:
   m_GameObject: {fileID: 133602}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1091,7 +1093,7 @@ SphereCollider:
   m_GameObject: {fileID: 193716}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}

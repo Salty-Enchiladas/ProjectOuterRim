@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserSpeed: 1000
-  laserRange: 2000
+  laserRange: 7500
 --- !u!136 &13622660
 CapsuleCollider:
   m_ObjectHideFlags: 1

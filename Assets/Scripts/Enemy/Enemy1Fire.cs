@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Enemy1Fire : MonoBehaviour {
 
+    public float startFireFreq;
     public float fireFreq;        
     public float minFreq;
     public float maxFreq;
@@ -18,23 +19,24 @@ public class Enemy1Fire : MonoBehaviour {
     void Start()
     {
         laserObject = GameObject.Find(laserPoolName).GetComponent<ObjectPooling>();
+        fireFreq = startFireFreq;
     }
 
 	// Update is called once per frame
 	void Update () {
         if (canFire)
         {
-            fireFreq = Random.Range(minFreq, maxFreq);
+            //fireFreq = Random.Range(minFreq, maxFreq);
 
             if (Time.time > lastShot + fireFreq)
             {
                 Fire();
             }
 
-            if (Time.time > lastDifficultyIncrease + difficultyTimer && minFreq > 1)
-            {
-                StartCoroutine(IncreaseDificulty(difficultyTimer));
-            }
+            //if (Time.time > lastDifficultyIncrease + difficultyTimer && minFreq > 1)
+            //{
+            //    StartCoroutine(IncreaseDificulty(difficultyTimer));
+            //}
         }
     }
 
