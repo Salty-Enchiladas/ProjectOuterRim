@@ -2310,14 +2310,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c03dddf5aadf04d899f0b68b0787e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 200
+  playerSpeed: 400
   forwardSpeed: 0
   horizontalTurnAngle: 0
   moveX: 0
   moveY: 0
   moveZ: 0
-  clampX: 1000
-  clampY: 1000
+  clampX: 2000
+  clampY: 2000
   thrusterRampUpRate: 0
   thrusterRampDownRate: 0
   thrusterCooldown: 0
