@@ -2333,7 +2333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91f64650f84c9f4dbe07c588b086a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missile: {fileID: 125306, guid: 1328870aa5168d64baefb176a4d0baef, type: 2}
+  missile: {fileID: 125306, guid: b0e3ff5bfaeca8d40a1cbaae32b2b920, type: 2}
   missile1Img: {fileID: 0}
   missile2Img: {fileID: 0}
   missile3Img: {fileID: 0}
@@ -2393,7 +2393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a4f54151b888c4d9af69a0f7c3768c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 122096, guid: 353b18d6eb57688448b01d3859f71058, type: 2}
+  laser: {fileID: 122096, guid: aef66cec2b3675a418e555a81ecdf9e7, type: 2}
   fireFreq: 0.2
 --- !u!114 &11448230
 MonoBehaviour:
@@ -2510,7 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a4f54151b888c4d9af69a0f7c3768c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 122096, guid: 353b18d6eb57688448b01d3859f71058, type: 2}
+  laser: {fileID: 122096, guid: aef66cec2b3675a418e555a81ecdf9e7, type: 2}
   fireFreq: 0.2
 --- !u!114 &11474044
 MonoBehaviour:
@@ -2524,14 +2524,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 131046, guid: b4242f6dc5cac4f4dbb72400c621f5d5, type: 2}
-  explosionSound: {fileID: 120490, guid: f82ea5538fd401f4eb21454798f86e7b, type: 2}
-  healthBar1: {fileID: 0}
-  healthBar2: {fileID: 0}
-  healthBar3: {fileID: 0}
+  explosionSound: {fileID: 106574, guid: 3bccd5214c55ab54e842038afc0ebfbc, type: 2}
+  greenHealthRing: {fileID: 0}
+  yellowHealthRing: {fileID: 0}
+  redHealthRing: {fileID: 0}
+  lifeImage1: {fileID: 0}
+  lifeImage2: {fileID: 0}
   damageIndicatorIMG: {fileID: 0}
   meteorExplosionPrefab: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a,
     type: 2}
-  livesText: {fileID: 0}
   playerHealth: 9
   playerLives: 3
   healthScore: 100000
