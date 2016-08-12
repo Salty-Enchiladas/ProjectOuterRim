@@ -5,45 +5,41 @@ using System.Collections;
 
 public class PlayerCollision : MonoBehaviour
 {
-
     public GameObject explosion;
     public GameObject explosionSound;
-    public GameObject healthBar1;
-    public GameObject healthBar2;
-    public GameObject healthBar3;
+    public GameObject greenHealthRing;
+    public GameObject yellowHealthRing;
+    public GameObject redHealthRing;
+    public GameObject lifeImage1;
+    public GameObject lifeImage2;
     public GameObject damageIndicatorIMG;
     public GameObject meteorExplosionPrefab;
-    public Text livesText;
+
     public int playerHealth = 3;
     public int playerLives = 3;
     public int healthScore = 100000;
     public int shieldScore = 300000;
+
     public string gameOverScene;
 
     PlayerScore playerScoreOBJ;
     public bool shieldActive;
-    GameObject _livesText;
 
     void Start()
     {
         playerScoreOBJ = transform.parent.GetComponent<PlayerScore>();
 
-        healthBar1 = GameObject.Find("HealthBar1");
-        healthBar2 = GameObject.Find("HealthBar2");
-        healthBar3 = GameObject.Find("HealthBar3");
+        greenHealthRing = GameObject.Find("GreenHealthRing");
+        yellowHealthRing = GameObject.Find("YellowHealthRing");
+        redHealthRing = GameObject.Find("RedHealthRing");
         damageIndicatorIMG = GameObject.Find("HitEffect");
         damageIndicatorIMG.SetActive(false);
 
-        _livesText = GameObject.Find("LivesText");
-        livesText = _livesText.GetComponent<Text>();
+        lifeImage1 = GameObject.Find("ShipIMG1");
+        lifeImage2 = GameObject.Find("ShipIMG2");
 
         StartCoroutine(CheckScore());
     }
-
-    //void Update()
-    //{
-        
-    //}
 
     void OnTriggerEnter(Collider col)
     {
@@ -116,30 +112,44 @@ public class PlayerCollision : MonoBehaviour
         {
             if (playerHealth % 3 == 0)
             {
-                healthBar1.SetActive(true);
-                healthBar2.SetActive(true);
-                healthBar3.SetActive(true);
+                greenHealthRing.SetActive(true);
+                yellowHealthRing.SetActive(false);
+                redHealthRing.SetActive(false);
             }
             else if (playerHealth % 3 == 2)
             {
-                healthBar1.SetActive(true);
-                healthBar2.SetActive(true);
-                healthBar3.SetActive(false);
+                greenHealthRing.SetActive(false);
+                yellowHealthRing.SetActive(true);
+                redHealthRing.SetActive(false);
             }
             else if (playerHealth % 3 == 1)
             {
-                healthBar1.SetActive(true);
-                healthBar2.SetActive(false);
-                healthBar3.SetActive(false);
+                greenHealthRing.SetActive(false);
+                yellowHealthRing.SetActive(false);
+                redHealthRing.SetActive(true);
             }
             else if (playerHealth % 3 == 4)
             {
-                healthBar1.SetActive(false);
-                healthBar2.SetActive(false);
-                healthBar3.SetActive(false);                
+                greenHealthRing.SetActive(false);
+                yellowHealthRing.SetActive(false);
+                redHealthRing.SetActive(false);                
             }
 
-            livesText.text = "x" + playerLives.ToString();
+            if (playerLives % 3 == 0)
+            {
+                lifeImage1.SetActive(true);
+                lifeImage2.SetActive(true);
+            }
+            else if (playerLives % 3 == 2)
+            {
+                lifeImage1.SetActive(true);
+                lifeImage2.SetActive(false);
+            }
+            else if (playerLives % 3 == 1)
+            {
+                lifeImage1.SetActive(false);
+                lifeImage2.SetActive(false);
+            }
         }        
     }
 
@@ -149,9 +159,9 @@ public class PlayerCollision : MonoBehaviour
         {
             playerLives--;
 
-            healthBar1.SetActive(true);
-            healthBar2.SetActive(true);
-            healthBar3.SetActive(true);
+            greenHealthRing.SetActive(true);
+            yellowHealthRing.SetActive(false);
+            redHealthRing.SetActive(false);
 
             Instantiate(explosion, transform.position, transform.rotation);
             Instantiate(explosionSound, transform.position, transform.rotation);
