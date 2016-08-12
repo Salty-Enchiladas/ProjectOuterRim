@@ -9,7 +9,7 @@ namespace UnityStandardAssets.ImageEffects
     public class CameraMotionBlur : PostEffectsBase
     {
         // make sure to match this to MAX_RADIUS in shader ('k' in paper)
-        static float MAX_RADIUS = 10.0f;
+        static float MAX_RADIUS = 50.0f;
 
         public enum MotionBlurFilter {
             CameraMotion = 0,			// global screen blur based on cam motion
@@ -27,7 +27,7 @@ namespace UnityStandardAssets.ImageEffects
         // params
         public float movementScale = 0.0f;
         public float rotationScale = 1.0f;
-        public float maxVelocity = 8.0f;	// maximum velocity in pixels
+        public float maxVelocity = 50.0f;	// maximum velocity in pixels
         public float minVelocity = 0.1f;	// minimum velocity in pixels
         public float velocityScale = 0.375f;	// global velocity scale
         public float softZDistance = 0.005f;	// for z overlap check softness (reconstruction filter only)

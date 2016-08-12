@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Metal 1a
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,19 +19,26 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: e2df958e0552c4854b05e0d6a3b15c99, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 46807f0a7c3985543935cf5c4f052cd1, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _DetailNormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NoiseMask
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -85,6 +92,20 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cube
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Illum
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -100,6 +121,26 @@ Material:
         second: 0.5
       data:
         first:
+          name: _Shininess
+        second: 0.229
+      data:
+        first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
+          name: _FadeLevel
+        second: 0
+      data:
+        first:
+          name: _CoreCoef
+        second: 0.5
+      data:
+        first:
+          name: _NoiseCoef
+        second: 1
+      data:
+        first:
           name: _Parallax
         second: 0.02
       data:
@@ -109,7 +150,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.596
+        second: 0.388
       data:
         first:
           name: _BumpScale
@@ -133,11 +174,15 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 1
+        second: 0.604
       data:
         first:
           name: _EmissionScaleUI
         second: 0
+      data:
+        first:
+          name: _Emission
+        second: 1
     m_Colors:
       data:
         first:
@@ -146,12 +191,32 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.52349097, g: 0.526661, b: 0.5803922, a: 1}
+        second: {r: 0.10845588, g: 0.10937757, b: 0.125, a: 1}
       data:
         first:
           name: _SpecColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _StartColor
+        second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+      data:
+        first:
+          name: _EndColor
+        second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+      data:
+        first:
+          name: _CoreColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _ReflectColor
+        second: {r: 1, g: 1, b: 1, a: 0.5}
