@@ -16,12 +16,12 @@ public class IsButton : MonoBehaviour
 
     private void OnMouseOver()
     {
-        gameObject.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        transform.localScale = new Vector3(transform.localScale.x * .25f, transform.localScale.y * .25f, transform.localScale.z * .25f);
     }
 
     private void OnMouseExit()
     {
-        gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
+        transform.localScale = new Vector3(transform.localScale.x / .25f, transform.localScale.y / .25f, transform.localScale.z / .25f);
     }
 
     private void Update()
