@@ -3,8 +3,7 @@ using System.Collections;
 
 public class WaveHandler : MonoBehaviour
 {
-    public float spawnRate;
-    public float difficultyTimer;
+    //GameSpawner
     public float objSpawnMinX;
     public float objSpawnMaxX;
     public float objSpawnMinY;
@@ -13,7 +12,11 @@ public class WaveHandler : MonoBehaviour
     public string enemyPoolName;
     public int spawnCap;
     public int enemyCount;
-    //public Transform[] spawnPoints;    
+
+    //DifficultyIncrease
+    public int capIncreaseAmount;
+    public float spawnRate;
+    public float difficultyTimer; 
 
     GameObject player;
     string[] enemyTypes = { "defender", "interceptor", "fighter" };
@@ -100,7 +103,6 @@ public class WaveHandler : MonoBehaviour
                 enemy = null;
                 break;
         }
-
         return enemy;
     }
 
@@ -119,6 +121,7 @@ public class WaveHandler : MonoBehaviour
         {
             increasingDifficulty = true;
             yield return new WaitForSeconds(difficultyTimer);
+            spawnCap = spawnCap + capIncreaseAmount;
             spawnRate = spawnRate - 0.1f;
             increasingDifficulty = false;
         }
