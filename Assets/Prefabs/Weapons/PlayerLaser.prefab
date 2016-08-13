@@ -136,9 +136,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 41930761675385e4cadad5f13aee60bf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b8878c851941d2145bdf813d4ade5b6c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.222
+  m_Volume: 0.43
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17535fe6f515cc46ad8d884212bc8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserSpeed: 2000
-  laserRange: 2000
+  laserSpeed: 4000
+  laserRange: 3000
 --- !u!114 &11443412
 MonoBehaviour:
   m_ObjectHideFlags: 1
