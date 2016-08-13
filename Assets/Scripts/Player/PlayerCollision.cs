@@ -5,6 +5,7 @@ using System.Collections;
 
 public class PlayerCollision : MonoBehaviour
 {
+    public GameObject player;
     public GameObject explosion;
     public GameObject explosionSound;
     public GameObject greenHealthRing;
@@ -27,7 +28,8 @@ public class PlayerCollision : MonoBehaviour
 
     void Start()
     {
-        playerScoreOBJ = transform.parent.GetComponent<PlayerScore>();
+        player = GameObject.Find("Player");
+        playerScoreOBJ = player.GetComponent<PlayerScore>();
 
         greenHealthRing = GameObject.Find("GreenHealthRing");
         yellowHealthRing = GameObject.Find("YellowHealthRing");
