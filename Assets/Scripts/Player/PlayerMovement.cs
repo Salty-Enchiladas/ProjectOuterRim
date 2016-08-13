@@ -32,23 +32,22 @@ public class PlayerMovement : MonoBehaviour {
         horizontalTurnAngle = Mathf.Clamp(horizontalTurnAngle, -45f, 45f);
         moveX = Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed;
 
-        transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, Mathf.Clamp(transform.rotation.z, -horizontalTurnAngle, horizontalTurnAngle), 0f);
+        //transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, Mathf.Clamp(transform.rotation.z, -45, 45), 0f);
 
         //moveZ = Time.deltaTime * forwardSpeed;
 
-        if (Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Horizontal") != 0)       // && transform.rotation.z > -45 && transform.rotation.z < 45
         {
-            transform.Rotate(Vector3.forward, horizontalTurnAngle);
-            //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, horizontalTurnAngle);
-            //transform.rotation = Quaternion.Lerp(transform.rotation, new Quaternion(0f, 0f, horizontalTurnAngle, 0f), Time.deltaTime * 2.5f);
-            
+            transform.Rotate((Vector3.forward * horizontalTurnAngle * Time.deltaTime) * 7);
+            ClampRotation(-45, 45, 0);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, new Quaternion(transform.rotation.x, transform.rotation.y, -horizontalTurnAngle, 0f), Time.deltaTime * 0.3f);
         }
+
         if (Input.GetAxis("Horizontal") == 0)
         {
-            transform.Rotate(Vector3.forward, 0f);
-            //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0f);
-            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * 2.5f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * 5f);
         }
+
         if (invertVertical)           //inverted vertical movement
         {
             moveY = -(Input.GetAxis("Vertical") * Time.deltaTime * (playerSpeed));
@@ -96,5 +95,42 @@ public class PlayerMovement : MonoBehaviour {
         }
 
 
+    }
+
+    void ClampRotation(float minAngle, float maxAngle, float clampAroundAngle = 0)
+    {
+        //clampAroundAngle is the angle you want the clamp to originate from
+        //For example a value of 90, with a min=-45 and max=45, will let the angle go 45 degrees away from 90
+
+        //Adjust to make 0 be right side up
+        clampAroundAngle += 180;
+
+        //Get the angle of the z axis and rotate it up side down
+        float z = transform.rotation.eulerAngles.z - clampAroundAngle;
+
+        z = WrapAngle(z);
+
+        //Move range to [-180, 180]
+        z -= 180;
+
+        //Clamp to desired range
+        z = Mathf.Clamp(z, minAngle, maxAngle);
+
+        //Move range back to [0, 360]
+        z += 180;
+
+        //Set the angle back to the transform and rotate it back to right side up
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, z + clampAroundAngle);
+    }
+
+    //Make sure angle is within 0,360 range
+    float WrapAngle(float angle)
+    {
+        //If its negative rotate until its positive
+        while (angle < 0)
+            angle += 360;
+
+        //If its to positive rotate until within range
+        return Mathf.Repeat(angle, 360);
     }
 }
