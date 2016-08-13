@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class IsButton : MonoBehaviour
 {
-    public GameObject menuButtons;
+    public GameObject menu;
 
     public bool play;
     public bool options;
@@ -14,8 +14,12 @@ public class IsButton : MonoBehaviour
     public bool garage;
     public bool credits;
 
+    //public AudioSource mouseOverSound;
+    //public AudioSource mouseClickSound;
+
     private void OnMouseOver()
     {
+       // mouseOverSound.Play();
         gameObject.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
     }
 
@@ -26,74 +30,34 @@ public class IsButton : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit))
-        //    {
-        //        if (hit.transform.name == "Play")
-        //        {
-                    
-        //        }
-        //        else if (hit.transform.name == "Quit")
-        //        {
-        //            Application.Quit();
-        //        }
-        //        else if (hit.transform.name == "Options")
-        //        {
-        //            print("Options");
-        //        }
-        //        else if (hit.transform.name == "Garage")
-        //        {
-        //            //Shuts off other buttons
-        //            GameObject.Find("Play").SetActive(false);
-        //            GameObject.Find("Quit").SetActive(false);
-        //            GameObject.Find("Options").SetActive(false);
-        //            GameObject.Find("Garage").SetActive(false);
-        //            GameObject.Find("Credit").SetActive(false);
-        //            GameObject.Find("Leaderboard").SetActive(false);
-        //            GameObject.Find("Achievement").SetActive(false);
 
-        //            //Turns on buttons in Garage
-        //            GameObject.FindGameObjectWithTag("LeftArrow").SetActive(true);
-        //            GameObject.FindGameObjectWithTag("RightArrow").SetActive(true);
-        //        }
-        //        else if (hit.transform.name == "Credit")
-        //        {
-        //            print("Credits");
-        //        }
-        //        else if (hit.transform.name == "Leaderboard")
-        //        {
-        //            print("Leaderboards");
-        //        }
-        //        else if (hit.transform.name == "Achievement")
-        //        {
-        //            print("Achievements");
-        //        }
-        //        else if (hit.transform.name == "LeftArrow")
-        //        {
-        //        }
-        //        else if (hit.transform.name == "RightArrow")
-        //        {
-        //        }
-        //    }
-        //}
     }
 
     public void ButtonFunction()
     {
         if (play)
         {
+           // mouseClickSound.Play();
             gameObject.GetComponent<LoadTargetScreenButton>().LoadSceneNum();
         }
         else if (options)
         {
+          //  mouseClickSound.Play();
             print("Options");
         }
         else if (quit)
         {
+          //  mouseClickSound.Play();
             Application.Quit();
+        }
+        else if (garage)
+        {
+          //  mouseClickSound.Play();
+            foreach (GameObject go in menu.GetComponent<AllMenuButtons>().mainMenuButtons)
+            {
+                print("happens");
+                go.SetActive(false);
+            }
         }
     }
 }

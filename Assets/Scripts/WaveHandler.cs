@@ -104,21 +104,12 @@ public class WaveHandler : MonoBehaviour
         return enemy;
     }
 
-    //Transform ChooseSpawn()
-    //{
-    //    Transform spawnPoint;
-    //    objectSpawn = new Vector3(Random.Range(player.transform.position.x + objSpawnMinX, player.transform.position.x + objSpawnMaxX), Random.Range(player.transform.position.y + objSpawnMinY, player.transform.position.y + objSpawnMaxY), player.transform.position.z + objSpawnZ);
-    //    spawnPoint.position = objectSpawn;
-
-    //    return spawnPoint;
-    //}
-
     void HandleDifficulty()
     {
         if (enemyCount != spawnCap)
         {
             StartCoroutine(Spawn());
-            //StartCoroutine(IncreaseSpawning());
+            StartCoroutine(IncreaseSpawning());
         }
     }
 
