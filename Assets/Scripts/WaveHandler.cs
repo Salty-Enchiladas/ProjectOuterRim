@@ -10,10 +10,11 @@ public class WaveHandler : MonoBehaviour
     public float objSpawnMaxY;
     public float objSpawnZ;
     public string enemyPoolName;
-    public int spawnCap;
     public int enemyCount;
 
     //DifficultyIncrease
+    public int spawnCap;
+    public int finalSpawnCap;
     public int capIncreaseAmount;
     public float spawnRate;
     public float difficultyTimer; 
@@ -105,7 +106,6 @@ public class WaveHandler : MonoBehaviour
         }
         return enemy;
     }
-
     void HandleDifficulty()
     {
         if (enemyCount != spawnCap)
@@ -114,15 +114,19 @@ public class WaveHandler : MonoBehaviour
             StartCoroutine(IncreaseSpawning());
         }
     }
-
     IEnumerator IncreaseSpawning()
     {
         if (!increasingDifficulty && spawnRate > 0.1f)
         {
+            print("Increasing Difficulty!");
             increasingDifficulty = true;
             yield return new WaitForSeconds(difficultyTimer);
-            spawnCap = spawnCap + capIncreaseAmount;
             spawnRate = spawnRate - 0.1f;
+            if (spawnCap < finalSpawnCap)
+            {
+                print("THIS IS HAPPENING");
+                spawnCap = spawnCap + capIncreaseAmount;
+            }
             increasingDifficulty = false;
         }
     }

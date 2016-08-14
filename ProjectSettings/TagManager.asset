@@ -18,6 +18,9 @@ TagManager:
   - Shield
   - Meteor
   - Missile
+  - Ship
+  - PowerUpMissiles
+  - PowerUpLasers
   layers:
   - Default
   - TransparentFX

@@ -24,10 +24,12 @@ public class PlayerCollision : MonoBehaviour
 
     PlayerScore playerScoreOBJ;
     public bool shieldActive;
+    GameObject player;
 
     void Start()
     {
-        playerScoreOBJ = transform.parent.GetComponent<PlayerScore>();
+        player = GameObject.Find("Player");
+        playerScoreOBJ = player.GetComponent<PlayerScore>();
 
         greenHealthRing = GameObject.Find("GreenHealthRing");
         yellowHealthRing = GameObject.Find("YellowHealthRing");

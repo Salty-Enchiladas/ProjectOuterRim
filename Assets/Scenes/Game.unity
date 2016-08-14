@@ -273,6 +273,48 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
   m_PrefabInternal: {fileID: 1668002296}
+--- !u!1001 &469753812
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 442454, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 97621
+      objectReference: {fileID: 0}
+    - target: {fileID: 442454, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 442454, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 442454, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.48066166
+      objectReference: {fileID: 0}
+    - target: {fileID: 442454, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.38699344
+      objectReference: {fileID: 0}
+    - target: {fileID: 442454, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.49352363
+      objectReference: {fileID: 0}
+    - target: {fileID: 442454, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.6128906
+      objectReference: {fileID: 0}
+    - target: {fileID: 442454, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b3ecd55c1ad67e04b88d6623421a5130, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &523563351
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +396,7 @@ GameObject:
   - 114: {fileID: 555410813}
   - 82: {fileID: 555410812}
   - 114: {fileID: 555410815}
+  - 114: {fileID: 555410816}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -378,10 +421,11 @@ MonoBehaviour:
   objSpawnMaxY: 3500
   objSpawnZ: 10000
   enemyPoolName: EnemyShips
-  spawnCap: 10
   enemyCount: 0
-  capIncreaseAmount: 0
-  spawnRate: 1.5
+  spawnCap: 10
+  finalSpawnCap: 50
+  capIncreaseAmount: 2
+  spawnRate: 2
   difficultyTimer: 15
 --- !u!4 &555410810
 Transform:
@@ -556,6 +600,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeTag: Node
+--- !u!114 &555410816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555410808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3534e646ed9e984ab92f8f440ec013d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUp: {fileID: 152446, guid: f976241817d7860448c76f1a5c6c92e1, type: 2}
+  spawnAfter: 1
+  xMinSpawn: -500
+  xMaxSpawn: 500
+  yMinSpawn: -500
+  yMaxSpawn: 500
+  zMinSpawn: 500
+  zMaxSpawn: 501
 --- !u!1 &568474987
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +674,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!4 &774877238 stripped
 Transform:
   m_PrefabParentObject: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
@@ -761,7 +824,7 @@ Transform:
   - {fileID: 1948741964}
   - {fileID: 775086620}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1032136427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1372,7 @@ RectTransform:
   - {fileID: 1792700114}
   - {fileID: 1459910420}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1419,7 +1482,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1591680875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1541,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10000
+  far clip plane: 100001
   field of view: 60
   orthographic: 0
   orthographic size: 25
@@ -1506,7 +1569,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1591680881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2594,7 +2657,7 @@ Transform:
   m_LocalScale: {x: 300, y: 300, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &2021218171 stripped
 Transform:
   m_PrefabParentObject: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
