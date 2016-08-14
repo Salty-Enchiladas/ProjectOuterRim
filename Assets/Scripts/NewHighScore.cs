@@ -12,14 +12,11 @@ public class NewHighScore : MonoBehaviour {
 	void Start () {
         highScore = PlayerPrefs.GetInt("HighScore");
         oldHighScore = PlayerPrefs.GetInt("OldHighScore");
-    }
-	
-	// Update is called once per frame
-	void Update () {
+
         if (highScore > oldHighScore)
         {
             oldHighScore = highScore;
-            newHS.SetActive(true);            
+            newHS.SetActive(true);
         }
         else
         {
@@ -27,5 +24,10 @@ public class NewHighScore : MonoBehaviour {
         }
 
         PlayerPrefs.SetInt("OldHighScore", oldHighScore);
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        
     }    
 }
