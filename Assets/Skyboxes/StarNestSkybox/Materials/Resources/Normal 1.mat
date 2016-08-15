@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Normal
+  m_Name: Normal 1
   m_Shader: {fileID: 4800000, guid: 100c9f6ec37b01644b7a5f7feac179d6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -16,6 +16,10 @@ Material:
     serializedVersion: 2
     m_TexEnvs: {}
     m_Floats:
+      data:
+        first:
+          name: _Tile
+        second: 677
       data:
         first:
           name: _CLAMPOUT
@@ -42,10 +46,6 @@ Material:
         second: 250
       data:
         first:
-          name: _Tile
-        second: 677
-      data:
-        first:
           name: _Brightness
         second: 5
       data:
@@ -68,7 +68,7 @@ Material:
       data:
         first:
           name: _Scroll
-        second: {r: 0, g: 0, b: -50, a: 0.02}
+        second: {r: 0, g: 0, b: 50, a: 0.02}
       data:
         first:
           name: _Center
