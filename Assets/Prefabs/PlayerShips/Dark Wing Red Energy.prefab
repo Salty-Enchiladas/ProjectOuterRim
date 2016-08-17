@@ -424,6 +424,7 @@ GameObject:
   - 114: {fileID: 11477096}
   - 54: {fileID: 5468264}
   - 114: {fileID: 11465030}
+  - 114: {fileID: 11465456}
   m_Layer: 0
   m_Name: Dark Wing Red Energy
   m_TagString: Untagged
@@ -2211,6 +2212,20 @@ MonoBehaviour:
   thrusterRampDownRate: 200
   thrusterCooldown: 15
   invertVertical: 0
+--- !u!114 &11465456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a154e8b50b23db47bc28e1900a21379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 181472}
+  - {fileID: 141260}
 --- !u!114 &11468522
 MonoBehaviour:
   m_ObjectHideFlags: 1

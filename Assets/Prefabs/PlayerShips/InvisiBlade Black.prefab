@@ -83,6 +83,7 @@ GameObject:
   - 114: {fileID: 11410226}
   - 54: {fileID: 5455278}
   - 114: {fileID: 11489032}
+  - 114: {fileID: 11404190}
   m_Layer: 0
   m_Name: InvisiBlade Black
   m_TagString: Untagged
@@ -1367,6 +1368,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: {fileID: 179882}
   onCooldown: 0
+--- !u!114 &11404190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a154e8b50b23db47bc28e1900a21379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 175884}
+  - {fileID: 177842}
 --- !u!114 &11404776
 MonoBehaviour:
   m_ObjectHideFlags: 1

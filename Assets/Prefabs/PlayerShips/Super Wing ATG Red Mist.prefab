@@ -84,6 +84,7 @@ GameObject:
   - 114: {fileID: 11488822}
   - 54: {fileID: 5415906}
   - 114: {fileID: 11435036}
+  - 114: {fileID: 11497850}
   m_Layer: 0
   m_Name: Super Wing ATG Red Mist
   m_TagString: Untagged
@@ -2963,6 +2964,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
   fireFreq: 0
+--- !u!114 &11497850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a154e8b50b23db47bc28e1900a21379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 125864}
+  - {fileID: 179338}
 --- !u!135 &13507386
 SphereCollider:
   m_ObjectHideFlags: 1

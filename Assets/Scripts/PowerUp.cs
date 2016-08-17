@@ -8,7 +8,7 @@ public class PowerUp : MonoBehaviour
         SHIELD,
         LASER,
         LIFE,
-        INVULNERABILITY,
+       // INVULNERABILITY,
     }
 
     public PowerUpType type = PowerUpType.SHIELD;
@@ -50,11 +50,11 @@ public class PowerUp : MonoBehaviour
 
                 break;
 
-            case PowerUpType.INVULNERABILITY:
+            //case PowerUpType.INVULNERABILITY:
 
-                StartCoroutine(InvulnerabilityPowerUp());
+            //    StartCoroutine(InvulnerabilityPowerUp());
 
-                break;
+            //    break;
         }
 	}
 
@@ -72,17 +72,23 @@ public class PowerUp : MonoBehaviour
     }
     IEnumerator LaserPowerUp()
     {
-        print("LASER POWER!!");
+        foreach (GameObject go in player.GetComponent<Upgrades>().weapons)
+        {
+            go.SetActive(true);
+        }
         yield return new WaitForSeconds(powerUpLength);
-        print("My lasers!! NOOO..");
+        foreach (GameObject go in player.GetComponent<Upgrades>().weapons)
+        {
+            go.SetActive(false);
+        }
     }
-    IEnumerator InvulnerabilityPowerUp()
-    {
-        player.GetComponentInChildren<MeshCollider>().enabled = false;
-        print("I AM INVINCIBLE!!! MUAHHAHAHAHHHAHAH!!!!");
-        yield return new WaitForSeconds(powerUpLength);
+    //IEnumerator InvulnerabilityPowerUp()
+    //{
+    //    player.GetComponentInChildren<MeshCollider>().enabled = false;
+    //    print("I AM INVINCIBLE!!! MUAHHAHAHAHHHAHAH!!!!");
+    //    yield return new WaitForSeconds(powerUpLength);
 
-        player.GetComponentInChildren<MeshCollider>().enabled = true;
-        print("Annnddd, it's gone.");
-    }
+    //    player.GetComponentInChildren<MeshCollider>().enabled = true;
+    //    print("Annnddd, it's gone.");
+    //}
 }

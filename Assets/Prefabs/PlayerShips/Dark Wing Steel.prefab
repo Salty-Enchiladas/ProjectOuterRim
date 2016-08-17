@@ -479,6 +479,7 @@ GameObject:
   - 114: {fileID: 11425750}
   - 54: {fileID: 5495700}
   - 114: {fileID: 11450986}
+  - 114: {fileID: 11426042}
   m_Layer: 0
   m_Name: Dark Wing Steel
   m_TagString: Untagged
@@ -1901,6 +1902,20 @@ MonoBehaviour:
   highScore: 0
   scoreText: {fileID: 0}
   highScoreText: {fileID: 0}
+--- !u!114 &11426042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a154e8b50b23db47bc28e1900a21379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 140996}
+  - {fileID: 164078}
 --- !u!114 &11436108
 MonoBehaviour:
   m_ObjectHideFlags: 1

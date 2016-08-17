@@ -101,11 +101,6 @@ public class FireMissile : MonoBehaviour {
         {
             hasTarget = false;
         }
-
-        if (target.GetComponent<EnemyState>().isTarget == true)
-        {
-            target = GameObject.FindGameObjectWithTag("Enemy");
-        }
     }
 
     IEnumerator MissileRecharge(float _missileRechargeLength)

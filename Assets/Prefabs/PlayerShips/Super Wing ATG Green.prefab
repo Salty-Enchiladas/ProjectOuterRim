@@ -152,6 +152,7 @@ GameObject:
   - 114: {fileID: 11415614}
   - 54: {fileID: 5494262}
   - 114: {fileID: 11448882}
+  - 114: {fileID: 11414920}
   m_Layer: 0
   m_Name: Super Wing ATG Green
   m_TagString: Untagged
@@ -2839,6 +2840,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: {fileID: 195276}
   onCooldown: 0
+--- !u!114 &11414920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a154e8b50b23db47bc28e1900a21379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 193506}
+  - {fileID: 107936}
 --- !u!114 &11415614
 MonoBehaviour:
   m_ObjectHideFlags: 1

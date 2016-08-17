@@ -133,6 +133,7 @@ GameObject:
   - 114: {fileID: 11425002}
   - 54: {fileID: 5431172}
   - 114: {fileID: 11450742}
+  - 114: {fileID: 11473988}
   m_Layer: 0
   m_Name: Dark Wing Irodecent Blue
   m_TagString: Untagged
@@ -2479,6 +2480,20 @@ MonoBehaviour:
   missileCooldown: 3
   missileCount: 3
   missileMax: 3
+--- !u!114 &11473988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a154e8b50b23db47bc28e1900a21379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 142002}
+  - {fileID: 178980}
 --- !u!114 &11491928
 MonoBehaviour:
   m_ObjectHideFlags: 1

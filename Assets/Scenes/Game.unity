@@ -397,6 +397,7 @@ GameObject:
   - 82: {fileID: 555410812}
   - 114: {fileID: 555410815}
   - 114: {fileID: 555410816}
+  - 114: {fileID: 555410817}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -619,6 +620,17 @@ MonoBehaviour:
   yMaxSpawn: 500
   zMinSpawn: 500
   zMaxSpawn: 501
+--- !u!114 &555410817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555410808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ee502db7a165b4eb0333e072b263c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568474987
 GameObject:
   m_ObjectHideFlags: 0
