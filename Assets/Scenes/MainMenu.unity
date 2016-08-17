@@ -258,13 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eb604a2e978ac48b056784f7704c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 2006917872}
-  - {fileID: 1495695159}
-  - {fileID: 1560093334}
-  - {fileID: 1880678553}
-  - {fileID: 994268936}
-  - {fileID: 802454066}
+  _object: {fileID: 0}
 --- !u!1 &78809248
 GameObject:
   m_ObjectHideFlags: 0
@@ -4169,10 +4163,6 @@ RectTransform:
 GameObject:
   m_PrefabParentObject: {fileID: 157998, guid: deb29aa05555c794f802aa37be75ae4d, type: 2}
   m_PrefabInternal: {fileID: 1161020130}
---- !u!1 &1495695159 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 174704, guid: 1a5d0b9b8edf5094aba131faabb09d41, type: 2}
-  m_PrefabInternal: {fileID: 459196581}
 --- !u!1 &1507792600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,10 +4335,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 254468528}
   m_RootOrder: 6
---- !u!1 &1560093334 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 133718, guid: 1a5d0b9b8edf5094aba131faabb09d41, type: 2}
-  m_PrefabInternal: {fileID: 459196581}
 --- !u!1 &1580496009
 GameObject:
   m_ObjectHideFlags: 0
@@ -4703,7 +4689,6 @@ GameObject:
   - 114: {fileID: 1755684734}
   - 61: {fileID: 1755684735}
   - 114: {fileID: 1755684736}
-  - 114: {fileID: 1755684737}
   m_Layer: 5
   m_Name: Start
   m_TagString: Button
@@ -4760,7 +4745,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
       - m_Target: {fileID: 1755684736}
         m_MethodName: Toggle
         m_Mode: 1
@@ -4768,17 +4753,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1755684737}
-        m_MethodName: LoadSceneNum
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4874,25 +4848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05eb604a2e978ac48b056784f7704c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 2006917872}
-  - {fileID: 1495695159}
-  - {fileID: 1560093334}
-  - {fileID: 1880678553}
-  - {fileID: 994268936}
-  - {fileID: 802454066}
---- !u!114 &1755684737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1755684729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b53b85e3d60da4d93c59aa5e2bf3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: 1
+  _object: {fileID: 2006917872}
 --- !u!1 &1782700512
 GameObject:
   m_ObjectHideFlags: 0
@@ -5065,10 +5021,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 254468528}
   m_RootOrder: 5
---- !u!1 &1880678553 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 180010, guid: 1a5d0b9b8edf5094aba131faabb09d41, type: 2}
-  m_PrefabInternal: {fileID: 459196581}
 --- !u!1 &1888515278
 GameObject:
   m_ObjectHideFlags: 0
