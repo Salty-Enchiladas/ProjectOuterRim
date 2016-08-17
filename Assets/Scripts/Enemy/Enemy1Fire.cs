@@ -24,17 +24,17 @@ public class Enemy1Fire : MonoBehaviour {
 	void Update () {
         if (canFire)
         {
-            fireFreq = Random.Range(minFreq, maxFreq);
+            //fireFreq = Random.Range(minFreq, maxFreq);
 
             if (Time.time > lastShot + fireFreq)
             {
                 Fire();
             }
 
-            if (Time.time > lastDifficultyIncrease + difficultyTimer && minFreq > 1)
-            {
-                StartCoroutine(IncreaseDificulty(difficultyTimer));
-            }
+            //if (Time.time > lastDifficultyIncrease + difficultyTimer && minFreq > 1)
+            //{
+            //    StartCoroutine(IncreaseDificulty(difficultyTimer));
+            //}
         }
     }
 

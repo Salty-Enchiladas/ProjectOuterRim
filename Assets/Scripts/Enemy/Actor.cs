@@ -222,19 +222,19 @@ public class Actor : MonoBehaviour
 
                     if (transform.position.x < player.transform.position.x && transform.position.y < player.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(-100f, -100f, -350f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(-100f, -100f, -1000f), Time.deltaTime * 7f);
                     }
                     else if (transform.position.x < player.transform.position.x && transform.position.y > player.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(-100f, 100f, -350f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(-100f, 100f, -1000f), Time.deltaTime * 7f);
                     }
                     else if (transform.position.x > player.transform.position.x && transform.position.y > player.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, 100f, -350f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, 100f, -1000f), Time.deltaTime * 7f);
                     }
                     else if (transform.position.x > player.transform.position.x && transform.position.y < player.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, -100f, -350f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * 7f);
                     }
 
                     if (transform.position.z > player.transform.position.z + 250)
@@ -247,7 +247,7 @@ public class Actor : MonoBehaviour
                     {
                         transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
 
-                        if (transform.position.z < player.transform.position.z - 300)
+                        if (transform.position.z < player.transform.position.z - 950)
                         {
                             GetComponent<Enemy1Collision>().WasDestroyed();
                         }

@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876fde79dbfeca6499e6783a6dadd083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireFreq: 1
+  fireFreq: 2
   minFreq: 5
   maxFreq: 8
   difficultyTimer: 10
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876fde79dbfeca6499e6783a6dadd083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireFreq: 1
+  fireFreq: 2
   minFreq: 5
   maxFreq: 8
   difficultyTimer: 10
