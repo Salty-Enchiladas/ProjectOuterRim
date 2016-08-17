@@ -570,7 +570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc51a04ad85811643b9c1b95e3d39a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 133542, guid: 7ad8dc8dbe95af4489cbc5fff1e13e2f, type: 2}
+  player: {fileID: 0}
+  laserPickUp: {fileID: 192852, guid: c3cbf27bae54edc41967c2f100510ee7, type: 2}
+  missilePickUp: {fileID: 100822, guid: acde87d815de6524db34cf21d114108a, type: 2}
+  shieldPickUp: {fileID: 155664, guid: 5d501daed271a9245bd86763f5d8b608, type: 2}
+  spawnAtScore: 2000
   spawnAfter: 5
   xMinSpawn: -250
   xMaxSpawn: 250

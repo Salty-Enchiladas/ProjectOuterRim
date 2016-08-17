@@ -7,21 +7,36 @@ public class PowerUp : MonoBehaviour
     {
         SHIELD,
         LASER,
-        LIFE,
-       // INVULNERABILITY,
+        Missile,
     }
 
     public PowerUpType type = PowerUpType.SHIELD;
+    PickUpManager pickUpManager;
     public int powerUpLength;
     GameObject player;
     GameObject shield;
+    GameObject gameManager;
     bool hit;
+
+    int laserLevel;
+    int missileLevel;
+    int shieldLevel;
+
+    [HideInInspector]
+    public string shieldType;
+
+    [HideInInspector]
+    public string laserType;
+
+    [HideInInspector]
+    public string missileType;
 
     void Start()
     {
         player = GameObject.Find("Player");
         shield = player.transform.FindChild("Shield").gameObject;
-        type = (PowerUpType)Random.Range(0, 3);
+        gameManager = GameObject.Find("GameManager");
+        pickUpManager = gameManager.GetComponent<PickUpManager>();
     }
 	void ApplyPower ()
     {
@@ -29,32 +44,65 @@ public class PowerUp : MonoBehaviour
         {
             case PowerUpType.SHIELD:
 
-                player.GetComponent<ActivateShield>().onCooldown = false;
-                shield.GetComponent<Shield>().currentHealth = shield.GetComponent<Shield>().startingHealth;
-                shield.SetActive(true);
+                shieldType = "shield";
+                pickUpManager.LevelUp(shieldType);
+                shieldLevel = pickUpManager.shieldLevel;
+
+                switch (shieldLevel)
+                {
+                    case 1:
+                        print("Shield upgraded to level 1!");
+                        break;
+                    case 2:
+                        print("Shield upgraded to level 2!");
+                        break;
+                    case 3:
+                        print("Shield upgraded to level 3!");
+                        break;
+                }
 
                 break;
 
             case PowerUpType.LASER:
 
-                StartCoroutine(LaserPowerUp());
-
-                break;
-
-            case PowerUpType.LIFE:
-                if (player.GetComponentInChildren<PlayerCollision>().playerLives < 3)
+                laserType = "laser";
+                pickUpManager.LevelUp(laserType);
+                laserLevel = pickUpManager.laserLevel;
+                
+                switch (laserLevel)
                 {
-                    player.GetComponentInChildren<PlayerCollision>().playerLives++;
-                    print("You gained a life!");
+                    case 1:
+                        print("Laser upgraded to level 1!");
+                        break;
+                    case 2:
+                        print("Laser upgraded to level 2!");
+                        break;
+                    case 3:
+                        print("Laser upgraded to level 3!");
+                        break;
                 }
 
                 break;
 
-            //case PowerUpType.INVULNERABILITY:
+            case PowerUpType.Missile:
 
-            //    StartCoroutine(InvulnerabilityPowerUp());
+                missileType = "missile";
+                pickUpManager.LevelUp(missileType);
+                missileLevel = pickUpManager.missileLevel;
+                switch (missileLevel)
+                {
+                    case 1:
+                        print("Missile upgraded to level 1!");
+                        break;
+                    case 2:
+                        print("Missile upgraded to level 2!");
+                        break;
+                    case 3:
+                        print("Missile upgraded to level 3!");
+                        break;
+                }
 
-            //    break;
+                break;
         }
 	}
 
@@ -70,25 +118,4 @@ public class PowerUp : MonoBehaviour
             }
         }
     }
-    IEnumerator LaserPowerUp()
-    {
-        foreach (GameObject go in player.GetComponent<Upgrades>().weapons)
-        {
-            go.SetActive(true);
-        }
-        yield return new WaitForSeconds(powerUpLength);
-        foreach (GameObject go in player.GetComponent<Upgrades>().weapons)
-        {
-            go.SetActive(false);
-        }
-    }
-    //IEnumerator InvulnerabilityPowerUp()
-    //{
-    //    player.GetComponentInChildren<MeshCollider>().enabled = false;
-    //    print("I AM INVINCIBLE!!! MUAHHAHAHAHHHAHAH!!!!");
-    //    yield return new WaitForSeconds(powerUpLength);
-
-    //    player.GetComponentInChildren<MeshCollider>().enabled = true;
-    //    print("Annnddd, it's gone.");
-    //}
 }

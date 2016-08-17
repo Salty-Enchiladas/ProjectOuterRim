@@ -48,7 +48,7 @@ GameObject:
   - 64: {fileID: 6411540}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
