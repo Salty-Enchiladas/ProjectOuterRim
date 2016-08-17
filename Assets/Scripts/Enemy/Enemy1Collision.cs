@@ -25,28 +25,21 @@ public class Enemy1Collision : MonoBehaviour {
     {
         if (col.gameObject.tag == "Laser")
         {
-            col.gameObject.SetActive(false);
-            gameObject.SetActive(false);
-
-            GameObject.Find("GameManager").GetComponent<WaveHandler>().enemyCount--;
-
+            col.gameObject.SetActive(false);            
             _playerScore.score += 1000;
-
-            Instantiate(explosion, transform.position, transform.rotation);
-            Instantiate(explosionSound, transform.position, transform.rotation);
+            WasDestroyed();
         }
         else if (col.gameObject.tag == "Missile")
         {
             col.gameObject.SetActive(false);
-            WasDestroyed();
             _playerScore.score += 1000;
+            WasDestroyed();
         }
-
         else if (col.gameObject.tag == "Meteor")
         {
-            WasDestroyed();
             Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
             col.gameObject.SetActive(false);
+            WasDestroyed();            
         }
     }
 
@@ -61,6 +54,7 @@ public class Enemy1Collision : MonoBehaviour {
     }
     public void WasDestroyed()
     {
+        GameObject.Find("GameManager").GetComponent<WaveHandler>().enemyCount--;
         Instantiate(explosion, transform.position, transform.rotation);
         Instantiate(explosionSound, transform.position, transform.rotation);
         gameObject.SetActive(false);

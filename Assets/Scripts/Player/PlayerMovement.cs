@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public float playerSpeed;
     public float forwardSpeed;
+    public float maxTurnAngle;
+    [HideInInspector]
     public float horizontalTurnAngle;
     public float moveX;
     public float moveY;
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         //}
 
         horizontalTurnAngle = -(Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed * 50) * 20;
-        horizontalTurnAngle = Mathf.Clamp(horizontalTurnAngle, -45f, 45f);
+        horizontalTurnAngle = Mathf.Clamp(horizontalTurnAngle, -maxTurnAngle, maxTurnAngle);
         moveX = Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed;
 
         //transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, Mathf.Clamp(transform.rotation.z, -45, 45), 0f);
@@ -39,7 +41,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetAxis("Horizontal") != 0)       // && transform.rotation.z > -45 && transform.rotation.z < 45
         {
             transform.Rotate((Vector3.forward * horizontalTurnAngle * Time.deltaTime) * 7);
-            ClampRotation(-45, 45, 0);
+            ClampRotation(-maxTurnAngle, maxTurnAngle, 0);
             //transform.rotation = Quaternion.Lerp(transform.rotation, new Quaternion(transform.rotation.x, transform.rotation.y, -horizontalTurnAngle, 0f), Time.deltaTime * 0.3f);
         }
 
@@ -50,11 +52,11 @@ public class PlayerMovement : MonoBehaviour {
 
         if (invertVertical)           //inverted vertical movement
         {
-            moveY = -(Input.GetAxis("Vertical") * Time.deltaTime * (playerSpeed));
+            moveY = -(Input.GetAxis("Vertical") * Time.deltaTime * (playerSpeed / 2));
         }
         else if (!invertVertical)     //normal vertical movement
         {
-            moveY = Input.GetAxis("Vertical") * Time.deltaTime * (playerSpeed);
+            moveY = Input.GetAxis("Vertical") * Time.deltaTime * (playerSpeed / 2);
         }
 
         transform.position += new Vector3(moveX, moveY, moveZ);

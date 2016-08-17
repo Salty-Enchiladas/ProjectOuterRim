@@ -18,15 +18,15 @@ public class AchievementManager : MonoBehaviour
         switch (playerScore.score)
         {
             case 10000:
-                print("You earned 10,000 points!");
+                //print("You earned 10,000 points!");
                 break;
 
             case 20000:
-                print("You earned 20,000 points!");
+                //print("You earned 20,000 points!");
                 break;
 
             case 30000:
-                print("You earned 30,000 points!");
+                //print("You earned 30,000 points!");
                 break;
         }
         

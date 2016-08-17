@@ -21,7 +21,6 @@ public class Actor : MonoBehaviour
     {
         IDLE,
         MOVING,
-        ATTACK,
         MANEUVER,
         STRAFE,
     }
@@ -40,7 +39,9 @@ public class Actor : MonoBehaviour
     private bool recalculating;
     private bool startManeuver;
     private bool hasChosenAction;
-    private bool ceasedFire;
+    private bool ceasedFire = true;
+    bool maneuverLeft;
+    bool hasChosenDirection;
 
     private Vector3 m_target = new Vector3(0, 0, 0);
     private Vector3 currNode;
@@ -79,14 +80,23 @@ public class Actor : MonoBehaviour
         enemyXPos = Random.Range(-250f, 250f);
         lerpSpeed = Random.Range(0.1f, 0.5f);
 
-        _waveHandler.enemyCount++;
         player = GameObject.Find("Player");
         MoveOrder(player.transform.position);
+    }
+
+    void OnEnable()
+    {
+        
     }
 
     private void OnDisable()
     {
         startManeuver = true;
+        hasChosenDirection = false;
+        hasChosenAction = false;
+
+        //transform.FindChild("Gun1").GetComponent<Enemy1Fire>().fireFreq = transform.FindChild("Gun1").GetComponent<Enemy1Fire>().startFireFreq;
+        //transform.FindChild("Gun2").GetComponent<Enemy1Fire>().fireFreq = transform.FindChild("Gun2").GetComponent<Enemy1Fire>().startFireFreq;
     }
 
     private void Update()
@@ -103,23 +113,12 @@ public class Actor : MonoBehaviour
 
                 if (randomInt == 0)
                 {
-                    ChangeState(State.ATTACK);
+                    ChangeState(State.MANEUVER);
                 }
                 else //if (randomInt == 1)
                 {
-                    ChangeState(State.MANEUVER);
+                    ChangeState(State.STRAFE);
                 }
-                //else
-                //{
-                //    if (transform.position.y < player.transform.position.y)
-                //    {
-                //        hasChosenAction = false;
-                //    }
-                //    else
-                //    {
-                //        ChangeState(State.STRAFE);
-                //    }
-                //}
             }
         }
     }
@@ -145,6 +144,7 @@ public class Actor : MonoBehaviour
 
                     if (ceasedFire)
                     {
+                        ceasedFire = false;
                         GetComponentInChildren<Enemy1Fire>().canFire = true;
                     }
 
@@ -169,19 +169,12 @@ public class Actor : MonoBehaviour
                     }
                     break;
 
-                case State.ATTACK:
-                    OldTime = elapsedTime + 0.01f;
-
-                    transform.LookAt(player.transform);
-
-                    transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + enemyXPos, player.transform.position.y, player.transform.position.z + enemyZClamp), Time.deltaTime * lerpSpeed);
-                    break;
-
                 case State.MANEUVER:
                     OldTime = elapsedTime + 0.01f;
 
                     if (!ceasedFire)
                     {
+                        ceasedFire = true;
                         GetComponentInChildren<Enemy1Fire>().canFire = false;
                     }
 
@@ -194,16 +187,27 @@ public class Actor : MonoBehaviour
                     centerY += player.transform.position.y;
                     centerZ += player.transform.position.z;
 
-                    if (transform.position.x > player.transform.position.x)
+                    if (transform.position.x > player.transform.position.x && !hasChosenDirection)
                     {
-                        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
-                        //Maneuver to the right of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * 2.5f);
+                        hasChosenDirection = true;
+                        maneuverLeft = false;
                     }
-                    else if (transform.position.x < player.transform.position.x)
+                    else if (transform.position.x < player.transform.position.x && !hasChosenDirection)
+                    {
+                        hasChosenDirection = true;
+                        maneuverLeft = true;
+                    }
+
+                    if (maneuverLeft && hasChosenDirection)
                     {
                         lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
                         //Maneuver to the left of the player
+                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * 2.5f);
+                    }
+                    else if (!maneuverLeft && hasChosenDirection)
+                    {
+                        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
+                        //Maneuver to the right of the player
                         transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * 2.5f);
                     }
 
@@ -214,27 +218,50 @@ public class Actor : MonoBehaviour
                     break;
 
                 case State.STRAFE:
-                    print("strafe");
                     OldTime = elapsedTime + 0.01f;
 
-                    transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(0f, 20f, 20f), Time.deltaTime * 1f);
+                    if (transform.position.x < player.transform.position.x && transform.position.y < player.transform.position.y)
+                    {
+                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(-100f, -100f, -350f), Time.deltaTime * 7f);
+                    }
+                    else if (transform.position.x < player.transform.position.x && transform.position.y > player.transform.position.y)
+                    {
+                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(-100f, 100f, -350f), Time.deltaTime * 7f);
+                    }
+                    else if (transform.position.x > player.transform.position.x && transform.position.y > player.transform.position.y)
+                    {
+                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, 100f, -350f), Time.deltaTime * 7f);
+                    }
+                    else if (transform.position.x > player.transform.position.x && transform.position.y < player.transform.position.y)
+                    {
+                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, -100f, -350f), Time.deltaTime * 7f);
+                    }
 
                     if (transform.position.z > player.transform.position.z + 250)
                     {
                         transform.LookAt(player.transform);
-                        GetComponentInChildren<Enemy1Fire>().fireFreq = 0.01f;
+                        transform.FindChild("Gun1").GetComponent<Enemy1Fire>().fireFreq = 0.5f;
+                        transform.FindChild("Gun2").GetComponent<Enemy1Fire>().fireFreq = 0.5f;
                     }
-                    else if(transform.position.z <= player.transform.position.z + 250)
+                    else if (transform.position.z <= player.transform.position.z + 250)
                     {
-                        transform.rotation = Quaternion.identity;
+                        transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
 
-                        if (transform.position.z < player.transform.position.z - 150)
+                        if (transform.position.z < player.transform.position.z - 300)
                         {
-                            gameObject.SetActive(false);
+                            GetComponent<Enemy1Collision>().WasDestroyed();
                         }
                     }
 
                     break;
+
+                //case State.ATTACK:
+                //    OldTime = elapsedTime + 0.01f;
+
+                //    transform.LookAt(player.transform);
+
+                //    transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + enemyXPos, player.transform.position.y, player.transform.position.z + enemyZClamp), Time.deltaTime * lerpSpeed);
+                //    break;
             }
         }
     }

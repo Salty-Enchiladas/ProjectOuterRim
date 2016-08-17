@@ -81,6 +81,8 @@ public class WaveHandler : MonoBehaviour
             obj.transform.rotation = Quaternion.identity;
             obj.SetActive(true);
 
+            enemyCount++;
+
             spawning = false;
         }
     }

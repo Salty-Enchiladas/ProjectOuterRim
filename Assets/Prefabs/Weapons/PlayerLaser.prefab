@@ -140,7 +140,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 20
+  Priority: 130
   DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 250
