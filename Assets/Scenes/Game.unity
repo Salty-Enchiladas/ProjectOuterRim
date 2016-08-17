@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.92
   m_AmbientMode: 3
-  m_SkyboxMaterial: {fileID: 2100000, guid: e689658b33fb99345b0d6eae58e9163a, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2d66d67eb54c86b459a257ce372bce85, type: 2}
   m_HaloStrength: 0.026
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -354,6 +354,8 @@ GameObject:
   - 114: {fileID: 555410813}
   - 82: {fileID: 555410812}
   - 114: {fileID: 555410815}
+  - 114: {fileID: 555410816}
+  - 114: {fileID: 555410817}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -378,9 +380,10 @@ MonoBehaviour:
   objSpawnMaxY: 3500
   objSpawnZ: 10000
   enemyPoolName: EnemyShips
-  spawnCap: 10
   enemyCount: 0
-  capIncreaseAmount: 0
+  spawnCap: 10
+  finalSpawnCap: 50
+  capIncreaseAmount: 5
   spawnRate: 1.5
   difficultyTimer: 15
 --- !u!4 &555410810
@@ -556,6 +559,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeTag: Node
+--- !u!114 &555410816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555410808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc51a04ad85811643b9c1b95e3d39a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUp: {fileID: 133542, guid: 7ad8dc8dbe95af4489cbc5fff1e13e2f, type: 2}
+  spawnAfter: 5
+  xMinSpawn: -250
+  xMaxSpawn: 250
+  yMinSpawn: -250
+  yMaxSpawn: 250
+  zMinSpawn: 500
+  zMaxSpawn: 500
+--- !u!114 &555410817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555410808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b441af83e280e140a345950848d7aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568474987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1534,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591680875}
-  m_LocalRotation: {x: 0.17364822, y: 0, z: 0, w: 0.9848078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 85, z: -155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1519,8 +1552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  cameraSpeed: 1.5
-  cameraOffset: {x: 0, y: 85, z: -155}
+  cameraSpeed: 1
+  cameraOffset: {x: 0, y: 35, z: -300}
 --- !u!1 &1660281895
 GameObject:
   m_ObjectHideFlags: 0

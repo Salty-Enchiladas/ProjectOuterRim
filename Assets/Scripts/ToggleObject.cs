@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ToggleObject : MonoBehaviour {
 
-    public GameObject[] objects;
+    public GameObject _object;
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +17,6 @@ public class ToggleObject : MonoBehaviour {
 
     public void Toggle()
     {
-        for (int i = 0; i < objects.Length; i++)
-        {
-            objects[i].SetActive(!objects[i].activeInHierarchy);
-        }
+        _object.SetActive(!_object.activeInHierarchy);
     }
 }

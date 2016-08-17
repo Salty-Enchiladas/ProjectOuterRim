@@ -17,7 +17,7 @@ public class FireScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if ((Input.GetButton("Fire1") || (Input.GetAxis("Laser")) != 0) && Time.time > lastShot + fireFreq)
+        if ((Input.GetButtonDown("Fire1") || (Input.GetAxis("Laser")) != 0) && Time.time > lastShot + fireFreq)
         {
             Fire();
         }       

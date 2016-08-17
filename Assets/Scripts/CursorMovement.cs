@@ -32,29 +32,24 @@ public class CursorMovement : MonoBehaviour {
 
         MoveCursor();
 
-        if (Input.GetButtonUp("Submit") || Input.GetMouseButtonUp(0))
+        OnCursorExit(currentButton);
+
+        Ray ray = Camera.main.ScreenPointToRay(transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
         {
-            Click();
-        }
-
-        //OnCursorExit(currentButton);
-
-        //Ray ray = Camera.main.ScreenPointToRay(transform.position);
-        //RaycastHit hit;
-        //if (Physics.Raycast(ray, out hit))
-        //{
-        //    if (hit.collider.tag == "Button")
-        //    {
-        //        currentButton = hit.collider.gameObject;
+            if (hit.collider.tag == "Button")
+            {
+                currentButton = hit.collider.gameObject;
                 
-        //        OnCursorOver(currentButton);
+                OnCursorOver(currentButton);
 
-        //        if (Input.GetButtonUp("Submit") || Input.GetMouseButtonUp(0))
-        //        {
-        //            Click();
-        //        }
-        //    }
-        //}
+                if (Input.GetButtonUp("Submit") || Input.GetMouseButtonUp(0))
+                {
+                    Click();
+                }
+            }
+        }
 	}
 
     void MoveCursor()
@@ -84,26 +79,24 @@ public class CursorMovement : MonoBehaviour {
 
     void Click()
     {
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.zero);
+        //RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.zero);
 
-        if (hit.collider.tag == "Button")
+        Ray ray = Camera.main.ScreenPointToRay(transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
         {
-            ExecuteEvents.Execute(hit.collider.gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
-        }
+            if (hit.collider == null)
+            {
+                return;
+            }
+            else if (hit.collider.tag == "Button")
+            {
+                hit.collider.gameObject.GetComponent<IsButton>().ButtonFunction();
 
-        //Ray ray = Camera.main.ScreenPointToRay(transform.position);
-        //RaycastHit hit;
-        //if (Physics.Raycast(ray, out hit))
-        //{
-        //    if (hit.collider == null)
-        //    {
-        //        return;
-        //    }
-        //    else if (hit.collider.tag == "Button")
-        //    {
-        //        hit.collider.gameObject.GetComponent<IsButton>().ButtonFunction();                
-        //    }
-        //}
+
+                //ExecuteEvents.Execute(hit.collider.gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+            }
+        }
     }
 
     void OnCursorOver(GameObject button)

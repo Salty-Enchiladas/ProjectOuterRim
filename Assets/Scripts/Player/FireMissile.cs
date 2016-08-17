@@ -28,8 +28,8 @@ public class FireMissile : MonoBehaviour {
         missile2Img = GameObject.Find("M2b");
         missile3Img = GameObject.Find("M3b");
 
-        noTarget = GameObject.Find("NoTarget");
-        noTarget.SetActive(false);
+        //noTarget = GameObject.Find("NoTarget");
+        //noTarget.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -42,10 +42,10 @@ public class FireMissile : MonoBehaviour {
         {
             Missile();
         }
-        else if ((Input.GetButtonDown("Fire2") && !hasTarget))   // || (Input.GetAxis("Secondary")) != 0)
-        {
-            StartCoroutine(FlashNoTarget());
-        }
+        //else if ((Input.GetButtonDown("Fire2") && !hasTarget))   // || (Input.GetAxis("Secondary")) != 0)
+        //{
+        //    StartCoroutine(FlashNoTarget());
+        //}
 
         switch (missileCount)
         {
@@ -88,18 +88,18 @@ public class FireMissile : MonoBehaviour {
     void FindEnemy()
     {
         target = GameObject.FindGameObjectWithTag("Enemy");
-        if(target == null)
+        if (target == null)
         {
             hasTarget = false;
         }
-        else if(!target.activeInHierarchy)
-        {
-            hasTarget = false;
-        }
-        else if(target.activeInHierarchy)
+        else if (target.activeInHierarchy)
         {
             target.GetComponent<EnemyState>().isTarget = true;
             hasTarget = true;
+        }
+        else if (!target.activeInHierarchy)
+        {
+            hasTarget = false;
         }
     }
 
@@ -109,21 +109,21 @@ public class FireMissile : MonoBehaviour {
         missileCount++;
     }
 
-    IEnumerator FlashNoTarget()
-    {
-        if (!noTarget.activeInHierarchy)
-        {
-            noTarget.SetActive(true);
-            yield return new WaitForSeconds(0.15f);
-            noTarget.SetActive(false);
-            yield return new WaitForSeconds(0.1f);
-            noTarget.SetActive(true);
-            yield return new WaitForSeconds(0.15f);
-            noTarget.SetActive(false);
-            yield return new WaitForSeconds(0.1f);
-            noTarget.SetActive(true);
-            yield return new WaitForSeconds(0.15f);
-            noTarget.SetActive(false);
-        }
-    }
+    //IEnumerator FlashNoTarget()
+    //{
+    //    if (!noTarget.activeInHierarchy)
+    //    {
+    //        noTarget.SetActive(true);
+    //        yield return new WaitForSeconds(0.15f);
+    //        noTarget.SetActive(false);
+    //        yield return new WaitForSeconds(0.1f);
+    //        noTarget.SetActive(true);
+    //        yield return new WaitForSeconds(0.15f);
+    //        noTarget.SetActive(false);
+    //        yield return new WaitForSeconds(0.1f);
+    //        noTarget.SetActive(true);
+    //        yield return new WaitForSeconds(0.15f);
+    //        noTarget.SetActive(false);
+    //    }
+    //}
 }

@@ -5,7 +5,6 @@ using System.Collections;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public GameObject player;
     public GameObject explosion;
     public GameObject explosionSound;
     public GameObject greenHealthRing;
@@ -25,6 +24,7 @@ public class PlayerCollision : MonoBehaviour
 
     PlayerScore playerScoreOBJ;
     public bool shieldActive;
+    GameObject player;
 
     void Start()
     {
