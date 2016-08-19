@@ -107,12 +107,12 @@ public class AchievementManager : MonoBehaviour
 
         if (pickUpManager.laserLevel == 3)
         {
-            print("Shield fully upgraded!!");
+            print("Laser fully upgraded!!");
         }
 
         if (pickUpManager.missileLevel == 3)
         {
-            print("Shield fully upgraded!!");
+            print("Missile fully upgraded!!");
         }
         if (pickUpManager.shieldLevel == 3 && pickUpManager.laserLevel == 3 && pickUpManager.missileLevel == 3)
         {
@@ -200,7 +200,6 @@ public class AchievementManager : MonoBehaviour
        
         
         //Amount of enemies killed
-
         //Meteors destroyed
         //Fully upgraded for an amount of time
         //time alive with 1 health left
