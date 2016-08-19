@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: No Name2
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _NORMALMAP
+  m_Name: Hud Shield Upgrade Level
+  m_Shader: {fileID: 4800000, guid: a86051229156cae42afa96fc66a7dd7e, type: 3}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -26,7 +26,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 6e9d8f7ff007ec540be7e766ed6be293, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -80,11 +80,11 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Cube
+          name: _Texture
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
+          m_Texture: {fileID: 2800000, guid: 8c2afa8e2e7fab3439fc456196827464, type: 3}
+          m_Scale: {x: -1, y: 1}
+          m_Offset: {x: 0.01, y: 0.98}
     m_Floats:
       data:
         first:
@@ -113,7 +113,7 @@ Material:
       data:
         first:
           name: _BumpScale
-        second: 8.77
+        second: 1
       data:
         first:
           name: _OcclusionStrength
@@ -133,7 +133,27 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0.821
+        second: 0
+      data:
+        first:
+          name: _Inside
+        second: 2
+      data:
+        first:
+          name: _Rim
+        second: 0.336
+      data:
+        first:
+          name: _Speed
+        second: 5
+      data:
+        first:
+          name: _Tile
+        second: 1
+      data:
+        first:
+          name: _Strength
+        second: 2.98
       data:
         first:
           name: _GlossMapScale
@@ -158,8 +178,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0, b: 0, a: 1}
-      data:
-        first:
-          name: _ReflectColor
-        second: {r: 1, g: 1, b: 1, a: 0.5}
+        second: {r: 0, g: 1, b: 0.2965517, a: 0.534}

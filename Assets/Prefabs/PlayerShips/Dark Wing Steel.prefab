@@ -1886,7 +1886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  fireFreq: 0
+  fireFreq: 0.5
 --- !u!114 &11425750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2089,7 +2089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  fireFreq: 0
+  fireFreq: 0.5
 --- !u!114 &11497702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  fireFreq: 0
+  fireFreq: 0.5
 --- !u!114 &11499664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2115,7 +2115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  fireFreq: 0
+  fireFreq: 0.5
 --- !u!135 &13504402
 SphereCollider:
   m_ObjectHideFlags: 1

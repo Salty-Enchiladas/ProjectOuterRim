@@ -12,8 +12,11 @@ public class AchievementManager : MonoBehaviour
     GameObject playerCollider;
 
     int gameTime;
+    int totalEnemiesDied;
+    int totalLaserShots;
+    int enemiesHit;
 
-	void Start ()
+    void Start ()
     {
         player = GameObject.Find("Player");
         playerScore = player.GetComponent<PlayerScore>();
@@ -96,7 +99,28 @@ public class AchievementManager : MonoBehaviour
             print("No damage in 30 min!....... You are a god.");
         }
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //Stay alive with 1 health for x amount of time.
+
+        if (playerCollision.playerHealth == 1 && playerCollision.playerLives == 0 && gameTime == 60)
+        {
+            print("At 1 health for 1 min!");
+        }
+        if (playerCollision.playerHealth == 1 && playerCollision.playerLives == 0 && gameTime == 300)
+        {
+            print("At 1 health for 5 min!");
+        }
+        if (playerCollision.playerHealth == 1 && playerCollision.playerLives == 0 && gameTime == 600)
+        {
+            print("At 1 health for min!");
+        }
+        if (playerCollision.playerHealth == 1 && playerCollision.playerLives == 0 && gameTime == 1800)
+        {
+            print("At 1 health for 30 min!");
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         // Weapons fully upgraded
 
@@ -196,14 +220,106 @@ public class AchievementManager : MonoBehaviour
             print("All weapons fully upgraded 30 minutes!");
         }
 
-//------------------------------------------------------------------------------------------------------------------------------------------------------------------
-       
-        
-        //Amount of enemies killed
-        //Meteors destroyed
-        //Fully upgraded for an amount of time
-        //time alive with 1 health left
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+        //Amount of enemies destroyed!
+        switch (totalEnemiesDied)
+        {
+            case 1:
+                print("You got one! 1 Enemy killed.");
+                break;
+
+            case 50:
+                print("50 Enemies killed.");
+                break;
+
+            case 100:
+                print("100 Enemies killed.");
+                break;
+
+            case 500:
+                print("500 Enemies killed.");
+                break;
+
+            case 1000:
+                print("1000 Enemies killed.");
+                break;
+
+            case 5000:
+                print("5000 Enemies killed.");
+                break;
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //How many lasers shot ever.
+
+        switch (totalLaserShots)
+        {
+            case 100:
+                print("100 Lasers shot!");
+                break;
+
+            case 500:
+                print("500 Lasers shot!");
+                break;
+
+            case 1000:
+                print("1,000 Lasers shot!");
+                break;
+
+            case 5000:
+                print("5,000 Lasers shot!");
+                break;
+
+            case 10000:
+                print("10,000 Lasers shot!");
+                break;
+
+            case 50000:
+                print("50,000 Lasers shot!");
+                break;
+
+            case 100000:
+                print("100,000 Lasers shot!");
+                break;
+
+            case 250000:
+                print("250,000 Lasers shot!");
+                break;
+
+            case 500000:
+                print("500,000 Lasers shot!");
+                break;
+
+            case 1000000:
+                print("1,000,000 Lasers shot!");
+                break;
+        }
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+        //Meteors destroyed
 
     }
+
+    //Methods for Enemies Killed.
+    public void EnemyDied()
+    {
+        totalEnemiesDied++;
+    }
+
+    //Methods for Lasers Shot.
+    public void LaserShot()
+    {
+        totalLaserShots++;
+    }
+    //Methods for detecting accuracy
+    public void EnemyHit()
+    {
+        enemiesHit++;
+    }
+
 }

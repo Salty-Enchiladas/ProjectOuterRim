@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: No Name2
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _NORMALMAP
-  m_LightmapFlags: 1
+  m_Name: Hud Player Lives
+  m_Shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -19,14 +19,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Texture: {fileID: 2800000, guid: d92c33f4a12fda4448c20d6176318f79, type: 3}
+          m_Scale: {x: 1.44, y: -0.25}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 6e9d8f7ff007ec540be7e766ed6be293, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -80,7 +80,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Cube
+          name: _Texture
+        second:
+          m_Texture: {fileID: 2800000, guid: 1f1a47d88e8036342955cec9582d9836, type: 3}
+          m_Scale: {x: 1, y: 0.01}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Illum
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -100,6 +107,10 @@ Material:
         second: 0.5
       data:
         first:
+          name: _Shininess
+        second: 1
+      data:
+        first:
           name: _Parallax
         second: 0.02
       data:
@@ -109,11 +120,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.5
+        second: 1
       data:
         first:
           name: _BumpScale
-        second: 8.77
+        second: 1
       data:
         first:
           name: _OcclusionStrength
@@ -133,7 +144,31 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0.821
+        second: 1
+      data:
+        first:
+          name: _Inside
+        second: 0
+      data:
+        first:
+          name: _Rim
+        second: 0
+      data:
+        first:
+          name: _Speed
+        second: 0.5
+      data:
+        first:
+          name: _Tile
+        second: 1
+      data:
+        first:
+          name: _Strength
+        second: 2.31
+      data:
+        first:
+          name: _Emission
+        second: 1
       data:
         first:
           name: _GlossMapScale
@@ -154,12 +189,16 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 0}
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 0}
       data:
         first:
-          name: _ReflectColor
-        second: {r: 1, g: 1, b: 1, a: 0.5}
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}

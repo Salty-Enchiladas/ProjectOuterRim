@@ -574,6 +574,9 @@ MonoBehaviour:
   laserPickUp: {fileID: 192852, guid: c3cbf27bae54edc41967c2f100510ee7, type: 2}
   missilePickUp: {fileID: 100822, guid: acde87d815de6524db34cf21d114108a, type: 2}
   shieldPickUp: {fileID: 155664, guid: 5d501daed271a9245bd86763f5d8b608, type: 2}
+  laserLevel: 0
+  missileLevel: 0
+  shieldLevel: 0
   spawnAtScore: 2000
   spawnAfter: 5
   xMinSpawn: -250
