@@ -2,8 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class FireMissile : MonoBehaviour {
-
+public class FireMissile : MonoBehaviour
+{
     public GameObject missile;
     public GameObject missile1Img;
     public GameObject missile2Img;
@@ -18,7 +18,7 @@ public class FireMissile : MonoBehaviour {
     public int missileMax;    
 
     float lastShot;
-
+    float recharge;
     bool hasTarget;
 
     // Use this for initialization
@@ -105,10 +105,61 @@ public class FireMissile : MonoBehaviour {
 
     IEnumerator MissileRecharge(float _missileRechargeLength)
     {
-        yield return new WaitForSeconds(_missileRechargeLength);
+        recharge = _missileRechargeLength;
+        yield return new WaitForSeconds(recharge);
         missileCount++;
     }
 
+    public void MissileLevel1(bool levelUp)
+    {
+
+        print(levelUp + "Missile1");
+        print("Old Recharge: " + recharge);
+        if (levelUp)
+        {
+            recharge = recharge / 5;
+            print("New Recharge: " + recharge); //its at 9seconds for the old charge
+        }
+        else if (!levelUp)
+        {
+            recharge = recharge * 5;
+            print("LostLevel Recharge " + recharge);    
+        }
+    }
+
+    public void MissileLevel2(bool levelUp)
+    {
+        print(levelUp + "Missile2");
+        print("Old missileCooldown: " + missileCooldown);
+        if (levelUp)
+        {
+            missileCooldown = missileCooldown / 3;
+            print("New missileCooldown: " + missileCooldown); 
+        }
+        else if (!levelUp)
+        {
+            missileCooldown = missileCooldown * 3;
+            print("LostLevel missileCooldown " + missileCooldown); 
+        }
+          
+    }
+
+    public void MissileLevel3(bool levelUp)
+    {
+
+        print(levelUp + "Missile3");
+        print("Old missileMax: " + missileMax);
+        if (levelUp)
+        {
+            missileMax = missileMax * 2;
+            print("New missileMax: " + missileMax);     
+        }
+        else if (!levelUp)
+        {
+            missileMax = missileMax / 2;
+            print("LostLevel missileMax " + missileMax);
+        }
+    }
     //IEnumerator FlashNoTarget()
     //{
     //    if (!noTarget.activeInHierarchy)

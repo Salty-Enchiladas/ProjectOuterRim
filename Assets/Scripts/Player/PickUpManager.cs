@@ -26,6 +26,8 @@ public class PickUpManager : MonoBehaviour
     public float zMinSpawn;
     public float zMaxSpawn;
 
+    public bool leveled;
+
     Vector3 spawnPoint;
     bool spawning;
     int oldScore;
@@ -71,6 +73,9 @@ public class PickUpManager : MonoBehaviour
 
     public void LevelUp(string powerUpType)
     {
+
+        print("YOU LEVELED UP!!!!!!!");
+        leveled = true;
         switch (powerUpType)
         {
             case "shield":
@@ -90,11 +95,74 @@ public class PickUpManager : MonoBehaviour
 
     public void LoseLevel()
     {
-        if(shieldLevel > 0)
+
+        print("YOU LOST A LEVEL!!!!!!!");
+        leveled = false;
+
+        if (shieldLevel > 0)
+        {
             shieldLevel--;
-        if(laserLevel > 0)
+            switch (shieldLevel)
+            {
+                case 1:
+                    print("Call shield lvl 1 method");
+                    break;
+                case 2:
+                    print("Call shield lvl 2 method");
+                    break;
+                case 3:
+                    print("Call shield lvl 3 method");
+                    break;
+            }
+        }
+
+        if (laserLevel > 0)
+        {
             laserLevel--;
+            switch (laserLevel)
+            {
+                case 1:
+                    foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                    {
+                        go.GetComponent<FireScript>().LaserLevel1(leveled);
+                    }
+                    print("Call laser lvl 1 method");
+                    break;
+                case 2:
+                    foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                    {
+                        go.GetComponent<FireScript>().LaserLevel2(leveled);
+                    }
+                    print("Call laser lvl 2 method");
+                    break;
+                case 3:
+                    foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                    {
+                        go.GetComponent<FireScript>().LaserLevel3(leveled);
+                    }
+                    print("Call laser lvl 3 method");
+                    break;
+            }
+        }
+
         if (missileLevel > 0)
+        {
             missileLevel--;
+            switch (missileLevel)
+            {
+                case 1:
+                    player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel1(leveled);
+                    print("Call shield lvl 1 method");
+                    break;
+                case 2:
+                    player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel2(leveled);
+                    print("Call shield lvl 2 method");
+                    break;
+                case 3:
+                    player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel3(leveled);
+                    print("Call shield lvl 3 method");
+                    break;
+            }
+        }
     }
 }

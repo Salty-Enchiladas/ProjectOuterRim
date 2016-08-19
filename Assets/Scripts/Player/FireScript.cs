@@ -15,34 +15,36 @@ public class FireScript : MonoBehaviour {
     ObjectPooling laserPool;
     GameObject gameManager;
     AchievementManager achievementManager;
+    GameObject player;
 
     void Start()
     {
         laserPool = GameObject.Find("PlayerLasers").GetComponent<ObjectPooling>();
         gameManager = GameObject.Find("GameManager");
         achievementManager = gameManager.GetComponent<AchievementManager>();
-        fireFreq = 0.25f;
-        overheatCap = 50;
+        player = GameObject.Find("Player");
+        //fireFreq = 0.25f;
+        //overheatCap = 50;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if ((Input.GetButton("Fire1") || (Input.GetAxis("Laser")) != 0) && Time.time > lastShot + fireFreq && overheated == false)
+        if ((Input.GetButton("Fire1") || (Input.GetAxis("Laser")) != 0) && Time.time > lastShot + fireFreq) // && overheated == false
         {
             Fire();
         }
-        if (heatLevel >= overheatCap)
-        {
-            Cooldown();
-        }
+        //if (heatLevel >= overheatCap)
+        //{
+        //    Cooldown();
+        //}
 
     }
 
     void Fire()
     {
-        heatLevel++;
-        print(heatLevel);
+        //heatLevel++;
+        //print(heatLevel);
         achievementManager.LaserShot();
         lastShot = Time.time;
 
@@ -58,9 +60,33 @@ public class FireScript : MonoBehaviour {
         obj.SetActive(true);
     }
 
-    void Cooldown()
+    //void Cooldown()
+    //{
+    //    overheated = true;
+    //    //Do the ui stuff here, then set it to false
+    //}
+
+    public void LaserLevel1(bool levelUp)
     {
-        overheated = true;
-        //Do the ui stuff here, then set it to false
+        if(levelUp)
+            overheatCap = overheatCap * 2;
+        else if (!levelUp)
+            overheatCap = overheatCap / 2;
+    }
+
+    public void LaserLevel2(bool levelUp)
+    {
+        if(levelUp)
+            fireFreq = fireFreq / 2;
+        else if (!levelUp)
+            fireFreq = fireFreq * 2;
+    }
+
+    public void LaserLevel3(bool levelUp)
+    {
+        foreach (GameObject go in player.GetComponent<StoreVariables>().upgradeWeapons)
+        {
+            go.SetActive(levelUp);
+        }
     }
 }

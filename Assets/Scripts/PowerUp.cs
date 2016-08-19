@@ -59,6 +59,9 @@ public class PowerUp : MonoBehaviour
                     case 3:
                         print("Shield upgraded to level 3!");
                         break;
+                    default:
+                        print("No Level");
+                        break;
                 }
 
                 break;
@@ -73,12 +76,27 @@ public class PowerUp : MonoBehaviour
                 {
                     case 1:
                         print("Laser upgraded to level 1!");
+                        foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                        {
+                            go.GetComponent<FireScript>().LaserLevel1(pickUpManager.leveled);
+                        }
                         break;
                     case 2:
                         print("Laser upgraded to level 2!");
+                        foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                        {
+                            go.GetComponent<FireScript>().LaserLevel2(pickUpManager.leveled);
+                        }
                         break;
                     case 3:
                         print("Laser upgraded to level 3!");
+                        foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                        {
+                            go.GetComponent<FireScript>().LaserLevel3(pickUpManager.leveled);
+                        }
+                        break;
+                    default:
+                        print("No Level");
                         break;
                 }
 
@@ -93,12 +111,18 @@ public class PowerUp : MonoBehaviour
                 {
                     case 1:
                         print("Missile upgraded to level 1!");
+                        player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel1(pickUpManager.leveled);
                         break;
                     case 2:
                         print("Missile upgraded to level 2!");
+                        player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel2(pickUpManager.leveled);
                         break;
                     case 3:
                         print("Missile upgraded to level 3!");
+                        player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel3(pickUpManager.leveled);
+                        break;
+                    default:
+                        print("No Level");
                         break;
                 }
 
@@ -112,6 +136,7 @@ public class PowerUp : MonoBehaviour
         {
             if (other.name == "Colliders")
             {
+                print("hit!!!!!!!!!!!!!");
                 hit = true;
                 ApplyPower();
                 Destroy(this.gameObject);
