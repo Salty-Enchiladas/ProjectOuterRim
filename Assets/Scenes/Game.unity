@@ -379,13 +379,15 @@ MonoBehaviour:
   objSpawnMinY: -3500
   objSpawnMaxY: 3500
   objSpawnZ: 10000
-  enemyPoolName: EnemyShips
   enemyCount: 0
   spawnCap: 10
-  finalSpawnCap: 50
-  capIncreaseAmount: 5
-  spawnRate: 1.5
-  difficultyTimer: 15
+  finalSpawnCap: 14
+  capIncreaseAmount: 2
+  spawnRate: 1
+  difficultyTimer: 1
+  enemyObject:
+  - {fileID: 11046876}
+  - {fileID: 1710923729}
 --- !u!4 &555410810
 Transform:
   m_ObjectHideFlags: 0
@@ -535,10 +537,10 @@ MonoBehaviour:
   - {fileID: 1545338636}
   - {fileID: 1948741963}
   - {fileID: 775086618}
-  objSpawnMinX: -5000
-  objSpawnMaxX: 5000
-  objSpawnMinY: -3500
-  objSpawnMaxY: 3500
+  objSpawnMinX: -1000
+  objSpawnMaxX: 1000
+  objSpawnMinY: -1000
+  objSpawnMaxY: 1000
   spawnFrequency: 1.5
   objSpawnZ: 10000
   sizes:
@@ -577,14 +579,15 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 2000
+  spawnAtScore: 25000
   spawnAfter: 5
-  xMinSpawn: -250
-  xMaxSpawn: 250
-  yMinSpawn: -250
-  yMaxSpawn: 250
-  zMinSpawn: 500
-  zMaxSpawn: 500
+  xMinSpawn: -100
+  xMaxSpawn: 100
+  yMinSpawn: -100
+  yMaxSpawn: 100
+  zMinSpawn: 1000
+  zMaxSpawn: 1001
+  leveled: 0
 --- !u!114 &555410817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +803,7 @@ Transform:
   - {fileID: 1545338637}
   - {fileID: 1948741964}
   - {fileID: 775086620}
+  - {fileID: 1710923728}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &1032136427
@@ -2046,6 +2050,50 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cf7126f929d1e1448a7b42572fd2a5a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1710923727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1710923728}
+  - 114: {fileID: 1710923729}
+  m_Layer: 0
+  m_Name: EnemyShips (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1710923728
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710923727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 8
+--- !u!114 &1710923729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710923727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 172330, guid: 11d637efe916a9941b7ee01954e5bbf6, type: 2}
+  pooledAmount: 20
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &1760556309
 GameObject:
   m_ObjectHideFlags: 0

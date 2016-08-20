@@ -117,12 +117,12 @@ public class FireMissile : MonoBehaviour
         print("Old Recharge: " + recharge);
         if (levelUp)
         {
-            recharge = recharge / 5;
-            print("New Recharge: " + recharge); //its at 9seconds for the old charge
+            recharge = recharge / 9;
+            print("New Recharge: " + recharge);
         }
         else if (!levelUp)
         {
-            recharge = recharge * 5;
+            recharge = recharge * 9;
             print("LostLevel Recharge " + recharge);    
         }
     }
@@ -146,17 +146,18 @@ public class FireMissile : MonoBehaviour
 
     public void MissileLevel3(bool levelUp)
     {
-
         print(levelUp + "Missile3");
         print("Old missileMax: " + missileMax);
         if (levelUp)
         {
             missileMax = missileMax * 2;
+            missile.GetComponent<MissileMovement>().missileSpeed = missile.GetComponent<MissileMovement>().missileSpeed * 2;
             print("New missileMax: " + missileMax);     
         }
         else if (!levelUp)
         {
             missileMax = missileMax / 2;
+            missile.GetComponent<MissileMovement>().missileSpeed = missile.GetComponent<MissileMovement>().missileSpeed / 2;
             print("LostLevel missileMax " + missileMax);
         }
     }

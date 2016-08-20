@@ -52,10 +52,10 @@ public class PlayerCollision : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy Laser")
         {
+            pickUpManager.LoseLevel();
             StartCoroutine(DamageIndicator());
             col.gameObject.SetActive(false);
             playerHealth--;
-            pickUpManager.LoseLevel();
 
             if (playerHealth % 3 == 0)
             {

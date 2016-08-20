@@ -104,14 +104,14 @@ public class PickUpManager : MonoBehaviour
             shieldLevel--;
             switch (shieldLevel)
             {
+                case 0:
+                    print("All shield upgrades lost");
+                    break;
                 case 1:
-                    print("Call shield lvl 1 method");
+                    print("You lost a shield level and are now level 1");
                     break;
                 case 2:
-                    print("Call shield lvl 2 method");
-                    break;
-                case 3:
-                    print("Call shield lvl 3 method");
+                    print("You lost a shield level and are now level 2");
                     break;
             }
         }
@@ -121,46 +121,42 @@ public class PickUpManager : MonoBehaviour
             laserLevel--;
             switch (laserLevel)
             {
+                case 0:
+                    print("All laser upgrades lost");
+                    break;
                 case 1:
                     foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
                     {
                         go.GetComponent<FireScript>().LaserLevel1(leveled);
                     }
-                    print("Call laser lvl 1 method");
+                    print("You lost a laser level and are now level 1");
                     break;
                 case 2:
                     foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
                     {
                         go.GetComponent<FireScript>().LaserLevel2(leveled);
                     }
-                    print("Call laser lvl 2 method");
-                    break;
-                case 3:
-                    foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
-                    {
-                        go.GetComponent<FireScript>().LaserLevel3(leveled);
-                    }
-                    print("Call laser lvl 3 method");
+                    print("You lost a laser level and are now level 2");
                     break;
             }
         }
 
         if (missileLevel > 0)
         {
+            print("You lost 1 missile level!!");
             missileLevel--;
             switch (missileLevel)
             {
+                case 0:
+                    print("All missile upgrades lost");
+                    break;
                 case 1:
                     player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel1(leveled);
-                    print("Call shield lvl 1 method");
+                    print("You lost a missile level and are now level 1");
                     break;
                 case 2:
                     player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel2(leveled);
-                    print("Call shield lvl 2 method");
-                    break;
-                case 3:
-                    player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel3(leveled);
-                    print("Call shield lvl 3 method");
+                    print("You lost a missile level and are now level 2");
                     break;
             }
         }

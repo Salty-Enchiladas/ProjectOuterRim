@@ -63,7 +63,8 @@ public class Enemy1Collision : MonoBehaviour {
     public void WasDestroyed()
     {
         achievementManager.EnemyDied();
-        gameManager.GetComponent<WaveHandler>().enemyCount--;
+
+       // gameManager.GetComponent<WaveHandler>().enemyCount--;
 
         Instantiate(explosion, transform.position, transform.rotation);
         Instantiate(explosionSound, transform.position, transform.rotation);

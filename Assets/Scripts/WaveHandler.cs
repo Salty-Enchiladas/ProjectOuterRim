@@ -9,7 +9,7 @@ public class WaveHandler : MonoBehaviour
     public float objSpawnMinY;
     public float objSpawnMaxY;
     public float objSpawnZ;
-    public string enemyPoolName;
+    //public string enemyPoolName;
     public int enemyCount;
 
     //DifficultyIncrease
@@ -24,40 +24,43 @@ public class WaveHandler : MonoBehaviour
     bool increasingDifficulty;
     bool spawning;
     Vector3 objectSpawn;
-
-    ObjectPooling enemyObject;
+    GameObject obj;
+    public ObjectPooling[] enemyObject;
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.Find("Player");
-        enemyObject = GameObject.Find(enemyPoolName).GetComponent<ObjectPooling>();
+        //enemyObject = GameObject.Find(enemyPoolName).GetComponent<ObjectPooling>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         HandleDifficulty();
+
+
     }
 
-    bool CheckWave(GameObject[] wave)
-    {
-        bool result = false;
+    //bool CheckWave(GameObject[] wave)
+    //{
+    //    bool result = false;
 
-        int counter = 0;
-        foreach (GameObject enemy in wave)
-        {
-            if (!enemy.activeInHierarchy)
-            {
-                counter++;
-                if (counter == wave.Length)
-                {
-                    result = true;
-                }
-            }
-        }
-        return result;
-    }
+    //    int counter = 0;
+    //    foreach (GameObject enemy in wave)
+    //    {
+    //        if (!enemy.activeInHierarchy)
+    //        {
+    //            counter++;
+    //            if (counter == wave.Length)
+    //            {
+    //                result = true;
+    //            }
+    //        }
+    //    }
+    //    return result;
+    //}
 
     IEnumerator Spawn()
     {
@@ -66,8 +69,9 @@ public class WaveHandler : MonoBehaviour
             spawning = true;
 
             yield return new WaitForSeconds(spawnRate);
+            ChoosePool();
+               //ChooseEnemy("interceptor")    enemyObject.GetPooledObject()       enemyTypes[(int)Random.Range(0, 3)]
 
-            GameObject obj = enemyObject.GetPooledObject();     //ChooseEnemy("interceptor")    enemyObject.GetPooledObject()       enemyTypes[(int)Random.Range(0, 3)]
             //Transform spawn = ChooseSpawn();
 
             if (obj == null)
@@ -85,27 +89,27 @@ public class WaveHandler : MonoBehaviour
         }
     }
 
-    GameObject ChooseEnemy(string enemyType)
-    {
-        GameObject enemy;
+    //GameObject ChooseEnemy(string enemyType)
+    //{
+    //    GameObject enemy;
 
-        switch (enemyType)
-        {
-            case "defender":
-                enemy = EnemyDefenderPooling.current.GetPooledObject();
-                break;
-            case "interceptor":
-                enemy = EnemyInterceptorPooling.current.GetPooledObject();
-                break;
-            case "fighter":
-                enemy = EnemyFighterPooling.current.GetPooledObject();
-                break;
-            default:
-                enemy = null;
-                break;
-        }
-        return enemy;
-    }
+    //    switch (enemyType)
+    //    {
+    //        case "defender":
+    //            enemy = EnemyDefenderPooling.current.GetPooledObject();
+    //            break;
+    //        case "interceptor":
+    //            enemy = EnemyInterceptorPooling.current.GetPooledObject();
+    //            break;
+    //        case "fighter":
+    //            enemy = EnemyFighterPooling.current.GetPooledObject();
+    //            break;
+    //        default:
+    //            enemy = null;
+    //            break;
+    //    }
+    //    return enemy;
+    //}
     void HandleDifficulty()
     {
         if (enemyCount != spawnCap)
@@ -128,6 +132,20 @@ public class WaveHandler : MonoBehaviour
                 spawnCap = spawnCap + capIncreaseAmount;
             }
             increasingDifficulty = false;
+        }
+    }
+
+    void ChoosePool()
+    {
+        if (player.GetComponent<PlayerScore>().score < 10000)
+        {
+            print("the first part works!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            obj = enemyObject[0].GetPooledObject();
+        }
+       else if (player.GetComponent<PlayerScore>().score >= 10000)
+        {
+            print("this is happening");
+            obj = enemyObject[1].GetPooledObject();
         }
     }
 }
