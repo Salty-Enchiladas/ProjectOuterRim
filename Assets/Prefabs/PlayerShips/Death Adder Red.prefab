@@ -171,7 +171,6 @@ GameObject:
   - 114: {fileID: 11401286}
   - 54: {fileID: 5401006}
   - 114: {fileID: 11488628}
-  - 114: {fileID: 11437856}
   m_Layer: 0
   m_Name: Death Adder Red
   m_TagString: Untagged
@@ -700,7 +699,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 9.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 459078}
@@ -1466,20 +1465,6 @@ MonoBehaviour:
   fireFreq: 0
   overheatCap: 0
   heatLevel: 0
---- !u!114 &11437856
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a154e8b50b23db47bc28e1900a21379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 124358}
-  - {fileID: 174574}
 --- !u!114 &11448796
 MonoBehaviour:
   m_ObjectHideFlags: 1

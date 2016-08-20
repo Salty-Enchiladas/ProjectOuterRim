@@ -19,7 +19,7 @@ Material:
       data:
         first:
           name: _Tile
-        second: 677
+        second: 675
       data:
         first:
           name: _CLAMPOUT
@@ -31,11 +31,11 @@ Material:
       data:
         first:
           name: _Iterations
-        second: 14
+        second: 14.5
       data:
         first:
           name: _Volsteps
-        second: 6
+        second: 20
       data:
         first:
           name: _Formuparam
@@ -64,15 +64,15 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.2794118, g: 0.27735728, b: 0.27735728, a: 1}
+        second: {r: 0.35294116, g: 0.35294116, b: 0.35294116, a: 1}
       data:
         first:
           name: _Rotation
-        second: {r: 0, g: 0, b: 0, a: 0.01}
+        second: {r: 0, g: 0, b: 90, a: 0.01}
       data:
         first:
           name: _Scroll
-        second: {r: 0, g: 0, b: 1, a: 0.3}
+        second: {r: 0, g: 0, b: 2, a: 0.3}
       data:
         first:
           name: _Center

@@ -65,16 +65,6 @@ public class AchievementManager : MonoBehaviour
             ResetAchievements();            
         }
 
-        if (Input.GetKey(KeyCode.E))
-        {
-            ActivateUI();
-        }
-
-        while (uiActive && canDeactivate)
-        {
-            DeactivateUI();
-        }
-
         //Score Achievements
         switch (playerScore.score)
         {
@@ -84,27 +74,48 @@ public class AchievementManager : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("ScoreAchievement1", 1);
                     achievement.text = "You earned 10,000 points!";
-                    while (!atEndPos)
-                    {
-                        ActivateUI();
-                    }                    
+                    CallWait();
                 }
                 break;
 
             case 100000:
-                print("You earned 100,000 points!");
+                //print("You earned 100,000 points!");
+                if (PlayerPrefs.GetInt("ScoreAchievement2") == 0)
+                {
+                    PlayerPrefs.SetInt("ScoreAchievement2", 1);
+                    achievement.text = "You earned 100,000 points!";
+                    CallWait();
+                }
                 break;
 
             case 250000:
-                print("You earned 250,000 points!");
+                //print("You earned 250,000 points!");
+                if (PlayerPrefs.GetInt("ScoreAchievement3") == 0)
+                {
+                    PlayerPrefs.SetInt("ScoreAchievement3", 1);
+                    achievement.text = "You earned 250,000 points!";
+                    CallWait();
+                }
                 break;
 
             case 500000:
-                print("You earned 500,000 points!");
+                //print("You earned 500,000 points!");
+                if (PlayerPrefs.GetInt("ScoreAchievement4") == 0)
+                {
+                    PlayerPrefs.SetInt("ScoreAchievement4", 1);
+                    achievement.text = "You earned 500,000 points!";
+                    CallWait();
+                }
                 break;
 
             case 1000000:
-                print("You earned 1,000,000 points!");
+                //print("You earned 1,000,000 points!");
+                if (PlayerPrefs.GetInt("ScoreAchievement5") == 0)
+                {
+                    PlayerPrefs.SetInt("ScoreAchievement5", 1);
+                    achievement.text = "You earned 1,000,000 points!";
+                    CallWait();
+                }
                 break;
         }
 
@@ -114,23 +125,53 @@ public class AchievementManager : MonoBehaviour
         switch (gameTime)
         {
             case 1:
-                print("Welcome to the Outer Rim! Stayed alive for 1 second!");
+                //print("Welcome to the Outer Rim! Stayed alive for 1 second!");
+                if (PlayerPrefs.GetInt("StayAlive1") == 0)
+                {
+                    PlayerPrefs.SetInt("StayAlive1", 1);
+                    achievement.text = "Welcome to the Outer Rim!";
+                    CallWait();
+                }
                 break;
 
             case 60:
-                print("Stayed alive for 1 minute!");
+                //print("Stayed alive for 1 minute!");
+                if (PlayerPrefs.GetInt("StayAlive2") == 0)
+                {
+                    PlayerPrefs.SetInt("StayAlive2", 1);
+                    achievement.text = "Stayed alive for 1 minute!";
+                    CallWait();
+                }
                 break;
 
             case 300:
-                print("Stayed alive for 5 minutes!");
+                //print("Stayed alive for 5 minutes!");
+                if (PlayerPrefs.GetInt("StayAlive3") == 0)
+                {
+                    PlayerPrefs.SetInt("StayAlive3", 1);
+                    achievement.text = "Stayed alive for 5 minutes!";
+                    CallWait();
+                }
                 break;
 
             case 600:
-                print("Stayed alive for 10 minutes!");
+                //print("Stayed alive for 10 minutes!");
+                if (PlayerPrefs.GetInt("StayAlive4") == 0)
+                {
+                    PlayerPrefs.SetInt("StayAlive4", 1);
+                    achievement.text = "Stayed alive for 10 minutes!";
+                    CallWait();
+                }
                 break;
 
             case 1800:
-                print("Stayed alive for 30 minutes!");
+                //print("Stayed alive for 30 minutes!");
+                if (PlayerPrefs.GetInt("StayAlive5") == 0)
+                {
+                    PlayerPrefs.SetInt("StayAlive5", 1);
+                    achievement.text = "Stayed alive for 30 minutes!";
+                    CallWait();
+                }
                 break;
         }
 
@@ -139,19 +180,43 @@ public class AchievementManager : MonoBehaviour
         //No damage in x amount of minutes!
         if (playerCollision.playerHealth >= 3 && playerCollision.playerLives >= 3 && gameTime == 60)
         {
-            print("No damage in 1 min!");
+            //print("No damage in 1 min!");
+            if (PlayerPrefs.GetInt("NoDamage1") == 0)
+            {
+                PlayerPrefs.SetInt("NoDamage1", 1);
+                achievement.text = "No damage in 1 min!";
+                CallWait();
+            }
         }
         if (playerCollision.playerHealth >= 3 && playerCollision.playerLives >= 3 && gameTime == 300)
         {
-            print("No damage in 5 min!");
+            //print("No damage in 5 min!");
+            if (PlayerPrefs.GetInt("NoDamage2") == 0)
+            {
+                PlayerPrefs.SetInt("NoDamage2", 1);
+                achievement.text = "No damage in 5 min!";
+                CallWait();
+            }
         }
         if (playerCollision.playerHealth >= 3 && playerCollision.playerLives >= 3 && gameTime == 600)
         {
-            print("No damage in 10 min!");
+            //print("No damage in 10 min!");
+            if (PlayerPrefs.GetInt("NoDamage3") == 0)
+            {
+                PlayerPrefs.SetInt("NoDamage3", 1);
+                achievement.text = "No damage in 10 min!";
+                CallWait();
+            }
         }
         if (playerCollision.playerHealth >= 3 && playerCollision.playerLives >= 3 && gameTime == 1800)
         {
-            print("No damage in 30 min!....... You are a god.");
+            //print("No damage in 30 min!....... You are a god.");
+            if (PlayerPrefs.GetInt("NoDamage4") == 0)
+            {
+                PlayerPrefs.SetInt("NoDamage4", 1);
+                achievement.text = "You are a god.";
+                CallWait();
+            }
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -160,19 +225,43 @@ public class AchievementManager : MonoBehaviour
 
         if (playerCollision.playerHealth == 1 && playerCollision.playerLives == 0 && gameTime == 60)
         {
-            print("At 1 health for 1 min!");
+            //print("At 1 health for 1 min!");
+            if (PlayerPrefs.GetInt("OneHealth1") == 0)
+            {
+                PlayerPrefs.SetInt("OneHealth1", 1);
+                achievement.text = "At 1 health for 1 min!";
+                CallWait();
+            }
         }
         if (playerCollision.playerHealth == 1 && playerCollision.playerLives == 0 && gameTime == 300)
         {
-            print("At 1 health for 5 min!");
+            //print("At 1 health for 5 min!");
+            if (PlayerPrefs.GetInt("OneHealth2") == 0)
+            {
+                PlayerPrefs.SetInt("OneHealth2", 1);
+                achievement.text = "At 1 health for 5 min!";
+                CallWait();
+            }
         }
         if (playerCollision.playerHealth == 1 && playerCollision.playerLives == 0 && gameTime == 600)
         {
-            print("At 1 health for min!");
+            //print("At 1 health for min!");
+            if (PlayerPrefs.GetInt("OneHealth3") == 0)
+            {
+                PlayerPrefs.SetInt("OneHealth3", 1);
+                achievement.text = "At 1 health for 10 min!";
+                CallWait();
+            }
         }
         if (playerCollision.playerHealth == 1 && playerCollision.playerLives == 0 && gameTime == 1800)
         {
-            print("At 1 health for 30 min!");
+            //print("At 1 health for 30 min!");
+            if (PlayerPrefs.GetInt("OneHealth4") == 0)
+            {
+                PlayerPrefs.SetInt("OneHealth4", 1);
+                achievement.text = "At 1 health for 30 min!";
+                CallWait();
+            }
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -181,21 +270,45 @@ public class AchievementManager : MonoBehaviour
 
         if (pickUpManager.shieldLevel == 3)
         {
-            print("Shield fully upgraded!!");
+            //print("Shield fully upgraded!!");
+            if (PlayerPrefs.GetInt("ShieldUpgraded") == 0)
+            {
+                PlayerPrefs.SetInt("ShieldUpgraded", 1);
+                achievement.text = "Shield fully upgraded!!";
+                CallWait();
+            }
         }
 
         if (pickUpManager.laserLevel == 3)
         {
-            print("Laser fully upgraded!!");
+            //print("Laser fully upgraded!!");
+            if (PlayerPrefs.GetInt("LasersUpgraded") == 0)
+            {
+                PlayerPrefs.SetInt("LasersUpgraded", 1);
+                achievement.text = "Lasers fully upgraded!!";
+                CallWait();
+            }
         }
 
         if (pickUpManager.missileLevel == 3)
         {
-            print("Missile fully upgraded!!");
+            //print("Missile fully upgraded!!");
+            if (PlayerPrefs.GetInt("MissilesUpgraded") == 0)
+            {
+                PlayerPrefs.SetInt("MissilesUpgraded", 1);
+                achievement.text = "Missiles fully upgraded!!";
+                CallWait();
+            }
         }
         if (pickUpManager.shieldLevel == 3 && pickUpManager.laserLevel == 3 && pickUpManager.missileLevel == 3)
         {
-            print("All weapons fully upgraded!!");
+            //print("All weapons fully upgraded!!");
+            if (PlayerPrefs.GetInt("FullyUpgraded") == 0)
+            {
+                PlayerPrefs.SetInt("FullyUpgraded", 1);
+                achievement.text = "All weapons fully upgraded!!";
+                CallWait();
+            }
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -360,12 +473,6 @@ public class AchievementManager : MonoBehaviour
 
     }
 
-    void ResetAchievements()
-    {
-        print("Reset Achievments");
-        PlayerPrefs.SetInt("ScoreAchievement1", 0);
-    }
-
     //Methods for Enemies Killed.
     public void EnemyDied()
     {
@@ -383,48 +490,61 @@ public class AchievementManager : MonoBehaviour
         enemiesHit++;
     }
 
-    void ActivateUI()
+    bool ActivateUI()
     {
-        print("activate ui");
-        uiActive = true;
-            
         achievementCap.anchoredPosition = Vector3.Lerp(achievementCap.anchoredPosition, capEndPos, Time.deltaTime * lerpSpeed);
         achievementContainer.anchoredPosition = Vector3.Lerp(achievementContainer.anchoredPosition, containerEndPos, Time.deltaTime * lerpSpeed);
 
         if (Vector3.Distance(achievementCap.anchoredPosition, capEndPos) <= .1f)
         {
-            atEndPos = true;
-
-            StartCoroutine(Wait(uiWaitTime));
+            return true;
         }
+
+        return false;
     }
 
-    void DeactivateUI()
+    bool DeactivateUI()
     {
-        print("deactivate ui");
-
         achievementCap.anchoredPosition = Vector3.Lerp(achievementCap.anchoredPosition, capStartPos, Time.deltaTime * lerpSpeed);
         achievementContainer.anchoredPosition = Vector3.Lerp(achievementContainer.anchoredPosition, containerStartPos, Time.deltaTime * lerpSpeed);
 
         if (Vector3.Distance(achievementCap.anchoredPosition, capStartPos) <= .1f)
         {
-            uiActive = false;
-            canDeactivate = false;
-        }        
+            return true;
+        }
+
+        return false;
     }
 
-    IEnumerator Wait(float waitTime)
+    void CallWait()
     {
-        if (!waiting)
-        {
-            print("waiting");
-            waiting = true;
+        StartCoroutine(UITimer(uiWaitTime));
+    }
 
+    IEnumerator UITimer(float waitTime)
+    {
+        if (!uiActive)
+        {
+            uiActive = true;
+            yield return new WaitUntil(ActivateUI);
             yield return new WaitForSeconds(waitTime);
-            atEndPos = false;
-            canDeactivate = true;
-            
-            waiting = false;
+            yield return new WaitUntil(DeactivateUI);
+            uiActive = false;
         }
+    }
+
+    void ResetAchievements()
+    {
+        print("Reset Achievments");
+        PlayerPrefs.SetInt("ScoreAchievement1", 0);
+        PlayerPrefs.SetInt("ScoreAchievement2", 0);
+        PlayerPrefs.SetInt("ScoreAchievement3", 0);
+        PlayerPrefs.SetInt("ScoreAchievement4", 0);
+        PlayerPrefs.SetInt("ScoreAchievement5", 0);
+        PlayerPrefs.SetInt("StayAlive1", 0);
+        PlayerPrefs.SetInt("StayAlive2", 0);
+        PlayerPrefs.SetInt("StayAlive3", 0);
+        PlayerPrefs.SetInt("StayAlive4", 0);
+        PlayerPrefs.SetInt("StayAlive5", 0);
     }
 }

@@ -393,7 +393,6 @@ GameObject:
   - 114: {fileID: 11420856}
   - 54: {fileID: 5485008}
   - 114: {fileID: 11474896}
-  - 114: {fileID: 11462354}
   m_Layer: 0
   m_Name: Super Wing ATG Purple
   m_TagString: Untagged
@@ -794,7 +793,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176008}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -40.3, z: 0}
+  m_LocalPosition: {x: 0, y: -48.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 423178}
@@ -1004,7 +1003,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 19, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 427958}
@@ -2902,20 +2901,6 @@ MonoBehaviour:
   missileCooldown: 3
   missileCount: 3
   missileMax: 3
---- !u!114 &11462354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a154e8b50b23db47bc28e1900a21379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 144788}
-  - {fileID: 173192}
 --- !u!114 &11474896
 MonoBehaviour:
   m_ObjectHideFlags: 1

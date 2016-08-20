@@ -9,6 +9,8 @@ public class Enemy1Collision : MonoBehaviour {
     public GameObject meteorExplosionPrefab;
     public GameObject player;
 
+    public int laserScore;
+    public int missileScore;
     public int baseHealth;
     public int currentHealth;
 
@@ -29,21 +31,24 @@ public class Enemy1Collision : MonoBehaviour {
     {
         if (col.gameObject.tag == "Laser")
         {
-            col.gameObject.SetActive(false);            
-            _playerScore.score += 1000;
+            col.gameObject.SetActive(false);
+            _playerScore.score += laserScore;
             WasDestroyed();
         }
         else if (col.gameObject.tag == "Missile")
         {
             col.gameObject.SetActive(false);
-            _playerScore.score += 1000;
+            _playerScore.score += missileScore;
             WasDestroyed();
         }
         else if (col.gameObject.tag == "Meteor")
         {
             Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
             col.gameObject.SetActive(false);
-            WasDestroyed();            
+            GameObject.Find("GameManager").GetComponent<WaveHandler>().enemyCount--;
+            Instantiate(explosion, transform.position, transform.rotation);
+            Instantiate(explosionSound, transform.position, transform.rotation);
+            gameObject.SetActive(false);
         }
     }
 

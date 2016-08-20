@@ -12,8 +12,13 @@ public class Actor : MonoBehaviour
     public float centerY;
     public float centerZ;
     public float maneuverRadius;
+    public float maneuverRadiusMin;
+    public float maneuverRadiusMax;
 
     public GameObject player;
+    public GameObject gun1;
+    public GameObject gun2;
+    public GameObject gun3;
 
     public bool DebugMode;
 
@@ -25,23 +30,28 @@ public class Actor : MonoBehaviour
         STRAFE,
     }
 
-    private State state = State.IDLE;
+    private State state = State.MOVING;
 
-    public float m_speed_multi = 40;
+    GameObject playerTarget;
+
     private float OldTime = 0;
     private float checkTime = 0;
     private float elapsedTime = 0;
     private float lerpSpeed;
     private float maneuverTimer;
     private float maneuverAngle;
+    private float _centerX;
+    private float _centerY;
+    private float _centerZ;
+    private float m_speed_multi = 40;
 
     private bool onNode = true;
     private bool recalculating;
     private bool startManeuver;
     private bool hasChosenAction;
     private bool ceasedFire = true;
-    bool maneuverLeft;
-    bool hasChosenDirection;
+    private bool maneuverLeft;
+    private bool hasChosenDirection;
 
     private Vector3 m_target = new Vector3(0, 0, 0);
     private Vector3 currNode;
@@ -54,10 +64,6 @@ public class Actor : MonoBehaviour
     private NodeControl control;
     private WaveHandler _waveHandler;
 
-    private float _centerX;
-    private float _centerY;
-    private float _centerZ;
-
     private Transform lookAtPoint;      //The point that the ship looks at during the maneuver state
 
     private void Awake()
@@ -65,11 +71,14 @@ public class Actor : MonoBehaviour
         GameObject gameManager = GameObject.FindGameObjectWithTag("Game Manager");
         control = (NodeControl)gameManager.GetComponent(typeof(NodeControl));
         _waveHandler = gameManager.GetComponent<WaveHandler>();
-        player = GameObject.Find("Player");
 
-        _centerX = centerX;
-        _centerY = centerY;
-        _centerZ = centerZ;
+        _centerX = centerX + Random.Range(-500, 500);
+        _centerY = centerY + Random.Range(-500, 500);
+        _centerZ = centerZ + Random.Range(-500, 500);
+
+        gun1 = transform.FindChild("Gun1").gameObject;
+        gun2 = transform.FindChild("Gun2").gameObject;
+        gun3 = transform.FindChild("Gun3").gameObject;
 
         lookAtPoint = transform.FindChild("LookAtPoint");
     }
@@ -78,15 +87,16 @@ public class Actor : MonoBehaviour
     {
         enemyZClamp = Random.Range(700f, 1000f);
         enemyXPos = Random.Range(-250f, 250f);
-        lerpSpeed = Random.Range(0.1f, 0.5f);
+        lerpSpeed = Random.Range(0.25f, 1f);
+        maneuverRadius = Random.Range(maneuverRadiusMin, maneuverRadiusMax);
 
         player = GameObject.Find("Player");
-        MoveOrder(player.transform.position);
+        playerTarget = GameObject.Find("PlayerTarget");
+        //MoveOrder(player.transform.position);
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
-        
     }
 
     private void OnDisable()
@@ -101,7 +111,6 @@ public class Actor : MonoBehaviour
 
     private void Update()
     {
-        speed = Time.deltaTime * m_speed_multi;
         elapsedTime += Time.deltaTime;
 
         if (player.transform.position.z + enemyZClamp >= transform.position.z)      //if enemy is near player
@@ -145,28 +154,32 @@ public class Actor : MonoBehaviour
                     if (ceasedFire)
                     {
                         ceasedFire = false;
-                        GetComponentInChildren<Enemy1Fire>().canFire = true;
+                        gun1.GetComponent<Enemy1Fire>().canFire = true;
+                        gun2.GetComponent<Enemy1Fire>().canFire = true;
+                        gun3.GetComponent<Enemy1Fire>().canFire = false;
                     }
 
-                    transform.LookAt(player.transform);
+                    transform.LookAt(playerTarget.transform);
 
-                    if (elapsedTime > checkTime)
-                    {
-                        checkTime = elapsedTime + 1;
-                        SetTarget();
-                    }
+                    transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
-                    if (path != null)
-                    {
-                        if (onNode)
-                        {
-                            onNode = false;
-                            if (nodeIndex < path.Count)
-                                currNode = path[nodeIndex];
-                        }
-                        else
-                            MoveToward();
-                    }
+                    //if (elapsedTime > checkTime)
+                    //{
+                    //    checkTime = elapsedTime + 1;
+                    //    SetTarget();
+                    //}
+
+                    //if (path != null)
+                    //{
+                    //    if (onNode)
+                    //    {
+                    //        onNode = false;
+                    //        if (nodeIndex < path.Count)
+                    //            currNode = path[nodeIndex];
+                    //    }
+                    //    else
+                    //        MoveToward();
+                    //}
                     break;
 
                 case State.MANEUVER:
@@ -175,7 +188,9 @@ public class Actor : MonoBehaviour
                     if (!ceasedFire)
                     {
                         ceasedFire = true;
-                        GetComponentInChildren<Enemy1Fire>().canFire = false;
+                        gun1.GetComponent<Enemy1Fire>().canFire = false;
+                        gun2.GetComponent<Enemy1Fire>().canFire = false;
+                        gun3.GetComponent<Enemy1Fire>().canFire = true;
                     }
 
                     transform.LookAt(lookAtPoint);
@@ -237,19 +252,24 @@ public class Actor : MonoBehaviour
                         transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * 7f);
                     }
 
-                    if (transform.position.z > player.transform.position.z + 250)
+                    if (transform.position.z > player.transform.position.z + 400)
                     {
-                        transform.LookAt(player.transform);
-                        transform.FindChild("Gun1").GetComponent<Enemy1Fire>().fireFreq = 0.5f;
-                        transform.FindChild("Gun2").GetComponent<Enemy1Fire>().fireFreq = 0.5f;
+                        transform.LookAt(playerTarget.transform);
+                        gun3.transform.LookAt(playerTarget.transform);
+                        gun1.GetComponent<Enemy1Fire>().fireFreq = 0.5f;
+                        gun2.GetComponent<Enemy1Fire>().fireFreq = 0.5f;
+                        gun3.GetComponent<Enemy1Fire>().canFire = true;
+                        gun3.GetComponent<Enemy1Fire>().fireFreq = 0.25f;
                     }
-                    else if (transform.position.z <= player.transform.position.z + 250)
+                    else if (transform.position.z <= player.transform.position.z + 400)
                     {
                         transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
+                        gun3.transform.LookAt(playerTarget.transform);
 
-                        if (transform.position.z < player.transform.position.z - 950)
+                        if (transform.position.z < player.transform.position.z - 350)
                         {
-                            GetComponent<Enemy1Collision>().WasDestroyed();
+                            _waveHandler.enemyCount--;
+                            gameObject.SetActive(false);
                         }
                     }
 
@@ -305,9 +325,9 @@ public class Actor : MonoBehaviour
         /***Move toward waypoint***/
         Vector3 motion = currNode - newPos;
         motion.Normalize();
-        newPos += motion * speed;
+        newPos += motion * (speed * Time.deltaTime);
 
-        transform.position = Vector3.Lerp(transform.position, newPos, speed);
+        transform.position = Vector3.Lerp(transform.position, newPos, speed * Time.deltaTime);
     }
 
     private void SetTarget()
