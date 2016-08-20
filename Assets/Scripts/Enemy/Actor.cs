@@ -76,9 +76,9 @@ public class Actor : MonoBehaviour
         _centerY = centerY + Random.Range(-500, 500);
         _centerZ = centerZ + Random.Range(-500, 500);
 
-        gun1 = transform.FindChild("Gun1").gameObject;
-        gun2 = transform.FindChild("Gun2").gameObject;
-        gun3 = transform.FindChild("Gun3").gameObject;
+        gun1 = GetComponent<EnemyStoreVariables>().gun1;
+        gun2 = GetComponent<EnemyStoreVariables>().gun2;
+        gun3 = GetComponent<EnemyStoreVariables>().gun3;
 
         lookAtPoint = transform.FindChild("LookAtPoint");
     }
