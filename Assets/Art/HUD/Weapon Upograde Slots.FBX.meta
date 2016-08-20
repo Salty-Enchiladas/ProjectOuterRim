@@ -1,18 +1,58 @@
 fileFormatVersion: 2
-guid: b2426dd2e4a425a4d9ea7998a2517a11
-timeCreated: 1459776226
-licenseType: Pro
+guid: 8db8bea37e8ae60459976a0fd6a1e4ac
+timeCreated: 1471639297
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: cylinder
-    100002: //RootNode
-    400000: cylinder
-    400002: //RootNode
-    2300000: cylinder
-    3300000: cylinder
-    4300000: cylinder
-    6400000: cylinder
+    100000: Rectangle001
+    100002: Rectangle002
+    100004: Rectangle003
+    100006: Rectangle004
+    100008: Rectangle005
+    100010: Rectangle006
+    100012: Rectangle007
+    100014: Rectangle008
+    100016: Rectangle009
+    100018: //RootNode
+    400000: Rectangle001
+    400002: Rectangle002
+    400004: Rectangle003
+    400006: Rectangle004
+    400008: Rectangle005
+    400010: Rectangle006
+    400012: Rectangle007
+    400014: Rectangle008
+    400016: Rectangle009
+    400018: //RootNode
+    2300000: Rectangle001
+    2300002: Rectangle002
+    2300004: Rectangle003
+    2300006: Rectangle004
+    2300008: Rectangle005
+    2300010: Rectangle006
+    2300012: Rectangle007
+    2300014: Rectangle008
+    2300016: Rectangle009
+    3300000: Rectangle001
+    3300002: Rectangle002
+    3300004: Rectangle003
+    3300006: Rectangle004
+    3300008: Rectangle005
+    3300010: Rectangle006
+    3300012: Rectangle007
+    3300014: Rectangle008
+    3300016: Rectangle009
+    4300000: Rectangle001
+    4300002: Rectangle002
+    4300004: Rectangle003
+    4300006: Rectangle004
+    4300008: Rectangle005
+    4300010: Rectangle006
+    4300012: Rectangle007
+    4300014: Rectangle008
+    4300016: Rectangle009
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,7 +79,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -55,7 +95,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
+    tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -71,7 +111,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

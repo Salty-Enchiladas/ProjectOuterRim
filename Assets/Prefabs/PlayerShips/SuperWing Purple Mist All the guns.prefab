@@ -44,7 +44,7 @@ GameObject:
   - 64: {fileID: 6415042}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2693,6 +2693,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
   fireFreq: 0
+  overheatCap: 0
+  heatLevel: 0
 --- !u!114 &11425696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2706,6 +2708,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
   fireFreq: 0
+  overheatCap: 0
+  heatLevel: 0
 --- !u!114 &11429672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2772,6 +2776,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
   fireFreq: 0
+  overheatCap: 0
+  heatLevel: 0
 --- !u!114 &11435924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2907,6 +2913,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
   fireFreq: 0
+  overheatCap: 0
+  heatLevel: 0
 --- !u!114 &11493326
 MonoBehaviour:
   m_ObjectHideFlags: 1

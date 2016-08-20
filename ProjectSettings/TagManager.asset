@@ -18,6 +18,10 @@ TagManager:
   - Shield
   - Meteor
   - Missile
+  - PowerUpLasers
+  - PowerUpMissiles
+  - Ship
+  - PlayerCollider
   layers:
   - Default
   - TransparentFX

@@ -13,12 +13,16 @@ public class Enemy1Collision : MonoBehaviour {
     public int currentHealth;
 
     PlayerScore _playerScore;
+    AchievementManager achievementManager;
+    GameObject gameManager;
 
     void Start()
     {
         currentHealth = baseHealth;
         player = GameObject.Find("Player");
         _playerScore = player.GetComponent<PlayerScore>();
+        gameManager = GameObject.Find("GameManager");
+        achievementManager = gameManager.GetComponent<AchievementManager>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -46,7 +50,7 @@ public class Enemy1Collision : MonoBehaviour {
     public void TookDamage()
     {
         currentHealth--;
-
+        achievementManager.EnemyHit();
         if (currentHealth <= 0)
         {
             WasDestroyed();
@@ -54,6 +58,7 @@ public class Enemy1Collision : MonoBehaviour {
     }
     public void WasDestroyed()
     {
+        achievementManager.EnemyDied();
         GameObject.Find("GameManager").GetComponent<WaveHandler>().enemyCount--;
         Instantiate(explosion, transform.position, transform.rotation);
         Instantiate(explosionSound, transform.position, transform.rotation);

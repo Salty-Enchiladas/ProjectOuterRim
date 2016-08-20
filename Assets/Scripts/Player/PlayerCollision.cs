@@ -22,14 +22,22 @@ public class PlayerCollision : MonoBehaviour
 
     public string gameOverScene;
 
-    PlayerScore playerScoreOBJ;
     public bool shieldActive;
+
+    PlayerScore playerScoreOBJ;
+
+    PickUpManager pickUpManager;
+    
     GameObject player;
+    GameObject gameManager;
 
     void Start()
     {
         player = GameObject.Find("Player");
         playerScoreOBJ = player.GetComponent<PlayerScore>();
+
+        gameManager = GameObject.Find("GameManager");
+        pickUpManager = gameManager.GetComponent<PickUpManager>();
 
         greenHealthRing = GameObject.Find("GreenHealthRing");
         yellowHealthRing = GameObject.Find("YellowHealthRing");
@@ -50,6 +58,7 @@ public class PlayerCollision : MonoBehaviour
             StartCoroutine(DamageIndicator());
             col.gameObject.SetActive(false);
             playerHealth--;
+            pickUpManager.LoseLevel();
 
             if (playerHealth % 3 == 0)
             {
@@ -91,6 +100,7 @@ public class PlayerCollision : MonoBehaviour
         {
             transform.parent.GetComponent<ActivateShield>().onCooldown = false;
         }
+
         StartCoroutine(CheckScore());
     }
 
@@ -99,7 +109,7 @@ public class PlayerCollision : MonoBehaviour
         if (!damageIndicatorIMG.activeInHierarchy)
         {
             damageIndicatorIMG.SetActive(true);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.075f);
             damageIndicatorIMG.SetActive(false);
         }
     }
