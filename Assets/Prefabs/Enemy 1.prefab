@@ -1173,9 +1173,9 @@ MonoBehaviour:
   meteorExplosionPrefab: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a,
     type: 2}
   player: {fileID: 0}
-  laserScore: 0
-  missileScore: 0
-  baseHealth: 3
+  laserScore: 1000
+  missileScore: 1000
+  baseHealth: 2
   currentHealth: 0
 --- !u!114 &11460694
 MonoBehaviour:
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4009d5516f523bc46beafaa09c6670e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
+  speed: 1500
   recalcDelay: 2
   enemyZClamp: 0
   enemyXPos: 0
