@@ -73,7 +73,7 @@ public class Actor : MonoBehaviour
         _waveHandler = gameManager.GetComponent<WaveHandler>();
 
         _centerX = centerX + Random.Range(-500, 500);
-        _centerY = centerY + Random.Range(-500, 500);
+        _centerY = centerY;
         _centerZ = centerZ + Random.Range(-500, 500);
 
         gun1 = GetComponent<EnemyStoreVariables>().gun1;
@@ -104,16 +104,13 @@ public class Actor : MonoBehaviour
         startManeuver = true;
         hasChosenDirection = false;
         hasChosenAction = false;
-
-        //transform.FindChild("Gun1").GetComponent<Enemy1Fire>().fireFreq = transform.FindChild("Gun1").GetComponent<Enemy1Fire>().startFireFreq;
-        //transform.FindChild("Gun2").GetComponent<Enemy1Fire>().fireFreq = transform.FindChild("Gun2").GetComponent<Enemy1Fire>().startFireFreq;
     }
 
     private void Update()
     {
         elapsedTime += Time.deltaTime;
 
-        if (player.transform.position.z + enemyZClamp >= transform.position.z)      //if enemy is near player
+        if (playerTarget.transform.position.z + enemyZClamp >= transform.position.z)      //if enemy is near player
         {
             if (!hasChosenAction)
             {
@@ -198,16 +195,16 @@ public class Actor : MonoBehaviour
                     maneuverTimer += Time.deltaTime;
                     maneuverAngle = maneuverTimer;
 
-                    centerX += player.transform.position.x;
-                    centerY += player.transform.position.y;
-                    centerZ += player.transform.position.z;
+                    centerX += playerTarget.transform.position.x;
+                    centerY += playerTarget.transform.position.y;
+                    centerZ += playerTarget.transform.position.z;
 
-                    if (transform.position.x > player.transform.position.x && !hasChosenDirection)
+                    if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection)
                     {
                         hasChosenDirection = true;
                         maneuverLeft = false;
                     }
-                    else if (transform.position.x < player.transform.position.x && !hasChosenDirection)
+                    else if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection)
                     {
                         hasChosenDirection = true;
                         maneuverLeft = true;
@@ -235,38 +232,38 @@ public class Actor : MonoBehaviour
                 case State.STRAFE:
                     OldTime = elapsedTime + 0.01f;
 
-                    if (transform.position.x < player.transform.position.x && transform.position.y < player.transform.position.y)
+                    if (transform.position.x < playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(-100f, -100f, -1000f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, -100f, -1000f), Time.deltaTime * 7f);
                     }
-                    else if (transform.position.x < player.transform.position.x && transform.position.y > player.transform.position.y)
+                    else if (transform.position.x < playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(-100f, 100f, -1000f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, 100f, -1000f), Time.deltaTime * 7f);
                     }
-                    else if (transform.position.x > player.transform.position.x && transform.position.y > player.transform.position.y)
+                    else if (transform.position.x > playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, 100f, -1000f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, 100f, -1000f), Time.deltaTime * 7f);
                     }
-                    else if (transform.position.x > player.transform.position.x && transform.position.y < player.transform.position.y)
+                    else if (transform.position.x > playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * 7f);
                     }
 
-                    if (transform.position.z > player.transform.position.z + 400)
+                    if (transform.position.z > playerTarget.transform.position.z + 400)
                     {
                         transform.LookAt(playerTarget.transform);
                         gun3.transform.LookAt(playerTarget.transform);
                         gun1.GetComponent<Enemy1Fire>().fireFreq = 0.5f;
                         gun2.GetComponent<Enemy1Fire>().fireFreq = 0.5f;
                         gun3.GetComponent<Enemy1Fire>().canFire = true;
-                        gun3.GetComponent<Enemy1Fire>().fireFreq = 0.25f;
+                        gun3.GetComponent<Enemy1Fire>().fireFreq = 0.1f;
                     }
-                    else if (transform.position.z <= player.transform.position.z + 400)
+                    else if (transform.position.z <= playerTarget.transform.position.z + 400)
                     {
                         transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
                         gun3.transform.LookAt(playerTarget.transform);
 
-                        if (transform.position.z < player.transform.position.z - 350)
+                        if (transform.position.z < playerTarget.transform.position.z - 350)
                         {
                             _waveHandler.enemyCount--;
                             gameObject.SetActive(false);

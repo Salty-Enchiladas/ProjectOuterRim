@@ -1027,7 +1027,7 @@ MonoBehaviour:
     type: 2}
   player: {fileID: 0}
   laserScore: 1000
-  missileScore: 1000
+  missileScore: 500
   baseHealth: 2
   currentHealth: 0
 --- !u!114 &11427050
@@ -1074,8 +1074,8 @@ MonoBehaviour:
   centerY: 0
   centerZ: 2000
   maneuverRadius: 2000
-  maneuverRadiusMin: 0
-  maneuverRadiusMax: 0
+  maneuverRadiusMin: 1750
+  maneuverRadiusMax: 2250
   player: {fileID: 0}
   gun1: {fileID: 0}
   gun2: {fileID: 0}
