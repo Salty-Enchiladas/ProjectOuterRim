@@ -4,7 +4,7 @@ using System.Collections;
 public class FireScript : MonoBehaviour {
 
     public GameObject laser;
-    public float fireFreq;
+    float fireFreq;
     public int overheatCap;
     public int heatLevel;
 
@@ -23,8 +23,7 @@ public class FireScript : MonoBehaviour {
         gameManager = GameObject.Find("GameManager");
         achievementManager = gameManager.GetComponent<AchievementManager>();
         player = GameObject.Find("Player");
-        //fireFreq = 0.25f;
-        //overheatCap = 50;
+        fireFreq = gameManager.GetComponent<PublicVariableHandler>().playerShootingFrequency;
     }
 
     // Update is called once per frame

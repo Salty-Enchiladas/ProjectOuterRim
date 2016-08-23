@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ActivateShield : MonoBehaviour 
+public class ActivateShield : MonoBehaviour
 {
-    public GameObject shield;
+    GameObject shield;
     public bool onCooldown;
 
+    void Start()
+    {
+        shield = GetComponent<StoreVariables>().shield;
+    }
 	void Update () 
     {
         if (Input.GetButtonUp("Fire3"))

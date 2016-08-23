@@ -352,12 +352,12 @@ GameObject:
   - 4: {fileID: 555410810}
   - 114: {fileID: 555410811}
   - 114: {fileID: 555410809}
-  - 114: {fileID: 555410814}
   - 114: {fileID: 555410813}
   - 82: {fileID: 555410812}
   - 114: {fileID: 555410815}
   - 114: {fileID: 555410816}
   - 114: {fileID: 555410817}
+  - 114: {fileID: 555410814}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -385,8 +385,8 @@ MonoBehaviour:
   spawnCap: 10
   finalSpawnCap: 50
   capIncreaseAmount: 2
-  spawnRate: 2
-  difficultyTimer: 30
+  spawnRate: 1.5
+  difficultyTimer: 15
   enemyObject:
   - {fileID: 11046876}
   - {fileID: 930241600}
@@ -529,28 +529,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 555410808}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943b9f36fb1d21a48baf751ce93d09ab, type: 3}
+  m_Script: {fileID: 11500000, guid: bbcc6d2a16bddba43897438761b0a06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectTypes:
-  - {fileID: 1814202497}
-  - {fileID: 1545338636}
-  - {fileID: 1948741963}
-  - {fileID: 775086618}
-  objSpawnMinX: -5000
-  objSpawnMaxX: 5000
-  objSpawnMinY: -3500
-  objSpawnMaxY: 3500
-  spawnFrequency: 1.5
-  objSpawnZ: 10000
-  sizes:
-  - {x: 10, y: 10, z: 10}
-  - {x: 20, y: 20, z: 20}
-  - {x: 30, y: 30, z: 30}
-  - {x: 40, y: 40, z: 40}
-  - {x: 50, y: 50, z: 50}
+  healthRecoverScore: 50000
+  shieldRecoverScore: 25000
+  playerShootingFrequency: 0.3
+  playerShieldHealth: 3
+  playerLives: 3
+  playerHealth: 9
 --- !u!114 &555410815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,14 +570,14 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 25000
+  spawnAtScore: 10000
   spawnAfter: 5
   xMinSpawn: -100
   xMaxSpawn: 100
   yMinSpawn: -100
   yMaxSpawn: 100
-  zMinSpawn: 1000
-  zMaxSpawn: 1001
+  zMinSpawn: 2000
+  zMaxSpawn: 2000
   leveled: 0
 --- !u!114 &555410817
 MonoBehaviour:
@@ -647,10 +636,10 @@ MonoBehaviour:
   - {fileID: 1545338636}
   - {fileID: 1948741963}
   - {fileID: 775086618}
-  objSpawnMinX: -1000
-  objSpawnMaxX: 1000
-  objSpawnMinY: -1000
-  objSpawnMaxY: 1000
+  objSpawnMinX: -250
+  objSpawnMaxX: 250
+  objSpawnMinY: -250
+  objSpawnMaxY: 250
   spawnFrequency: 1.5
   objSpawnZ: 1000
   sizes:

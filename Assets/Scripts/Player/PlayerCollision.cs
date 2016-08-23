@@ -15,10 +15,10 @@ public class PlayerCollision : MonoBehaviour
     public GameObject damageIndicatorIMG;
     public GameObject meteorExplosionPrefab;
 
-    public int playerHealth = 3;
-    public int playerLives = 3;
-    public int healthScore = 100000;
-    public int shieldScore = 300000;
+    public int playerHealth;
+    public int playerLives;
+     int healthScore;
+     int shieldScore;
 
     public string gameOverScene;
 
@@ -30,7 +30,7 @@ public class PlayerCollision : MonoBehaviour
     
     GameObject player;
     GameObject gameManager;
-
+    PublicVariableHandler publicVariableHandler;
     void Start()
     {
         player = GameObject.Find("Player");
@@ -47,6 +47,12 @@ public class PlayerCollision : MonoBehaviour
 
         lifeImage1 = GameObject.Find("ShipIMG1");
         lifeImage2 = GameObject.Find("ShipIMG2");
+        publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
+
+        playerHealth = publicVariableHandler.playerHealth;
+        playerLives = publicVariableHandler.playerLives;
+        healthScore = publicVariableHandler.healthRecoverScore;
+        shieldScore = publicVariableHandler.shieldRecoverScore;
 
         StartCoroutine(CheckScore());
     }

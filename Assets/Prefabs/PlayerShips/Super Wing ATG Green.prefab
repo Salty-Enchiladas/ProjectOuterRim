@@ -2578,7 +2578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0533f952e1813e74e9a482d32f7dce71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shield: {fileID: 195276}
   onCooldown: 0
 --- !u!114 &11415614
 MonoBehaviour:
@@ -2607,7 +2606,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  fireFreq: 0.5
   overheatCap: 0
   heatLevel: 0
 --- !u!114 &11433956
@@ -2622,7 +2620,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  fireFreq: 0.5
   overheatCap: 0
   heatLevel: 0
 --- !u!114 &11435346
@@ -2728,6 +2725,7 @@ MonoBehaviour:
   missile: {fileID: 148928}
   colliders: {fileID: 138824}
   shield: {fileID: 195276}
+  meteorExplosion: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a, type: 2}
 --- !u!114 &11468910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2751,8 +2749,6 @@ MonoBehaviour:
     type: 2}
   playerHealth: 9
   playerLives: 3
-  healthScore: 100000
-  shieldScore: 300000
   gameOverScene: GameOver
   shieldActive: 0
 --- !u!114 &11469052
@@ -2789,7 +2785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  fireFreq: 0.5
   overheatCap: 0
   heatLevel: 0
 --- !u!114 &11486010
@@ -2828,7 +2823,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  fireFreq: 0.5
   overheatCap: 0
   heatLevel: 0
 --- !u!135 &13505056

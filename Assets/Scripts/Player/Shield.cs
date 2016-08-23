@@ -6,9 +6,14 @@ public class Shield : MonoBehaviour
     public int startingHealth;
     public int currentHealth;
     public GameObject meteorExplosionPrefab;
-
+    GameObject gameManager;
+    GameObject player;
     void Start()
     {
+        player = GameObject.Find("Player");
+        gameManager = GameObject.Find("GameManager");
+        startingHealth = gameManager.GetComponent<PublicVariableHandler>().playerShieldHealth;
+        meteorExplosionPrefab = player.GetComponent<StoreVariables>().meteorExplosion;
         currentHealth = startingHealth;
     }
     void OnTriggerEnter(Collider other)

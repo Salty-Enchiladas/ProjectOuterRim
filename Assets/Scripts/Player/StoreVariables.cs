@@ -8,4 +8,5 @@ public class StoreVariables : MonoBehaviour
     public GameObject missile;
     public GameObject colliders;
     public GameObject shield;
+    public GameObject meteorExplosion;
 }
