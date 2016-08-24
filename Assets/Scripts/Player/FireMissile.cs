@@ -18,14 +18,20 @@ public class FireMissile : MonoBehaviour {
     public int missileCount;
     public int missileMax;
 
+    GameObject player;
+
     float lastShot;
     float recharge;
+    float newRecharge;
+    float newMissileCooldown;
     bool hasTarget;
 
     // Use this for initialization
     void Start()
     {
         hasTarget = false;
+        player = GameObject.Find("Player");
+        player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = false;
         missile1Img = GameObject.Find("M1b");
         missile2Img = GameObject.Find("M2b");
         missile3Img = GameObject.Find("M3b");
@@ -117,51 +123,45 @@ public class FireMissile : MonoBehaviour {
     {
 
         print(levelUp + "Missile1");
-        print("Old Recharge: " + recharge);
         if (levelUp)
         {
             recharge = recharge / 9;
-            print("New Recharge: " + recharge);
+            newRecharge = recharge;
+            missileCooldown = missileCooldown / 3;
+            newMissileCooldown = missileCooldown;
         }
         else if (!levelUp)
         {
             recharge = recharge * 9;
-            print("LostLevel Recharge " + recharge);
+            missileCooldown = missileCooldown * 3;
         }
     }
 
     public void MissileLevel2(bool levelUp)
     {
         print(levelUp + "Missile2");
-        print("Old missileCooldown: " + missileCooldown);
         if (levelUp)
         {
-            missileCooldown = missileCooldown / 3;
-            print("New missileCooldown: " + missileCooldown);
+            recharge = 0;
+            missileCooldown = 0;
         }
         else if (!levelUp)
         {
-            missileCooldown = missileCooldown * 3;
-            print("LostLevel missileCooldown " + missileCooldown);
+            recharge = newRecharge;
+            missileCooldown = newMissileCooldown;
         }
 
     }
 
     public void MissileLevel3(bool levelUp)
     {
-        print(levelUp + "Missile3");
-        print("Old missileMax: " + missileMax);
         if (levelUp)
         {
-            missileMax = missileMax * 2;
-            missile.GetComponent<MissileMovement>().missileSpeed = missile.GetComponent<MissileMovement>().missileSpeed * 2;
-            print("New missileMax: " + missileMax);
+            player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = true;
         }
         else if (!levelUp)
         {
-            missileMax = missileMax / 2;
-            missile.GetComponent<MissileMovement>().missileSpeed = missile.GetComponent<MissileMovement>().missileSpeed / 2;
-            print("LostLevel missileMax " + missileMax);
+            player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = true;
         }
     }
 }

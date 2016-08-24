@@ -99,22 +99,22 @@ public class PickUpManager : MonoBehaviour
         print("YOU LOST A LEVEL!!!!!!!");
         leveled = false;
 
-        if (shieldLevel > 0)
-        {
-            shieldLevel--;
-            switch (shieldLevel)
-            {
-                case 0:
-                    print("All shield upgrades lost");
-                    break;
-                case 1:
-                    print("You lost a shield level and are now level 1");
-                    break;
-                case 2:
-                    print("You lost a shield level and are now level 2");
-                    break;
-            }
-        }
+        //if (shieldLevel > 0)
+        //{
+        //    shieldLevel--;
+        //    switch (shieldLevel)
+        //    {
+        //        case 0:
+        //            print("All shield upgrades lost");
+        //            break;
+        //        case 1:
+        //            print("You lost a shield level and are now level 1");
+        //            break;
+        //        case 2:
+        //            print("You lost a shield level and are now level 2");
+        //            break;
+        //    }
+        //}
 
         if (laserLevel > 0)
         {

@@ -570,14 +570,14 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 10000
+  spawnAtScore: 5000
   spawnAfter: 5
   xMinSpawn: -100
   xMaxSpawn: 100
   yMinSpawn: -100
   yMaxSpawn: 100
-  zMinSpawn: 2000
-  zMaxSpawn: 2000
+  zMinSpawn: 5000
+  zMaxSpawn: 5000
   leveled: 0
 --- !u!114 &555410817
 MonoBehaviour:

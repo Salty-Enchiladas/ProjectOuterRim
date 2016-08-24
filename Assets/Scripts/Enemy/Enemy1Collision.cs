@@ -32,13 +32,11 @@ public class Enemy1Collision : MonoBehaviour {
         if (col.gameObject.tag == "Laser")
         {
             col.gameObject.SetActive(false);
-            _playerScore.score += laserScore;
             WasDestroyed();
         }
         else if (col.gameObject.tag == "Missile")
         {
             col.gameObject.SetActive(false);
-            _playerScore.score += missileScore;
             WasDestroyed();
         }
         else if (col.gameObject.tag == "Meteor")
@@ -64,6 +62,7 @@ public class Enemy1Collision : MonoBehaviour {
     public void WasDestroyed()
     {
         achievementManager.EnemyDied();
+        _playerScore.score += laserScore;
         GameObject.Find("GameManager").GetComponent<WaveHandler>().enemyCount--;
         Instantiate(explosion, transform.position, transform.rotation);
         Instantiate(explosionSound, transform.position, transform.rotation);
