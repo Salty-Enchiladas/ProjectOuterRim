@@ -17,12 +17,13 @@ public class PlayerCollision : MonoBehaviour
 
     public int playerHealth;
     public int playerLives;
-     int healthScore;
-     int shieldScore;
+    int healthScore;
+    int shieldScore;
 
     public string gameOverScene;
 
     public bool shieldActive;
+    bool takingDamage;
 
     PlayerScore playerScoreOBJ;
 
@@ -31,6 +32,9 @@ public class PlayerCollision : MonoBehaviour
     GameObject player;
     GameObject gameManager;
     PublicVariableHandler publicVariableHandler;
+
+    float playerInvulnerabilityTime;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -53,6 +57,7 @@ public class PlayerCollision : MonoBehaviour
         playerLives = publicVariableHandler.playerLives;
         healthScore = publicVariableHandler.healthRecoverScore;
         shieldScore = publicVariableHandler.shieldRecoverScore;
+        playerInvulnerabilityTime = publicVariableHandler.playerInvulnerabilityTime;
 
         StartCoroutine(CheckScore());
     }
@@ -60,10 +65,9 @@ public class PlayerCollision : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Enemy Laser")
-        {
-            StartCoroutine(DamageIndicator());
+        {            
             col.gameObject.SetActive(false);
-            playerHealth--;
+            StartCoroutine(TakeDamage());
             pickUpManager.LoseLevel();
 
             if (playerHealth % 3 == 0)
@@ -183,6 +187,18 @@ public class PlayerCollision : MonoBehaviour
 
             Instantiate(explosion, transform.position, transform.rotation);
             Instantiate(explosionSound, transform.position, transform.rotation);
+        }
+    }
+
+    IEnumerator TakeDamage()
+    {
+        if (!takingDamage)
+        {
+            takingDamage = true;
+            StartCoroutine(DamageIndicator());
+            playerHealth--;
+            yield return new WaitForSeconds(playerInvulnerabilityTime);
+            takingDamage = false;
         }
     }
 

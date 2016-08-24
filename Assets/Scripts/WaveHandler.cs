@@ -24,6 +24,8 @@ public class WaveHandler : MonoBehaviour
     bool spawning;
     Vector3 objectSpawn;
 
+    float deltaTime = 0.0f;
+
     public ObjectPooling[] enemyObject;
 
     // Use this for initialization
@@ -35,7 +37,14 @@ public class WaveHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         HandleDifficulty();
+    }
+
+    void OnGUI()
+    {
+        float fps = 1.0f / deltaTime;
+        GUILayout.Label("FPS: " + (int)fps);
     }
 
     IEnumerator Spawn()

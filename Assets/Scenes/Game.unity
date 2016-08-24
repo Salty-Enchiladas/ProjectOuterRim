@@ -383,7 +383,7 @@ MonoBehaviour:
   objSpawnZ: 10000
   enemyCount: 0
   spawnCap: 10
-  finalSpawnCap: 50
+  finalSpawnCap: 25
   capIncreaseAmount: 2
   spawnRate: 1.5
   difficultyTimer: 15
@@ -536,10 +536,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthRecoverScore: 50000
   shieldRecoverScore: 25000
-  playerShootingFrequency: 0.3
   playerShieldHealth: 3
   playerLives: 3
   playerHealth: 9
+  playerInvulnerabilityTime: 1.5
+  playerShootingFrequency: 0.3
+  playerSpeed: 350
+  playerMaxTurnAngle: 20
 --- !u!114 &555410815
 MonoBehaviour:
   m_ObjectHideFlags: 0

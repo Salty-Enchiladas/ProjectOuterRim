@@ -22,6 +22,15 @@ public class PlayerMovement : MonoBehaviour {
     public bool invertVertical;
     bool isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive;
 
+    PublicVariableHandler publicVariableHandler;
+
+    void Start()
+    {
+        publicVariableHandler = GameObject.FindGameObjectWithTag("Game Manager").GetComponent<PublicVariableHandler>();
+        playerSpeed = publicVariableHandler.playerSpeed;
+        maxTurnAngle = publicVariableHandler.playerMaxTurnAngle;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
