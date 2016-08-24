@@ -8,7 +8,7 @@ public class ArcReactor_Arc : MonoBehaviour {
 
 	public LineRendererInfo[] arcs;
 	new public Camera camera;
-	public float lifetime = 2.0f;
+	public float lifetime;
 	public ArcsPlaybackType playbackType = ArcsPlaybackType.once;
 	public bool playbackMessages = false;
 	public GameObject messageReciever;
@@ -1234,7 +1234,6 @@ public class ArcReactor_Arc : MonoBehaviour {
 
 	void Update()
 	{
-	
 		//Phase shifting
 		for (int n = 0; n < arcs.Length; n++)
 		{

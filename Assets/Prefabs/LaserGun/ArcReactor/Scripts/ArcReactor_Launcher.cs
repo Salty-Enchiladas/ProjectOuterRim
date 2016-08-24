@@ -21,6 +21,7 @@ public class ArcReactor_Launcher : MonoBehaviour {
 	public InertialSettings rayInertiaSettings;
 	public Transform globalSpaceTransform;
 
+    bool active;
 
 	const int maxReflections = 100;
 	const float reflectGap = 0.01f;
@@ -124,7 +125,6 @@ public class ArcReactor_Launcher : MonoBehaviour {
 		if (Physics.Raycast(position,direction,out hit,maxDistance,layers.value | reflectionSettings.reflectLayers.value))
 		
 		{
-	
 			if (SendMessageToHitObjects)
 			{
 				ArcReactorHitInfo arcHit = new ArcReactorHitInfo();
@@ -190,11 +190,12 @@ public class ArcReactor_Launcher : MonoBehaviour {
 	[ContextMenu ("Launch Ray")]
 	public void LaunchRay()
 	{
-		if (launchMethod == LaunchMethod.forward_raycast && startBehaviour == RayTransformBehaivour.follow_raycast)
-		{
-			Debug.LogError("Launch method 'forward_raycast' and start behaviour 'follow_raycast' are incompatible. Change one of the settings.");
-			return;
-		}
+            active = true;
+            if (launchMethod == LaunchMethod.forward_raycast && startBehaviour == RayTransformBehaivour.follow_raycast)
+            {
+                Debug.LogError("Launch method 'forward_raycast' and start behaviour 'follow_raycast' are incompatible. Change one of the settings.");
+                return;
+            }
 
 		if (arcPrefab == null)
 		{
@@ -207,6 +208,7 @@ public class ArcReactor_Launcher : MonoBehaviour {
 		//GameObject startObj;
 		//GameObject endObj;
 		GameObject tmpobj = new GameObject("rayEndPoint");
+            tmpobj.tag = "Laser";
 		RaycastHit hit = new RaycastHit();
 
 		//End position will be raycasted in any case
@@ -214,6 +216,10 @@ public class ArcReactor_Launcher : MonoBehaviour {
 		if (Physics.Raycast(transform.position,transform.forward,out hit,Distance,layers.value))		
 		{
 			end.position = hit.point;
+            if (hit.transform.tag != "Player")
+            {
+                hit.transform.GetComponent<Enemy1Collision>().TookDamage();
+            }
 			//endObj = hit.transform.gameObject;
 		}
 		else		
@@ -233,6 +239,7 @@ public class ArcReactor_Launcher : MonoBehaviour {
 		{
 		case LaunchMethod.double_raycast:
 			tmpobj = new GameObject("rayStartPoint");
+                    tmpobj.tag = "Laser";
 			start = tmpobj.transform;
 			if (Physics.Raycast(transform.position,-transform.forward,out hit,Distance,layers.value))
 			{
@@ -306,6 +313,7 @@ public class ArcReactor_Launcher : MonoBehaviour {
 				rinfo.shape[i] = tmpobj.transform;
 			}
 			break;
+
 		}
 
 
@@ -317,13 +325,12 @@ public class ArcReactor_Launcher : MonoBehaviour {
 
 
 		rays.Add(rinfo);
-	}
+    }
 
-		
 	// Update is called once per frame
 	void LateUpdate () 
 	{
-		for (int x = 0; x < rays.Count; x++)
+        for (int x = 0; x < rays.Count; x++)
 		{
 			if (rays[x].arc == null)
 			{
@@ -340,7 +347,7 @@ public class ArcReactor_Launcher : MonoBehaviour {
 					{
 						if (Physics.Raycast(transform.position,-transform.forward,out hit,rays[x].distance,layers.value))
 						{
-							if (SendMessageToHitObjects)
+                                if (SendMessageToHitObjects)
 							{
 								ArcReactorHitInfo arcHit = new ArcReactorHitInfo();
 								arcHit.launcher = this;
@@ -387,7 +394,7 @@ public class ArcReactor_Launcher : MonoBehaviour {
 					{
 						if (Physics.Raycast(transform.position,transform.forward,out hit,rays[x].distance,layers.value))
 						{
-							if (SendMessageToHitObjects)
+                                if (SendMessageToHitObjects)
 							{
 								ArcReactorHitInfo arcHit = new ArcReactorHitInfo();
 								arcHit.launcher = this;
@@ -520,12 +527,12 @@ public class ArcReactor_Launcher : MonoBehaviour {
 				}
 			}
 		}
-		for (int x = 0; x < destrArr.Count; x++)
-		{
-			foreach (Transform tr in destrArr[x].shape)
-				GameObject.Destroy(tr.gameObject);
-			rays.RemoveAt(x);
-		}
+		//for (int x = 0; x < destrArr.Count; x++)
+		//{
+		//	foreach (Transform tr in destrArr[x].shape)
+		//		GameObject.Destroy(tr.gameObject);
+		//	rays.RemoveAt(x);
+		//}
 		if (destrArr.Count > 0)
 			destrArr.Clear();
 	}

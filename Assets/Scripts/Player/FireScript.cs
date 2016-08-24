@@ -68,9 +68,15 @@ public class FireScript : MonoBehaviour {
     public void LaserLevel1(bool levelUp)
     {
         if (levelUp)
-            overheatCap = overheatCap * 2;
+        {
+            fireFreq = fireFreq / 2;
+            // overheatCap = overheatCap * 2;
+        }
         else if (!levelUp)
-            overheatCap = overheatCap / 2;
+        {
+            fireFreq = fireFreq * 2;
+            // overheatCap = overheatCap / 2;
+        }
     }
 
     public void LaserLevel2(bool levelUp)

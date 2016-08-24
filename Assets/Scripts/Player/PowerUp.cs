@@ -51,12 +51,15 @@ public class PowerUp : MonoBehaviour
                 switch (shieldLevel)
                 {
                     case 1:
+                        player.GetComponent<ActivateShield>().ShieldLevel1(pickUpManager.leveled);
                         print("Shield upgraded to level 1!");
                         break;
                     case 2:
+                        player.GetComponent<ActivateShield>().ShieldLevel2(pickUpManager.leveled);
                         print("Shield upgraded to level 2!");
                         break;
                     case 3:
+                        player.GetComponent<ActivateShield>().ShieldLevel3(pickUpManager.leveled);
                         print("Shield upgraded to level 3!");
                         break;
                 }
@@ -72,12 +75,24 @@ public class PowerUp : MonoBehaviour
                 switch (laserLevel)
                 {
                     case 1:
+                        foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                        {
+                            go.GetComponent<FireScript>().LaserLevel1(pickUpManager.leveled);
+                        }
                         print("Laser upgraded to level 1!");
                         break;
                     case 2:
+                        foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                        {
+                            go.GetComponent<FireScript>().LaserLevel2(pickUpManager.leveled);
+                        }
                         print("Laser upgraded to level 2!");
                         break;
                     case 3:
+                        foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
+                        {
+                            go.GetComponent<FireScript>().LaserLevel3(pickUpManager.leveled);
+                        }
                         print("Laser upgraded to level 3!");
                         break;
                 }
@@ -92,12 +107,15 @@ public class PowerUp : MonoBehaviour
                 switch (missileLevel)
                 {
                     case 1:
+                        player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel1(pickUpManager.leveled);
                         print("Missile upgraded to level 1!");
                         break;
                     case 2:
+                        player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel2(pickUpManager.leveled);
                         print("Missile upgraded to level 2!");
                         break;
                     case 3:
+                        player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel3(pickUpManager.leveled);
                         print("Missile upgraded to level 3!");
                         break;
                 }
