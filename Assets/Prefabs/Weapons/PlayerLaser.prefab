@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11443116}
   - 82: {fileID: 8250346}
   - 136: {fileID: 13653032}
-  - 165: {fileID: 16597246}
+  - 165: {fileID: 16563072}
   m_Layer: 0
   m_Name: PlayerLaser
   m_TagString: Laser
@@ -46,6 +46,7 @@ GameObject:
   - 4: {fileID: 452374}
   - 108: {fileID: 10894208}
   - 114: {fileID: 11443412}
+  - 96: {fileID: 9683202}
   m_Layer: 0
   m_Name: LongLaser_B
   m_TagString: Untagged
@@ -74,7 +75,7 @@ Transform:
   m_GameObject: {fileID: 179700}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5000001, w: 0.49999994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 473024}
   m_Father: {fileID: 450494}
@@ -133,22 +134,22 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b8878c851941d2145bdf813d4ade5b6c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ed29694c14dc093498de49fa9fb63f13, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.43
+  m_Volume: 0.14
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 130
+  Priority: 47
   DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 250
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -198,6 +199,53 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!96 &9683202
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179700}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a079af473a2579f488a0ab44a29b1c58, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.05
+  m_StartWidth: 7.61
+  m_EndWidth: 0.3
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4278255369
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0
+  m_Autodestruct: 0
 --- !u!108 &10894208
 Light:
   m_ObjectHideFlags: 1
@@ -209,7 +257,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0, g: 1, b: 0.33793092, a: 1}
   m_Intensity: 8
-  m_Range: 300
+  m_Range: 217.87
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -220,7 +268,7 @@ Light:
     m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 1
   m_CullingMask:
@@ -242,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17535fe6f515cc46ad8d884212bc8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserSpeed: 4000
+  laserSpeed: 9000
   laserRange: 3000
 --- !u!114 &11443412
 MonoBehaviour:
@@ -335,14 +383,14 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!165 &16597246
+--- !u!165 &16563072
 AudioHighPassFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122096}
   m_Enabled: 1
-  m_CutoffFrequency: 150
+  m_CutoffFrequency: 140.45
   m_HighpassResonanceQ: 1
 --- !u!1001 &100100000
 Prefab:

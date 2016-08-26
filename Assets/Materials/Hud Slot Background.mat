@@ -141,11 +141,11 @@ Material:
       data:
         first:
           name: _Rim
-        second: 0.255
+        second: 0.561
       data:
         first:
           name: _Speed
-        second: 0.47
+        second: 1.01
       data:
         first:
           name: _Tile
@@ -178,4 +178,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0.91724133, b: 1, a: 0.303}
+        second: {r: 0.34337154, g: 0.3454152, b: 0.6397059, a: 0.303}

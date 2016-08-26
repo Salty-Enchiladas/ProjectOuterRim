@@ -62,6 +62,8 @@ GameObject:
   - 136: {fileID: 13643466}
   - 114: {fileID: 11498048}
   - 82: {fileID: 8281104}
+  - 82: {fileID: 8258022}
+  - 165: {fileID: 16556610}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Laser
@@ -920,7 +922,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158468}
   m_Mesh: {fileID: 4300010, guid: ec91d40a45407e04ab3488c5ba7da9ac, type: 3}
---- !u!82 &8281104
+--- !u!82 &8258022
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -929,17 +931,17 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 66c9352fc9331104383401b318d9b9ec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7e674cb533d893c41b9303fe3621e414, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.443
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 110
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 811.9
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -987,7 +989,81 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0.577
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &8281104
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125306}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 66c9352fc9331104383401b318d9b9ec, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.696
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 82
+  DopplerLevel: 2.63
+  MinDistance: 36.31
+  MaxDistance: 2097
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.746
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.699
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1079,6 +1155,15 @@ CapsuleCollider:
   m_Height: 0.128
   m_Direction: 2
   m_Center: {x: 0.002, y: 0.01, z: 0.058}
+--- !u!165 &16556610
+AudioHighPassFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125306}
+  m_Enabled: 0
+  m_CutoffFrequency: 150
+  m_HighpassResonanceQ: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
