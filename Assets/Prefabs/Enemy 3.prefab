@@ -134,6 +134,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &129248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 432608}
+  - 33: {fileID: 3309868}
+  - 135: {fileID: 13584100}
+  - 23: {fileID: 2363884}
+  - 82: {fileID: 8273514}
+  - 114: {fileID: 11443662}
+  m_Layer: 0
+  m_Name: Red Shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &131826
 GameObject:
   m_ObjectHideFlags: 1
@@ -590,13 +610,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194340}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -39.359474, y: 182.05911, z: -126.13459}
+  m_LocalPosition: {x: -39.65146, y: -517.02905, z: 6736.7554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 444296}
   - {fileID: 482936}
   - {fileID: 453320}
   - {fileID: 414512}
+  - {fileID: 432608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &429858
@@ -635,6 +656,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 444296}
   m_RootOrder: 9
+--- !u!4 &432608
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 150, y: 150, z: 150}
+  m_Children: []
+  m_Father: {fileID: 422698}
+  m_RootOrder: 4
 --- !u!4 &439874
 Transform:
   m_ObjectHideFlags: 1
@@ -1245,6 +1278,32 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &2363884
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129248}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: d2c97a60bab4edb44867234ea0590f84, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2369598
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1362,6 +1421,13 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189546}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3309868
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129248}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3335494
 MeshFilter:
@@ -1533,6 +1599,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 40, y: 45, z: 120}
   m_Center: {x: 0, y: 10, z: 0}
+--- !u!82 &8273514
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129248}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a94b4bdfd7963f94d91745bdd6e55bf6, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.529
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.471
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11409030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1593,7 +1733,6 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
   laserPoolName: EnemyLasers
   canFire: 1
 --- !u!114 &11424988
@@ -1635,8 +1774,7 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
-  laserPoolName: EnemyLasers
+  laserPoolName: Enemy3Lasers
   canFire: 1
 --- !u!114 &11441126
 MonoBehaviour:
@@ -1652,9 +1790,22 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
-  laserPoolName: EnemyLasers
+  laserPoolName: Enemy3Lasers
   canFire: 1
+--- !u!114 &11443662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f9bdc51dcc2b8e4eb8ab95750b0f8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 0
+  currentHealth: 0
+  meteorExplosionPrefab: {fileID: 0}
 --- !u!114 &11444422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1740,8 +1891,7 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
-  laserPoolName: EnemyLasers
+  laserPoolName: Enemy3Lasers
   canFire: 1
 --- !u!114 &11479064
 MonoBehaviour:
@@ -1771,8 +1921,7 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
-  laserPoolName: EnemyLasers
+  laserPoolName: Enemy3Lasers
   canFire: 1
 --- !u!114 &11493308
 MonoBehaviour:
@@ -1866,6 +2015,18 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &13584100
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129248}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

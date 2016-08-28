@@ -1006,7 +1006,6 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
   laserPoolName: EnemyLasers
   canFire: 1
 --- !u!114 &11426670
@@ -1106,7 +1105,6 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
   laserPoolName: EnemyLasers
   canFire: 1
 --- !u!114 &11484016
@@ -1147,7 +1145,6 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
   laserPoolName: EnemyLasers
   canFire: 1
 --- !u!114 &11499188

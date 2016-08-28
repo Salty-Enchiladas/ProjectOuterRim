@@ -18,7 +18,6 @@ public class PlayerCollision : MonoBehaviour
     public int playerHealth;
     public int playerLives;
      int healthScore;
-     int shieldScore;
 
     public string gameOverScene;
 
@@ -52,7 +51,6 @@ public class PlayerCollision : MonoBehaviour
         playerHealth = publicVariableHandler.playerHealth;
         playerLives = publicVariableHandler.playerLives;
         healthScore = publicVariableHandler.healthRecoverScore;
-        shieldScore = publicVariableHandler.shieldRecoverScore;
 
         StartCoroutine(CheckScore());
     }
@@ -100,11 +98,6 @@ public class PlayerCollision : MonoBehaviour
         {
             CheckHealth();
             yield return new WaitForSeconds(0f);
-        }
-
-        if (playerScoreOBJ.score % shieldScore == 0 && playerScoreOBJ.score != 0)
-        {
-            transform.parent.GetComponent<ActivateShield>().onCooldown = false;
         }
 
         StartCoroutine(CheckScore());

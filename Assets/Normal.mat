@@ -72,7 +72,7 @@ Material:
       data:
         first:
           name: _Scroll
-        second: {r: 0, g: 0, b: 1, a: 0.3}
+        second: {r: 0, g: 0, b: 1, a: 4.5}
       data:
         first:
           name: _Center

@@ -12,6 +12,12 @@ public class WaveHandler : MonoBehaviour
     public float spawnRate;
     public int difficultyIncreaseScore;
 
+    public float minXSpawn;
+    public float maxXspawn;
+    public float minYSpawn;
+    public float maxYSpawn;
+    public float zSpawn;
+
     public int secondEnemySpawnScore;
     public int thirdEnemySpawnScore;
     public int fourthEnemySpawnScore;
@@ -21,6 +27,11 @@ public class WaveHandler : MonoBehaviour
     public int thirdEnemySpawnCap;
     public int fourthEnemySpawnCap;
 
+    public int firstEnemyFinalCap;
+    public int secondEnemyFinalCap;
+    public int thirdEnemyFinalCap;
+    public int fourthEnemyFinalCap;
+
     public int firstEnemyCount;
     public int secondEnemyCount;
     public int thirdEnemyCount;
@@ -28,6 +39,7 @@ public class WaveHandler : MonoBehaviour
 
     private GameObject player;
     private GameObject currentObject;
+    private GameObject debrisField;
     private string poolObject;
 
     private float lastSpawn;
@@ -40,9 +52,15 @@ public class WaveHandler : MonoBehaviour
     ObjectPooling thirdEnemy;
     ObjectPooling fourthEnemy;
 
+    DebrisField debrisSpawner;
+    PublicVariableHandler publicVariableHandler;
+
     void Start()
     {
         player = GameObject.Find("Player");
+        debrisField = GameObject.Find("DebrisField");
+        publicVariableHandler = GetComponent<PublicVariableHandler>();
+        debrisSpawner = debrisField.GetComponent<DebrisField>();
         firstEnemy = firstEnemyPool.GetComponent<ObjectPooling>();
         secondEnemy = secondEnemyPool.GetComponent<ObjectPooling>();
         thirdEnemy = thirdEnemyPool.GetComponent<ObjectPooling>();
@@ -77,19 +95,34 @@ public class WaveHandler : MonoBehaviour
 
         if (score % difficultyIncreaseScore == 0 && score > 0)
         {
-
             if (increaseDifficulty)
             {
                 tempScore = score;
 
                 if (spawnRate >= 0)
                     spawnRate = spawnRate - .1f;
-                if (firstEnemySpawnCap <= 10 && secondEnemySpawnCap <= 10 && thirdEnemySpawnCap <= 10 && fourthEnemySpawnCap <= 10)
+                if (debrisSpawner.spawnFrequency >= 0)
+                    debrisSpawner.spawnFrequency = debrisSpawner.spawnFrequency - .1f;
+                if (firstEnemySpawnCap <= firstEnemyFinalCap && secondEnemySpawnCap <= secondEnemyFinalCap && thirdEnemySpawnCap <= thirdEnemyFinalCap && fourthEnemySpawnCap <= fourthEnemyFinalCap)
                 {
                     firstEnemySpawnCap++;
                     secondEnemySpawnCap++;
                     thirdEnemySpawnCap++;
                     fourthEnemySpawnCap++;
+                }
+                if (publicVariableHandler.enemy4Speed <= 2000)
+                {
+                    publicVariableHandler.enemy1Speed = publicVariableHandler.enemy1Speed + 100;
+                    publicVariableHandler.enemy2Speed = publicVariableHandler.enemy2Speed + 100;
+                    publicVariableHandler.enemy3Speed = publicVariableHandler.enemy3Speed + 100;
+                    publicVariableHandler.enemy4Speed = publicVariableHandler.enemy4Speed + 100;
+                }
+                if (publicVariableHandler.enemy1FireFreq >= .2)
+                {
+                    publicVariableHandler.enemy1FireFreq = publicVariableHandler.enemy1FireFreq - .1f;
+                    publicVariableHandler.enemy2FireFreq = publicVariableHandler.enemy2FireFreq - .1f;
+                    publicVariableHandler.enemy3FireFreq = publicVariableHandler.enemy3FireFreq - .1f;
+                    publicVariableHandler.enemy4FireFreq = publicVariableHandler.enemy4FireFreq - .1f;
                 }
                 increaseDifficulty = false;
             }
@@ -132,7 +165,8 @@ public class WaveHandler : MonoBehaviour
             return;
         }
 
-        currentObject.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 5000);
+        currentObject.transform.position = new Vector3(player.transform.position.x + Random.Range(minXSpawn, maxXspawn),
+            player.transform.position.y + Random.Range(minYSpawn,maxYSpawn), player.transform.position.z + zSpawn);
         currentObject.transform.rotation = transform.rotation;
         currentObject.SetActive(true);
     }

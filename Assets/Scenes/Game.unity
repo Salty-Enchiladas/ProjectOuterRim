@@ -386,6 +386,50 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 523563351}
+--- !u!1 &536503302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 536503303}
+  - 114: {fileID: 536503304}
+  m_Layer: 0
+  m_Name: Enemy3Lasers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &536503303
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536503302}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 11
+--- !u!114 &536503304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536503302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 102324, guid: d2e4fe297a407e74584bb12050279048, type: 2}
+  pooledAmount: 300
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &555410808
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +470,11 @@ MonoBehaviour:
   fourthEnemyPool: {fileID: 357815564}
   spawnRate: 2
   difficultyIncreaseScore: 15000
+  minXSpawn: -2500
+  maxXspawn: 2500
+  minYSpawn: -1000
+  maxYSpawn: 1000
+  zSpawn: 6000
   secondEnemySpawnScore: 25000
   thirdEnemySpawnScore: 50000
   fourthEnemySpawnScore: 75000
@@ -433,6 +482,10 @@ MonoBehaviour:
   secondEnemySpawnCap: 5
   thirdEnemySpawnCap: 5
   fourthEnemySpawnCap: 5
+  firstEnemyFinalCap: 25
+  secondEnemyFinalCap: 15
+  thirdEnemyFinalCap: 10
+  fourthEnemyFinalCap: 5
   firstEnemyCount: 0
   secondEnemyCount: 0
   thirdEnemyCount: 0
@@ -582,25 +635,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthRecoverScore: 50000
-  shieldRecoverScore: 25000
-  playerShootingFrequency: 0.3
-  playerShieldHealth: 3
+  playerShootingFrequency: 0.4
+  lightningGunDuration: 8
+  playerShieldLength: 3
+  playerShieldCooldown: 6
   playerLives: 3
   playerHealth: 9
+  playerSpeed: 500
   enemy1Speed: 700
+  enemy1FireFreq: 1.5
   enemy1BaseHealth: 2
   enemy1LaserScore: 1000
   enemy1MissileScore: 500
-  enemy2Speed: 900
-  enemy2BaseHealth: 3
+  enemy2Speed: 700
+  enemy2FireFreq: 1
+  enemy2BaseHealth: 6
   enemy2LaserScore: 1000
   enemy2MissileScore: 500
-  enemy3Speed: 1100
+  enemy3Speed: 800
+  enemy3FireFreq: 0.5
   enemy3BaseHealth: 2
+  enemy3ShieldHealth: 8
   enemy3LaserScore: 1000
   enemy3MissileScore: 500
   enemy4Speed: 600
+  enemy4FireFreq: 2.5
   enemy4BaseHealth: 5
+  enemy4ShieldHealth: 15
   enemy4LaserScore: 2000
   enemy4MissileScore: 500
 --- !u!114 &555410815
@@ -633,12 +694,12 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 5000
+  spawnAtScore: 15000
   spawnAfter: 5
-  xMinSpawn: -700
-  xMaxSpawn: 700
-  yMinSpawn: -700
-  yMaxSpawn: 700
+  xMinSpawn: -400
+  xMaxSpawn: 400
+  yMinSpawn: -300
+  yMaxSpawn: 300
   zSpawnMin: 5000
   zSpawnMax: 10000
   leveled: 0
@@ -699,18 +760,23 @@ MonoBehaviour:
   - {fileID: 1545338636}
   - {fileID: 1948741963}
   - {fileID: 775086618}
-  objSpawnMinX: -250
-  objSpawnMaxX: 250
-  objSpawnMinY: -250
-  objSpawnMaxY: 250
-  spawnFrequency: 1.5
-  objSpawnZ: 1000
+  objSpawnMinX: -600
+  objSpawnMaxX: 600
+  objSpawnMinY: -600
+  objSpawnMaxY: 600
+  spawnFrequency: 2
+  objSpawnZ: 7000
   sizes:
-  - {x: 10, y: 10, z: 10}
-  - {x: 20, y: 20, z: 20}
-  - {x: 30, y: 30, z: 30}
-  - {x: 40, y: 40, z: 40}
-  - {x: 50, y: 50, z: 50}
+  - {x: 10, y: 8, z: 9}
+  - {x: 20, y: 23, z: 16}
+  - {x: 25, y: 46, z: 30}
+  - {x: 55, y: 76, z: 80}
+  - {x: 120, y: 90, z: 86}
+  - {x: 56, y: 34, z: 45}
+  - {x: 456, y: 685, z: 566}
+  - {x: 20, y: 13, z: 16}
+  - {x: 45, y: 56, z: 50}
+  - {x: 158, y: 225, z: 305}
 --- !u!4 &568474989
 Transform:
   m_ObjectHideFlags: 0
@@ -918,6 +984,7 @@ Transform:
   - {fileID: 1545338637}
   - {fileID: 1948741964}
   - {fileID: 775086620}
+  - {fileID: 536503303}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &1032136427
@@ -1939,7 +2006,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10000
+  far clip plane: 5000
   field of view: 60
   orthographic: 0
   orthographic size: 25
@@ -1980,8 +2047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  cameraSpeed: 1
-  cameraOffset: {x: 0, y: 0, z: -300}
+  cameraSpeed: 4.5
+  cameraOffset: {x: 0, y: 25, z: -300}
 --- !u!1 &1660281895
 GameObject:
   m_ObjectHideFlags: 0

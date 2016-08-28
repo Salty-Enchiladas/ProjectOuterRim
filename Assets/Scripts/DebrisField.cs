@@ -49,7 +49,8 @@ public class DebrisField : MonoBehaviour
             }
 
             //objectTypes[Random.Range(0, objectTypes.Length)].gameObject.transform.localScale = sizes[Random.Range(0, sizes.Length)];
-            objectSpawn = new Vector3(Random.Range(objSpawnMinX, objSpawnMaxX), Random.Range(objSpawnMinY, objSpawnMaxY), player.transform.position.z + objSpawnZ);
+            objectSpawn = new Vector3(player.transform.position.x + Random.Range(objSpawnMinX, objSpawnMaxX), 
+                player.transform.position.y + Random.Range(objSpawnMinY, objSpawnMaxY), player.transform.position.z + objSpawnZ);
             obj.transform.position = objectSpawn;
             obj.transform.localScale = sizes[Random.Range(0, sizes.Length)];
            // obj.GetComponent<Destructable>().sploded = true;
