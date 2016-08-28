@@ -40,11 +40,13 @@ public class WaveHandler : MonoBehaviour
     private GameObject player;
     private GameObject currentObject;
     private GameObject debrisField;
+
     private string poolObject;
 
     private float lastSpawn;
-    private int score;
+
     private int tempScore;
+
     private bool increaseDifficulty;
 
     ObjectPooling firstEnemy;
@@ -53,11 +55,15 @@ public class WaveHandler : MonoBehaviour
     ObjectPooling fourthEnemy;
 
     DebrisField debrisSpawner;
+
     PublicVariableHandler publicVariableHandler;
+
+    PlayerScore playerScore;
 
     void Start()
     {
         player = GameObject.Find("Player");
+        playerScore = player.GetComponent<PlayerScore>();
         debrisField = GameObject.Find("DebrisField");
         publicVariableHandler = GetComponent<PublicVariableHandler>();
         debrisSpawner = debrisField.GetComponent<DebrisField>();
@@ -70,39 +76,42 @@ public class WaveHandler : MonoBehaviour
 
     void Update()
     {
-        score = player.GetComponent<PlayerScore>().score;
-
-        if (score >= 0 && firstEnemyCount <= firstEnemySpawnCap && Time.time > lastSpawn + spawnRate)
+        if (playerScore.score >= 0 && firstEnemyCount <= firstEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
             poolObject = "Enemy1";
             Spawn(poolObject);
         }
-        if (score >= secondEnemySpawnScore && secondEnemyCount <= secondEnemySpawnCap && Time.time > lastSpawn + spawnRate)
+
+        if (playerScore.score >= secondEnemySpawnScore && secondEnemyCount <= secondEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
             poolObject = "Enemy2";
             Spawn(poolObject);
         }
-        if (score >= thirdEnemySpawnScore && thirdEnemyCount <= thirdEnemySpawnCap && Time.time > lastSpawn + spawnRate)
+
+        if (playerScore.score >= thirdEnemySpawnScore && thirdEnemyCount <= thirdEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
             poolObject = "Enemy3";
             Spawn(poolObject);
         }
-        if (score >= fourthEnemySpawnScore && fourthEnemyCount <= fourthEnemySpawnCap && Time.time > lastSpawn + spawnRate)
+
+        if (playerScore.score >= fourthEnemySpawnScore && fourthEnemyCount <= fourthEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
             poolObject = "Enemy4";
             Spawn(poolObject);
         }
 
-        if (score % difficultyIncreaseScore == 0 && score > 0)
+        if (playerScore.score % difficultyIncreaseScore == 0 && playerScore.score > 0)
         {
             if (increaseDifficulty)
             {
-                tempScore = score;
+                tempScore = playerScore.score;
 
                 if (spawnRate >= 0)
                     spawnRate = spawnRate - .1f;
+
                 if (debrisSpawner.spawnFrequency >= 0)
                     debrisSpawner.spawnFrequency = debrisSpawner.spawnFrequency - .1f;
+
                 if (firstEnemySpawnCap <= firstEnemyFinalCap && secondEnemySpawnCap <= secondEnemyFinalCap && thirdEnemySpawnCap <= thirdEnemyFinalCap && fourthEnemySpawnCap <= fourthEnemyFinalCap)
                 {
                     firstEnemySpawnCap++;
@@ -110,6 +119,7 @@ public class WaveHandler : MonoBehaviour
                     thirdEnemySpawnCap++;
                     fourthEnemySpawnCap++;
                 }
+
                 if (publicVariableHandler.enemy4Speed <= 2000)
                 {
                     publicVariableHandler.enemy1Speed = publicVariableHandler.enemy1Speed + 100;
@@ -117,6 +127,7 @@ public class WaveHandler : MonoBehaviour
                     publicVariableHandler.enemy3Speed = publicVariableHandler.enemy3Speed + 100;
                     publicVariableHandler.enemy4Speed = publicVariableHandler.enemy4Speed + 100;
                 }
+
                 if (publicVariableHandler.enemy1FireFreq >= .2)
                 {
                     publicVariableHandler.enemy1FireFreq = publicVariableHandler.enemy1FireFreq - .1f;
@@ -124,9 +135,10 @@ public class WaveHandler : MonoBehaviour
                     publicVariableHandler.enemy3FireFreq = publicVariableHandler.enemy3FireFreq - .1f;
                     publicVariableHandler.enemy4FireFreq = publicVariableHandler.enemy4FireFreq - .1f;
                 }
+
                 increaseDifficulty = false;
             }
-            if (tempScore != score)
+            if (tempScore != playerScore.score)
             {
                 increaseDifficulty = true;
             }
@@ -166,7 +178,7 @@ public class WaveHandler : MonoBehaviour
         }
 
         currentObject.transform.position = new Vector3(player.transform.position.x + Random.Range(minXSpawn, maxXspawn),
-            player.transform.position.y + Random.Range(minYSpawn,maxYSpawn), player.transform.position.z + zSpawn);
+        player.transform.position.y + Random.Range(minYSpawn,maxYSpawn), player.transform.position.z + zSpawn);
         currentObject.transform.rotation = transform.rotation;
         currentObject.SetActive(true);
     }

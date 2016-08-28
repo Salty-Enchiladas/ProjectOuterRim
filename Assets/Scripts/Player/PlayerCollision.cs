@@ -30,6 +30,7 @@ public class PlayerCollision : MonoBehaviour
     GameObject player;
     GameObject gameManager;
     PublicVariableHandler publicVariableHandler;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -71,10 +72,10 @@ public class PlayerCollision : MonoBehaviour
 
             CheckHealth();
         }
-
         else if (col.gameObject.tag == "Meteor")
         {
             LoseLife();
+            pickUpManager.LoseLevel();
             Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
             col.gameObject.SetActive(false);
         }

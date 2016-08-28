@@ -763,13 +763,13 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127480}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: d2c97a60bab4edb44867234ea0590f84, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
+  m_UseLightProbes: 0
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
@@ -1424,6 +1424,7 @@ MonoBehaviour:
   noTarget: {fileID: 0}
   missileRechargeLength: 9
   missileCooldown: 3
+  lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
 --- !u!114 &11482830

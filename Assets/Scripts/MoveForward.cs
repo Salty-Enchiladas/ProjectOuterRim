@@ -11,7 +11,7 @@ public class MoveForward : MonoBehaviour
     {
         speed = Random.Range(minSpeed, maxSpeed);
     }
-	void Update ()
+	void FixedUpdate ()
 	{
 		transform.position += Vector3.back * Time.deltaTime * speed;
 	}

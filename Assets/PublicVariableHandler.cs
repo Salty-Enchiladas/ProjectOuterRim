@@ -15,6 +15,9 @@ public class PublicVariableHandler : MonoBehaviour
 
     //Enemy Variables
 
+    public float maneuverSpeed;
+    public float strafeSpeed;
+
     //Enemy1
     public float enemy1Speed;
     public float enemy1FireFreq;

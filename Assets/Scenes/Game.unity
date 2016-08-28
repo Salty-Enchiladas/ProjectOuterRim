@@ -440,12 +440,12 @@ GameObject:
   - 4: {fileID: 555410810}
   - 114: {fileID: 555410811}
   - 114: {fileID: 555410809}
-  - 114: {fileID: 555410813}
-  - 82: {fileID: 555410812}
-  - 114: {fileID: 555410815}
+  - 114: {fileID: 555410814}
   - 114: {fileID: 555410816}
   - 114: {fileID: 555410817}
-  - 114: {fileID: 555410814}
+  - 114: {fileID: 555410813}
+  - 114: {fileID: 555410815}
+  - 82: {fileID: 555410812}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -474,7 +474,7 @@ MonoBehaviour:
   maxXspawn: 2500
   minYSpawn: -1000
   maxYSpawn: 1000
-  zSpawn: 6000
+  zSpawn: 7500
   secondEnemySpawnScore: 25000
   thirdEnemySpawnScore: 50000
   fourthEnemySpawnScore: 75000
@@ -642,6 +642,8 @@ MonoBehaviour:
   playerLives: 3
   playerHealth: 9
   playerSpeed: 500
+  maneuverSpeed: 1.5
+  strafeSpeed: 1.5
   enemy1Speed: 700
   enemy1FireFreq: 1.5
   enemy1BaseHealth: 2
@@ -694,13 +696,13 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 15000
+  spawnAtScore: 1000
   spawnAfter: 5
   xMinSpawn: -400
   xMaxSpawn: 400
   yMinSpawn: -300
   yMaxSpawn: 300
-  zSpawnMin: 5000
+  zSpawnMin: 7500
   zSpawnMax: 10000
   leveled: 0
 --- !u!114 &555410817
@@ -2006,7 +2008,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 5000
+  far clip plane: 10000
   field of view: 60
   orthographic: 0
   orthographic size: 25

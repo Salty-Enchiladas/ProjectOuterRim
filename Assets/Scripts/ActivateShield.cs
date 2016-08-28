@@ -20,6 +20,7 @@ public class ActivateShield : MonoBehaviour
         shieldLength = gameManager.GetComponent<PublicVariableHandler>().playerShieldLength;
         shield = GetComponent<StoreVariables>().shield;
     }
+
 	void Update () 
     {
         if (Input.GetButtonUp("Fire3") && Time.time > lastUse + shieldCooldown)
@@ -39,6 +40,7 @@ public class ActivateShield : MonoBehaviour
         onCooldown = true;
         GetComponentInChildren<PlayerCollision>().shieldActive = false;
     }
+
     IEnumerator ShieldActive()
     {
         onCooldown = true;
@@ -47,8 +49,8 @@ public class ActivateShield : MonoBehaviour
         shield.SetActive(false);
         GetComponentInChildren<PlayerCollision>().shieldActive = false;
         onCooldown = false;
-
     }
+
     public void ShieldLevel1(bool levelUp)
     {
         print(levelUp + "Shield1");
