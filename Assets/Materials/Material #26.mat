@@ -127,6 +127,22 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _GlossMapScale
+        second: 1
+      data:
+        first:
+          name: _GlossyReflections
+        second: 1
+      data:
+        first:
+          name: _SmoothnessTextureChannel
+        second: 0
+      data:
+        first:
+          name: _SpecularHighlights
+        second: 1
     m_Colors:
       data:
         first:

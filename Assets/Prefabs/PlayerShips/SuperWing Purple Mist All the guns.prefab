@@ -60,7 +60,7 @@ GameObject:
   - 199: {fileID: 19982580}
   - 198: {fileID: 19863356}
   - 114: {fileID: 11497256}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AfterburnerLeft (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   - 199: {fileID: 19970148}
   - 198: {fileID: 19802038}
   - 114: {fileID: 11456554}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AfterburnerLeft (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   - 199: {fileID: 19927126}
   - 198: {fileID: 19818016}
   - 114: {fileID: 11434080}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,7 +667,7 @@ GameObject:
   - 199: {fileID: 19973744}
   - 198: {fileID: 19878400}
   - 114: {fileID: 11482974}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

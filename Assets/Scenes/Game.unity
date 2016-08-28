@@ -275,6 +275,50 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
   m_PrefabInternal: {fileID: 1668002296}
+--- !u!1 &357815564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 357815565}
+  - 114: {fileID: 357815566}
+  m_Layer: 0
+  m_Name: EnemyShips (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &357815565
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 357815564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 10
+--- !u!114 &357815566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 357815564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 194340, guid: d5fad98a42fc1304abda9cbcbb398422, type: 2}
+  pooledAmount: 50
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &523563351
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,15 +425,28 @@ MonoBehaviour:
   objSpawnMinY: -3500
   objSpawnMaxY: 3500
   objSpawnZ: 10000
-  enemyCount: 0
-  spawnCap: 10
-  finalSpawnCap: 50
-  capIncreaseAmount: 2
-  spawnRate: 1.5
-  difficultyTimer: 15
+  enemy1Count: 0
+  enemy2Count: 0
+  enemy3Count: 0
+  enemy4Count: 0
+  e1SpawnCap: 5
+  e2SpawnCap: 5
+  e3SpawnCap: 5
+  e4SpawnCap: 5
+  e1IncSpawnAtScore: 0
+  e2IncSpawnAtScore: 2000
+  e3IncSpawnAtScore: 3000
+  e4IncSpawnAtScore: 4000
+  obj:
+  - {fileID: 11046874}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   enemyObject:
   - {fileID: 11046876}
   - {fileID: 930241600}
+  - {fileID: 1478111000}
+  - {fileID: 357815566}
 --- !u!4 &555410810
 Transform:
   m_ObjectHideFlags: 0
@@ -572,12 +629,12 @@ MonoBehaviour:
   shieldLevel: 0
   spawnAtScore: 5000
   spawnAfter: 5
-  xMinSpawn: -100
-  xMaxSpawn: 100
-  yMinSpawn: -100
-  yMaxSpawn: 100
-  zMinSpawn: 5000
-  zMaxSpawn: 5000
+  xMinSpawn: -1500
+  xMaxSpawn: 1500
+  yMinSpawn: -1500
+  yMaxSpawn: 1500
+  zSpawnMin: 5000
+  zSpawnMax: 10000
   leveled: 0
 --- !u!114 &555410817
 MonoBehaviour:
@@ -853,6 +910,8 @@ Transform:
   - {fileID: 1545338637}
   - {fileID: 1948741964}
   - {fileID: 775086620}
+  - {fileID: 1478110999}
+  - {fileID: 357815565}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &1032136427
@@ -1343,6 +1402,50 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22410778, guid: 6cf7126f929d1e1448a7b42572fd2a5a,
     type: 2}
   m_PrefabInternal: {fileID: 1682952261}
+--- !u!1 &1478110998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1478110999}
+  - 114: {fileID: 1478111000}
+  m_Layer: 0
+  m_Name: EnemyShips (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1478110999
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1478110998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 9
+--- !u!114 &1478111000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1478110998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 161636, guid: 698be1fea7b795f4dbff240ee7c3505e, type: 2}
+  pooledAmount: 50
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &1502947778
 GameObject:
   m_ObjectHideFlags: 0

@@ -265,8 +265,26 @@ public class Actor : MonoBehaviour
 
                         if (transform.position.z < playerTarget.transform.position.z - 350)
                         {
-                            _waveHandler.enemyCount--;
-                            gameObject.SetActive(false);
+                            switch (transform.name)
+                            {
+                                case "Enemy1":
+                                    print("happens");
+                                    _waveHandler.enemy1Count--;
+                                    gameObject.SetActive(false);
+                                    break;
+                                case "Enemy2":
+                                    _waveHandler.enemy2Count--;
+                                    gameObject.SetActive(false);
+                                    break;
+                                case "Enemy3":
+                                    _waveHandler.enemy3Count--;
+                                    gameObject.SetActive(false);
+                                    break;
+                                case "Enemy4":
+                                    _waveHandler.enemy4Count--;
+                                    gameObject.SetActive(false);
+                                    break;
+                            }
                         }
                     }
 

@@ -23,8 +23,8 @@ public class PickUpManager : MonoBehaviour
     public float yMinSpawn;
     public float yMaxSpawn;
 
-    public float zMinSpawn;
-    public float zMaxSpawn;
+    public float zSpawnMin;
+    public float zSpawnMax;
 
     public bool leveled;
 
@@ -52,22 +52,31 @@ public class PickUpManager : MonoBehaviour
     }
     void SpawnPickUp()
     {
-        x = Random.Range(0.05f, 0.95f);
-        y = Random.Range(0.05f, 0.95f);
-        spawnPoint = new Vector3(x, y, 500.0f);
-        spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        //x = Random.Range(0.05f, 0.95f);
+        //y = Random.Range(0.05f, 0.95f);
+        //spawnPoint = new Vector3(x, y, zSpawn);
+        //spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        spawnPoint = new Vector3(Random.Range(player.transform.position.x + xMinSpawn, player.transform.position.x + xMaxSpawn),
+            Random.Range(player.transform.position.y + yMinSpawn, player.transform.position.y + yMaxSpawn),
+            Random.Range(player.transform.position.z + zSpawnMin, player.transform.position.z + zSpawnMax));
         Instantiate(laserPickUp, spawnPoint, Quaternion.identity);
 
-        x = Random.Range(0.05f, 0.95f);
-        y = Random.Range(0.05f, 0.95f);
-        spawnPoint = new Vector3(x, y, 500.0f);
-        spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        //x = Random.Range(0.05f, 0.95f);
+        //y = Random.Range(0.05f, 0.95f);
+        //spawnPoint = new Vector3(x, y, zSpawn);
+        //spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        spawnPoint = new Vector3(Random.Range(player.transform.position.x + xMinSpawn, player.transform.position.x + xMaxSpawn),
+            Random.Range(player.transform.position.y + yMinSpawn, player.transform.position.y + yMaxSpawn),
+            Random.Range(player.transform.position.z + zSpawnMin, player.transform.position.z + zSpawnMax));
         Instantiate(missilePickUp, spawnPoint, Quaternion.identity);
 
-        x = Random.Range(0.05f, 0.95f);
-        y = Random.Range(0.05f, 0.95f);
-        spawnPoint = new Vector3(x, y, 500.0f);
-        spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        //x = Random.Range(0.05f, 0.95f);
+        //y = Random.Range(0.05f, 0.95f);
+        //spawnPoint = new Vector3(x, y, zSpawn);
+        //spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        spawnPoint = new Vector3(Random.Range(player.transform.position.x + xMinSpawn, player.transform.position.x + xMaxSpawn),
+            Random.Range(player.transform.position.y + yMinSpawn, player.transform.position.y + yMaxSpawn),
+            Random.Range(player.transform.position.z + zSpawnMin, player.transform.position.z + zSpawnMax));
         Instantiate(shieldPickUp, spawnPoint, Quaternion.identity);
     }
 

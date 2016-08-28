@@ -43,7 +43,21 @@ public class Enemy1Collision : MonoBehaviour {
         {
             Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
             col.gameObject.SetActive(false);
-            GameObject.Find("GameManager").GetComponent<WaveHandler>().enemyCount--;
+            switch (transform.name)
+            {
+                case "Enemy1":
+                    gameManager.GetComponent<WaveHandler>().enemy1Count--;
+                    break;
+                case "Enemy2":
+                    gameManager.GetComponent<WaveHandler>().enemy2Count--;
+                    break;
+                case "Enemy3":
+                    gameManager.GetComponent<WaveHandler>().enemy3Count--;
+                    break;
+                case "Enemy4":
+                    gameManager.GetComponent<WaveHandler>().enemy4Count--;
+                    break;
+            }
             Instantiate(explosion, transform.position, transform.rotation);
             Instantiate(explosionSound, transform.position, transform.rotation);
             gameObject.SetActive(false);
@@ -62,8 +76,21 @@ public class Enemy1Collision : MonoBehaviour {
     public void WasDestroyed()
     {
         achievementManager.EnemyDied();
-        _playerScore.score += laserScore;
-        GameObject.Find("GameManager").GetComponent<WaveHandler>().enemyCount--;
+        _playerScore.score += laserScore; switch (transform.name)
+        {
+            case "Enemy1":
+                gameManager.GetComponent<WaveHandler>().enemy1Count--;
+                break;
+            case "Enemy2":
+                gameManager.GetComponent<WaveHandler>().enemy2Count--;
+                break;
+            case "Enemy3":
+                gameManager.GetComponent<WaveHandler>().enemy3Count--;
+                break;
+            case "Enemy4":
+                gameManager.GetComponent<WaveHandler>().enemy4Count--;
+                break;
+        }
         Instantiate(explosion, transform.position, transform.rotation);
         Instantiate(explosionSound, transform.position, transform.rotation);
         gameObject.SetActive(false);

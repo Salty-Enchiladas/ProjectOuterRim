@@ -302,7 +302,7 @@ GameObject:
   - 4: {fileID: 478120}
   - 198: {fileID: 19851480}
   - 199: {fileID: 19904324}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: particle glow master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 417518}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - 4: {fileID: 409278}
   - 198: {fileID: 19821966}
   - 199: {fileID: 19927752}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: particle core glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

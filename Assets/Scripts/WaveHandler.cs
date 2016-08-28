@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WaveHandler : MonoBehaviour
 {
@@ -9,92 +10,109 @@ public class WaveHandler : MonoBehaviour
     public float objSpawnMinY;
     public float objSpawnMaxY;
     public float objSpawnZ;
-    public int enemyCount;
 
-    //DifficultyIncrease
-    public int spawnCap;
-    public int finalSpawnCap;
-    public int capIncreaseAmount;
-    public float spawnRate;
-    public float difficultyTimer;
+    //Enemy variables
+    public int enemy1Count;
+    public int enemy2Count;
+    public int enemy3Count;
+    public int enemy4Count;
 
-    GameObject obj;
+    public int e1SpawnCap;
+    public int e2SpawnCap;
+    public int e3SpawnCap;
+    public int e4SpawnCap;
+
+    public int e1IncSpawnAtScore;
+    public int e2IncSpawnAtScore;
+    public int e3IncSpawnAtScore;
+    public int e4IncSpawnAtScore;
+
+    public List<GameObject> obj;
     GameObject player;
     bool increasingDifficulty;
     bool spawning;
     Vector3 objectSpawn;
-
+    PlayerScore playerScore;
     public ObjectPooling[] enemyObject;
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.Find("Player");
+        playerScore = player.GetComponent<PlayerScore>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleDifficulty();
-    }
+        if (enemy1Count < e1SpawnCap)
+        {
+            print("Spawning E1");
+            obj.Add (enemyObject[0].GetPooledObject());
+            obj[0].name = "Enemy1";
+            Spawn();
+        }
+        if (playerScore.score >= e2IncSpawnAtScore && enemy2Count < e2SpawnCap)
+        {
+            print("Spawning E2");
+            obj.Add(enemyObject[1].GetPooledObject());
+            obj[1].name = "Enemy2";
+            Spawn();
+        }
+        if (playerScore.score >= e3IncSpawnAtScore && enemy3Count < e3SpawnCap)
+        {
+            print("Spawning E3");
+            obj.Add(enemyObject[2].GetPooledObject());
+            obj[2].name = "Enemy3";
+            Spawn();
+        }
+        if (playerScore.score >= e4IncSpawnAtScore && enemy4Count < e4SpawnCap)
+        {
+            print("Spawning E4");
+            obj.Add(enemyObject[3].GetPooledObject());
+            obj[3].name = "Enemy4";
+            Spawn();
+        }
 
-    IEnumerator Spawn()
+    }
+    void Spawn()
     {
+        print("Your coroutine has started");
         if (!spawning)
         {
+            print("Your bool for spawning is set to " + spawning + " this means you are not spawning already so you will spawn " + obj);
             spawning = true;
 
-            yield return new WaitForSeconds(spawnRate);
-            ChoosePool();
-
-            if (obj == null)
+            GameObject newObj;
+            newObj = obj[Random.Range(0, obj.Count)];
+            if (newObj == null)
             {
-                yield break;
+                return;
             }
 
             objectSpawn = new Vector3(Random.Range(objSpawnMinX, objSpawnMaxX), Random.Range(objSpawnMinY, objSpawnMaxY), player.transform.position.z + objSpawnZ);
 
-            obj.transform.position = objectSpawn;
-            obj.transform.rotation = Quaternion.identity;
-            obj.SetActive(true);
-
-            enemyCount++;
-
-            spawning = false;
-        }
-    }
-    void HandleDifficulty()
-    {
-        if (enemyCount != spawnCap)
-        {
-            StartCoroutine(Spawn());
-            StartCoroutine(IncreaseSpawning());
-        }
-    }
-    IEnumerator IncreaseSpawning()
-    {
-        if (!increasingDifficulty && spawnRate > 0.1f)
-        {
-            increasingDifficulty = true;
-            yield return new WaitForSeconds(difficultyTimer);
-            spawnRate = spawnRate - 0.1f;
-            if (spawnCap < finalSpawnCap)
+            newObj.transform.position = objectSpawn;
+            newObj.transform.rotation = Quaternion.identity;
+            newObj.SetActive(true);
+            switch (newObj.name)
             {
-                spawnCap = spawnCap + capIncreaseAmount;
-            }
-            increasingDifficulty = false;
-        }
-    }
+                case "Enemy1":
+                    print("hi");
+                    enemy1Count++;
+                    break;
+                case "Enemy2":
+                    enemy2Count++;
+                    break;
+                case "Enemy3":
+                    enemy3Count++;
+                    break;
+                case "Enemy4":
+                    enemy4Count++;
+                    break;
 
-    void ChoosePool()
-    {
-        if (player.GetComponent<PlayerScore>().score < 10000)
-        {
-            obj = enemyObject[0].GetPooledObject();
-        }
-        else if (player.GetComponent<PlayerScore>().score >= 10000)
-        {
-            obj = enemyObject[1].GetPooledObject();
+              spawning = false;
+            }
         }
     }
 }
