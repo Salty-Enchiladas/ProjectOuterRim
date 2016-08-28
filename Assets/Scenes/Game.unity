@@ -696,7 +696,7 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 1000
+  spawnAtScore: 15000
   spawnAfter: 5
   xMinSpawn: -400
   xMaxSpawn: 400
