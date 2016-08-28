@@ -9,11 +9,13 @@ public class Enemy1Movement : MonoBehaviour {
     public float enemyZClamp;
     public float enemyXPos;
     float lerpSpeed;
+    GameObject gameManager;
 
-	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         player = GameObject.Find("Player");
-
+        gameManager = GameObject.Find("GameManager");
+        enemySpeed = gameManager.GetComponent<PublicVariableHandler>().enemy1Speed;
         enemyZClamp = Random.Range(2f, 5f);
         enemyXPos = Random.Range(-0.5f, 0.5f);
         lerpSpeed = Random.Range(0.5f, 2.5f);

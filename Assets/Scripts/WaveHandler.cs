@@ -4,115 +4,136 @@ using System.Collections.Generic;
 
 public class WaveHandler : MonoBehaviour
 {
-    //GameSpawner
-    public float objSpawnMinX;
-    public float objSpawnMaxX;
-    public float objSpawnMinY;
-    public float objSpawnMaxY;
-    public float objSpawnZ;
+    public GameObject firstEnemyPool;
+    public GameObject secondEnemyPool;
+    public GameObject thirdEnemyPool;
+    public GameObject fourthEnemyPool;
 
-    //Enemy variables
-    public int enemy1Count;
-    public int enemy2Count;
-    public int enemy3Count;
-    public int enemy4Count;
+    public float spawnRate;
+    public int difficultyIncreaseScore;
 
-    public int e1SpawnCap;
-    public int e2SpawnCap;
-    public int e3SpawnCap;
-    public int e4SpawnCap;
+    public int secondEnemySpawnScore;
+    public int thirdEnemySpawnScore;
+    public int fourthEnemySpawnScore;
 
-    public int e1IncSpawnAtScore;
-    public int e2IncSpawnAtScore;
-    public int e3IncSpawnAtScore;
-    public int e4IncSpawnAtScore;
+    public int firstEnemySpawnCap;
+    public int secondEnemySpawnCap;
+    public int thirdEnemySpawnCap;
+    public int fourthEnemySpawnCap;
 
-    public List<GameObject> obj;
-    GameObject player;
-    bool increasingDifficulty;
-    bool spawning;
-    Vector3 objectSpawn;
-    PlayerScore playerScore;
-    public ObjectPooling[] enemyObject;
+    public int firstEnemyCount;
+    public int secondEnemyCount;
+    public int thirdEnemyCount;
+    public int fourthEnemyCount;
 
-    // Use this for initialization
+    private GameObject player;
+    private GameObject currentObject;
+    private string poolObject;
+
+    private float lastSpawn;
+    private int score;
+    private int tempScore;
+    private bool increaseDifficulty;
+
+    ObjectPooling firstEnemy;
+    ObjectPooling secondEnemy;
+    ObjectPooling thirdEnemy;
+    ObjectPooling fourthEnemy;
+
     void Start()
     {
         player = GameObject.Find("Player");
-        playerScore = player.GetComponent<PlayerScore>();
+        firstEnemy = firstEnemyPool.GetComponent<ObjectPooling>();
+        secondEnemy = secondEnemyPool.GetComponent<ObjectPooling>();
+        thirdEnemy = thirdEnemyPool.GetComponent<ObjectPooling>();
+        fourthEnemy = fourthEnemyPool.GetComponent<ObjectPooling>();
+        increaseDifficulty = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (enemy1Count < e1SpawnCap)
+        score = player.GetComponent<PlayerScore>().score;
+
+        if (score >= 0 && firstEnemyCount <= firstEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
-            print("Spawning E1");
-            obj.Add (enemyObject[0].GetPooledObject());
-            obj[0].name = "Enemy1";
-            Spawn();
+            poolObject = "Enemy1";
+            Spawn(poolObject);
         }
-        if (playerScore.score >= e2IncSpawnAtScore && enemy2Count < e2SpawnCap)
+        if (score >= secondEnemySpawnScore && secondEnemyCount <= secondEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
-            print("Spawning E2");
-            obj.Add(enemyObject[1].GetPooledObject());
-            obj[1].name = "Enemy2";
-            Spawn();
+            poolObject = "Enemy2";
+            Spawn(poolObject);
         }
-        if (playerScore.score >= e3IncSpawnAtScore && enemy3Count < e3SpawnCap)
+        if (score >= thirdEnemySpawnScore && thirdEnemyCount <= thirdEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
-            print("Spawning E3");
-            obj.Add(enemyObject[2].GetPooledObject());
-            obj[2].name = "Enemy3";
-            Spawn();
+            poolObject = "Enemy3";
+            Spawn(poolObject);
         }
-        if (playerScore.score >= e4IncSpawnAtScore && enemy4Count < e4SpawnCap)
+        if (score >= fourthEnemySpawnScore && fourthEnemyCount <= fourthEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
-            print("Spawning E4");
-            obj.Add(enemyObject[3].GetPooledObject());
-            obj[3].name = "Enemy4";
-            Spawn();
+            poolObject = "Enemy4";
+            Spawn(poolObject);
         }
 
+        if (score % difficultyIncreaseScore == 0 && score > 0)
+        {
+
+            if (increaseDifficulty)
+            {
+                tempScore = score;
+
+                if (spawnRate >= 0)
+                    spawnRate = spawnRate - .1f;
+                if (firstEnemySpawnCap <= 10 && secondEnemySpawnCap <= 10 && thirdEnemySpawnCap <= 10 && fourthEnemySpawnCap <= 10)
+                {
+                    firstEnemySpawnCap++;
+                    secondEnemySpawnCap++;
+                    thirdEnemySpawnCap++;
+                    fourthEnemySpawnCap++;
+                }
+                increaseDifficulty = false;
+            }
+            if (tempScore != score)
+            {
+                increaseDifficulty = true;
+            }
+        }
     }
-    void Spawn()
+
+    void Spawn(string objectPool)
     {
-        print("Your coroutine has started");
-        if (!spawning)
+        switch (objectPool)
         {
-            print("Your bool for spawning is set to " + spawning + " this means you are not spawning already so you will spawn " + obj);
-            spawning = true;
-
-            GameObject newObj;
-            newObj = obj[Random.Range(0, obj.Count)];
-            if (newObj == null)
-            {
-                return;
-            }
-
-            objectSpawn = new Vector3(Random.Range(objSpawnMinX, objSpawnMaxX), Random.Range(objSpawnMinY, objSpawnMaxY), player.transform.position.z + objSpawnZ);
-
-            newObj.transform.position = objectSpawn;
-            newObj.transform.rotation = Quaternion.identity;
-            newObj.SetActive(true);
-            switch (newObj.name)
-            {
-                case "Enemy1":
-                    print("hi");
-                    enemy1Count++;
-                    break;
-                case "Enemy2":
-                    enemy2Count++;
-                    break;
-                case "Enemy3":
-                    enemy3Count++;
-                    break;
-                case "Enemy4":
-                    enemy4Count++;
-                    break;
-
-              spawning = false;
-            }
+            case "Enemy1":
+                firstEnemyCount++;
+                currentObject = firstEnemy.GetPooledObject();
+                currentObject.name = objectPool;
+                break;
+            case "Enemy2":
+                secondEnemyCount++;
+                currentObject = secondEnemy.GetPooledObject();
+                currentObject.name = objectPool;
+                break;
+            case "Enemy3":
+                thirdEnemyCount++;
+                currentObject = thirdEnemy.GetPooledObject();
+                currentObject.name = objectPool;
+                break;
+            case "Enemy4":
+                fourthEnemyCount++;
+                currentObject = fourthEnemy.GetPooledObject();
+                currentObject.name = objectPool;
+                break;
         }
+
+        lastSpawn = Time.time;
+        if (currentObject == null)
+        {
+            return;
+        }
+
+        currentObject.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 5000);
+        currentObject.transform.rotation = transform.rotation;
+        currentObject.SetActive(true);
     }
 }

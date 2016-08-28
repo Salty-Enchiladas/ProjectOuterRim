@@ -33,6 +33,7 @@ public class Actor : MonoBehaviour
     private State state = State.MOVING;
 
     GameObject playerTarget;
+    GameObject gameManager;
 
     private float OldTime = 0;
     private float checkTime = 0;
@@ -92,7 +93,24 @@ public class Actor : MonoBehaviour
 
         player = GameObject.Find("Player");
         playerTarget = GameObject.Find("PlayerTarget");
+        gameManager = GameObject.Find("GameManager");
         //MoveOrder(player.transform.position);
+
+        switch (transform.name)
+        {
+            case "Enemy1":
+                speed = gameManager.GetComponent<PublicVariableHandler>().enemy1Speed;
+                break;
+            case "Enemy2":
+                speed = gameManager.GetComponent<PublicVariableHandler>().enemy2Speed;
+                break;
+            case "Enemy3":
+                speed = gameManager.GetComponent<PublicVariableHandler>().enemy3Speed;
+                break;
+            case "Enemy4":
+                speed = gameManager.GetComponent<PublicVariableHandler>().enemy4Speed;
+                break;
+        }
     }
 
     private void OnEnable()
@@ -269,19 +287,19 @@ public class Actor : MonoBehaviour
                             {
                                 case "Enemy1":
                                     print("happens");
-                                    _waveHandler.enemy1Count--;
+                                    _waveHandler.firstEnemyCount--;
                                     gameObject.SetActive(false);
                                     break;
                                 case "Enemy2":
-                                    _waveHandler.enemy2Count--;
+                                    _waveHandler.secondEnemyCount--;
                                     gameObject.SetActive(false);
                                     break;
                                 case "Enemy3":
-                                    _waveHandler.enemy3Count--;
+                                    _waveHandler.thirdEnemyCount--;
                                     gameObject.SetActive(false);
                                     break;
                                 case "Enemy4":
-                                    _waveHandler.enemy4Count--;
+                                    _waveHandler.fourthEnemyCount--;
                                     gameObject.SetActive(false);
                                     break;
                             }
