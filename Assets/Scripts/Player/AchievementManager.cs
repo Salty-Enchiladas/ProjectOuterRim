@@ -317,75 +317,172 @@ public class AchievementManager : MonoBehaviour
 
         if (pickUpManager.shieldLevel == 3 && gameTime == 60)
         {
-            print("Shield fully upgraded for 1 minute!");
+            //print("Shield fully upgraded for 1 minute!");
+            if (PlayerPrefs.GetInt("ShieldUpgradedTimed1") == 0)
+            {
+                PlayerPrefs.SetInt("ShieldUpgradedTimed1", 1);
+                achievement.text = "Shield fully upgraded for 1 minute!";
+                CallWait();
+            }
         }
         if (pickUpManager.shieldLevel == 3 && gameTime == 300)
         {
-            print("Shield fully upgraded for 5 minutes!");
+            //print("Shield fully upgraded for 5 minutes!");
+            if (PlayerPrefs.GetInt("ShieldUpgradedTimed2") == 0)
+            {
+                PlayerPrefs.SetInt("ShieldUpgradedTimed2", 1);
+                achievement.text = "Shield fully upgraded for 5 minutes!";
+                CallWait();
+            }
         }
         if (pickUpManager.shieldLevel == 3 && gameTime == 600)
         {
-            print("Shield fully upgraded for 10 minutes!");
+            //print("Shield fully upgraded for 10 minutes!");
+            if (PlayerPrefs.GetInt("ShieldUpgradedTimed3") == 0)
+            {
+                PlayerPrefs.SetInt("ShieldUpgradedTimed3", 1);
+                achievement.text = "Shield fully upgraded for 10 minutes!";
+                CallWait();
+            }
         }
         if (pickUpManager.shieldLevel == 3 && gameTime == 1800)
         {
-            print("Shield fully upgraded for 30 minutes!");
+            //print("Shield fully upgraded for 30 minutes!");
+            if (PlayerPrefs.GetInt("ShieldUpgradedTimed4") == 0)
+            {
+                PlayerPrefs.SetInt("ShieldUpgradedTimed4", 1);
+                achievement.text = "Shield fully upgraded for 30 minutes!";
+                CallWait();
+            }
         }
 
 
 
         if (pickUpManager.laserLevel == 3 && gameTime == 60)
         {
-            print("Laser fully upgraded for 1 minute!");
+            //print("Laser fully upgraded for 1 minute!");
+            if (PlayerPrefs.GetInt("LaserUpgradedTimed1") == 0)
+            {
+                PlayerPrefs.SetInt("LaserUpgradedTimed1", 1);
+                achievement.text = "Laser fully upgraded for 1 minute!";
+                CallWait();
+            }
         }
         if (pickUpManager.laserLevel == 3 && gameTime == 300)
         {
-            print("Laser fully upgraded for 5 minutes!");
+            //print("Laser fully upgraded for 5 minutes!");
+            if (PlayerPrefs.GetInt("LaserUpgradedTimed2") == 0)
+            {
+                PlayerPrefs.SetInt("LaserUpgradedTimed2", 1);
+                achievement.text = "Laser fully upgraded for 5 minutes!";
+                CallWait();
+            }
         }
         if (pickUpManager.laserLevel == 3 && gameTime == 600)
         {
-            print("Laser fully upgraded for 10 minutes!");
+            //print("Laser fully upgraded for 10 minutes!");
+            if (PlayerPrefs.GetInt("LaserUpgradedTimed3") == 0)
+            {
+                PlayerPrefs.SetInt("LaserUpgradedTimed3", 1);
+                achievement.text = "Laser fully upgraded for 10 minutes!";
+                CallWait();
+            }
         }
         if (pickUpManager.laserLevel == 3 && gameTime == 1800)
         {
-            print("Laser fully upgraded for 30 minutes!");
+            //print("Laser fully upgraded for 30 minutes!");
+            if (PlayerPrefs.GetInt("LaserUpgradedTimed4") == 0)
+            {
+                PlayerPrefs.SetInt("LaserUpgradedTimed4", 1);
+                achievement.text = "Laser fully upgraded for 30 minutes!";
+                CallWait();
+            }
         }
 
 
 
         if (pickUpManager.missileLevel == 3 && gameTime == 60)
         {
-            print("Missile fully upgraded for 1 minute!");
+            //print("Missile fully upgraded for 1 minute!");
+            if (PlayerPrefs.GetInt("MissileUpgradedTimed1") == 0)
+            {
+                PlayerPrefs.SetInt("MissileUpgradedTimed1", 1);
+                achievement.text = "Missile fully upgraded for 1 minute!";
+                CallWait();
+            }
         }
         if (pickUpManager.missileLevel == 3 && gameTime == 300)
         {
-            print("Missile fully upgraded for 5 minutes!");
+            //print("Missile fully upgraded for 5 minutes!");
+            if (PlayerPrefs.GetInt("MissileUpgradedTimed2") == 0)
+            {
+                PlayerPrefs.SetInt("MissileUpgradedTimed2", 1);
+                achievement.text = "Missile fully upgraded for 5 minutes!";
+                CallWait();
+            }
+
         }
         if (pickUpManager.missileLevel == 3 && gameTime == 600)
         {
-            print("Missile fully upgraded for 10 minutes!");
+            //print("Missile fully upgraded for 10 minutes!");
+            if (PlayerPrefs.GetInt("MissileUpgradedTimed3") == 0)
+            {
+                PlayerPrefs.SetInt("MissileUpgradedTimed3", 1);
+                achievement.text = "Missile fully upgraded for 10 minutes!";
+                CallWait();
+            }
         }
         if (pickUpManager.missileLevel == 3 && gameTime == 1800)
         {
-            print("Missile fully upgraded for 30 minutes!");
+            //print("Missile fully upgraded for 30 minutes!");
+            if (PlayerPrefs.GetInt("MissileUpgradedTimed4") == 0)
+            {
+                PlayerPrefs.SetInt("MissileUpgradedTimed4", 1);
+                achievement.text = "Missile fully upgraded for 30 minute!";
+                CallWait();
+            }
         }
 
 
         if (pickUpManager.shieldLevel == 3 && pickUpManager.laserLevel == 3 && pickUpManager.missileLevel == 3 && gameTime == 60)
         {
-            print("All weapons fully upgraded for 1 minute!");
+            //print("All weapons fully upgraded for 1 minute!");
+            if (PlayerPrefs.GetInt("AllWeaponsUpgradedTimed1") == 0)
+            {
+                PlayerPrefs.SetInt("AllWeaponsUpgradedTimed1", 1);
+                achievement.text = "All weapons fully upgraded for 1 minute!";
+                CallWait();
+            }
         }
         if (pickUpManager.shieldLevel == 3 && pickUpManager.laserLevel == 3 && pickUpManager.missileLevel == 3 && gameTime == 300)
         {
-            print("All weapons fully upgraded for 5 minutes!");
+           // print("All weapons fully upgraded for 5 minutes!");
+            if (PlayerPrefs.GetInt("AllWeaponsUpgradedTimed2") == 0)
+            {
+                PlayerPrefs.SetInt("AllWeaponsUpgradedTimed2", 1);
+                achievement.text = "All weapons fully upgraded for 5 minutes!";
+                CallWait();
+            }
         }
         if (pickUpManager.shieldLevel == 3 && pickUpManager.laserLevel == 3 && pickUpManager.missileLevel == 3 && gameTime == 600)
         {
-            print("All weapons fully upgraded for 10 minutes!");
+            //print("All weapons fully upgraded for 10 minutes!");
+            if (PlayerPrefs.GetInt("AllWeaponsUpgradedTimed3") == 0)
+            {
+                PlayerPrefs.SetInt("AllWeaponsUpgradedTimed3", 1);
+                achievement.text = "All weapons fully upgraded for 10 minutes!";
+                CallWait();
+            }
         }
         if (pickUpManager.shieldLevel == 3 && pickUpManager.laserLevel == 3 && pickUpManager.missileLevel == 3 && gameTime == 1800)
         {
-            print("All weapons fully upgraded 30 minutes!");
+            //print("All weapons fully upgraded 30 minutes!");
+            if (PlayerPrefs.GetInt("AllWeaponsUpgradedTimed4") == 0)
+            {
+                PlayerPrefs.SetInt("AllWeaponsUpgradedTimed4", 1);
+                achievement.text = "All weapons fully upgraded for 30 minutes!";
+                CallWait();
+            }
         }
 
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -394,27 +491,63 @@ public class AchievementManager : MonoBehaviour
         switch (totalEnemiesDied)
         {
             case 1:
-                print("You got one! 1 Enemy killed.");
+                //print("You got one! 1 Enemy killed.");
+                if (PlayerPrefs.GetInt("KilledEnemy1") == 0)
+                {
+                    PlayerPrefs.SetInt("KilledEnemy1", 1);
+                    achievement.text = "You got one! One enemy killed!";
+                    CallWait();
+                }
                 break;
 
             case 50:
-                print("50 Enemies killed.");
+                //print("50 Enemies killed.");
+                if (PlayerPrefs.GetInt("KilledEnemy2") == 0)
+                {
+                    PlayerPrefs.SetInt("KilledEnemy2", 1);
+                    achievement.text = "50 enemies killed!";
+                    CallWait();
+                }
                 break;
 
             case 100:
-                print("100 Enemies killed.");
+                //print("100 Enemies killed.");
+                if (PlayerPrefs.GetInt("KilledEnemy3") == 0)
+                {
+                    PlayerPrefs.SetInt("KilledEnemy3", 1);
+                    achievement.text = "100 enemies killed!";
+                    CallWait();
+                }
                 break;
 
             case 500:
-                print("500 Enemies killed.");
+                //print("500 Enemies killed.");
+                if (PlayerPrefs.GetInt("KilledEnemy4") == 0)
+                {
+                    PlayerPrefs.SetInt("KilledEnemy4", 1);
+                    achievement.text = "500 enemies killed!";
+                    CallWait();
+                }
                 break;
 
             case 1000:
-                print("1000 Enemies killed.");
+                //print("1000 Enemies killed.");
+                if (PlayerPrefs.GetInt("KilledEnemy5") == 0)
+                {
+                    PlayerPrefs.SetInt("KilledEnemy5", 1);
+                    achievement.text = "1000 enemies killed!";
+                    CallWait();
+                }
                 break;
 
             case 5000:
-                print("5000 Enemies killed.");
+                //print("5000 Enemies killed.");
+                if (PlayerPrefs.GetInt("KilledEnemy6") == 0)
+                {
+                    PlayerPrefs.SetInt("KilledEnemy6", 1);
+                    achievement.text = "5000 enemies killed!";
+                    CallWait();
+                }
                 break;
         }
 
@@ -425,43 +558,63 @@ public class AchievementManager : MonoBehaviour
         switch (totalLaserShots)
         {
             case 100:
-                print("100 Lasers shot!");
+                //print("100 Lasers shot!");
+                if (PlayerPrefs.GetInt("LasersShot1") == 0)
+                {
+                    PlayerPrefs.SetInt("LasersShot1", 1);
+                    achievement.text = "100 Lasers shot!";
+                    CallWait();
+                }
                 break;
 
             case 500:
-                print("500 Lasers shot!");
+                //print("500 Lasers shot!");
+                if (PlayerPrefs.GetInt("LasersShot2") == 0)
+                {
+                    PlayerPrefs.SetInt("LasersShot2", 1);
+                    achievement.text = "500 Lasers shot!";
+                    CallWait();
+                }
                 break;
 
             case 1000:
-                print("1,000 Lasers shot!");
+                //print("1,000 Lasers shot!");
+                if (PlayerPrefs.GetInt("LasersShot3") == 0)
+                {
+                    PlayerPrefs.SetInt("LasersShot3", 1);
+                    achievement.text = "1,000 Lasers shot!";
+                    CallWait();
+                }
                 break;
 
             case 5000:
-                print("5,000 Lasers shot!");
+                //print("5,000 Lasers shot!");
+                if (PlayerPrefs.GetInt("LasersShot4") == 0)
+                {
+                    PlayerPrefs.SetInt("LasersShot4", 1);
+                    achievement.text = "5,000 Lasers shot!";
+                    CallWait();
+                }
                 break;
 
             case 10000:
-                print("10,000 Lasers shot!");
+                //print("10,000 Lasers shot!");
+                if (PlayerPrefs.GetInt("LasersShot5") == 0)
+                {
+                    PlayerPrefs.SetInt("LasersShot5", 1);
+                    achievement.text = "10,000 Lasers shot!";
+                    CallWait();
+                }
                 break;
 
             case 50000:
-                print("50,000 Lasers shot!");
-                break;
-
-            case 100000:
-                print("100,000 Lasers shot!");
-                break;
-
-            case 250000:
-                print("250,000 Lasers shot!");
-                break;
-
-            case 500000:
-                print("500,000 Lasers shot!");
-                break;
-
-            case 1000000:
-                print("1,000,000 Lasers shot!");
+                //print("50,000 Lasers shot!");
+                if (PlayerPrefs.GetInt("LasersShot6") == 0)
+                {
+                    PlayerPrefs.SetInt("LasersShot6", 1);
+                    achievement.text = "50,000 Lasers shot!";
+                    CallWait();
+                }
                 break;
         }
 
@@ -546,5 +699,45 @@ public class AchievementManager : MonoBehaviour
         PlayerPrefs.SetInt("StayAlive3", 0);
         PlayerPrefs.SetInt("StayAlive4", 0);
         PlayerPrefs.SetInt("StayAlive5", 0);
+        PlayerPrefs.SetInt("NoDamage1", 0);
+        PlayerPrefs.SetInt("NoDamage2", 0);
+        PlayerPrefs.SetInt("NoDamage3", 0);
+        PlayerPrefs.SetInt("NoDamage4", 0);
+        PlayerPrefs.SetInt("OneHealth1", 0);
+        PlayerPrefs.SetInt("OneHealth2", 0);
+        PlayerPrefs.SetInt("OneHealth3", 0);
+        PlayerPrefs.SetInt("OneHealth4", 0);
+        PlayerPrefs.SetInt("ShieldUpgraded", 0);
+        PlayerPrefs.SetInt("LaserUpgraded", 0);
+        PlayerPrefs.SetInt("MissileUpgraded", 0);
+        PlayerPrefs.SetInt("FullyUpgraded", 0);
+        PlayerPrefs.SetInt("ShieldUpgradedTimed1", 0);
+        PlayerPrefs.SetInt("ShieldUpgradedTimed2", 0);
+        PlayerPrefs.SetInt("ShieldUpgradedTimed3", 0);
+        PlayerPrefs.SetInt("ShieldUpgradedTimed4", 0);
+        PlayerPrefs.SetInt("LaserUpgradedTimed1", 0);
+        PlayerPrefs.SetInt("LaserUpgradedTimed2", 0);
+        PlayerPrefs.SetInt("LaserUpgradedTimed3", 0);
+        PlayerPrefs.SetInt("LaserUpgradedTimed4", 0);
+        PlayerPrefs.SetInt("MissileUpgradedTimed1", 0);
+        PlayerPrefs.SetInt("MissileUpgradedTimed2", 0);
+        PlayerPrefs.SetInt("MissileUpgradedTimed3", 0);
+        PlayerPrefs.SetInt("MissileUpgradedTimed4", 0);
+        PlayerPrefs.SetInt("AllWeaponsUpgradedTimed1", 0);
+        PlayerPrefs.SetInt("AllWeaponsUpgradedTimed2", 0);
+        PlayerPrefs.SetInt("AllWeaponsUpgradedTimed3", 0);
+        PlayerPrefs.SetInt("AllWeaponsUpgradedTimed4", 0);
+        PlayerPrefs.SetInt("KilledEnemy1", 0);
+        PlayerPrefs.SetInt("KilledEnemy2", 0);
+        PlayerPrefs.SetInt("KilledEnemy3", 0);
+        PlayerPrefs.SetInt("KilledEnemy4", 0);
+        PlayerPrefs.SetInt("KilledEnemy5", 0);
+        PlayerPrefs.SetInt("KilledEnemy6", 0);
+        PlayerPrefs.SetInt("LaserShot1", 0);
+        PlayerPrefs.SetInt("LaserShot2", 0);
+        PlayerPrefs.SetInt("LaserShot3", 0);
+        PlayerPrefs.SetInt("LaserShot4", 0);
+        PlayerPrefs.SetInt("LaserShot5", 0);
+        PlayerPrefs.SetInt("LaserShot6", 0);
     }
 }

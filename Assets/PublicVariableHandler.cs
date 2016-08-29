@@ -12,6 +12,9 @@ public class PublicVariableHandler : MonoBehaviour
     public int playerLives;
     public int playerHealth;
     public float playerSpeed;
+    public int playerLaserHeatCap;
+    public int playerLaserHeatIncreaseAmount;
+    public float laserHeatLossAfterSeconds;
 
     //Enemy Variables
 

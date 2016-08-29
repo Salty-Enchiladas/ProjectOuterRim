@@ -642,6 +642,9 @@ MonoBehaviour:
   playerLives: 3
   playerHealth: 9
   playerSpeed: 500
+  playerLaserHeatCap: 100
+  playerLaserHeatIncreaseAmount: 10
+  laserHeatLossAfterSeconds: 2
   maneuverSpeed: 1.5
   strafeSpeed: 1.5
   enemy1Speed: 700
