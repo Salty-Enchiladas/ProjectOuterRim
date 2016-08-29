@@ -28,6 +28,7 @@ public class Actor : MonoBehaviour
         MOVING,
         MANEUVER,
         STRAFE,
+		CROSS,
     }
 
     private State state = State.MOVING;
@@ -81,9 +82,9 @@ public class Actor : MonoBehaviour
         maneuverSpeed = publicVariableHandler.maneuverSpeed;
         strafeSpeed = publicVariableHandler.strafeSpeed;
 
-        _centerX = centerX + Random.Range(-500, 500);
-        _centerY = centerY + Random.Range(-500, 500);
-        _centerZ = centerZ + Random.Range(-500, 500);
+        _centerX = centerX + Random.Range(-200, 200);
+        _centerY = centerY + Random.Range(-200, 200);
+        _centerZ = centerZ + Random.Range(-200, 200);
 
         gun1 = GetComponent<EnemyStoreVariables>().gun1;
         gun2 = GetComponent<EnemyStoreVariables>().gun2;
@@ -98,6 +99,8 @@ public class Actor : MonoBehaviour
         enemyXPos = Random.Range(-250f, 250f);
         lerpSpeed = Random.Range(0.25f, 1f);
         maneuverRadius = Random.Range(maneuverRadiusMin, maneuverRadiusMax);
+
+		transform.rotation = new Quaternion (0, 180, 0 ,0);
 
         player = GameObject.Find("Player");
         playerTarget = GameObject.Find("PlayerTarget");
@@ -136,23 +139,29 @@ public class Actor : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
 
-        if (playerTarget.transform.position.z + enemyZClamp >= transform.position.z)      //if enemy is near player
-        {
-            if (!hasChosenAction)
-            {
-                hasChosenAction = true;
-                randomInt = Random.Range(0, 2);
+        //if (playerTarget.transform.position.z + enemyZClamp >= transform.position.z)      //if enemy is near player
+        //{
+            
+        //}
+		if (!hasChosenAction)
+		{
+			hasChosenAction = true;
+			randomInt = Random.Range(0, 3);
 
-                if (randomInt == 0)
-                {
-                    ChangeState(State.MANEUVER);
-                }
-                else //if (randomInt == 1)
-                {
-                    ChangeState(State.STRAFE);
-                }
-            }
-        }
+			if (randomInt == 0) {
+				ChangeState (State.MANEUVER);
+			} else if (randomInt == 1) {
+				ChangeState (State.STRAFE);
+			} else if (randomInt == 2) 
+			{
+				ChangeState (State.CROSS);
+			}
+		}
+		if (transform.position.z > player.transform.position.z + 4000)
+			transform.rotation = new Quaternion (0,180,0,0);
+		if(transform.position.z < player.transform.position.z -500)
+			transform.rotation = new Quaternion (0,0,0,0);
+			
     }
 
     private void FixedUpdate()
@@ -182,7 +191,7 @@ public class Actor : MonoBehaviour
                         gun3.GetComponent<Enemy1Fire>().canFire = false;
                     }
 
-                    transform.LookAt(playerTarget.transform);
+                    //transform.LookAt(playerTarget.transform);
 
                     transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
@@ -205,121 +214,152 @@ public class Actor : MonoBehaviour
                     //}
                     break;
 
-                case State.MANEUVER:
-                    OldTime = elapsedTime + 0.01f;
+			case State.MANEUVER:
+				OldTime = elapsedTime + 0.01f;
 
-                    if (!ceasedFire)
-                    {
-                        ceasedFire = true;
-                        gun1.GetComponent<Enemy1Fire>().canFire = false;
-                        gun2.GetComponent<Enemy1Fire>().canFire = false;
-                        gun3.GetComponent<Enemy1Fire>().canFire = false;
-                    }
+				if (!ceasedFire) {
+					ceasedFire = true;
+					gun1.GetComponent<Enemy1Fire> ().canFire = false;
+					gun2.GetComponent<Enemy1Fire> ().canFire = false;
+					gun3.GetComponent<Enemy1Fire> ().canFire = false;
+				}
 
-                    transform.LookAt(lookAtPoint);
+				//transform.LookAt (lookAtPoint);
 
-                    maneuverTimer += Time.deltaTime;
-                    maneuverAngle = maneuverTimer;
+				maneuverTimer += Time.deltaTime;
+				maneuverAngle = maneuverTimer;
 
-                    centerX += playerTarget.transform.position.x;
-                    centerY += playerTarget.transform.position.y;
-                    centerZ += playerTarget.transform.position.z;
+				centerX += playerTarget.transform.position.x;
+				centerY += playerTarget.transform.position.y;
+				centerZ += playerTarget.transform.position.z;
 
-                    if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection)
-                    {
-                        hasChosenDirection = true;
-                        maneuverLeft = false;
-                    }
-                    else if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection)
-                    {
-                        hasChosenDirection = true;
-                        maneuverLeft = true;
-                    }
+				if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection) {
+					hasChosenDirection = true;
+					maneuverLeft = false;
+				} else if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection) {
+					hasChosenDirection = true;
+					maneuverLeft = true;
+				}
 
-                    if (maneuverLeft && hasChosenDirection)
-                    {
-                        lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
-                        //Maneuver to the left of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
-                    }
-                    else if (!maneuverLeft && hasChosenDirection)
-                    {
-                        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
-                        //Maneuver to the right of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
-                    }
+				if (maneuverLeft && hasChosenDirection) {
+					lookAtPoint.position = new Vector3 (-centerX + (Mathf.Cos (maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin (maneuverAngle) * (maneuverRadius * 3)));
+					//Maneuver to the left of the player
+					transform.position = Vector3.Lerp (transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+				} else if (!maneuverLeft && hasChosenDirection) {
+					lookAtPoint.position = new Vector3 (centerX + -(Mathf.Cos (maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin (maneuverAngle) * (maneuverRadius * 3)));
+					//Maneuver to the right of the player
+					transform.position = Vector3.Lerp (transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+				}
 
-                    centerX = _centerX;
-                    centerY = _centerY;
-                    centerZ = _centerZ;
-
+				centerX = _centerX;
+				centerY = _centerY;
+				centerZ = _centerZ;
                     break;
 
-                case State.STRAFE:
-                    OldTime = elapsedTime + 0.01f;
+			case State.STRAFE:
+				OldTime = elapsedTime + 0.01f;
 
-                    if (transform.position.x < playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
-                    {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, -100f, -1000f), Time.deltaTime * strafeSpeed);
-                    }
-                    else if (transform.position.x < playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
-                    {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, 100f, -1000f), Time.deltaTime * strafeSpeed);
-                    }
-                    else if (transform.position.x > playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
-                    {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, 100f, -1000f), Time.deltaTime * strafeSpeed);
-                    }
-                    else if (transform.position.x > playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
-                    {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * strafeSpeed);
-                    }
+				if (transform.position.x < playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y) {
+					transform.position = Vector3.Lerp (transform.position, playerTarget.transform.position + new Vector3 (-25f, -25f, -1000f), Time.deltaTime * strafeSpeed);
+				} else if (transform.position.x < playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y) {
+					transform.position = Vector3.Lerp (transform.position, playerTarget.transform.position + new Vector3 (-25, 25f, -1000f), Time.deltaTime * strafeSpeed);
+				} else if (transform.position.x > playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y) {
+					transform.position = Vector3.Lerp (transform.position, playerTarget.transform.position + new Vector3 (25, 25f, -1000f), Time.deltaTime * strafeSpeed);
+				} else if (transform.position.x > playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y) {
+					transform.position = Vector3.Lerp (transform.position, playerTarget.transform.position + new Vector3 (25, -25f, -1000f), Time.deltaTime * strafeSpeed);
+				}
 
-                    if (transform.position.z > playerTarget.transform.position.z + 400)
-                    {
-                        transform.LookAt(playerTarget.transform);
-                        gun3.transform.LookAt(playerTarget.transform);
-                        gun1.GetComponent<Enemy1Fire>().fireFreq = 0.5f;
-                        gun2.GetComponent<Enemy1Fire>().fireFreq = 0.5f;
-                        gun3.GetComponent<Enemy1Fire>().canFire = true;
-                        gun3.GetComponent<Enemy1Fire>().fireFreq = 0.1f;
-                    }
-                    else if (transform.position.z <= playerTarget.transform.position.z + 400)
-                    {
-                        transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
-                        gun3.transform.LookAt(playerTarget.transform);
+				if (transform.position.z > playerTarget.transform.position.z + 1000) {
+					//transform.LookAt (playerTarget.transform);
+					gun3.transform.LookAt (playerTarget.transform);
+					gun2.transform.LookAt (playerTarget.transform);
+					gun1.transform.LookAt (playerTarget.transform);
+					gun1.GetComponent<Enemy1Fire> ().fireFreq = .3f;
+					gun2.GetComponent<Enemy1Fire> ().fireFreq = .3f;
+					gun3.GetComponent<Enemy1Fire> ().canFire = true;
+					gun3.GetComponent<Enemy1Fire> ().fireFreq = .3f;
+				} else if (transform.position.z <= playerTarget.transform.position.z + 999) {
+					//transform.rotation = new Quaternion (0f, 180f, 0f, 0f);
+					//transform.LookAt(transform);
+					gun3.GetComponent<Enemy1Fire> ().canFire = false;
+					gun2.GetComponent<Enemy1Fire> ().canFire = false;
+					gun1.GetComponent<Enemy1Fire> ().canFire = false;
 
-                        if (transform.position.z < playerTarget.transform.position.z)
-                        {
-                            gun3.GetComponent<Enemy1Fire>().canFire = false;
-                        }
+					//if (transform.position.z < playerTarget.transform.position.z) {
+					//	gun3.GetComponent<Enemy1Fire> ().canFire = false;
+					//	gun2.GetComponent<Enemy1Fire> ().canFire = false;
+					//	gun1.GetComponent<Enemy1Fire> ().canFire = false;
+					//}
 
-                        if (transform.position.z < playerTarget.transform.position.z - 200)
-                        {
-                            switch (transform.name)
-                            {
-                                case "Enemy1":
-                                    print("happens");
-                                    _waveHandler.firstEnemyCount--;
-                                    gameObject.SetActive(false);
-                                    break;
-                                case "Enemy2":
-                                    _waveHandler.secondEnemyCount--;
-                                    gameObject.SetActive(false);
-                                    break;
-                                case "Enemy3":
-                                    _waveHandler.thirdEnemyCount--;
-                                    gameObject.SetActive(false);
-                                    break;
-                                case "Enemy4":
-                                    _waveHandler.fourthEnemyCount--;
-                                    gameObject.SetActive(false);
-                                    break;
-                            }
-                        }
-                    }
 
-                    break;
+					if (transform.position.z < playerTarget.transform.position.z - 200) {
+						switch (transform.name) {
+						case "Enemy1":
+							print ("happens");
+							_waveHandler.firstEnemyCount--;
+							gameObject.SetActive (false);
+							break;
+						case "Enemy2":
+							_waveHandler.secondEnemyCount--;
+							gameObject.SetActive (false);
+							break;
+						case "Enemy3":
+							_waveHandler.thirdEnemyCount--;
+							gameObject.SetActive (false);
+							break;
+						case "Enemy4":
+							_waveHandler.fourthEnemyCount--;
+							gameObject.SetActive (false);
+							break;
+						}
+					}
+				}
+
+				break;
+			case State.CROSS:
+
+				OldTime = elapsedTime + 0.01f;
+
+				if (!ceasedFire) {
+					ceasedFire = true;
+					gun1.GetComponent<Enemy1Fire> ().canFire = false;
+					gun2.GetComponent<Enemy1Fire> ().canFire = false;
+					gun3.GetComponent<Enemy1Fire> ().canFire = false;
+				}
+
+				//transform.LookAt (lookAtPoint);
+
+				maneuverTimer += Time.deltaTime;
+				maneuverAngle = maneuverTimer;
+
+				centerX += playerTarget.transform.position.x;
+				centerY += playerTarget.transform.position.y;
+				centerZ += playerTarget.transform.position.z;
+
+				if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection) {
+					hasChosenDirection = true;
+					maneuverLeft = false;
+				} else if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection) {
+					hasChosenDirection = true;
+					maneuverLeft = true;
+				}
+
+				if (maneuverLeft && hasChosenDirection) {
+					lookAtPoint.position = new Vector3 (-centerX + (Mathf.Cos (maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin (maneuverAngle) * (maneuverRadius * 3)));
+					//Maneuver to the left of the player
+					transform.position = Vector3.Lerp (transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+				} else if (!maneuverLeft && hasChosenDirection) {
+					lookAtPoint.position = new Vector3 (centerX + -(Mathf.Cos (maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin (maneuverAngle) * (maneuverRadius * 3)));
+					//Maneuver to the right of the player
+					transform.position = Vector3.Lerp (transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+				}
+
+				centerX = _centerX;
+				centerY = _centerY;
+				centerZ = _centerZ;
+				break;
+
+				break;
 
                 //case State.ATTACK:
                 //    OldTime = elapsedTime + 0.01f;
@@ -328,6 +368,7 @@ public class Actor : MonoBehaviour
 
                 //    transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + enemyXPos, player.transform.position.y, player.transform.position.z + enemyZClamp), Time.deltaTime * lerpSpeed);
                 //    break;
+			
             }
         }
     }

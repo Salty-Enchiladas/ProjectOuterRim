@@ -324,8 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17535fe6f515cc46ad8d884212bc8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserSpeed: 1500
-  laserRange: 3000
+  laserSpeed: 3000
+  laserRange: 4000
 --- !u!136 &13682378
 CapsuleCollider:
   m_ObjectHideFlags: 1
