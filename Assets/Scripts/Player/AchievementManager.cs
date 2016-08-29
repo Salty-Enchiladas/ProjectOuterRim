@@ -73,6 +73,7 @@ public class AchievementManager : MonoBehaviour
                 if (PlayerPrefs.GetInt("ScoreAchievement1") == 0)
                 {
                     PlayerPrefs.SetInt("ScoreAchievement1", 1);
+                    PlayerPrefs.SetInt("DarkWingBlue", 1);
                     achievement.text = "You earned 10,000 points!";
                     CallWait();
                 }

@@ -29,6 +29,10 @@ public class ChooseShipButton : MonoBehaviour {
 
     public void Play()
     {
-        PlayerPrefs.SetString("Ship", _shipWrangler.CurrentShip.name);
+        if (_shipWrangler.CurrentShip.GetComponent<ShipUnlocking>().unlocked == true)
+        {
+            PlayerPrefs.SetString("Ship", _shipWrangler.CurrentShip.name);
+            GetComponent<LoadLevel>().LevelLoad();
+        }
     }
 }
