@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 497240}
   - 198: {fileID: 19858094}
   - 199: {fileID: 19957976}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: particle core glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - 4: {fileID: 491474}
   - 198: {fileID: 19815958}
   - 199: {fileID: 19909374}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: particle glow master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - 198: {fileID: 19891736}
   - 199: {fileID: 19928234}
   - 95: {fileID: 9517036}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: particle glow master 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 426328}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - 4: {fileID: 451854}
   - 198: {fileID: 19845608}
   - 199: {fileID: 19938138}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: particle glow master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +992,7 @@ Transform:
   m_GameObject: {fileID: 175788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 50, z: 9}
-  m_LocalScale: {x: 110, y: 110, z: 110}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 419720}
   m_RootOrder: 1
@@ -2204,6 +2204,7 @@ MonoBehaviour:
   noTarget: {fileID: 0}
   missileRechargeLength: 9
   missileCooldown: 3
+  lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
 --- !u!114 &11428262
@@ -2240,7 +2241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  forwardSpeed: 100
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -2248,9 +2248,6 @@ MonoBehaviour:
   moveZ: 0
   clampX: 10000
   clampY: 10000
-  thrusterRampUpRate: 100
-  thrusterRampDownRate: 200
-  thrusterCooldown: 15
   invertVertical: 0
 --- !u!114 &11453756
 MonoBehaviour:
@@ -2264,8 +2261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  overheatCap: 0
-  heatLevel: 0
+  heatCap: 0
+  heatIncreaseAmount: 0
+  heatResetTimer: 0
 --- !u!114 &11455442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2277,9 +2275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a27be2ab39c5b248adb1f836e58d59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
-  currentHealth: 0
-  meteorExplosionPrefab: {fileID: 0}
 --- !u!114 &11458026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2292,8 +2287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  overheatCap: 0
-  heatLevel: 0
+  heatCap: 0
+  heatIncreaseAmount: 0
+  heatResetTimer: 0
 --- !u!114 &11459866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2306,8 +2302,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  overheatCap: 0
-  heatLevel: 0
+  heatCap: 0
+  heatIncreaseAmount: 0
+  heatResetTimer: 0
 --- !u!114 &11465276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2345,6 +2342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onCooldown: 0
+  shieldCooldown: 0
+  shieldLength: 0
 --- !u!114 &11492256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2369,8 +2368,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  overheatCap: 0
-  heatLevel: 0
+  heatCap: 0
+  heatIncreaseAmount: 0
+  heatResetTimer: 0
 --- !u!135 &13506386
 SphereCollider:
   m_ObjectHideFlags: 1

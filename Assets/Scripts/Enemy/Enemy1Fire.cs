@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy1Fire : MonoBehaviour {
-
+public class Enemy1Fire : MonoBehaviour
+{
     public float fireFreq;        
     public float minFreq;
     public float maxFreq;
-    public float difficultyTimer;
     public string laserPoolName;
     public bool canFire;
 
@@ -14,10 +13,27 @@ public class Enemy1Fire : MonoBehaviour {
     float lastShot;
 
     ObjectPooling laserObject;
+    GameObject gameManager;
 
     void Start()
     {
         laserObject = GameObject.Find(laserPoolName).GetComponent<ObjectPooling>();
+        gameManager = GameObject.Find("GameManager");
+        switch (transform.name)
+        {
+            case "Enemy1":
+                fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy1FireFreq;
+                break;
+            case "Enemy2":
+                fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy2FireFreq;
+                break;
+            case "Enemy3":
+                fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy3FireFreq;
+                break;
+            case "Enemy4":
+                fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy4FireFreq;
+                break;
+        }
     }
 
 	// Update is called once per frame
@@ -53,10 +69,8 @@ public class Enemy1Fire : MonoBehaviour {
         obj.SetActive(true);
     }
 
-    IEnumerator IncreaseDificulty(float waitTime)
+    public void IncreaseDificulty()
     {
-        lastDifficultyIncrease = Time.time;
-        yield return new WaitForSeconds(waitTime);
         minFreq--;
         maxFreq--;
     }

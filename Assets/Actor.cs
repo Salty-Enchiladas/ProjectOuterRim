@@ -28,6 +28,7 @@ public class Actor : MonoBehaviour
         MOVING,
         MANEUVER,
         STRAFE,
+        CROSS,
     }
 
     private State state = State.MOVING;
@@ -37,6 +38,8 @@ public class Actor : MonoBehaviour
     private float OldTime = 0;
     private float checkTime = 0;
     private float elapsedTime = 0;
+    private float maneuverSpeed;
+    private float strafeSpeed;
     private float lerpSpeed;
     private float maneuverTimer;
     private float maneuverAngle;
@@ -65,12 +68,16 @@ public class Actor : MonoBehaviour
     private WaveHandler _waveHandler;
 
     private Transform lookAtPoint;      //The point that the ship looks at during the maneuver state
-
+    GameObject gameManager;
+    PublicVariableHandler publicVariableHandler;
     private void Awake()
     {
         GameObject gameManager = GameObject.FindGameObjectWithTag("Game Manager");
         control = (NodeControl)gameManager.GetComponent(typeof(NodeControl));
         _waveHandler = gameManager.GetComponent<WaveHandler>();
+        publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
+        maneuverSpeed = publicVariableHandler.maneuverSpeed;
+        strafeSpeed = publicVariableHandler.strafeSpeed;
 
         _centerX = centerX + Random.Range(-500, 500);
         _centerY = centerY;
@@ -92,11 +99,23 @@ public class Actor : MonoBehaviour
 
         player = GameObject.Find("Player");
         playerTarget = GameObject.Find("PlayerTarget");
-        //MoveOrder(player.transform.position);
-    }
+        gameManager = GameObject.Find("GameManager");
 
-    private void OnEnable()
-    {
+        switch (transform.name)
+        {
+            case "Enemy1":
+                speed = gameManager.GetComponent<PublicVariableHandler>().enemy1Speed;
+                break;
+            case "Enemy2":
+                speed = gameManager.GetComponent<PublicVariableHandler>().enemy2Speed;
+                break;
+            case "Enemy3":
+                speed = gameManager.GetComponent<PublicVariableHandler>().enemy3Speed;
+                break;
+            case "Enemy4":
+                speed = gameManager.GetComponent<PublicVariableHandler>().enemy4Speed;
+                break;
+        }
     }
 
     private void OnDisable()
@@ -121,9 +140,13 @@ public class Actor : MonoBehaviour
                 {
                     ChangeState(State.MANEUVER);
                 }
-                else //if (randomInt == 1)
+                else if (randomInt == 1)
                 {
                     ChangeState(State.STRAFE);
+                } 
+                else if (randomInt == 2)
+                {
+                    ChangeState(State.CROSS);
                 }
             }
         }
@@ -187,7 +210,7 @@ public class Actor : MonoBehaviour
                         ceasedFire = true;
                         gun1.GetComponent<Enemy1Fire>().canFire = false;
                         gun2.GetComponent<Enemy1Fire>().canFire = false;
-                        gun3.GetComponent<Enemy1Fire>().canFire = true;
+                        gun3.GetComponent<Enemy1Fire>().canFire = false;
                     }
 
                     transform.LookAt(lookAtPoint);
@@ -214,13 +237,13 @@ public class Actor : MonoBehaviour
                     {
                         lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
                         //Maneuver to the left of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * 2.5f);
+                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
                     }
                     else if (!maneuverLeft && hasChosenDirection)
                     {
                         lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
                         //Maneuver to the right of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * 2.5f);
+                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
                     }
 
                     centerX = _centerX;
@@ -234,19 +257,19 @@ public class Actor : MonoBehaviour
 
                     if (transform.position.x < playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, -100f, -1000f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, -100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x < playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, 100f, -1000f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, 100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x > playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, 100f, -1000f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, 100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x > playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * 7f);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
 
                     if (transform.position.z > playerTarget.transform.position.z + 400)
@@ -263,25 +286,87 @@ public class Actor : MonoBehaviour
                         transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
                         gun3.transform.LookAt(playerTarget.transform);
 
-                        if (transform.position.z < playerTarget.transform.position.z - 350)
+                        if (transform.position.z < playerTarget.transform.position.z - 200)
                         {
-                            _waveHandler.enemyCount--;
-                            gameObject.SetActive(false);
+                            switch (transform.name)
+                            {
+                                case "Enemy1":
+                                    _waveHandler.firstEnemyCount--;
+                                    gameObject.SetActive(false);
+                                    break;
+                                case "Enemy2":
+                                    _waveHandler.secondEnemyCount--;
+                                    gameObject.SetActive(false);
+                                    break;
+                                case "Enemy3":
+                                    _waveHandler.thirdEnemyCount--;
+                                    gameObject.SetActive(false);
+                                    break;
+                                case "Enemy4":
+                                    _waveHandler.fourthEnemyCount--;
+                                    gameObject.SetActive(false);
+                                    break;
+                            }
                         }
                     }
 
                     break;
 
-                //case State.ATTACK:
-                //    OldTime = elapsedTime + 0.01f;
+                case State.CROSS:
 
-                //    transform.LookAt(player.transform);
+                    OldTime = elapsedTime + 0.01f;
 
-                //    transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + enemyXPos, player.transform.position.y, player.transform.position.z + enemyZClamp), Time.deltaTime * lerpSpeed);
-                //    break;
+                    if (!ceasedFire)
+                    {
+                        ceasedFire = true;
+                        gun1.GetComponent<Enemy1Fire>().canFire = false;
+                        gun2.GetComponent<Enemy1Fire>().canFire = false;
+                        gun3.GetComponent<Enemy1Fire>().canFire = false;
+                    }
+
+                    //transform.LookAt (lookAtPoint);
+
+                    maneuverTimer += Time.deltaTime;
+                    maneuverAngle = maneuverTimer;
+
+                    centerX += playerTarget.transform.position.x;
+                    centerY += playerTarget.transform.position.y;
+                    centerZ += playerTarget.transform.position.z;
+
+                    if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection)
+                    {
+                        hasChosenDirection = true;
+                        maneuverLeft = false;
+                    }
+                    else if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection)
+                    {
+                        hasChosenDirection = true;
+                        maneuverLeft = true;
+                    }
+
+                    if (maneuverLeft && hasChosenDirection)
+                    {
+                        lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
+                        //Maneuver to the left of the player
+                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+                    }
+                    else if (!maneuverLeft && hasChosenDirection)
+                    {
+                        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
+                        //Maneuver to the right of the player
+                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+                    }
+
+                    centerX = _centerX;
+                    centerY = _centerY;
+                    centerZ = _centerZ;
+                    break;
+
+                    break;
             }
         }
     }
+
 
     private void MoveToward()
     {

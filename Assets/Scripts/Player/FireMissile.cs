@@ -14,12 +14,14 @@ public class FireMissile : MonoBehaviour {
 
     public float missileRechargeLength;
     public float missileCooldown;
+    public float lightningGunDuration;
 
     public int missileCount;
     public int missileMax;
 
     GameObject player;
-
+    GameObject gameManager;
+         
     float lastShot;
     float recharge;
     float newRecharge;
@@ -31,6 +33,8 @@ public class FireMissile : MonoBehaviour {
     {
         hasTarget = false;
         player = GameObject.Find("Player");
+        gameManager = GameObject.Find("GameManager");
+        lightningGunDuration = gameManager.GetComponent<PublicVariableHandler>().lightningGunDuration;
         player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = false;
         missile1Img = GameObject.Find("M1b");
         missile2Img = GameObject.Find("M2b");
@@ -157,11 +161,19 @@ public class FireMissile : MonoBehaviour {
     {
         if (levelUp)
         {
-            player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = true;
+            StartCoroutine(LightningGunActive());
         }
         else if (!levelUp)
         {
-            player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = true;
+            
         }
+    }
+
+    IEnumerator LightningGunActive()
+    {
+        player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = true;
+        yield return new WaitForSeconds(lightningGunDuration);
+        player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = false;
+        gameManager.GetComponent<PickUpManager>().LoseMissileLevel();
     }
 }

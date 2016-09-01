@@ -134,7 +134,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d4d94e8445160bd4ebc08c8f8ab2e158, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -224,7 +224,7 @@ Light:
     m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 1
   m_CullingMask:
@@ -324,8 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17535fe6f515cc46ad8d884212bc8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserSpeed: 1000
-  laserRange: 2000
+  laserSpeed: 3000
+  laserRange: 4000
 --- !u!136 &13622660
 CapsuleCollider:
   m_ObjectHideFlags: 1

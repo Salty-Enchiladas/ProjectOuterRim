@@ -4,21 +4,32 @@ using System.Collections;
 public class ActivateShield : MonoBehaviour
 {
     GameObject shield;
+    GameObject gameManager;
+
     public bool onCooldown;
+    public float shieldCooldown;
+    public float shieldLength;
+
+    float lastUse;
+    float lastActive;
 
     void Start()
     {
+        gameManager = GameObject.Find("GameManager");
+        shieldCooldown = gameManager.GetComponent<PublicVariableHandler>().playerShieldCooldown;
+        shieldLength = gameManager.GetComponent<PublicVariableHandler>().playerShieldLength;
         shield = GetComponent<StoreVariables>().shield;
     }
+
 	void Update () 
     {
-        if (Input.GetButtonUp("Fire3"))
+        if (Input.GetButtonUp("Fire3") && Time.time > lastUse + shieldCooldown)
         {
             if (!onCooldown)
             {
-                shield.GetComponent<Shield>().currentHealth = shield.GetComponent<Shield>().startingHealth;
                 shield.SetActive(true);
                 GetComponentInChildren<PlayerCollision>().shieldActive = true;
+                StartCoroutine(ShieldActive());
             }
         }
 	}
@@ -30,13 +41,29 @@ public class ActivateShield : MonoBehaviour
         GetComponentInChildren<PlayerCollision>().shieldActive = false;
     }
 
+    IEnumerator ShieldActive()
+    {
+        onCooldown = true;
+        yield return new WaitForSeconds(shieldLength);
+        lastUse = Time.time;
+        shield.SetActive(false);
+        GetComponentInChildren<PlayerCollision>().shieldActive = false;
+        onCooldown = false;
+    }
+
     public void ShieldLevel1(bool levelUp)
     {
         print(levelUp + "Shield1");
         if (levelUp)
         {
-            shield.SetActive(true);
-            shield.GetComponent<Shield>().currentHealth = shield.GetComponent<Shield>().currentHealth + 3;
+            StartCoroutine(ShieldActive());
+            shieldLength = shieldLength + 2;
+            shieldCooldown = shieldCooldown - 2;
+        }
+        else if (!levelUp)
+        {
+            shieldLength = shieldLength - 2;
+            shieldCooldown = shieldCooldown + 2;
         }
     }
 
@@ -45,8 +72,14 @@ public class ActivateShield : MonoBehaviour
         print(levelUp + "Shield2");
         if (levelUp)
         {
-            shield.SetActive(true);
-            shield.GetComponent<Shield>().currentHealth = shield.GetComponent<Shield>().currentHealth + 5;
+            StartCoroutine(ShieldActive());
+            shieldLength = shieldLength + 2;
+            shieldCooldown = shieldCooldown - 2;
+        }
+        else if (!levelUp)
+        {
+            shieldLength = shieldLength - 2;
+            shieldCooldown = shieldCooldown + 2;
         }
 
     }
@@ -55,9 +88,14 @@ public class ActivateShield : MonoBehaviour
     {
         if (levelUp)
         {
-            shield.SetActive(true);
-            shield.GetComponent<Shield>().currentHealth = shield.GetComponent<Shield>().currentHealth + 7;
-            shield.GetComponent<Shield>().startingHealth = shield.GetComponent<Shield>().startingHealth + 3;
+            StartCoroutine(ShieldActive());
+            shieldLength = shieldLength + 2;
+            shieldCooldown = shieldCooldown - 2;
+        }
+        else if (!levelUp)
+        {
+            shieldLength = shieldLength - 2;
+            shieldCooldown = shieldCooldown + 2;
         }
     }
 }

@@ -23,8 +23,8 @@ public class PickUpManager : MonoBehaviour
     public float yMinSpawn;
     public float yMaxSpawn;
 
-    public float zMinSpawn;
-    public float zMaxSpawn;
+    public float zSpawnMin;
+    public float zSpawnMax;
 
     public bool leveled;
 
@@ -52,22 +52,19 @@ public class PickUpManager : MonoBehaviour
     }
     void SpawnPickUp()
     {
-        x = Random.Range(0.05f, 0.95f);
-        y = Random.Range(0.05f, 0.95f);
-        spawnPoint = new Vector3(x, y, 500.0f);
-        spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        spawnPoint = new Vector3(Random.Range(player.transform.position.x + xMinSpawn, player.transform.position.x + xMaxSpawn),
+        Random.Range(player.transform.position.y + yMinSpawn, player.transform.position.y + yMaxSpawn),
+        Random.Range(player.transform.position.z + zSpawnMin, player.transform.position.z + zSpawnMax));
         Instantiate(laserPickUp, spawnPoint, Quaternion.identity);
-
-        x = Random.Range(0.05f, 0.95f);
-        y = Random.Range(0.05f, 0.95f);
-        spawnPoint = new Vector3(x, y, 500.0f);
-        spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        
+        spawnPoint = new Vector3(Random.Range(player.transform.position.x + xMinSpawn, player.transform.position.x + xMaxSpawn),
+        Random.Range(player.transform.position.y + yMinSpawn, player.transform.position.y + yMaxSpawn),
+        Random.Range(player.transform.position.z + zSpawnMin, player.transform.position.z + zSpawnMax));
         Instantiate(missilePickUp, spawnPoint, Quaternion.identity);
 
-        x = Random.Range(0.05f, 0.95f);
-        y = Random.Range(0.05f, 0.95f);
-        spawnPoint = new Vector3(x, y, 500.0f);
-        spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
+        spawnPoint = new Vector3(Random.Range(player.transform.position.x + xMinSpawn, player.transform.position.x + xMaxSpawn),
+        Random.Range(player.transform.position.y + yMinSpawn, player.transform.position.y + yMaxSpawn),
+        Random.Range(player.transform.position.z + zSpawnMin, player.transform.position.z + zSpawnMax));
         Instantiate(shieldPickUp, spawnPoint, Quaternion.identity);
     }
 
@@ -99,22 +96,29 @@ public class PickUpManager : MonoBehaviour
         print("YOU LOST A LEVEL!!!!!!!");
         leveled = false;
 
-        //if (shieldLevel > 0)
-        //{
-        //    shieldLevel--;
-        //    switch (shieldLevel)
-        //    {
-        //        case 0:
-        //            print("All shield upgrades lost");
-        //            break;
-        //        case 1:
-        //            print("You lost a shield level and are now level 1");
-        //            break;
-        //        case 2:
-        //            print("You lost a shield level and are now level 2");
-        //            break;
-        //    }
-        //}
+        if (shieldLevel > 0)
+        {
+            shieldLevel--;
+            switch (shieldLevel)
+            {
+                case 0:
+                    print("All shield upgrades lost");
+                    break;
+                case 1:
+                    player.GetComponent<ActivateShield>().ShieldLevel1(leveled);
+                    print("You lost a shield level and are now level 1");
+                    break;
+                case 2:
+                    player.GetComponent<ActivateShield>().ShieldLevel2(leveled);
+                    print("You lost a shield level and are now level 2");
+                    break;
+                case 3:
+                    player.GetComponent<ActivateShield>().ShieldLevel3(leveled);
+                    print("You lost a shield level and are now level 2");
+                    break;
+
+            }
+        }
 
         if (laserLevel > 0)
         {
@@ -159,6 +163,14 @@ public class PickUpManager : MonoBehaviour
                     print("You lost a missile level and are now level 2");
                     break;
             }
+        }
+    }
+
+    public void LoseMissileLevel()
+    {
+        if (missileLevel == 3)
+        {
+            missileLevel--;
         }
     }
 }

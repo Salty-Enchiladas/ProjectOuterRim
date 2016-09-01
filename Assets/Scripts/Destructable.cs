@@ -14,7 +14,10 @@ public class Destructable : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Instantiate(explosion, transform.position, transform.rotation);
-        this.gameObject.SetActive(false);
+        if (other.tag == "Player" || other.tag == "Enemy" || other.tag == "Enemy Laser" || other.tag == "Laser")
+        {
+            gameObject.SetActive(false);
+            Instantiate(explosion, transform.position, transform.rotation);
+        }
     }
 }
