@@ -537,8 +537,8 @@ MonoBehaviour:
   healthRecoverScore: 50000
   shieldRecoverScore: 25000
   playerShieldHealth: 3
-  playerLives: 3
-  playerHealth: 9
+  playerLives: 60000
+  playerHealth: 50000
   playerInvulnerabilityTime: 1.5
   playerShootingFrequency: 0.3
   playerSpeed: 350
@@ -1176,7 +1176,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 9, y: 137}
+  m_AnchoredPosition: {x: 0, y: 32.54}
   m_SizeDelta: {x: 97, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252220247
@@ -1198,7 +1198,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e6610c6fd7475aa4d8ce311743bc0686, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 797e36b28b649d044a07d58c52ace800, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1288,11 +1288,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.84
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1324,7 +1324,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.1682845
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalScale.z
@@ -1857,7 +1857,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591680875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 35, z: -300}
+  m_LocalPosition: {x: 0, y: 0, z: -300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1958,11 +1958,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.84
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1994,7 +1994,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.1682845
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalScale.z
@@ -2599,7 +2599,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2087320, guid: c34b6c2c49c7dab418898767af3de19f, type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11489636, guid: c34b6c2c49c7dab418898767af3de19f, type: 2}
       propertyPath: m_Enabled
@@ -2678,11 +2678,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.84
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2714,7 +2714,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.1682845
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalScale.z
