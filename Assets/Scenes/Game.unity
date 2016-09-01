@@ -468,7 +468,7 @@ MonoBehaviour:
   secondEnemyPool: {fileID: 930241598}
   thirdEnemyPool: {fileID: 1478110998}
   fourthEnemyPool: {fileID: 357815564}
-  spawnRate: 2
+  spawnRate: 0.5
   difficultyIncreaseScore: 15000
   minXSpawn: -2500
   maxXspawn: 2500
@@ -637,36 +637,36 @@ MonoBehaviour:
   healthRecoverScore: 50000
   playerShootingFrequency: 0.4
   lightningGunDuration: 8
-  playerShieldLength: 100000000
+  playerShieldLength: 3
   playerShieldCooldown: 6
   playerLives: 3
   playerHealth: 9
   playerSpeed: 500
   playerLaserHeatCap: 100
-  playerLaserHeatIncreaseAmount: 10
-  laserHeatLossAfterSeconds: 2
-  maneuverSpeed: 0.7
-  strafeSpeed: 0.7
-  enemy1Speed: 300
+  playerLaserHeatIncreaseAmount: 20
+  laserHeatLossAfterSeconds: 0.05
+  maneuverSpeed: 1
+  strafeSpeed: 1.5
+  enemy1Speed: 700
   enemy1FireFreq: 1.5
   enemy1BaseHealth: 2
   enemy1LaserScore: 1000
   enemy1MissileScore: 500
-  enemy2Speed: 400
+  enemy2Speed: 900
   enemy2FireFreq: 1
   enemy2BaseHealth: 6
   enemy2LaserScore: 500
   enemy2MissileScore: 500
-  enemy3Speed: 800
+  enemy3Speed: 1100
   enemy3FireFreq: 0.5
   enemy3BaseHealth: 2
-  enemy3ShieldHealth: 8
+  enemy3ShieldHealth: 3
   enemy3LaserScore: 1000
   enemy3MissileScore: 500
-  enemy4Speed: 250
+  enemy4Speed: 600
   enemy4FireFreq: 2.5
   enemy4BaseHealth: 5
-  enemy4ShieldHealth: 15
+  enemy4ShieldHealth: 5
   enemy4LaserScore: 2000
   enemy4MissileScore: 500
 --- !u!114 &555410815

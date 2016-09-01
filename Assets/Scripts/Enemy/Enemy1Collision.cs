@@ -21,7 +21,6 @@ public class Enemy1Collision : MonoBehaviour {
 
     void Start()
     {
-        currentHealth = baseHealth;
         player = GameObject.Find("Player");
         _playerScore = player.GetComponent<PlayerScore>();
         gameManager = GameObject.Find("GameManager");
@@ -51,6 +50,8 @@ public class Enemy1Collision : MonoBehaviour {
                 baseHealth = publicVariableHandler.enemy4BaseHealth;
                 break;
         }
+
+        currentHealth = baseHealth;
     }
 
     void OnTriggerEnter(Collider col)
@@ -58,7 +59,7 @@ public class Enemy1Collision : MonoBehaviour {
         if (col.gameObject.tag == "Laser")
         {
             col.gameObject.SetActive(false);
-            WasDestroyed();
+            TookDamage();
         }
         else if (col.gameObject.tag == "Missile")
         {
@@ -96,6 +97,8 @@ public class Enemy1Collision : MonoBehaviour {
         achievementManager.EnemyHit();
         if (currentHealth <= 0)
         {
+            print(currentHealth);
+            print("WasDestroyed was called");
             WasDestroyed();
         }
     }

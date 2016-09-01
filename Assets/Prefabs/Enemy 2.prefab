@@ -62,9 +62,10 @@ GameObject:
   - 135: {fileID: 13555372}
   - 23: {fileID: 2309880}
   - 82: {fileID: 8263622}
+  - 114: {fileID: 11413462}
   m_Layer: 0
-  m_Name: Red Shield
-  m_TagString: Untagged
+  m_Name: Shield
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +220,6 @@ GameObject:
   - 114: {fileID: 11488364}
   - 114: {fileID: 11454548}
   - 54: {fileID: 5412662}
-  - 65: {fileID: 6513296}
   - 65: {fileID: 6510412}
   - 114: {fileID: 11426238}
   m_Layer: 0
@@ -413,7 +413,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161636}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 49.47995, y: -564.08167, z: 6721.4893}
+  m_LocalPosition: {x: 104.51624, y: -476.3705, z: 6801.795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464124}
@@ -527,7 +527,7 @@ Transform:
   m_GameObject: {fileID: 127480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 7.3, z: -14}
-  m_LocalScale: {x: 90, y: 90, z: 90}
+  m_LocalScale: {x: 125, y: 125, z: 125}
   m_Children: []
   m_Father: {fileID: 406968}
   m_RootOrder: 4
@@ -1149,19 +1149,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 90, y: 30, z: 90}
-  m_Center: {x: 0, y: 10, z: -17}
---- !u!65 &6513296
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161636}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 90, y: 30, z: 90}
+  m_Size: {x: 80, y: 30, z: 80}
   m_Center: {x: 0, y: 10, z: -17}
 --- !u!82 &8263622
 AudioSource:
@@ -1237,6 +1225,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &11413462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f9bdc51dcc2b8e4eb8ab95750b0f8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 0
+  currentHealth: 0
+  colliders: {fileID: 0}
+  meteorExplosionPrefab: {fileID: 0}
 --- !u!114 &11416192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1281,7 +1284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 161636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4009d5516f523bc46beafaa09c6670e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 15958e410bc686b4f8dfe81e1d8a49ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1500
@@ -1325,8 +1328,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  overheatCap: 0
-  heatLevel: 0
+  heatCap: 0
+  heatIncreaseAmount: 0
+  heatResetTimer: 0
 --- !u!114 &11446278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1476,8 +1480,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  overheatCap: 0
-  heatLevel: 0
+  heatCap: 0
+  heatIncreaseAmount: 0
+  heatResetTimer: 0
 --- !u!135 &13518832
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1521,7 +1526,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127480}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

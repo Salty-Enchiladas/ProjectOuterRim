@@ -1187,7 +1187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172330}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -39.359474, y: 182.05911, z: -126.13459}
+  m_LocalPosition: {x: 104.51624, y: -476.3705, z: 6801.795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 406462}
@@ -2185,7 +2185,6 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
   laserPoolName: EnemyLasers
   canFire: 1
 --- !u!114 &11434762
@@ -2215,7 +2214,6 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
   laserPoolName: EnemyLasers
   canFire: 1
 --- !u!114 &11448546
@@ -2254,7 +2252,6 @@ MonoBehaviour:
   fireFreq: 1
   minFreq: 5
   maxFreq: 8
-  difficultyTimer: 10
   laserPoolName: EnemyLasers
   canFire: 1
 --- !u!114 &11460214
@@ -2297,6 +2294,7 @@ MonoBehaviour:
   noTarget: {fileID: 0}
   missileRechargeLength: 9
   missileCooldown: 3
+  lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
 --- !u!114 &11467192
@@ -2311,8 +2309,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  overheatCap: 0
-  heatLevel: 0
+  heatCap: 0
+  heatIncreaseAmount: 0
+  heatResetTimer: 0
 --- !u!114 &11473390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2375,8 +2374,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  overheatCap: 0
-  heatLevel: 0
+  heatCap: 0
+  heatIncreaseAmount: 0
+  heatResetTimer: 0
 --- !u!114 &11486060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2385,7 +2385,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 172330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4009d5516f523bc46beafaa09c6670e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 15958e410bc686b4f8dfe81e1d8a49ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1500

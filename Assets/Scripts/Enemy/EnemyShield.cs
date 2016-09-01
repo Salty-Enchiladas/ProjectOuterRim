@@ -5,6 +5,7 @@ public class EnemyShield : MonoBehaviour
 {
     public int startingHealth;
     public int currentHealth;
+    public GameObject colliders;
     public GameObject meteorExplosionPrefab;
     GameObject gameManager;
     GameObject player;
@@ -12,10 +13,8 @@ public class EnemyShield : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        gameManager = GameObject.Find("GameManager"); 
-        meteorExplosionPrefab = player.GetComponent<StoreVariables>().meteorExplosion;
-        currentHealth = startingHealth;
-        switch (transform.name)
+        gameManager = GameObject.Find("GameManager");
+        switch (transform.parent.name)
         {
             case "Enemy3":
                 startingHealth = gameManager.GetComponent<PublicVariableHandler>().enemy3ShieldHealth;
@@ -24,6 +23,9 @@ public class EnemyShield : MonoBehaviour
                 startingHealth = gameManager.GetComponent<PublicVariableHandler>().enemy4ShieldHealth;
                 break;
         }
+        meteorExplosionPrefab = player.GetComponent<StoreVariables>().meteorExplosion;
+        currentHealth = startingHealth;
+        GetComponentInParent<Enemy1Collision>().enabled = false;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -31,17 +33,18 @@ public class EnemyShield : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             currentHealth--;
-            if (currentHealth == 0)
+            print(currentHealth + "EnemyShieldHealth");
+            if (currentHealth <= 0)
             {
+                GetComponentInParent<Enemy1Collision>().enabled = true;
                 gameObject.SetActive(false);
             }
         }
-
         else if (other.tag == "Meteor")
         {
-            gameObject.SetActive(false);
             Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
             other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }
