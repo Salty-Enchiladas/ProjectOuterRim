@@ -21,12 +21,17 @@ public class FireMissile : MonoBehaviour {
 
     GameObject player;
     GameObject gameManager;
-         
+    GameObject missileLevel1Bar;
+    GameObject missileLevel2Bar;
+    GameObject missileLevel3Bar;
+
     float lastShot;
     float recharge;
     float newRecharge;
     float newMissileCooldown;
     bool hasTarget;
+
+    PublicVariableHandler publicVariableHandler;
 
     // Use this for initialization
     void Start()
@@ -34,11 +39,16 @@ public class FireMissile : MonoBehaviour {
         hasTarget = false;
         player = GameObject.Find("Player");
         gameManager = GameObject.Find("GameManager");
-        lightningGunDuration = gameManager.GetComponent<PublicVariableHandler>().lightningGunDuration;
+        publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
+        lightningGunDuration = publicVariableHandler.lightningGunDuration;
         player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = false;
         missile1Img = GameObject.Find("M1b");
         missile2Img = GameObject.Find("M2b");
         missile3Img = GameObject.Find("M3b");
+
+        missileLevel1Bar = publicVariableHandler.missileLevel1Bar;
+        missileLevel2Bar = publicVariableHandler.missileLevel2Bar;
+        missileLevel3Bar = publicVariableHandler.missileLevel3Bar;
 
         //noTarget = GameObject.Find("NoTarget");
         //noTarget.SetActive(false);
@@ -129,6 +139,7 @@ public class FireMissile : MonoBehaviour {
         print(levelUp + "Missile1");
         if (levelUp)
         {
+            missileLevel1Bar.SetActive(levelUp);
             recharge = recharge / 9;
             newRecharge = recharge;
             missileCooldown = missileCooldown / 3;
@@ -146,6 +157,7 @@ public class FireMissile : MonoBehaviour {
         print(levelUp + "Missile2");
         if (levelUp)
         {
+            missileLevel2Bar.SetActive(levelUp);
             recharge = 0;
             missileCooldown = 0;
         }
@@ -161,11 +173,11 @@ public class FireMissile : MonoBehaviour {
     {
         if (levelUp)
         {
+            missileLevel3Bar.SetActive(levelUp);
             StartCoroutine(LightningGunActive());
         }
         else if (!levelUp)
         {
-            
         }
     }
 

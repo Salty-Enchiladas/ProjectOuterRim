@@ -28,6 +28,20 @@ public class PickUpManager : MonoBehaviour
 
     public bool leveled;
 
+    GameObject laserLevel1Bar;
+    GameObject laserLevel2Bar;
+    GameObject laserLevel3Bar;
+
+    GameObject missileLevel1Bar;
+    GameObject missileLevel2Bar;
+    GameObject missileLevel3Bar;
+
+    GameObject shieldLevel1Bar;
+    GameObject shieldLevel2Bar;
+    GameObject shieldLevel3Bar;
+
+    PublicVariableHandler publicVariableHandler;
+
     Vector3 spawnPoint;
     bool spawning;
     int oldScore;
@@ -38,6 +52,19 @@ public class PickUpManager : MonoBehaviour
     {
         player = GameObject.Find("Player");
         playerScore = player.GetComponent<PlayerScore>();
+        publicVariableHandler = GetComponent<PublicVariableHandler>();
+
+        laserLevel1Bar = publicVariableHandler.laserLevel1Bar;
+        laserLevel2Bar = publicVariableHandler.laserLevel2Bar;
+        laserLevel3Bar = publicVariableHandler.laserLevel3Bar;
+
+        missileLevel1Bar = publicVariableHandler.missileLevel1Bar;
+        missileLevel2Bar = publicVariableHandler.missileLevel2Bar;
+        missileLevel3Bar = publicVariableHandler.missileLevel3Bar;
+
+        shieldLevel1Bar = publicVariableHandler.shieldLevel1Bar;
+        shieldLevel2Bar = publicVariableHandler.shieldLevel2Bar;
+        shieldLevel3Bar = publicVariableHandler.shieldLevel3Bar;
     }
     void Update()
     {
@@ -102,17 +129,17 @@ public class PickUpManager : MonoBehaviour
             switch (shieldLevel)
             {
                 case 0:
-                    print("All shield upgrades lost");
-                    break;
-                case 1:
+                    shieldLevel1Bar.SetActive(false);
                     player.GetComponent<ActivateShield>().ShieldLevel1(leveled);
                     print("You lost a shield level and are now level 1");
                     break;
-                case 2:
+                case 1:
+                    shieldLevel2Bar.SetActive(false);
                     player.GetComponent<ActivateShield>().ShieldLevel2(leveled);
                     print("You lost a shield level and are now level 2");
                     break;
-                case 3:
+                case 2:
+                    shieldLevel3Bar.SetActive(false);
                     player.GetComponent<ActivateShield>().ShieldLevel3(leveled);
                     print("You lost a shield level and are now level 2");
                     break;
@@ -126,20 +153,23 @@ public class PickUpManager : MonoBehaviour
             switch (laserLevel)
             {
                 case 0:
-                    print("All laser upgrades lost");
-                    break;
-                case 1:
+                    laserLevel1Bar.SetActive(false);
                     foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
                     {
                         go.GetComponent<FireScript>().LaserLevel1(leveled);
                     }
-                    print("You lost a laser level and are now level 1");
+                    print("All laser upgrades lost");
                     break;
-                case 2:
+                case 1:
+                    laserLevel2Bar.SetActive(false);
                     foreach (GameObject go in player.GetComponent<StoreVariables>().lasers)
                     {
                         go.GetComponent<FireScript>().LaserLevel2(leveled);
                     }
+                    print("You lost a laser level and are now level 1");
+                    break;
+                case 2:
+                    laserLevel3Bar.SetActive(false);
                     print("You lost a laser level and are now level 2");
                     break;
             }
@@ -152,14 +182,17 @@ public class PickUpManager : MonoBehaviour
             switch (missileLevel)
             {
                 case 0:
+                    missileLevel1Bar.SetActive(false);
+                    player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel1(leveled);
                     print("All missile upgrades lost");
                     break;
                 case 1:
-                    player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel1(leveled);
+                    missileLevel2Bar.SetActive(false);
+                    player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel2(leveled);
                     print("You lost a missile level and are now level 1");
                     break;
                 case 2:
-                    player.GetComponent<StoreVariables>().missile.GetComponent<FireMissile>().MissileLevel2(leveled);
+                    missileLevel3Bar.SetActive(false);
                     print("You lost a missile level and are now level 2");
                     break;
             }

@@ -3,6 +3,22 @@ using System.Collections;
 
 public class PublicVariableHandler : MonoBehaviour
 {
+    //User Interface Variables
+    public GameObject laserLevel1Bar;
+    public GameObject laserLevel2Bar;
+    public GameObject laserLevel3Bar;
+
+    public GameObject missileLevel1Bar;
+    public GameObject missileLevel2Bar;
+    public GameObject missileLevel3Bar;
+
+    public GameObject shieldLevel1Bar;
+    public GameObject shieldLevel2Bar;
+    public GameObject shieldLevel3Bar;
+
+    public GameObject shipIMG1;
+    public GameObject shipIMG2;
+
     //Player Variables
     public int healthRecoverScore;
     public float playerShootingFrequency;

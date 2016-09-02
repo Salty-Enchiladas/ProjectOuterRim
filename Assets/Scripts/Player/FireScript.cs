@@ -4,8 +4,9 @@ using System.Collections;
 public class FireScript : MonoBehaviour {
 
     public GameObject laser;
-    int heatLevel;
-    public int heatCap;
+    [HideInInspector]
+    public int heatLevel;
+    public float heatCap;
     public int heatIncreaseAmount;
     float fireFreq;
 
@@ -18,18 +19,26 @@ public class FireScript : MonoBehaviour {
     ObjectPooling laserPool;
     GameObject gameManager;
     AchievementManager achievementManager;
+    PublicVariableHandler publicVariableHandler;
     GameObject player;
+    GameObject laserLevel1Bar;
+    GameObject laserLevel2Bar;
+    GameObject laserLevel3Bar;
 
     void Start()
     {
         laserPool = GameObject.Find("PlayerLasers").GetComponent<ObjectPooling>();
         gameManager = GameObject.Find("GameManager");
+        publicVariableHandler = gameManager. GetComponent<PublicVariableHandler>();
         achievementManager = gameManager.GetComponent<AchievementManager>();
         player = GameObject.Find("Player");
-        fireFreq = gameManager.GetComponent<PublicVariableHandler>().playerShootingFrequency;
-        heatCap = gameManager.GetComponent<PublicVariableHandler>().playerLaserHeatCap;
-        heatIncreaseAmount = gameManager.GetComponent<PublicVariableHandler>().playerLaserHeatIncreaseAmount;
-        heatResetTimer = gameManager.GetComponent<PublicVariableHandler>().laserHeatLossAfterSeconds;
+        fireFreq = publicVariableHandler.playerShootingFrequency;
+        heatCap = publicVariableHandler.playerLaserHeatCap;
+        heatIncreaseAmount = publicVariableHandler.playerLaserHeatIncreaseAmount;
+        heatResetTimer = publicVariableHandler.laserHeatLossAfterSeconds;
+        laserLevel1Bar = publicVariableHandler.laserLevel1Bar;
+        laserLevel2Bar = publicVariableHandler.laserLevel2Bar;
+        laserLevel3Bar = publicVariableHandler.laserLevel3Bar;
     }
     
     void Update()
@@ -103,6 +112,7 @@ public class FireScript : MonoBehaviour {
     {
         if (levelUp)
         {
+            laserLevel1Bar.SetActive(levelUp);
             fireFreq = fireFreq / 2;
         }
         else if (!levelUp)
@@ -114,16 +124,32 @@ public class FireScript : MonoBehaviour {
     public void LaserLevel2(bool levelUp)
     {
         if (levelUp)
+        {
+            laserLevel2Bar.SetActive(levelUp);
             fireFreq = fireFreq / 2;
+        }
         else if (!levelUp)
+        {
             fireFreq = fireFreq * 2;
+        }
     }
 
     public void LaserLevel3(bool levelUp)
     {
-        foreach (GameObject go in player.GetComponent<StoreVariables>().upgradeWeapons)
+        if (levelUp)
         {
-            go.SetActive(levelUp);
+            laserLevel3Bar.SetActive(levelUp);
+            foreach (GameObject go in player.GetComponent<StoreVariables>().upgradeWeapons)
+            {
+                go.SetActive(levelUp);
+            }
+        }
+        else if (!levelUp)
+        {
+              foreach (GameObject go in player.GetComponent<StoreVariables>().upgradeWeapons)
+            {
+                go.SetActive(levelUp);
+            }
         }
     }
 }

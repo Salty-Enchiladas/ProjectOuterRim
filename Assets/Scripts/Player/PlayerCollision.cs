@@ -45,8 +45,8 @@ public class PlayerCollision : MonoBehaviour
         damageIndicatorIMG = GameObject.Find("HitEffect");
         damageIndicatorIMG.SetActive(false);
 
-        lifeImage1 = GameObject.Find("ShipIMG1");
-        lifeImage2 = GameObject.Find("ShipIMG2");
+        lifeImage1 = publicVariableHandler.shipIMG1;
+        lifeImage2 = publicVariableHandler.shipIMG2;
         publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
 
         playerHealth = publicVariableHandler.playerHealth;
@@ -67,7 +67,7 @@ public class PlayerCollision : MonoBehaviour
 
             if (playerHealth % 3 == 0)
             {
-                LoseLife();
+                //LoseLife();
             }
 
             CheckHealth();

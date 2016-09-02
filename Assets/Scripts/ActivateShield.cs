@@ -5,6 +5,9 @@ public class ActivateShield : MonoBehaviour
 {
     GameObject shield;
     GameObject gameManager;
+    GameObject shieldLevel1Bar;
+    GameObject shieldLevel2Bar;
+    GameObject shieldLevel3Bar;
 
     public bool onCooldown;
     public float shieldCooldown;
@@ -13,12 +16,19 @@ public class ActivateShield : MonoBehaviour
     float lastUse;
     float lastActive;
 
+    PublicVariableHandler publicVariableHandler;
+
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
-        shieldCooldown = gameManager.GetComponent<PublicVariableHandler>().playerShieldCooldown;
-        shieldLength = gameManager.GetComponent<PublicVariableHandler>().playerShieldLength;
+        publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
+        shieldCooldown = publicVariableHandler.playerShieldCooldown;
+        shieldLength = publicVariableHandler.playerShieldLength;
         shield = GetComponent<StoreVariables>().shield;
+
+        shieldLevel1Bar = publicVariableHandler.shieldLevel1Bar;
+        shieldLevel2Bar = publicVariableHandler.shieldLevel2Bar;
+        shieldLevel3Bar = publicVariableHandler.shieldLevel3Bar;
     }
 
 	void Update () 
@@ -56,6 +66,7 @@ public class ActivateShield : MonoBehaviour
         print(levelUp + "Shield1");
         if (levelUp)
         {
+            shieldLevel1Bar.SetActive(levelUp);
             StartCoroutine(ShieldActive());
             shieldLength = shieldLength + 2;
             shieldCooldown = shieldCooldown - 2;
@@ -72,6 +83,7 @@ public class ActivateShield : MonoBehaviour
         print(levelUp + "Shield2");
         if (levelUp)
         {
+            shieldLevel2Bar.SetActive(levelUp);
             StartCoroutine(ShieldActive());
             shieldLength = shieldLength + 2;
             shieldCooldown = shieldCooldown - 2;
@@ -88,6 +100,7 @@ public class ActivateShield : MonoBehaviour
     {
         if (levelUp)
         {
+            shieldLevel3Bar.SetActive(levelUp);
             StartCoroutine(ShieldActive());
             shieldLength = shieldLength + 2;
             shieldCooldown = shieldCooldown - 2;
