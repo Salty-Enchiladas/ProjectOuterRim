@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
     public float playerSpeed;
-   // public float forwardSpeed;
+    public float forwardSpeed;
     public float maxTurnAngle;
     [HideInInspector]
     public float horizontalTurnAngle;
@@ -15,19 +15,22 @@ public class PlayerMovement : MonoBehaviour {
     public float clampX;
     public float clampY;
 
-    //public float thrusterRampUpRate;
-    //public float thrusterRampDownRate;
-    //public float thrusterCooldown;
+    public float thrusterRampUpRate;
+    public float thrusterRampDownRate;
+    public float thrusterCooldown;
 
-    GameObject gameManager;
     public bool invertVertical;
-    //bool isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive;
+    bool isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive;
+
+    PublicVariableHandler publicVariableHandler;
 
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-       playerSpeed = gameManager.GetComponent<PublicVariableHandler>().playerSpeed;
+        publicVariableHandler = GameObject.FindGameObjectWithTag("Game Manager").GetComponent<PublicVariableHandler>();
+        playerSpeed = publicVariableHandler.playerSpeed;
+        maxTurnAngle = publicVariableHandler.playerMaxTurnAngle;
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -69,41 +72,41 @@ public class PlayerMovement : MonoBehaviour {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -clampX, clampX), Mathf.Clamp(transform.position.y, -clampY, clampY), transform.position.z);
     }
 
-    //IEnumerator TurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncrease()
-    //{
-    //    if (!isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive)
-    //    {
-    //        isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive = true;
+    IEnumerator TurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncrease()
+    {
+        if (!isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive)
+        {
+            isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive = true;
 
-    //        forwardSpeed += thrusterRampUpRate;
-    //        yield return new WaitForSeconds(.5f);
-    //        forwardSpeed += thrusterRampUpRate;
-    //        yield return new WaitForSeconds(.5f);
-    //        forwardSpeed += thrusterRampUpRate;
-    //        yield return new WaitForSeconds(.5f);
-    //        forwardSpeed += thrusterRampUpRate;
-    //        yield return new WaitForSeconds(.5f);
-    //        forwardSpeed += thrusterRampUpRate;
-    //        yield return new WaitForSeconds(.5f);
-    //        forwardSpeed += thrusterRampUpRate;
-    //        yield return new WaitForSeconds(.5f);
-    //        forwardSpeed += thrusterRampUpRate;
-    //        yield return new WaitForSeconds(3);
+            forwardSpeed += thrusterRampUpRate;
+            yield return new WaitForSeconds(.5f);
+            forwardSpeed += thrusterRampUpRate;
+            yield return new WaitForSeconds(.5f);
+            forwardSpeed += thrusterRampUpRate;
+            yield return new WaitForSeconds(.5f);
+            forwardSpeed += thrusterRampUpRate;
+            yield return new WaitForSeconds(.5f);
+            forwardSpeed += thrusterRampUpRate;
+            yield return new WaitForSeconds(.5f);
+            forwardSpeed += thrusterRampUpRate;
+            yield return new WaitForSeconds(.5f);
+            forwardSpeed += thrusterRampUpRate;
+            yield return new WaitForSeconds(3);
 
-    //        forwardSpeed -= thrusterRampDownRate;
-    //        yield return new WaitForSeconds(.25f);
-    //        forwardSpeed -= thrusterRampDownRate;
-    //        yield return new WaitForSeconds(.25f);
-    //        forwardSpeed -= thrusterRampDownRate;
-    //        yield return new WaitForSeconds(.25f);
-    //        forwardSpeed -= thrusterRampDownRate;
+            forwardSpeed -= thrusterRampDownRate;
+            yield return new WaitForSeconds(.25f);
+            forwardSpeed -= thrusterRampDownRate;
+            yield return new WaitForSeconds(.25f);
+            forwardSpeed -= thrusterRampDownRate;
+            yield return new WaitForSeconds(.25f);
+            forwardSpeed -= thrusterRampDownRate;
 
-    //        yield return new WaitForSeconds(thrusterCooldown);
-    //        isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive = false;
-    //    }
+            yield return new WaitForSeconds(thrusterCooldown);
+            isTurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncreaseActive = false;
+        }
 
 
-    //}
+    }
 
     void ClampRotation(float minAngle, float maxAngle, float clampAroundAngle = 0)
     {

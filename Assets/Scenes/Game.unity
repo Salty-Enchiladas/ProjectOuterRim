@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.92
   m_AmbientMode: 3
-  m_SkyboxMaterial: {fileID: 2100000, guid: c0dab155e43d56540934277edfc76899, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: c0bf10f35a5bb134099c54258b07d807, type: 2}
   m_HaloStrength: 0.026
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 11046875}
   - 114: {fileID: 11046876}
   m_Layer: 0
-  m_Name: FirstEnemyShips
+  m_Name: EnemyShips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,50 +275,6 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
   m_PrefabInternal: {fileID: 1668002296}
---- !u!1 &357815564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 357815565}
-  - 114: {fileID: 357815566}
-  m_Layer: 0
-  m_Name: FourthEnemyShips
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &357815565
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 357815564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 986097446}
-  m_RootOrder: 4
---- !u!114 &357815566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 357815564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObject: {fileID: 194340, guid: d5fad98a42fc1304abda9cbcbb398422, type: 2}
-  pooledAmount: 50
-  waitTime: 0.0000001
-  willGrow: 1
-  pooledObjects: []
 --- !u!1 &523563351
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,50 +342,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 523563351}
---- !u!1 &536503302
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 536503303}
-  - 114: {fileID: 536503304}
-  m_Layer: 0
-  m_Name: Enemy3Lasers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &536503303
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 536503302}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 986097446}
-  m_RootOrder: 11
---- !u!114 &536503304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 536503302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObject: {fileID: 102324, guid: d2e4fe297a407e74584bb12050279048, type: 2}
-  pooledAmount: 300
-  waitTime: 0.0000001
-  willGrow: 1
-  pooledObjects: []
 --- !u!1 &555410808
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,12 +352,12 @@ GameObject:
   - 4: {fileID: 555410810}
   - 114: {fileID: 555410811}
   - 114: {fileID: 555410809}
-  - 114: {fileID: 555410814}
+  - 114: {fileID: 555410813}
+  - 82: {fileID: 555410812}
+  - 114: {fileID: 555410815}
   - 114: {fileID: 555410816}
   - 114: {fileID: 555410817}
-  - 114: {fileID: 555410813}
-  - 114: {fileID: 555410815}
-  - 82: {fileID: 555410812}
+  - 114: {fileID: 555410814}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -464,32 +376,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19fb84d51019714a9b7194f9108ffde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstEnemyPool: {fileID: 11046874}
-  secondEnemyPool: {fileID: 930241598}
-  thirdEnemyPool: {fileID: 1478110998}
-  fourthEnemyPool: {fileID: 357815564}
-  spawnRate: 0.5
-  difficultyIncreaseScore: 15000
-  minXSpawn: -2500
-  maxXspawn: 2500
-  minYSpawn: -1000
-  maxYSpawn: 1000
-  zSpawn: 7500
-  secondEnemySpawnScore: 25000
-  thirdEnemySpawnScore: 50000
-  fourthEnemySpawnScore: 75000
-  firstEnemySpawnCap: 5
-  secondEnemySpawnCap: 5
-  thirdEnemySpawnCap: 5
-  fourthEnemySpawnCap: 5
-  firstEnemyFinalCap: 25
-  secondEnemyFinalCap: 15
-  thirdEnemyFinalCap: 10
-  fourthEnemyFinalCap: 5
-  firstEnemyCount: 0
-  secondEnemyCount: 0
-  thirdEnemyCount: 0
-  fourthEnemyCount: 0
+  objSpawnMinX: -7500
+  objSpawnMaxX: 7500
+  objSpawnMinY: -3500
+  objSpawnMaxY: 3500
+  objSpawnZ: 10000
+  enemyCount: 0
+  spawnCap: 10
+  finalSpawnCap: 25
+  capIncreaseAmount: 2
+  spawnRate: 1.5
+  difficultyTimer: 15
+  enemyObject:
+  - {fileID: 11046876}
+  - {fileID: 930241600}
 --- !u!4 &555410810
 Transform:
   m_ObjectHideFlags: 0
@@ -635,40 +535,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthRecoverScore: 50000
-  playerShootingFrequency: 0.4
-  lightningGunDuration: 8
-  playerShieldLength: 3
-  playerShieldCooldown: 6
+  shieldRecoverScore: 25000
+  playerShieldHealth: 3
   playerLives: 3
   playerHealth: 9
-  playerSpeed: 500
-  playerLaserHeatCap: 100
-  playerLaserHeatIncreaseAmount: 20
-  laserHeatLossAfterSeconds: 0.05
-  maneuverSpeed: 1
-  strafeSpeed: 1.5
-  enemy1Speed: 700
-  enemy1FireFreq: 1.5
-  enemy1BaseHealth: 2
-  enemy1LaserScore: 1000
-  enemy1MissileScore: 500
-  enemy2Speed: 900
-  enemy2FireFreq: 1
-  enemy2BaseHealth: 6
-  enemy2LaserScore: 500
-  enemy2MissileScore: 500
-  enemy3Speed: 1100
-  enemy3FireFreq: 0.5
-  enemy3BaseHealth: 2
-  enemy3ShieldHealth: 3
-  enemy3LaserScore: 1000
-  enemy3MissileScore: 500
-  enemy4Speed: 600
-  enemy4FireFreq: 2.5
-  enemy4BaseHealth: 5
-  enemy4ShieldHealth: 5
-  enemy4LaserScore: 2000
-  enemy4MissileScore: 500
+  playerInvulnerabilityTime: 1.5
+  playerShootingFrequency: 0.3
+  playerSpeed: 350
+  playerMaxTurnAngle: 20
 --- !u!114 &555410815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,14 +573,14 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 15000
+  spawnAtScore: 5000
   spawnAfter: 5
-  xMinSpawn: -400
-  xMaxSpawn: 400
-  yMinSpawn: -300
-  yMaxSpawn: 300
-  zSpawnMin: 7500
-  zSpawnMax: 10000
+  xMinSpawn: -100
+  xMaxSpawn: 100
+  yMinSpawn: -100
+  yMaxSpawn: 100
+  zMinSpawn: 5000
+  zMaxSpawn: 5000
   leveled: 0
 --- !u!114 &555410817
 MonoBehaviour:
@@ -765,23 +639,18 @@ MonoBehaviour:
   - {fileID: 1545338636}
   - {fileID: 1948741963}
   - {fileID: 775086618}
-  objSpawnMinX: -600
-  objSpawnMaxX: 600
-  objSpawnMinY: -600
-  objSpawnMaxY: 600
-  spawnFrequency: 2
-  objSpawnZ: 7000
+  objSpawnMinX: -250
+  objSpawnMaxX: 250
+  objSpawnMinY: -250
+  objSpawnMaxY: 250
+  spawnFrequency: 1.5
+  objSpawnZ: 1000
   sizes:
-  - {x: 10, y: 8, z: 9}
-  - {x: 20, y: 23, z: 16}
-  - {x: 25, y: 46, z: 30}
-  - {x: 55, y: 76, z: 80}
-  - {x: 120, y: 90, z: 86}
-  - {x: 56, y: 34, z: 45}
-  - {x: 456, y: 685, z: 566}
-  - {x: 20, y: 13, z: 16}
-  - {x: 45, y: 56, z: 50}
-  - {x: 158, y: 225, z: 305}
+  - {x: 10, y: 10, z: 10}
+  - {x: 20, y: 20, z: 20}
+  - {x: 30, y: 30, z: 30}
+  - {x: 40, y: 40, z: 40}
+  - {x: 50, y: 50, z: 50}
 --- !u!4 &568474989
 Transform:
   m_ObjectHideFlags: 0
@@ -841,7 +710,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986097446}
-  m_RootOrder: 10
+  m_RootOrder: 8
 --- !u!1 &809921980
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +742,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1343.8, y: 53.599854}
+  m_AnchoredPosition: {x: 1343.8, y: 53.59996}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &809921982
@@ -919,7 +788,7 @@ GameObject:
   - 4: {fileID: 930241599}
   - 114: {fileID: 930241600}
   m_Layer: 0
-  m_Name: SecondEnemyShips
+  m_Name: EnemyShips (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -981,15 +850,12 @@ Transform:
   - {fileID: 1533686843}
   - {fileID: 11046875}
   - {fileID: 930241599}
-  - {fileID: 1478110999}
-  - {fileID: 357815565}
   - {fileID: 2077037189}
   - {fileID: 2010570148}
   - {fileID: 1814202498}
   - {fileID: 1545338637}
   - {fileID: 1948741964}
   - {fileID: 775086620}
-  - {fileID: 536503303}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &1032136427
@@ -1480,50 +1346,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22410778, guid: 6cf7126f929d1e1448a7b42572fd2a5a,
     type: 2}
   m_PrefabInternal: {fileID: 1682952261}
---- !u!1 &1478110998
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1478110999}
-  - 114: {fileID: 1478111000}
-  m_Layer: 0
-  m_Name: ThirdEnemyShips
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1478110999
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1478110998}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 986097446}
-  m_RootOrder: 3
---- !u!114 &1478111000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1478110998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObject: {fileID: 161636, guid: 698be1fea7b795f4dbff240ee7c3505e, type: 2}
-  pooledAmount: 50
-  waitTime: 0.0000001
-  willGrow: 1
-  pooledObjects: []
 --- !u!1 &1502947778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,7 +1655,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986097446}
-  m_RootOrder: 8
+  m_RootOrder: 6
 --- !u!114 &1545338638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2010,7 +1832,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.3
   far clip plane: 10000
   field of view: 60
   orthographic: 0
@@ -2052,8 +1874,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  cameraSpeed: 4.5
-  cameraOffset: {x: 0, y: 25, z: -300}
+  cameraSpeed: 1
+  cameraOffset: {x: 0, y: 0, z: -300}
 --- !u!1 &1660281895
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,7 +2392,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1297.5, y: 53.600098}
+  m_AnchoredPosition: {x: 1297.5, y: 53.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760556311
@@ -2830,7 +2652,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986097446}
-  m_RootOrder: 7
+  m_RootOrder: 5
 --- !u!114 &1814202499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3076,7 +2898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986097446}
-  m_RootOrder: 9
+  m_RootOrder: 7
 --- !u!114 &1948741965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3120,7 +2942,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986097446}
-  m_RootOrder: 6
+  m_RootOrder: 4
 --- !u!114 &2010570149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3241,7 +3063,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986097446}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!114 &2077037190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3291,7 +3113,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -416.2998, y: 45.100098}
+  m_AnchoredPosition: {x: -416.3, y: 45.100006}
   m_SizeDelta: {x: 259.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087236806

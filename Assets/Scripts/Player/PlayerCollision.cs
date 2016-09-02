@@ -17,11 +17,13 @@ public class PlayerCollision : MonoBehaviour
 
     public int playerHealth;
     public int playerLives;
-     int healthScore;
+    int healthScore;
+    int shieldScore;
 
     public string gameOverScene;
 
     public bool shieldActive;
+    bool takingDamage;
 
     PlayerScore playerScoreOBJ;
 
@@ -30,6 +32,8 @@ public class PlayerCollision : MonoBehaviour
     GameObject player;
     GameObject gameManager;
     PublicVariableHandler publicVariableHandler;
+
+    float playerInvulnerabilityTime;
 
     void Start()
     {
@@ -52,6 +56,8 @@ public class PlayerCollision : MonoBehaviour
         playerHealth = publicVariableHandler.playerHealth;
         playerLives = publicVariableHandler.playerLives;
         healthScore = publicVariableHandler.healthRecoverScore;
+        shieldScore = publicVariableHandler.shieldRecoverScore;
+        playerInvulnerabilityTime = publicVariableHandler.playerInvulnerabilityTime;
 
         StartCoroutine(CheckScore());
     }
@@ -59,10 +65,9 @@ public class PlayerCollision : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Enemy Laser")
-        {
-            StartCoroutine(DamageIndicator());
+        {            
             col.gameObject.SetActive(false);
-            playerHealth--;
+            StartCoroutine(TakeDamage());
             pickUpManager.LoseLevel();
 
             if (playerHealth % 3 == 0)
@@ -72,10 +77,10 @@ public class PlayerCollision : MonoBehaviour
 
             CheckHealth();
         }
+
         else if (col.gameObject.tag == "Meteor")
         {
             LoseLife();
-            pickUpManager.LoseLevel();
             Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
             col.gameObject.SetActive(false);
         }
@@ -99,6 +104,11 @@ public class PlayerCollision : MonoBehaviour
         {
             CheckHealth();
             yield return new WaitForSeconds(0f);
+        }
+
+        if (playerScoreOBJ.score % shieldScore == 0 && playerScoreOBJ.score != 0)
+        {
+            transform.parent.GetComponent<ActivateShield>().onCooldown = false;
         }
 
         StartCoroutine(CheckScore());
@@ -177,6 +187,18 @@ public class PlayerCollision : MonoBehaviour
 
             Instantiate(explosion, transform.position, transform.rotation);
             Instantiate(explosionSound, transform.position, transform.rotation);
+        }
+    }
+
+    IEnumerator TakeDamage()
+    {
+        if (!takingDamage)
+        {
+            takingDamage = true;
+            StartCoroutine(DamageIndicator());
+            playerHealth--;
+            yield return new WaitForSeconds(playerInvulnerabilityTime);
+            takingDamage = false;
         }
     }
 
