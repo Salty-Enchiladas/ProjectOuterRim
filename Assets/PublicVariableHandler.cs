@@ -16,6 +16,8 @@ public class PublicVariableHandler : MonoBehaviour
     public GameObject shieldLevel2Bar;
     public GameObject shieldLevel3Bar;
 
+
+    public GameObject shieldIcon;
     public GameObject shipIMG1;
     public GameObject shipIMG2;
 

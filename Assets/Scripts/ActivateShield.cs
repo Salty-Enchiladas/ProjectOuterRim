@@ -9,6 +9,8 @@ public class ActivateShield : MonoBehaviour
     GameObject shieldLevel2Bar;
     GameObject shieldLevel3Bar;
 
+    GameObject shieldIcon;
+
     public bool onCooldown;
     public float shieldCooldown;
     public float shieldLength;
@@ -25,6 +27,7 @@ public class ActivateShield : MonoBehaviour
         shieldCooldown = publicVariableHandler.playerShieldCooldown;
         shieldLength = publicVariableHandler.playerShieldLength;
         shield = GetComponent<StoreVariables>().shield;
+        shieldIcon = publicVariableHandler.shieldIcon;
 
         shieldLevel1Bar = publicVariableHandler.shieldLevel1Bar;
         shieldLevel2Bar = publicVariableHandler.shieldLevel2Bar;
@@ -42,6 +45,10 @@ public class ActivateShield : MonoBehaviour
                 StartCoroutine(ShieldActive());
             }
         }
+        if (Time.time > lastUse + shieldCooldown)
+        {
+            shieldIcon.SetActive(true);
+        }
 	}
 
     public void ShieldDestroyed()
@@ -57,6 +64,7 @@ public class ActivateShield : MonoBehaviour
         yield return new WaitForSeconds(shieldLength);
         lastUse = Time.time;
         shield.SetActive(false);
+        shieldIcon.SetActive(false);
         GetComponentInChildren<PlayerCollision>().shieldActive = false;
         onCooldown = false;
     }

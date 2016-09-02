@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Meteor 3
-  m_Shader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP
-  m_LightmapFlags: 1
-  m_CustomRenderQueue: 2000
+  m_Name: 'Material #49'
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -19,14 +19,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 9e9e7bbb3d557584a90408cad0040bb7, type: 3}
-          m_Scale: {x: 15, y: 15}
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 5dbaf1cded556824badb92d2c9603657, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -55,7 +55,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 0.01, y: 0.03}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -74,13 +74,6 @@ Material:
       data:
         first:
           name: _MetallicGlossMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Illum
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -109,11 +102,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.303
+        second: 0.5
       data:
         first:
           name: _BumpScale
-        second: 1.95
+        second: 1
       data:
         first:
           name: _OcclusionStrength
@@ -133,11 +126,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: 0.883
-      data:
-        first:
-          name: _Emission
-        second: 1
+        second: 0
     m_Colors:
       data:
         first:
@@ -146,4 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.19852942, g: 0.1532764, b: 0.1532764, a: 1}
+        second: {r: 0.588, g: 0.588, b: 0.588, a: 1}

@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ObjectPooling : MonoBehaviour {
-
+public class ObjectPooling : MonoBehaviour
+{
     public GameObject pooledObject;
     public int pooledAmount;
     public float waitTime = 0.001f;
