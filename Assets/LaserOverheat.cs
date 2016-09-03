@@ -18,8 +18,9 @@ public class LaserOverheat : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        heatBar.color = Color.Lerp(heatBar.color, Color.clear, fireScript.heatLevel / 100 * Time.deltaTime);
+        //heatBar.color = Color.Lerp(heatBar.color, Color.clear, fireScript.heatLevel / 100 * Time.deltaTime);
+        heatBar.fillAmount = Mathf.Lerp(heatBar.fillAmount, fireScript.heatLevel, 3 * Time.deltaTime);
     }
 }

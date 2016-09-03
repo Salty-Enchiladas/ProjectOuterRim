@@ -40,6 +40,7 @@ public class WaveHandler : MonoBehaviour
     private GameObject player;
     private GameObject currentObject;
     private GameObject debrisField;
+    GameObject shield;
 
     private string poolObject;
 
@@ -163,11 +164,15 @@ public class WaveHandler : MonoBehaviour
                 thirdEnemyCount++;
                 currentObject = thirdEnemy.GetPooledObject();
                 currentObject.name = objectPool;
+                shield = currentObject.transform.FindChild("Shield").gameObject;
+                shield.SetActive(true);
                 break;
             case "Enemy4":
                 fourthEnemyCount++;
                 currentObject = fourthEnemy.GetPooledObject();
                 currentObject.name = objectPool;
+                shield = currentObject.transform.FindChild("Shield").gameObject;
+                shield.SetActive(true);
                 break;
         }
 

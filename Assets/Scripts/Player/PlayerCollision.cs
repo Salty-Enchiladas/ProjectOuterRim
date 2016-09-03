@@ -38,6 +38,7 @@ public class PlayerCollision : MonoBehaviour
 
         gameManager = GameObject.Find("GameManager");
         pickUpManager = gameManager.GetComponent<PickUpManager>();
+        publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
 
         greenHealthRing = GameObject.Find("GreenHealthRing");
         yellowHealthRing = GameObject.Find("YellowHealthRing");
@@ -46,8 +47,7 @@ public class PlayerCollision : MonoBehaviour
         damageIndicatorIMG.SetActive(false);
 
         lifeImage1 = publicVariableHandler.shipIMG1;
-        lifeImage2 = publicVariableHandler.shipIMG2;
-        publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
+        lifeImage2 = publicVariableHandler.shipIMG2;        
 
         playerHealth = publicVariableHandler.playerHealth;
         playerLives = publicVariableHandler.playerLives;
@@ -67,7 +67,7 @@ public class PlayerCollision : MonoBehaviour
 
             if (playerHealth % 3 == 0)
             {
-                //LoseLife();
+                LoseLife();
             }
 
             CheckHealth();

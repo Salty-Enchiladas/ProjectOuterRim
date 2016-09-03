@@ -5,9 +5,9 @@ public class FireScript : MonoBehaviour {
 
     public GameObject laser;
     [HideInInspector]
-    public int heatLevel;
+    public float heatLevel;
     public float heatCap;
-    public int heatIncreaseAmount;
+    public float heatIncreaseAmount;
     float fireFreq;
 
     float lastShot;
@@ -52,7 +52,7 @@ public class FireScript : MonoBehaviour {
             lastReset = Time.time;
             heatLevel = heatLevel - heatIncreaseAmount;
         }
-        print("Laser heatlevel is at "+ heatLevel);
+        //print("Laser heatlevel is at "+ heatLevel);
     }
 
     void Fire()
@@ -60,52 +60,38 @@ public class FireScript : MonoBehaviour {
         if (heatLevel < heatCap)
         {
             heatLevel = heatLevel + heatIncreaseAmount;
+            achievementManager.LaserShot();
+            lastShot = Time.time;
+
+            GameObject obj = laserPool.GetPooledObject();
+
+            if (obj == null)
+            {
+                return;
+            }
+
+            obj.transform.position = transform.position;
+            obj.transform.rotation = transform.rotation;
+            obj.SetActive(true);
         }
         else if (heatLevel >= heatCap)
         {
             overHeated = true;
-            print("Laser is overheating");
+            //print("Laser is overheating");
             StartCoroutine(OverHeating());
-        }
-        achievementManager.LaserShot();
-        lastShot = Time.time;
-
-        GameObject obj = laserPool.GetPooledObject();
-
-        if (obj == null)
-        {
-            return;
-        }
-
-        obj.transform.position = transform.position;
-        obj.transform.rotation = transform.rotation;
-        obj.SetActive(true);
+        }        
     }
 
     IEnumerator OverHeating()
     {
-        print("laser cooling down");
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        heatLevel = heatLevel - 10;
-        yield return new WaitForSeconds(.3f);
-        print("Laser is cooled and ready for action!");
+        //print("laser cooling down");
+        for(int i = 0; i < 20; i++)
+        {
+            yield return new WaitForSeconds(.3f);
+            heatLevel = heatLevel - .05f;            
+        }        
+        
+        //print("Laser is cooled and ready for action!");
         overHeated = false;
     }
     public void LaserLevel1(bool levelUp)
