@@ -30,7 +30,6 @@ public class GetScore : MonoBehaviour {
             {
                 scoreText.text = "Current \n High Score: " + PlayerPrefs.GetInt("HighScore");
             }
-
         }
     }
 }
