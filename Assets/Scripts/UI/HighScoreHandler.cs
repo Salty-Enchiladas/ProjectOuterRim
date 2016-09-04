@@ -14,31 +14,41 @@ public class HighScoreHandler : MonoBehaviour {
     public Button quitButton;
 
     public static int rankToUpdate;
+
     public static int currentScore;
 
     public List<LeaderboardInfo> leaderboardInfo;
 
+    string scoreString;
+    string scoreText;
+    string nameString;
+
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () 
+    {
+        currentScore = PlayerPrefs.GetInt("Score");
+        leaderboardInfo = new List<LeaderboardInfo>(10);
+
         for(int i = 1; i <= 10; i++)
         {
-            print(i);
-            leaderboardInfo.Add(new LeaderboardInfo(PlayerPrefs.GetInt("Rank" + i.ToString() + "Score"), PlayerPrefs.GetString("Rank" + i.ToString() + "Name")));
-            scoreList[i - 1].text = leaderboardInfo[i - 1].Score.ToString();
-            print(leaderboardInfo[i - 1].Score.ToString());
-            nameList[i - 1].text = leaderboardInfo[i - 1].Name.ToString();
-            print(leaderboardInfo[i - 1].Name.ToString());
+            scoreString = "Rank" + i.ToString() + "Score";
+            nameString = "Rank" + i.ToString() + "Name";
+            
+            leaderboardInfo.Add(new LeaderboardInfo(PlayerPrefs.GetInt(scoreString), PlayerPrefs.GetString(nameString)));
+
+            UpdateLeaderboardGraphics();
         }
 
-        for(int j = 0; j < leaderboardInfo.Count; j++)
+        yield return new WaitForSeconds(0.05f);
+
+        for(int j = 0; j < 10; j++)
         {
-            print("count: " + leaderboardInfo.Count);
             if (currentScore > leaderboardInfo[j].Score)
             {
                 newHSPanel.SetActive(true);
                 restartButton.interactable = false;
                 quitButton.interactable = false;
-                rankToUpdate = j;
+                rankToUpdate = j+1;
                 break;
             }
         }        
@@ -46,8 +56,65 @@ public class HighScoreHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}    
+        if (Input.GetKeyDown("r")) 
+        {
+            for(int i = 1; i <= 10; i++)
+            {
+                scoreString = "Rank" + i.ToString() + "Score";
+                nameString = "Rank" + i.ToString() + "Name";
+
+                PlayerPrefs.SetInt(scoreString, 0);
+                PlayerPrefs.SetString(nameString, "");                
+
+                leaderboardInfo[i - 1].Score = PlayerPrefs.GetInt(scoreString);
+                leaderboardInfo[i - 1].Name = PlayerPrefs.GetString(nameString);
+
+                UpdateLeaderboardGraphics();
+            }
+        }
+	}
+
+    public void UpdateLeaderboardInfo(int score, string name, int index)
+    {
+        leaderboardInfo.Insert(index, new LeaderboardInfo(score, name));
+
+        if (leaderboardInfo.Count > 10)
+        {
+            leaderboardInfo.RemoveAt(10);
+        }
+
+        UpdatePlayerPrefs();
+    }
+
+    public void  UpdatePlayerPrefs()
+    {
+        for(int i = 1; i <= 10; i++)
+        {
+            scoreString = "Rank" + i.ToString() + "Score";
+            nameString = "Rank" + i.ToString() + "Name";
+
+            PlayerPrefs.SetInt(scoreString, leaderboardInfo[i - 1].Score);
+            PlayerPrefs.SetString(nameString, leaderboardInfo[i - 1].Name);
+        }
+
+        PlayerPrefs.Save();
+
+        UpdateLeaderboardGraphics();
+    }
+    
+    public void UpdateLeaderboardGraphics()
+    {
+        for(int i = 1; i <= 10; i++)
+        {
+            scoreString = "Rank" + i.ToString() + "Score";
+            nameString = "Rank" + i.ToString() + "Name";
+
+            scoreText = PlayerPrefs.GetInt(scoreString).ToString();
+            scoreList[i - 1].text = scoreText;
+
+            nameList[i - 1].text = PlayerPrefs.GetString(nameString);
+        }
+    } 
 }
 
 public class LeaderboardInfo

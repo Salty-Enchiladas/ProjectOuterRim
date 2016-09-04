@@ -17,13 +17,21 @@ public class NewHighScore : MonoBehaviour {
     public Button restartButton;
     public Button quitButton;
 
+    string playerName;
+
     public void UpdateRank()
     {
-        PlayerPrefs.SetInt("Rank" + HighScoreHandler.rankToUpdate + 1.ToString() + "Score", HighScoreHandler.currentScore);
-        PlayerPrefs.SetString("Rank" + HighScoreHandler.rankToUpdate + 1.ToString() + "Name", initial1.text + initial2.text + initial3.text);
+        playerName = initial1.text + initial2.text + initial3.text;
 
-        scoreList[HighScoreHandler.rankToUpdate + 1].text = PlayerPrefs.GetInt("Rank" + HighScoreHandler.rankToUpdate + 1.ToString() + "Score").ToString();
-        nameList[HighScoreHandler.rankToUpdate + 1].text = PlayerPrefs.GetInt("Rank" + HighScoreHandler.rankToUpdate + 1.ToString() + "Name").ToString();
+        GameObject.Find("Manager").GetComponent<HighScoreHandler>().UpdateLeaderboardInfo(PlayerPrefs.GetInt("Score"), playerName, HighScoreHandler.rankToUpdate-1);
+
+        //PlayerPrefs.SetInt("Rank" + HighScoreHandler.rankToUpdate.ToString() + "Score", PlayerPrefs.GetInt("Score"));
+        //PlayerPrefs.SetString("Rank" + HighScoreHandler.rankToUpdate.ToString() + "Name", playerName);
+
+        //PlayerPrefs.Save();
+
+        //scoreList[HighScoreHandler.rankToUpdate-1].text = PlayerPrefs.GetInt("Rank" + HighScoreHandler.rankToUpdate.ToString() + "Score").ToString();
+        //nameList[HighScoreHandler.rankToUpdate-1].text = PlayerPrefs.GetString("Rank" + HighScoreHandler.rankToUpdate.ToString() + "Name");
 
         newHSPanel.SetActive(false);
 
