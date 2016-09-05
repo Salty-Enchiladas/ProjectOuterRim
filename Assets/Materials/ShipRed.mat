@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Hud Slot WeaponBackground Blue
+  m_Name: ShipRed
   m_Shader: {fileID: 4800000, guid: a86051229156cae42afa96fc66a7dd7e, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -141,7 +141,7 @@ Material:
       data:
         first:
           name: _Rim
-        second: 0.403
+        second: 1
       data:
         first:
           name: _Speed
@@ -178,4 +178,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0.48864117, b: 0.9705882, a: 1}
+        second: {r: 0.9705882, g: 0, b: 0, a: 1}
