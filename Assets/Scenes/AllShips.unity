@@ -7562,10 +7562,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 186968, guid: 15afbff08185a2f4f8605fbf91b49c95, type: 2}
-      propertyPath: m_Name
-      value: Super Wing White
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15afbff08185a2f4f8605fbf91b49c95, type: 2}
   m_IsPrefabParent: 0
@@ -8787,10 +8783,6 @@ Prefab:
     - target: {fileID: 477216, guid: 41530e4a9e271d242b1708e3db1bad98, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 100284, guid: 41530e4a9e271d242b1708e3db1bad98, type: 2}
-      propertyPath: m_Name
-      value: Super Wing Orange
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41530e4a9e271d242b1708e3db1bad98, type: 2}

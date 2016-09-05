@@ -99,11 +99,11 @@ public class FireScript : MonoBehaviour {
         if (levelUp)
         {
             laserLevel1Bar.SetActive(levelUp);
-            fireFreq = fireFreq / 2;
+            heatIncreaseAmount = heatIncreaseAmount / 2;
         }
         else if (!levelUp)
         {
-            fireFreq = fireFreq * 2;
+            heatIncreaseAmount = heatIncreaseAmount * 2;
         }
     }
 

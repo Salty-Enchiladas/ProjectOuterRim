@@ -40,6 +40,7 @@ public class FireMissile : MonoBehaviour {
         player = GameObject.Find("Player");
         gameManager = GameObject.Find("GameManager");
         publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
+        missile = player.GetComponent<StoreVariables>().missileColor;
         lightningGunDuration = publicVariableHandler.lightningGunDuration;
         player.GetComponent<StoreVariables>().lightningGun.GetComponent<ArcReactorDemoGunController>().enabled = false;
         missile1Img = GameObject.Find("M1b");
