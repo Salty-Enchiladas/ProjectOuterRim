@@ -3175,7 +3175,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591680875}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.08715575, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 35, z: -300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3198,7 +3198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cameraSpeed: 4.5
-  cameraOffset: {x: 0, y: 25, z: -300}
+  cameraOffset: {x: 0, y: 30, z: -300}
+  snapMovement: 0
 --- !u!1 &1607794819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,7 +4144,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 133736, guid: c34b6c2c49c7dab418898767af3de19f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2087320, guid: c34b6c2c49c7dab418898767af3de19f, type: 2}
       propertyPath: m_CullingMask.m_Bits

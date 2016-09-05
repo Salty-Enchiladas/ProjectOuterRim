@@ -1021,8 +1021,8 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Time: 1
-  m_StartWidth: 10
-  m_EndWidth: 10
+  m_StartWidth: 5
+  m_EndWidth: 5
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1ee2095ff814f4c8f1d8148eaa9c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missileSpeed: 1500
+  missileSpeed: 2500
   target: {fileID: 0}
 --- !u!136 &13635832
 CapsuleCollider:
