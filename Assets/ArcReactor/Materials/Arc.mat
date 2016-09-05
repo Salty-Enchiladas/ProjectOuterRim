@@ -37,7 +37,7 @@ Material:
       data:
         first:
           name: _FadeLevel
-        second: 0
+        second: 0.001
       data:
         first:
           name: _CoreCoef

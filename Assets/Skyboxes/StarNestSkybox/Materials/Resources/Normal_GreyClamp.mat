@@ -22,24 +22,20 @@ Material:
         second: 700
       data:
         first:
-          name: _CLAMPOUT
-        second: 1
-      data:
-        first:
           name: _CamScroll
         second: 55
       data:
         first:
           name: _Iterations
-        second: 13
+        second: 7.4
       data:
         first:
           name: _Volsteps
-        second: 8
+        second: 9.04
       data:
         first:
           name: _Formuparam
-        second: 420
+        second: 391.28
       data:
         first:
           name: _StepSize
@@ -60,6 +56,10 @@ Material:
         first:
           name: _Saturation
         second: 77
+      data:
+        first:
+          name: _CLAMPOUT
+        second: 1
     m_Colors:
       data:
         first:
