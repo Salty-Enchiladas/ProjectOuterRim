@@ -190,7 +190,6 @@ GameObject:
   - 4: {fileID: 446080}
   - 199: {fileID: 19971636}
   - 198: {fileID: 19842148}
-  - 114: {fileID: 11496116}
   m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
@@ -208,7 +207,6 @@ GameObject:
   - 4: {fileID: 465372}
   - 199: {fileID: 19923368}
   - 198: {fileID: 19829942}
-  - 114: {fileID: 11422804}
   m_Layer: 8
   m_Name: AfterburnerLeft (11)
   m_TagString: Untagged
@@ -800,7 +798,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117452}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -904,7 +902,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144552}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1061,7 +1059,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102734}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1243,7 +1241,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102926}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1506,17 +1504,6 @@ MonoBehaviour:
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
---- !u!114 &11422804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11426956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1778,17 +1765,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   noTarget: {fileID: 0}
---- !u!114 &11496116
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &13512264
 SphereCollider:
   m_ObjectHideFlags: 1

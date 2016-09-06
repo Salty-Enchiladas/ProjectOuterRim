@@ -118,7 +118,6 @@ GameObject:
   - 4: {fileID: 488882}
   - 199: {fileID: 19924786}
   - 198: {fileID: 19889636}
-  - 114: {fileID: 11494876}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -360,7 +359,6 @@ GameObject:
   - 4: {fileID: 402330}
   - 199: {fileID: 19902902}
   - 198: {fileID: 19804798}
-  - 114: {fileID: 11404240}
   m_Layer: 0
   m_Name: AfterburnerLeft (2)
   m_TagString: Untagged
@@ -603,7 +601,6 @@ GameObject:
   - 4: {fileID: 477766}
   - 199: {fileID: 19956404}
   - 198: {fileID: 19813196}
-  - 114: {fileID: 11451268}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -655,7 +652,6 @@ GameObject:
   - 4: {fileID: 417702}
   - 199: {fileID: 19923466}
   - 198: {fileID: 19899558}
-  - 114: {fileID: 11476242}
   m_Layer: 0
   m_Name: AfterburnerLeft (1)
   m_TagString: Untagged
@@ -1387,7 +1383,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197444}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1543,7 +1539,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194282}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1863,7 +1859,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195426}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1923,7 +1919,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175100}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -2418,17 +2414,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11404240
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11409294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2590,17 +2575,6 @@ MonoBehaviour:
   lightningGun: {fileID: 112700}
   laserColor: {fileID: 188982, guid: e76b7fb8090ece44d848b9ea2b17832c, type: 2}
   missileColor: {fileID: 128558, guid: 2bfca4e69e1f8b944b7dc5bab39ebf7a, type: 2}
---- !u!114 &11451268
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11457440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2673,17 +2647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a27be2ab39c5b248adb1f836e58d59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11476242
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11484752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2754,17 +2717,6 @@ MonoBehaviour:
       m_RotationOrder: 4
     maxSnapBackDistance: 100
   globalSpaceTransform: {fileID: 0}
---- !u!114 &11494876
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &13504684
 SphereCollider:
   m_ObjectHideFlags: 1

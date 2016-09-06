@@ -110,7 +110,6 @@ GameObject:
   - 4: {fileID: 454154}
   - 199: {fileID: 19912218}
   - 198: {fileID: 19832930}
-  - 114: {fileID: 11419582}
   m_Layer: 8
   m_Name: AfterburnerLeft (6)
   m_TagString: Untagged
@@ -436,7 +435,6 @@ GameObject:
   - 4: {fileID: 414776}
   - 199: {fileID: 19958478}
   - 198: {fileID: 19898180}
-  - 114: {fileID: 11485806}
   m_Layer: 8
   m_Name: AfterburnerLeft (5)
   m_TagString: Untagged
@@ -471,7 +469,6 @@ GameObject:
   - 4: {fileID: 420768}
   - 199: {fileID: 19964186}
   - 198: {fileID: 19813092}
-  - 114: {fileID: 11474248}
   m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
@@ -489,7 +486,6 @@ GameObject:
   - 4: {fileID: 447496}
   - 199: {fileID: 19942014}
   - 198: {fileID: 19883296}
-  - 114: {fileID: 11404824}
   m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
@@ -1274,7 +1270,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1543,7 +1539,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146346}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1569,7 +1565,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156618}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1990,7 +1986,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148932}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -2387,17 +2383,6 @@ MonoBehaviour:
       m_RotationOrder: 4
     maxSnapBackDistance: 100
   globalSpaceTransform: {fileID: 0}
---- !u!114 &11404824
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11406946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2458,17 +2443,6 @@ MonoBehaviour:
   lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
---- !u!114 &11419582
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11425944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2573,17 +2547,6 @@ MonoBehaviour:
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
---- !u!114 &11474248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11485474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2598,17 +2561,6 @@ MonoBehaviour:
   onCooldown: 0
   shieldCooldown: 0
   shieldLength: 0
---- !u!114 &11485806
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11487332
 MonoBehaviour:
   m_ObjectHideFlags: 1

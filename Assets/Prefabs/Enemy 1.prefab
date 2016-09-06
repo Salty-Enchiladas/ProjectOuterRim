@@ -127,7 +127,6 @@ GameObject:
   - 4: {fileID: 467396}
   - 199: {fileID: 19901072}
   - 198: {fileID: 19892936}
-  - 114: {fileID: 11474280}
   m_Layer: 8
   m_Name: AfterburnerLeft (6)
   m_TagString: Untagged
@@ -179,7 +178,6 @@ GameObject:
   - 4: {fileID: 475224}
   - 199: {fileID: 19912872}
   - 198: {fileID: 19896898}
-  - 114: {fileID: 11448546}
   m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
@@ -282,7 +280,6 @@ GameObject:
   - 4: {fileID: 454344}
   - 199: {fileID: 19906184}
   - 198: {fileID: 19848250}
-  - 114: {fileID: 11457518}
   m_Layer: 8
   m_Name: AfterburnerLeft (5)
   m_TagString: Untagged
@@ -489,7 +486,6 @@ GameObject:
   - 4: {fileID: 403282}
   - 199: {fileID: 19920814}
   - 198: {fileID: 19844710}
-  - 114: {fileID: 11413708}
   m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
@@ -2160,17 +2156,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 90, y: 50, z: 100}
   m_Center: {x: 0, y: 0, z: -17}
---- !u!114 &11413708
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11427986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2216,28 +2201,6 @@ MonoBehaviour:
   maxFreq: 8
   laserPoolName: EnemyLasers
   canFire: 1
---- !u!114 &11448546
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11457518
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11458756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2309,6 +2272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
+  heatLevel: 0
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
@@ -2337,17 +2301,6 @@ MonoBehaviour:
   playerLives: 3
   gameOverScene: GameOver
   shieldActive: 0
---- !u!114 &11474280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11475016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2374,6 +2327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
+  heatLevel: 0
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0

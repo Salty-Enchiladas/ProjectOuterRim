@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 482434}
   - 199: {fileID: 19997148}
   - 198: {fileID: 19846638}
-  - 114: {fileID: 11408320}
   m_Layer: 0
   m_Name: AfterburnerLeft (3)
   m_TagString: Untagged
@@ -114,7 +113,6 @@ GameObject:
   - 4: {fileID: 483220}
   - 199: {fileID: 19952044}
   - 198: {fileID: 19820166}
-  - 114: {fileID: 11440300}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -132,7 +130,6 @@ GameObject:
   - 4: {fileID: 446546}
   - 199: {fileID: 19909566}
   - 198: {fileID: 19854494}
-  - 114: {fileID: 11405136}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -206,7 +203,6 @@ GameObject:
   - 4: {fileID: 414708}
   - 199: {fileID: 19915712}
   - 198: {fileID: 19827074}
-  - 114: {fileID: 11400656}
   m_Layer: 0
   m_Name: AfterburnerLeft (4)
   m_TagString: Untagged
@@ -1203,17 +1199,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11400656
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 145758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11402310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1256,28 +1241,6 @@ MonoBehaviour:
   clampX: 10000
   clampY: 10000
   invertVertical: 0
---- !u!114 &11405136
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11408320
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11421078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1330,17 +1293,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   noTarget: {fileID: 0}
---- !u!114 &11440300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11447162
 MonoBehaviour:
   m_ObjectHideFlags: 1

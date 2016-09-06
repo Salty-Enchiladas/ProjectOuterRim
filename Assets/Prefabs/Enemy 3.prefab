@@ -198,7 +198,6 @@ GameObject:
   - 4: {fileID: 454512}
   - 199: {fileID: 19958796}
   - 198: {fileID: 19845050}
-  - 114: {fileID: 11418624}
   m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
@@ -286,7 +285,6 @@ GameObject:
   - 4: {fileID: 492006}
   - 199: {fileID: 19976192}
   - 198: {fileID: 19815242}
-  - 114: {fileID: 11445082}
   m_Layer: 8
   m_Name: AfterburnerLeft (11)
   m_TagString: Untagged
@@ -1693,20 +1691,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
+  heatLevel: 0
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
---- !u!114 &11418624
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11424724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1817,17 +1805,6 @@ MonoBehaviour:
   lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
---- !u!114 &11445082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11452266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1895,6 +1872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
+  heatLevel: 0
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0

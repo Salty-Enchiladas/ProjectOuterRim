@@ -111,7 +111,6 @@ GameObject:
   - 4: {fileID: 463402}
   - 199: {fileID: 19932392}
   - 198: {fileID: 19813632}
-  - 114: {fileID: 11492032}
   m_Layer: 0
   m_Name: AfterburnerLeft (3)
   m_TagString: Untagged
@@ -257,7 +256,6 @@ GameObject:
   - 4: {fileID: 422630}
   - 199: {fileID: 19990950}
   - 198: {fileID: 19841100}
-  - 114: {fileID: 11478894}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -275,7 +273,6 @@ GameObject:
   - 4: {fileID: 499472}
   - 199: {fileID: 19932860}
   - 198: {fileID: 19876956}
-  - 114: {fileID: 11450214}
   m_Layer: 0
   m_Name: AfterburnerLeft (4)
   m_TagString: Untagged
@@ -349,7 +346,6 @@ GameObject:
   - 4: {fileID: 423560}
   - 199: {fileID: 19960790}
   - 198: {fileID: 19866374}
-  - 114: {fileID: 11451398}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -1279,28 +1275,6 @@ MonoBehaviour:
   lightningGun: {fileID: 123552}
   laserColor: {fileID: 186514, guid: c361b9016c5897f46962e17b136b7536, type: 2}
   missileColor: {fileID: 114522, guid: 2d018c5daf88329488a3534d93000922, type: 2}
---- !u!114 &11450214
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11451398
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11456086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1406,17 +1380,6 @@ MonoBehaviour:
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
---- !u!114 &11478894
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11485146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1513,17 +1476,6 @@ MonoBehaviour:
   lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
---- !u!114 &11492032
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &13507786
 SphereCollider:
   m_ObjectHideFlags: 1

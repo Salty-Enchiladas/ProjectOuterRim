@@ -217,7 +217,6 @@ GameObject:
   - 4: {fileID: 455708}
   - 199: {fileID: 19917882}
   - 198: {fileID: 19886964}
-  - 114: {fileID: 11467190}
   m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
@@ -323,7 +322,6 @@ GameObject:
   - 4: {fileID: 435446}
   - 199: {fileID: 19979232}
   - 198: {fileID: 19834008}
-  - 114: {fileID: 11417182}
   m_Layer: 8
   m_Name: AfterburnerLeft (5)
   m_TagString: Untagged
@@ -1372,17 +1370,6 @@ MonoBehaviour:
   onCooldown: 0
   shieldCooldown: 0
   shieldLength: 0
---- !u!114 &11417182
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11427464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1520,17 +1507,6 @@ MonoBehaviour:
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
---- !u!114 &11467190
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11473704
 MonoBehaviour:
   m_ObjectHideFlags: 1

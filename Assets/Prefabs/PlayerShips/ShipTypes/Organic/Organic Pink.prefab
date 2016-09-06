@@ -62,7 +62,6 @@ GameObject:
   - 4: {fileID: 437424}
   - 199: {fileID: 19912184}
   - 198: {fileID: 19818318}
-  - 114: {fileID: 11441782}
   m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
@@ -415,7 +414,6 @@ GameObject:
   - 4: {fileID: 410302}
   - 199: {fileID: 19993338}
   - 198: {fileID: 19888202}
-  - 114: {fileID: 11434274}
   m_Layer: 8
   m_Name: AfterburnerLeft (11)
   m_TagString: Untagged
@@ -983,7 +981,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138326}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1087,7 +1085,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1113,7 +1111,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1217,7 +1215,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166768}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1525,17 +1523,6 @@ MonoBehaviour:
   lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
---- !u!114 &11434274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 184320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11435106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1587,17 +1574,6 @@ MonoBehaviour:
   lightningGun: {fileID: 140618}
   laserColor: {fileID: 186514, guid: c361b9016c5897f46962e17b136b7536, type: 2}
   missileColor: {fileID: 114522, guid: 2d018c5daf88329488a3534d93000922, type: 2}
---- !u!114 &11441782
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11443948
 MonoBehaviour:
   m_ObjectHideFlags: 1

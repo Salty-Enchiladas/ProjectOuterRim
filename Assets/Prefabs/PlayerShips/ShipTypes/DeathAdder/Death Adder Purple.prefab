@@ -201,7 +201,6 @@ GameObject:
   - 4: {fileID: 476588}
   - 199: {fileID: 19971718}
   - 198: {fileID: 19807776}
-  - 114: {fileID: 11467520}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -238,7 +237,6 @@ GameObject:
   - 4: {fileID: 418140}
   - 199: {fileID: 19993706}
   - 198: {fileID: 19809406}
-  - 114: {fileID: 11484950}
   m_Layer: 0
   m_Name: AfterburnerLeft (4)
   m_TagString: Untagged
@@ -256,7 +254,6 @@ GameObject:
   - 4: {fileID: 412220}
   - 199: {fileID: 19978520}
   - 198: {fileID: 19832744}
-  - 114: {fileID: 11447504}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -274,7 +271,6 @@ GameObject:
   - 4: {fileID: 496480}
   - 199: {fileID: 19930978}
   - 198: {fileID: 19803996}
-  - 114: {fileID: 11484350}
   m_Layer: 0
   m_Name: AfterburnerLeft (3)
   m_TagString: Untagged
@@ -1395,17 +1391,6 @@ MonoBehaviour:
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
---- !u!114 &11447504
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11462858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1428,17 +1413,6 @@ MonoBehaviour:
   lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
---- !u!114 &11467520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 175492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11467786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1500,28 +1474,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a27be2ab39c5b248adb1f836e58d59f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11484350
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 184948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11484950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &13502920

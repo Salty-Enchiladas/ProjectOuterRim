@@ -98,7 +98,6 @@ GameObject:
   - 4: {fileID: 402560}
   - 199: {fileID: 19995334}
   - 198: {fileID: 19866966}
-  - 114: {fileID: 11498104}
   m_Layer: 0
   m_Name: AfterburnerLeft (3)
   m_TagString: Untagged
@@ -136,7 +135,6 @@ GameObject:
   - 4: {fileID: 426990}
   - 199: {fileID: 19981614}
   - 198: {fileID: 19846616}
-  - 114: {fileID: 11457128}
   m_Layer: 0
   m_Name: AfterburnerLeft (4)
   m_TagString: Untagged
@@ -192,7 +190,6 @@ GameObject:
   - 4: {fileID: 424662}
   - 199: {fileID: 19909522}
   - 198: {fileID: 19892202}
-  - 114: {fileID: 11405990}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -333,7 +330,6 @@ GameObject:
   - 4: {fileID: 472846}
   - 199: {fileID: 19984842}
   - 198: {fileID: 19822528}
-  - 114: {fileID: 11455282}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -1203,17 +1199,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11405990
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11414920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1292,28 +1277,6 @@ MonoBehaviour:
   lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
---- !u!114 &11455282
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11457128
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11457210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1488,17 +1451,6 @@ MonoBehaviour:
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
---- !u!114 &11498104
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11498698
 MonoBehaviour:
   m_ObjectHideFlags: 1
