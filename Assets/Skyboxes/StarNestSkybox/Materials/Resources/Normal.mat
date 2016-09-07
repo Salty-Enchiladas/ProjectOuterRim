@@ -19,7 +19,7 @@ Material:
       data:
         first:
           name: _Tile
-        second: 535.5
+        second: 430.9
       data:
         first:
           name: _CamScroll
@@ -27,23 +27,23 @@ Material:
       data:
         first:
           name: _Iterations
-        second: 13.2
+        second: 10.5
       data:
         first:
           name: _Volsteps
-        second: 20
+        second: 9.3
       data:
         first:
           name: _Formuparam
-        second: 366.5
+        second: 557.2
       data:
         first:
           name: _StepSize
-        second: 766.5
+        second: 159.4
       data:
         first:
           name: _Brightness
-        second: 0.11
+        second: 3
       data:
         first:
           name: _Darkmatter
@@ -51,7 +51,7 @@ Material:
       data:
         first:
           name: _Distfading
-        second: 26.1
+        second: 58.99
       data:
         first:
           name: _Saturation
@@ -64,7 +64,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 0.7647059, g: 0.8636917, b: 1, a: 1}
       data:
         first:
           name: _Rotation
@@ -72,8 +72,8 @@ Material:
       data:
         first:
           name: _Scroll
-        second: {r: 0, g: 0, b: 15, a: 0.01}
+        second: {r: 0, g: 0, b: 5, a: 0.05}
       data:
         first:
           name: _Center
-        second: {r: 1, g: 0.3, b: 100, a: 0}
+        second: {r: 1.99, g: 0.81, b: 1.03, a: 0}
