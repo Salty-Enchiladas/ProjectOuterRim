@@ -18,10 +18,6 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Tile
-        second: 677
-      data:
-        first:
           name: _CLAMPOUT
         second: 0
       data:
@@ -46,6 +42,10 @@ Material:
         second: 250
       data:
         first:
+          name: _Tile
+        second: 677
+      data:
+        first:
           name: _Brightness
         second: 5
       data:
@@ -67,13 +67,13 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _Rotation
-        second: {r: 0, g: 0, b: 0, a: 0.01}
-      data:
-        first:
           name: _Scroll
         second: {r: 0, g: 0, b: 50, a: 0.01}
       data:
         first:
           name: _Center
-        second: {r: 1, g: 0.3, b: 0.5, a: 0}
+        second: {r: 0, g: 0, b: 0.5, a: 0}
+      data:
+        first:
+          name: _Rotation
+        second: {r: 0, g: 0, b: 0, a: 0.01}

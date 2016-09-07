@@ -18,16 +18,12 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Tile
-        second: 675
-      data:
-        first:
           name: _CLAMPOUT
         second: 0
       data:
         first:
           name: _CamScroll
-        second: 5
+        second: 3
       data:
         first:
           name: _Iterations
@@ -35,7 +31,7 @@ Material:
       data:
         first:
           name: _Volsteps
-        second: 20
+        second: 6.4
       data:
         first:
           name: _Formuparam
@@ -44,6 +40,10 @@ Material:
         first:
           name: _StepSize
         second: 250
+      data:
+        first:
+          name: _Tile
+        second: 675
       data:
         first:
           name: _Brightness
@@ -55,7 +55,7 @@ Material:
       data:
         first:
           name: _Distfading
-        second: 50
+        second: 43.64
       data:
         first:
           name: _Saturation
@@ -67,13 +67,13 @@ Material:
         second: {r: 0.35294116, g: 0.35294116, b: 0.35294116, a: 1}
       data:
         first:
-          name: _Rotation
-        second: {r: 0, g: 0, b: 90, a: 0.01}
-      data:
-        first:
           name: _Scroll
-        second: {r: 0, g: 0, b: 2, a: 0}
+        second: {r: 0, g: 0, b: 10, a: 0.01}
       data:
         first:
           name: _Center
-        second: {r: 0.5, g: 0.3, b: 0.5, a: 0}
+        second: {r: -0.79, g: -1.49, b: -2.24, a: 0}
+      data:
+        first:
+          name: _Rotation
+        second: {r: 0, g: 0, b: 90, a: 0.01}
