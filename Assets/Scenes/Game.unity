@@ -949,7 +949,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1057,7 +1057,7 @@ MonoBehaviour:
   shipIMG1: {fileID: 1760556309}
   shipIMG2: {fileID: 809921980}
   healthRecoverScore: 50000
-  playerShootingFrequency: 0.4
+  playerShootingFrequency: 0.3
   lightningGunDuration: 8
   playerShieldLength: 5000000
   playerShieldCooldown: 6
@@ -1194,16 +1194,16 @@ MonoBehaviour:
   spawnFrequency: 2
   objSpawnZ: 7000
   sizes:
-  - {x: 10, y: 8, z: 9}
-  - {x: 20, y: 23, z: 16}
-  - {x: 25, y: 46, z: 30}
-  - {x: 55, y: 76, z: 80}
-  - {x: 120, y: 90, z: 86}
+  - {x: 5, y: 5, z: 5}
+  - {x: 15, y: 15, z: 15}
+  - {x: 25, y: 25, z: 25}
+  - {x: 55, y: 55, z: 55}
+  - {x: 90, y: 90, z: 90}
   - {x: 56, y: 34, z: 45}
-  - {x: 225, y: 158, z: 254}
-  - {x: 20, y: 13, z: 16}
-  - {x: 45, y: 56, z: 50}
-  - {x: 158, y: 225, z: 305}
+  - {x: 100, y: 100, z: 100}
+  - {x: 60, y: 60, z: 60}
+  - {x: 80, y: 80, z: 80}
+  - {x: 90, y: 90, z: 90}
 --- !u!4 &568474989
 Transform:
   m_ObjectHideFlags: 0
@@ -2822,7 +2822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1549132126
 Light:
   m_ObjectHideFlags: 0

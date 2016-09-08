@@ -23,15 +23,15 @@ Material:
       data:
         first:
           name: _CamScroll
-        second: 3
+        second: 3.27
       data:
         first:
           name: _Iterations
-        second: 14.5
+        second: 10.8
       data:
         first:
           name: _Volsteps
-        second: 6.4
+        second: 4.68
       data:
         first:
           name: _Formuparam
@@ -47,7 +47,7 @@ Material:
       data:
         first:
           name: _Brightness
-        second: 5
+        second: 29.3
       data:
         first:
           name: _Darkmatter
@@ -68,12 +68,12 @@ Material:
       data:
         first:
           name: _Scroll
-        second: {r: 0, g: 0, b: 10, a: 0.01}
+        second: {r: 0, g: 0, b: 5, a: 0.01}
       data:
         first:
           name: _Center
-        second: {r: -0.79, g: -1.49, b: -2.24, a: 0}
+        second: {r: 0.3, g: 0.75, b: 0, a: 0}
       data:
         first:
           name: _Rotation
-        second: {r: 0, g: 0, b: 90, a: 0.01}
+        second: {r: 0, g: 0, b: 0, a: 0.01}

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &497866
 Transform:
   m_ObjectHideFlags: 1
@@ -77,7 +77,7 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   scalingMode: 2
   InitialModule:
     serializedVersion: 2
@@ -234,7 +234,7 @@ ParticleSystem:
         rgba: 840371634
       maxColor:
         serializedVersion: 2
-        rgba: 1342242759
+        rgba: 1353155973
       minMaxState: 2
     startSize:
       scalar: 80.9
