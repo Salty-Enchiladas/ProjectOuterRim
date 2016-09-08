@@ -3,6 +3,10 @@ using System.Collections;
 
 public class PublicVariableHandler : MonoBehaviour
 {
+	//Meteor Variables
+	public GameObject meteorExplosion;
+	public int meteorHealth;
+
     //User Interface Variables
     public GameObject laserLevel1Bar;
     public GameObject laserLevel2Bar;
@@ -22,6 +26,7 @@ public class PublicVariableHandler : MonoBehaviour
     public GameObject shipIMG2;
 
     //Player Variables
+	public GameObject hitEffect;
     public int healthRecoverScore;
     public float playerShootingFrequency;
     public float lightningGunDuration;

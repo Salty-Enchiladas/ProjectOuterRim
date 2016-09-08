@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 450494}
   - 114: {fileID: 11443116}
-  - 82: {fileID: 8250346}
   - 136: {fileID: 13622660}
   m_Layer: 0
   m_Name: EnemyLaser_Red
@@ -124,85 +123,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182058}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &8250346
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122096}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d4d94e8445160bd4ebc08c8f8ab2e158, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.05
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 130
-  DopplerLevel: 2.7
-  MinDistance: 1
-  MaxDistance: 200
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.9936132
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 0.13685822
-      value: 0.12235108
-      inSlope: -0.56703925
-      outSlope: -0.56703925
-      tangentMode: 0
-    - time: 0.9929796
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!96 &9616072
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -372,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17535fe6f515cc46ad8d884212bc8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserSpeed: 3000
+  laserSpeed: 1000
   laserRange: 4000
 --- !u!136 &13622660
 CapsuleCollider:

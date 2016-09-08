@@ -93,7 +93,7 @@ MonoBehaviour:
   explodeDelayMin: 0
   explodeDelayMax: 0
   startDuration: 2
-  duration: 2
+  duration: 3
   timeScale: 1
   startDetail: 1
   detail: 9.97841
@@ -104,9 +104,15 @@ MonoBehaviour:
   startForce: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   startVelocity: {x: 0, y: 0, z: 0}
-  velocity: {x: 50, y: 20, z: 50}
+  velocity: {x: 0, y: 0, z: 0}
   detailThreshold: 0
   sparksMaterial: {fileID: 0}
+  minVelocityX: 50
+  maxVelocityX: 200
+  minVelocityY: 50
+  maxVelocityY: 300
+  minVelocityZ: 400
+  maxVelocityZ: 700
 --- !u!1002 &11400003
 EditorExtensionImpl:
   serializedVersion: 6

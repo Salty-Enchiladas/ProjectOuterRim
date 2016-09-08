@@ -18,6 +18,7 @@ public class Enemy1Collision : MonoBehaviour {
     AchievementManager achievementManager;
     PublicVariableHandler publicVariableHandler;
     GameObject gameManager;
+	GameObject hitEffect;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Enemy1Collision : MonoBehaviour {
         gameManager = GameObject.Find("GameManager");
         publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
         achievementManager = gameManager.GetComponent<AchievementManager>();
+		hitEffect = publicVariableHandler.hitEffect;
 
         switch (transform.name)
         {
@@ -58,13 +60,14 @@ public class Enemy1Collision : MonoBehaviour {
     {
         if (col.gameObject.tag == "Laser")
         {
+			Instantiate (hitEffect, col.transform.position, col.transform.rotation);
             col.gameObject.SetActive(false);
             TookDamage();
         }
         else if (col.gameObject.tag == "Missile")
         {
+			WasDestroyed();
             col.gameObject.SetActive(false);
-            WasDestroyed();
         }
         else if (col.gameObject.tag == "Meteor")
         {
@@ -98,7 +101,6 @@ public class Enemy1Collision : MonoBehaviour {
         if (currentHealth <= 0)
         {
             print(currentHealth);
-            print("WasDestroyed was called");
             WasDestroyed();
         }
     }

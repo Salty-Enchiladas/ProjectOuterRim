@@ -782,7 +782,6 @@ GameObject:
   - 114: {fileID: 555410814}
   - 114: {fileID: 555410816}
   - 114: {fileID: 555410817}
-  - 114: {fileID: 555410813}
   - 114: {fileID: 555410815}
   - 82: {fileID: 555410812}
   m_Layer: 0
@@ -948,13 +947,13 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.605
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 100
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1005,34 +1004,13 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &555410813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 555410808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2291aabb6aaf62e4b939f913c918029f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songList:
-  - {fileID: 8300000, guid: b554fe7ffbe2a6a44bd768d2f8bd67f8, type: 3}
-  - {fileID: 8300000, guid: f1af4c52657639b4d9553f9ccf7bbc11, type: 3}
-  - {fileID: 8300000, guid: 2d7ada62161c21e4f9bea49038f75268, type: 3}
-  - {fileID: 8300000, guid: 59fa20b618ec94b43af66fa85242e45c, type: 3}
-  - {fileID: 8300000, guid: 505834dbbd35faf48861415c5c5dfa0a, type: 3}
-  - {fileID: 8300000, guid: 052bb0ed168c4e74a926d070e251f9ef, type: 3}
-  - {fileID: 8300000, guid: ce50738aa0a4d054e9305772fe1cc292, type: 3}
-  - {fileID: 8300000, guid: f7a58dafd831e034d92fc8d2963ee354, type: 3}
-  source: {fileID: 555410812}
 --- !u!114 &555410814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1044,6 +1022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcc6d2a16bddba43897438761b0a06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meteorExplosion: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a, type: 2}
+  meteorHealth: 20
   laserLevel1Bar: {fileID: 1759693549}
   laserLevel2Bar: {fileID: 1481191325}
   laserLevel3Bar: {fileID: 1876432731}
@@ -1056,41 +1036,42 @@ MonoBehaviour:
   shieldIcon: {fileID: 1563848385}
   shipIMG1: {fileID: 1760556309}
   shipIMG2: {fileID: 809921980}
+  hitEffect: {fileID: 100000, guid: 2b55ffa5aab4e2c48bcdb135a37adba3, type: 2}
   healthRecoverScore: 50000
-  playerShootingFrequency: 0.3
+  playerShootingFrequency: 0.2
   lightningGunDuration: 8
-  playerShieldLength: 5000000
+  playerShieldLength: 3
   playerShieldCooldown: 6
   playerLives: 3
   playerHealth: 9
   playerSpeed: 500
   playerLaserHeatCap: 1
-  playerLaserHeatIncreaseAmount: 0.1
-  laserHeatLossAfterSeconds: 2
+  playerLaserHeatIncreaseAmount: 0.05
+  laserHeatLossAfterSeconds: 1
   maneuverSpeed: 1
   strafeSpeed: 1.5
   enemy1Speed: 700
-  enemy1FireFreq: 1.5
+  enemy1FireFreq: 5
   enemy1BaseHealth: 2
   enemy1LaserScore: 1000
-  enemy1MissileScore: 500
+  enemy1MissileScore: 1000
   enemy2Speed: 900
-  enemy2FireFreq: 1
+  enemy2FireFreq: 5
   enemy2BaseHealth: 6
   enemy2LaserScore: 500
-  enemy2MissileScore: 500
+  enemy2MissileScore: 1000
   enemy3Speed: 1100
-  enemy3FireFreq: 0.5
+  enemy3FireFreq: 5
   enemy3BaseHealth: 2
   enemy3ShieldHealth: 3
   enemy3LaserScore: 1000
-  enemy3MissileScore: 500
+  enemy3MissileScore: 1000
   enemy4Speed: 600
-  enemy4FireFreq: 2.5
+  enemy4FireFreq: 5
   enemy4BaseHealth: 5
   enemy4ShieldHealth: 5
   enemy4LaserScore: 2000
-  enemy4MissileScore: 500
+  enemy4MissileScore: 1000
 --- !u!114 &555410815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,10 +1099,14 @@ MonoBehaviour:
   laserPickUp: {fileID: 192852, guid: c3cbf27bae54edc41967c2f100510ee7, type: 2}
   missilePickUp: {fileID: 198106, guid: acde87d815de6524db34cf21d114108a, type: 2}
   shieldPickUp: {fileID: 155664, guid: 5d501daed271a9245bd86763f5d8b608, type: 2}
+  pickupSounds:
+  - {fileID: 8300000, guid: f1cbc985b74d1e743844f1a01fcc1afb, type: 3}
+  - {fileID: 8300000, guid: a33d08cbbfb57a7498dfd51594b790f8, type: 3}
+  - {fileID: 8300000, guid: 470326cb67134ca449d25b18717b3a05, type: 3}
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 1000
+  spawnAtScore: 10000
   spawnAfter: 5
   xMinSpawn: -400
   xMaxSpawn: 400
@@ -2661,7 +2646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 122096, guid: 1f9f38da6a289044db41bc6e65e352f9, type: 2}
+  pooledObject: {fileID: 158440, guid: 198df6149ce07bc408be79d23105d0c7, type: 2}
   pooledAmount: 300
   waitTime: 0.0000001
   willGrow: 1
@@ -3135,6 +3120,8 @@ GameObject:
   - 124: {fileID: 1591680877}
   - 81: {fileID: 1591680876}
   - 114: {fileID: 1591680881}
+  - 114: {fileID: 1591680883}
+  - 82: {fileID: 1591680882}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3203,7 +3190,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591680875}
-  m_LocalRotation: {x: 0.08715575, y: 0, z: 0, w: 0.9961947}
+  m_LocalRotation: {x: 0.15339841, y: 0, z: 0, w: 0.9881644}
   m_LocalPosition: {x: 0, y: 35, z: -300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3226,8 +3213,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cameraSpeed: 4.5
-  cameraOffset: {x: 0, y: 30, z: -300}
+  cameraOffset: {x: 0, y: 100, z: -300}
   snapMovement: 0
+--- !u!82 &1591680882
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1591680875}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.765
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 76
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &1591680883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1591680875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2291aabb6aaf62e4b939f913c918029f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songList:
+  - {fileID: 8300000, guid: b554fe7ffbe2a6a44bd768d2f8bd67f8, type: 3}
+  - {fileID: 8300000, guid: f1af4c52657639b4d9553f9ccf7bbc11, type: 3}
+  - {fileID: 8300000, guid: 2d7ada62161c21e4f9bea49038f75268, type: 3}
+  - {fileID: 8300000, guid: 59fa20b618ec94b43af66fa85242e45c, type: 3}
+  - {fileID: 8300000, guid: 505834dbbd35faf48861415c5c5dfa0a, type: 3}
+  - {fileID: 8300000, guid: 052bb0ed168c4e74a926d070e251f9ef, type: 3}
+  - {fileID: 8300000, guid: ce50738aa0a4d054e9305772fe1cc292, type: 3}
+  - {fileID: 8300000, guid: f7a58dafd831e034d92fc8d2963ee354, type: 3}
+  source: {fileID: 1591680882}
 --- !u!1 &1607794819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3342,7 +3424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.38235295, b: 0.38235295, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4172,7 +4254,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 133736, guid: c34b6c2c49c7dab418898767af3de19f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2087320, guid: c34b6c2c49c7dab418898767af3de19f, type: 2}
       propertyPath: m_CullingMask.m_Bits

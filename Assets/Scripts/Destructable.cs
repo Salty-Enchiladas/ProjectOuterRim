@@ -4,20 +4,49 @@ using System.Collections.Generic;
 
 public class Destructable : MonoBehaviour
 {
+	[HideInInspector]
+	public int baseHealth;
+	[HideInInspector]
+	public int currentHealth;
+
     GameObject explosion;
-    GameObject player;
+	GameObject gameManager;
+	GameObject hitEffect;
+
+	PublicVariableHandler publicVariableHandler;
 
     void Start()
     {
-        player = GameObject.Find("Player");
-        explosion = player.GetComponent<StoreVariables>().meteorExplosion;
+		gameManager = GameObject.Find("GameManager");
+		publicVariableHandler = gameManager.GetComponent<PublicVariableHandler> ();
+		explosion = publicVariableHandler.meteorExplosion;
+		hitEffect = publicVariableHandler.hitEffect;
+		baseHealth = publicVariableHandler.meteorHealth;
+		currentHealth = baseHealth;
+		print (currentHealth + " is your health");
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" || other.tag == "Enemy" || other.tag == "Enemy Laser" || other.tag == "Laser")
         {
-            gameObject.SetActive(false);
-            Instantiate(explosion, transform.position, transform.rotation);
+			LoseHealth ();
+			if (other.tag == "Enemy Laser" || other.tag == "Laser") 
+			{
+				Instantiate (hitEffect, other.transform.position, other.transform.rotation);
+				other.GetComponentInChildren<Light> ().enabled = false;
+				other.gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+			}
         }
     }
+
+	void LoseHealth()
+	{
+		currentHealth--;
+		print ("health after damage " + currentHealth);
+		if (currentHealth <= 0) 
+		{
+			Instantiate(explosion, transform.position, transform.rotation);
+			gameObject.SetActive(false);
+		}
+	}
 }

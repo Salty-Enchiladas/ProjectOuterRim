@@ -7,7 +7,7 @@ public class DetonatorSparks : DetonatorComponent
 {
 	private float _baseSize = 1f;
 	private float _baseDuration = 4f;
-	private Vector3 _baseVelocity = new Vector3(400f, 400f, 400f);
+	private Vector3 _baseVelocity;
 	private Color _baseColor = Color.white;
 //	private float _baseDamping = 0.185f;
 	private Vector3 _baseForce = Physics.gravity;
@@ -16,9 +16,20 @@ public class DetonatorSparks : DetonatorComponent
 	private GameObject _sparks;
 	private DetonatorBurstEmitter _sparksEmitter;
 	public Material sparksMaterial;
-		
+
+	public float minVelocityX;
+	public float maxVelocityX;
+
+	public float minVelocityY;
+	public float maxVelocityY;
+
+	public float minVelocityZ;
+	public float maxVelocityZ;
+
+
 	override public void Init()
 	{
+		print ("Init is happening");
 		//make sure there are materials at all
 		FillMaterials(false);
 		BuildSparks();
@@ -69,7 +80,9 @@ public class DetonatorSparks : DetonatorComponent
 		}
 		else
 		{
-			_sparksEmitter.velocity = this.velocity;
+
+			velocity = new Vector3 (Random.Range (minVelocityX, maxVelocityX), Random.Range (minVelocityY, maxVelocityY), Random.Range (minVelocityZ, maxVelocityZ));
+			_sparksEmitter.velocity = velocity;
 		}
 		
 		_sparksEmitter.startRadius = 0f;
@@ -80,6 +93,7 @@ public class DetonatorSparks : DetonatorComponent
 
     public void Reset()
     {
+		print ("Reset called");
 		FillMaterials(true);
 		on = true;
 		size = _baseSize;

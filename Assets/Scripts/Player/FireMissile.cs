@@ -136,8 +136,6 @@ public class FireMissile : MonoBehaviour {
 
     public void MissileLevel1(bool levelUp)
     {
-
-        print(levelUp + "Missile1");
         if (levelUp)
         {
             missileLevel1Bar.SetActive(levelUp);
@@ -155,7 +153,6 @@ public class FireMissile : MonoBehaviour {
 
     public void MissileLevel2(bool levelUp)
     {
-        print(levelUp + "Missile2");
         if (levelUp)
         {
             missileLevel2Bar.SetActive(levelUp);

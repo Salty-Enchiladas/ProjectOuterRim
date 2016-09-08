@@ -8,6 +8,7 @@ public class FireScript : MonoBehaviour {
     public float heatLevel;
     public float heatCap;
     public float heatIncreaseAmount;
+	float baseFireFreq;
     float fireFreq;
 
     float lastShot;
@@ -32,18 +33,23 @@ public class FireScript : MonoBehaviour {
         publicVariableHandler = gameManager. GetComponent<PublicVariableHandler>();
         achievementManager = gameManager.GetComponent<AchievementManager>();
         player = GameObject.Find("Player");
-        fireFreq = publicVariableHandler.playerShootingFrequency;
+        baseFireFreq = publicVariableHandler.playerShootingFrequency;
         heatCap = publicVariableHandler.playerLaserHeatCap;
         heatIncreaseAmount = publicVariableHandler.playerLaserHeatIncreaseAmount;
         heatResetTimer = publicVariableHandler.laserHeatLossAfterSeconds;
         laserLevel1Bar = publicVariableHandler.laserLevel1Bar;
         laserLevel2Bar = publicVariableHandler.laserLevel2Bar;
         laserLevel3Bar = publicVariableHandler.laserLevel3Bar;
+		fireFreq = baseFireFreq;
+		if (transform.tag == "PodLeft")
+			fireFreq = .5f;
+		else if (transform.tag == "PodRight")
+			fireFreq = .5f;
     }
-    
+
     void Update()
     {
-        if ((Input.GetButton("Fire1") || (Input.GetAxis("Laser")) != 0) && Time.time > lastShot + fireFreq && !overHeated)
+        if ((Input.GetButton("Fire1") || (Input.GetAxis("Laser")) != 0) && Time.time > lastShot + fireFreq)
         {
             Fire();
         }
@@ -57,8 +63,11 @@ public class FireScript : MonoBehaviour {
 
     void Fire()
     {
-        if (heatLevel < heatCap)
-        {
+		if (heatLevel >= heatCap) 
+		{
+			fireFreq = fireFreq * 2;
+			StartCoroutine(OverHeating());
+		}
             heatLevel = heatLevel + heatIncreaseAmount;
             achievementManager.LaserShot();
             lastShot = Time.time;
@@ -73,14 +82,8 @@ public class FireScript : MonoBehaviour {
             obj.transform.position = transform.position;
             obj.transform.rotation = transform.rotation;
             obj.SetActive(true);
-        }
-        else if (heatLevel >= heatCap)
-        {
-            overHeated = true;
-            //print("Laser is overheating");
-            StartCoroutine(OverHeating());
-        }        
-    }
+        }      
+    
 
     IEnumerator OverHeating()
     {
@@ -92,6 +95,7 @@ public class FireScript : MonoBehaviour {
         }        
         
         //print("Laser is cooled and ready for action!");
+		fireFreq = baseFireFreq;
         overHeated = false;
     }
     public void LaserLevel1(bool levelUp)
@@ -127,14 +131,15 @@ public class FireScript : MonoBehaviour {
             laserLevel3Bar.SetActive(levelUp);
             foreach (GameObject go in player.GetComponent<StoreVariables>().upgradeWeapons)
             {
-                go.SetActive(levelUp);
+                go.SetActive(true);
             }
         }
         else if (!levelUp)
         {
+			print ("lost a laser level");
               foreach (GameObject go in player.GetComponent<StoreVariables>().upgradeWeapons)
             {
-                go.SetActive(levelUp);
+				go.SetActive(false);
             }
         }
     }

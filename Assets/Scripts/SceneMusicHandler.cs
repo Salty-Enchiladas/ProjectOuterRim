@@ -8,7 +8,8 @@ public class SceneMusicHandler : MonoBehaviour {
     public AudioSource source;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         ChooseRandomSong();
 	}
 	

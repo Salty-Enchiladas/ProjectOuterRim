@@ -19,7 +19,7 @@ public class Enemy1Fire : MonoBehaviour
     {
         laserObject = GameObject.Find(laserPoolName).GetComponent<ObjectPooling>();
         gameManager = GameObject.Find("GameManager");
-        switch (transform.name)
+        switch (transform.parent.name)
         {
             case "Enemy1":
                 fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy1FireFreq;
@@ -40,17 +40,10 @@ public class Enemy1Fire : MonoBehaviour
 	void Update () {
         if (canFire)
         {
-            //fireFreq = Random.Range(minFreq, maxFreq);
-
             if (Time.time > lastShot + fireFreq)
             {
                 Fire();
             }
-
-            //if (Time.time > lastDifficultyIncrease + difficultyTimer && minFreq > 1)
-            //{
-            //    StartCoroutine(IncreaseDificulty(difficultyTimer));
-            //}
         }
     }
 
@@ -67,11 +60,5 @@ public class Enemy1Fire : MonoBehaviour
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
         obj.SetActive(true);
-    }
-
-    public void IncreaseDificulty()
-    {
-        minFreq--;
-        maxFreq--;
     }
 }

@@ -71,10 +71,10 @@ public class ActivateShield : MonoBehaviour
 
     public void ShieldLevel1(bool levelUp)
     {
-        print(levelUp + "Shield1");
         if (levelUp)
         {
             shieldLevel1Bar.SetActive(levelUp);
+			shield.SetActive (true);
             StartCoroutine(ShieldActive());
             shieldLength = shieldLength + 2;
             shieldCooldown = shieldCooldown - 2;
@@ -88,10 +88,10 @@ public class ActivateShield : MonoBehaviour
 
     public void ShieldLevel2(bool levelUp)
     {
-        print(levelUp + "Shield2");
         if (levelUp)
         {
             shieldLevel2Bar.SetActive(levelUp);
+			shield.SetActive (true);
             StartCoroutine(ShieldActive());
             shieldLength = shieldLength + 2;
             shieldCooldown = shieldCooldown - 2;
@@ -101,7 +101,6 @@ public class ActivateShield : MonoBehaviour
             shieldLength = shieldLength - 2;
             shieldCooldown = shieldCooldown + 2;
         }
-
     }
 
     public void ShieldLevel3(bool levelUp)
@@ -109,6 +108,7 @@ public class ActivateShield : MonoBehaviour
         if (levelUp)
         {
             shieldLevel3Bar.SetActive(levelUp);
+			shield.SetActive (true);
             StartCoroutine(ShieldActive());
             shieldLength = shieldLength + 2;
             shieldCooldown = shieldCooldown - 2;

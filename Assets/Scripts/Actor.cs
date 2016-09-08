@@ -276,10 +276,7 @@ public class Actor : MonoBehaviour
                     {
                         transform.LookAt(playerTarget.transform);
                         gun3.transform.LookAt(playerTarget.transform);
-                        gun1.GetComponent<Enemy1Fire>().fireFreq = 0.5f;
-                        gun2.GetComponent<Enemy1Fire>().fireFreq = 0.5f;
                         gun3.GetComponent<Enemy1Fire>().canFire = true;
-                        gun3.GetComponent<Enemy1Fire>().fireFreq = 0.1f;
                     }
                     else if (transform.position.z <= playerTarget.transform.position.z + 400)
                     {

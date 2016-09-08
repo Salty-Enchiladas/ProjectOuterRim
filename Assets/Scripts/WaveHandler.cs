@@ -129,14 +129,6 @@ public class WaveHandler : MonoBehaviour
                     publicVariableHandler.enemy4Speed = publicVariableHandler.enemy4Speed + 100;
                 }
 
-                if (publicVariableHandler.enemy1FireFreq >= .2)
-                {
-                    publicVariableHandler.enemy1FireFreq = publicVariableHandler.enemy1FireFreq - .1f;
-                    publicVariableHandler.enemy2FireFreq = publicVariableHandler.enemy2FireFreq - .1f;
-                    publicVariableHandler.enemy3FireFreq = publicVariableHandler.enemy3FireFreq - .1f;
-                    publicVariableHandler.enemy4FireFreq = publicVariableHandler.enemy4FireFreq - .1f;
-                }
-
                 increaseDifficulty = false;
             }
             if (tempScore != playerScore.score)
