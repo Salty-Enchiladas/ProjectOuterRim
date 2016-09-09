@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorExplosion: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a, type: 2}
-  meteorHealth: 20
+  meteorHealth: 14
   laserLevel1Bar: {fileID: 1759693549}
   laserLevel2Bar: {fileID: 1481191325}
   laserLevel3Bar: {fileID: 1876432731}
@@ -1040,14 +1040,14 @@ MonoBehaviour:
   healthRecoverScore: 50000
   playerShootingFrequency: 0.15
   lightningGunDuration: 8
-  playerShieldLength: 3
-  playerShieldCooldown: 6
+  playerShieldLength: 10
+  playerShieldCooldown: 3
   playerLives: 3
   playerHealth: 9
   playerSpeed: 1000
   playerLaserHeatCap: 1
-  playerLaserHeatIncreaseAmount: 0.05
-  laserHeatLossAfterSeconds: 1
+  playerLaserHeatIncreaseAmount: 0.3
+  laserHeatLossAfterSeconds: 0.16
   maneuverSpeed: 1
   strafeSpeed: 1.5
   enemy1Speed: 500
@@ -3309,7 +3309,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.583
+  m_Volume: 0.634
   m_Pitch: 1
   Loop: 1
   Mute: 0
