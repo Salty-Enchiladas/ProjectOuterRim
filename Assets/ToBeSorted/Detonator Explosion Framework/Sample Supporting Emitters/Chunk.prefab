@@ -53,7 +53,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.4745812, y: -0.2844215, z: -15.345818}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 400006}
   m_Father: {fileID: 0}
@@ -70,7 +69,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400004}
   m_RootOrder: 0
@@ -98,12 +96,12 @@ ParticleAnimator:
     rgba: 304818987
   colorAnimation[4]:
     serializedVersion: 2
-    rgba: 8421504
+    rgba: 8487297
   worldRotationAxis: {x: 0, y: 0, z: 0}
   localRotationAxis: {x: 0, y: 0, z: 0}
-  sizeGrow: 1
-  rndForce: {x: 0, y: 0, z: 0}
-  force: {x: 0, y: 0, z: 0}
+  sizeGrow: 3
+  rndForce: {x: 1, y: 1, z: 1}
+  force: {x: 1, y: 1, z: 1}
   damping: 1
   stopSimulation: 0
   autodestruct: 0
@@ -118,15 +116,15 @@ EllipsoidParticleEmitter:
   m_GameObject: {fileID: 100006}
   serializedVersion: 2
   m_Enabled: 1
-  m_Emit: 0
+  m_Emit: 1
   minSize: 0.32485282
   maxSize: 1
   minEnergy: 1
-  maxEnergy: 2
-  minEmission: 50
+  maxEnergy: 5
+  minEmission: 1
   maxEmission: 55.461147
-  worldVelocity: {x: 0, y: 0.65, z: 0}
-  localVelocity: {x: 1.17, y: 0.36, z: 0}
+  worldVelocity: {x: 4, y: 4, z: 4}
+  localVelocity: {x: 5, y: 3, z: 5}
   rndVelocity: {x: 0, y: 0, z: 0}
   emitterVelocityScale: 0
   tangentVelocity: {x: 1.71, y: 0, z: 0}
@@ -136,7 +134,7 @@ EllipsoidParticleEmitter:
   Simulate in Worldspace?: 1
   m_OneShot: 1
   m_Ellipsoid: {x: 0.45, y: 0, z: 0.54}
-  m_MinEmitterRange: 3.12
+  m_MinEmitterRange: 10
 --- !u!1002 &1500005
 EditorExtensionImpl:
   serializedVersion: 6
@@ -175,7 +173,7 @@ ParticleRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
