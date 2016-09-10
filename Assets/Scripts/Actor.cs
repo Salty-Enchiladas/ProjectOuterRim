@@ -11,9 +11,9 @@ public class Actor : MonoBehaviour
     public float centerX;
     public float centerY;
     public float centerZ;
-    public float maneuverRadius;
-    public float maneuverRadiusMin;
-    public float maneuverRadiusMax;
+    //public float maneuverRadius;
+    //public float maneuverRadiusMin;
+    //public float maneuverRadiusMax;
 
     public GameObject player;
     public GameObject gun1;
@@ -26,9 +26,9 @@ public class Actor : MonoBehaviour
     {
         IDLE,
         MOVING,
-        MANEUVER,
+      //  MANEUVER,
         STRAFE,
-        CROSS,
+     //   CROSS,
     }
 
     private State state = State.MOVING;
@@ -95,7 +95,7 @@ public class Actor : MonoBehaviour
         enemyZClamp = Random.Range(700f, 1000f);
         enemyXPos = Random.Range(-250f, 250f);
         lerpSpeed = Random.Range(0.25f, 1f);
-        maneuverRadius = Random.Range(maneuverRadiusMin, maneuverRadiusMax);
+       // maneuverRadius = Random.Range(maneuverRadiusMin, maneuverRadiusMax);
 
         player = GameObject.Find("Player");
         playerTarget = GameObject.Find("PlayerTarget");
@@ -134,20 +134,20 @@ public class Actor : MonoBehaviour
             if (!hasChosenAction)
             {
                 hasChosenAction = true;
-                randomInt = Random.Range(0, 2);
+               // randomInt = Random.Range(0, 0);
 
-                if (randomInt == 0)
-                {
-                    ChangeState(State.MANEUVER);
-                }
-                else if (randomInt == 1)
-                {
+                //if (randomInt == 0)
+                //{
+                //    ChangeState(State.MANEUVER);
+                //}
+               // else if (randomInt == 0)
+               // {
                     ChangeState(State.STRAFE);
-                } 
-                else if (randomInt == 2)
-                {
-                    ChangeState(State.CROSS);
-                }
+               // } 
+                //else if (randomInt == 2)
+                //{
+                //    ChangeState(State.CROSS);
+                //}
             }
         }
     }
@@ -202,74 +202,74 @@ public class Actor : MonoBehaviour
                     //}
                     break;
 
-                case State.MANEUVER:
-                    OldTime = elapsedTime + 0.01f;
+                //case State.MANEUVER:
+                //    OldTime = elapsedTime + 0.01f;
 
-                    if (!ceasedFire)
-                    {
-                        ceasedFire = true;
-                        gun1.GetComponent<Enemy1Fire>().canFire = false;
-                        gun2.GetComponent<Enemy1Fire>().canFire = false;
-                        gun3.GetComponent<Enemy1Fire>().canFire = false;
-                    }
+                //    if (!ceasedFire)
+                //    {
+                //        ceasedFire = true;
+                //        gun1.GetComponent<Enemy1Fire>().canFire = false;
+                //        gun2.GetComponent<Enemy1Fire>().canFire = false;
+                //        gun3.GetComponent<Enemy1Fire>().canFire = false;
+                //    }
 
-                    transform.LookAt(lookAtPoint);
+                //    transform.LookAt(lookAtPoint);
 
-                    maneuverTimer += Time.deltaTime;
-                    maneuverAngle = maneuverTimer;
+                //    maneuverTimer += Time.deltaTime;
+                //    maneuverAngle = maneuverTimer;
 
-                    centerX += playerTarget.transform.position.x;
-                    centerY += playerTarget.transform.position.y;
-                    centerZ += playerTarget.transform.position.z;
+                //    centerX += playerTarget.transform.position.x;
+                //    centerY += playerTarget.transform.position.y;
+                //    centerZ += playerTarget.transform.position.z;
 
-                    if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection)
-                    {
-                        hasChosenDirection = true;
-                        maneuverLeft = false;
-                    }
-                    else if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection)
-                    {
-                        hasChosenDirection = true;
-                        maneuverLeft = true;
-                    }
+                //    if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection)
+                //    {
+                //        hasChosenDirection = true;
+                //        maneuverLeft = false;
+                //    }
+                //    else if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection)
+                //    {
+                //        hasChosenDirection = true;
+                //        maneuverLeft = true;
+                //    }
 
-                    if (maneuverLeft && hasChosenDirection)
-                    {
-                        lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
-                        //Maneuver to the left of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
-                    }
-                    else if (!maneuverLeft && hasChosenDirection)
-                    {
-                        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
-                        //Maneuver to the right of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
-                    }
+                //    if (maneuverLeft && hasChosenDirection)
+                //    {
+                //        lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
+                //        //Maneuver to the left of the player
+                //        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+                //    }
+                //    else if (!maneuverLeft && hasChosenDirection)
+                //    {
+                //        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
+                //        //Maneuver to the right of the player
+                //        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+                //    }
 
-                    centerX = _centerX;
-                    centerY = _centerY;
-                    centerZ = _centerZ;
+                //    centerX = _centerX;
+                //    centerY = _centerY;
+                //    centerZ = _centerZ;
 
-                    break;
+                //    break;
 
                 case State.STRAFE:
                     OldTime = elapsedTime + 0.01f;
 
                     if (transform.position.x < playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, -100f, -1000f), Time.deltaTime * strafeSpeed);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-50f, -50f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x < playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, 100f, -1000f), Time.deltaTime * strafeSpeed);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-50f, 50f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x > playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, 100f, -1000f), Time.deltaTime * strafeSpeed);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(50f, 50f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x > playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * strafeSpeed);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(50f, -100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
 
                     if (transform.position.z > playerTarget.transform.position.z + 400)
@@ -309,57 +309,57 @@ public class Actor : MonoBehaviour
 
                     break;
 
-                case State.CROSS:
+                //case State.CROSS:
 
-                    OldTime = elapsedTime + 0.01f;
+                //    OldTime = elapsedTime + 0.01f;
 
-                    if (!ceasedFire)
-                    {
-                        ceasedFire = true;
-                        gun1.GetComponent<Enemy1Fire>().canFire = false;
-                        gun2.GetComponent<Enemy1Fire>().canFire = false;
-                        gun3.GetComponent<Enemy1Fire>().canFire = false;
-                    }
+                //    if (!ceasedFire)
+                //    {
+                //        ceasedFire = true;
+                //        gun1.GetComponent<Enemy1Fire>().canFire = false;
+                //        gun2.GetComponent<Enemy1Fire>().canFire = false;
+                //        gun3.GetComponent<Enemy1Fire>().canFire = false;
+                //    }
 
-                    //transform.LookAt (lookAtPoint);
+                //    //transform.LookAt (lookAtPoint);
 
-                    maneuverTimer += Time.deltaTime;
-                    maneuverAngle = maneuverTimer;
+                //    maneuverTimer += Time.deltaTime;
+                //    maneuverAngle = maneuverTimer;
 
-                    centerX += playerTarget.transform.position.x;
-                    centerY += playerTarget.transform.position.y;
-                    centerZ += playerTarget.transform.position.z;
+                //    centerX += playerTarget.transform.position.x;
+                //    centerY += playerTarget.transform.position.y;
+                //    centerZ += playerTarget.transform.position.z;
 
-                    if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection)
-                    {
-                        hasChosenDirection = true;
-                        maneuverLeft = false;
-                    }
-                    else if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection)
-                    {
-                        hasChosenDirection = true;
-                        maneuverLeft = true;
-                    }
+                //    if (transform.position.x < playerTarget.transform.position.x && !hasChosenDirection)
+                //    {
+                //        hasChosenDirection = true;
+                //        maneuverLeft = false;
+                //    }
+                //    else if (transform.position.x > playerTarget.transform.position.x && !hasChosenDirection)
+                //    {
+                //        hasChosenDirection = true;
+                //        maneuverLeft = true;
+                //    }
 
-                    if (maneuverLeft && hasChosenDirection)
-                    {
-                        lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
-                        //Maneuver to the left of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
-                    }
-                    else if (!maneuverLeft && hasChosenDirection)
-                    {
-                        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
-                        //Maneuver to the right of the player
-                        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
-                    }
+                //    if (maneuverLeft && hasChosenDirection)
+                //    {
+                //        lookAtPoint.position = new Vector3(-centerX + (Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
+                //        //Maneuver to the left of the player
+                //        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+                //    }
+                //    else if (!maneuverLeft && hasChosenDirection)
+                //    {
+                //        lookAtPoint.position = new Vector3(centerX + -(Mathf.Cos(maneuverAngle) * maneuverRadius), centerY, centerZ + -(Mathf.Sin(maneuverAngle) * (maneuverRadius * 3)));
+                //        //Maneuver to the right of the player
+                //        transform.position = Vector3.Lerp(transform.position, lookAtPoint.position, Time.deltaTime * maneuverSpeed);
+                //    }
 
-                    centerX = _centerX;
-                    centerY = _centerY;
-                    centerZ = _centerZ;
-                    break;
+                //    centerX = _centerX;
+                //    centerY = _centerY;
+                //    centerZ = _centerZ;
+                //    break;
 
-                    break;
+                //    break;
             }
         }
     }

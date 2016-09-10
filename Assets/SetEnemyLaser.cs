@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SetLaserType : MonoBehaviour
+public class SetEnemyLaser : MonoBehaviour
 {
     GameObject player;
 
-	void Start ()
+    void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Enemy");
         GetComponent<ObjectPooling>().pooledObject[0] = player.GetComponent<StoreVariables>().laserColor;
-	}
+    }
 }
