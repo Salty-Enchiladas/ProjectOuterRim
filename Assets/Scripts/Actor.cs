@@ -87,7 +87,7 @@ public class Actor : MonoBehaviour
         gun2 = GetComponent<EnemyStoreVariables>().gun2;
         gun3 = GetComponent<EnemyStoreVariables>().gun3;
 
-        lookAtPoint = transform.FindChild("LookAtPoint");
+        lookAtPoint = GetComponent<EnemyStoreVariables>().lookAtPoint;
     }
 
     private void Start()
@@ -143,12 +143,12 @@ public class Actor : MonoBehaviour
                 else if (randomInt == 1)
                 {
                     ChangeState(State.STRAFE);
+                }
+                else if (randomInt == 2)
+                {
+                    ChangeState(State.CROSS);
+                }
             }
-            else if (randomInt == 2)
-            {
-                ChangeState(State.CROSS);
-            }
-        }
         }
     }
 
@@ -257,19 +257,19 @@ public class Actor : MonoBehaviour
 
                     if (transform.position.x < playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-50f, -50f, -1000f), Time.deltaTime * strafeSpeed);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, -100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x < playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-50f, 50f, -1000f), Time.deltaTime * strafeSpeed);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(-100f, 100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x > playerTarget.transform.position.x && transform.position.y > playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(50f, 50f, -1000f), Time.deltaTime * strafeSpeed);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, 100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
                     else if (transform.position.x > playerTarget.transform.position.x && transform.position.y < playerTarget.transform.position.y)
                     {
-                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(50f, -100f, -1000f), Time.deltaTime * strafeSpeed);
+                        transform.position = Vector3.Lerp(transform.position, playerTarget.transform.position + new Vector3(100f, -100f, -1000f), Time.deltaTime * strafeSpeed);
                     }
 
                     if (transform.position.z > playerTarget.transform.position.z + 400)

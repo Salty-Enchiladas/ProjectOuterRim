@@ -482,8 +482,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject:
-  - {fileID: 194340, guid: d5fad98a42fc1304abda9cbcbb398422, type: 2}
-  pooledAmount: 50
+  - {fileID: 160932, guid: 1f7ddda92106df142b788f4314511e9b, type: 2}
+  - {fileID: 180280, guid: 25f41660cc747324685928e7224ed7e9, type: 2}
+  - {fileID: 111760, guid: 7d19f04fbd243084d9e3078d37304aa8, type: 2}
+  - {fileID: 196660, guid: 70b182be05c52ee439bc0d16ce054aca, type: 2}
+  - {fileID: 156334, guid: eaecb23eb010acc41ad30f26a4071042, type: 2}
+  - {fileID: 118924, guid: b343cce3e7a85664aa6b9329c5ccc67f, type: 2}
+  - {fileID: 154014, guid: e33b1975efaf93146957ca67460069bc, type: 2}
+  - {fileID: 190918, guid: c12d4f41cf1753647a9c79e39163e931, type: 2}
+  pooledAmount: 10
   waitTime: 0.0000001
   willGrow: 1
   pooledObjects: []
@@ -822,17 +829,17 @@ MonoBehaviour:
   minYSpawn: -1000
   maxYSpawn: 1000
   zSpawn: 10000
-  secondEnemySpawnScore: 25000
-  thirdEnemySpawnScore: 50000
-  fourthEnemySpawnScore: 75000
+  secondEnemySpawnScore: 30000
+  thirdEnemySpawnScore: 60000
+  fourthEnemySpawnScore: 90000
   firstEnemySpawnCap: 5
   secondEnemySpawnCap: 5
   thirdEnemySpawnCap: 5
   fourthEnemySpawnCap: 5
-  firstEnemyFinalCap: 25
-  secondEnemyFinalCap: 15
+  firstEnemyFinalCap: 10
+  secondEnemyFinalCap: 10
   thirdEnemyFinalCap: 10
-  fourthEnemyFinalCap: 5
+  fourthEnemyFinalCap: 10
   firstEnemyCount: 0
   secondEnemyCount: 0
   thirdEnemyCount: 0
@@ -1048,7 +1055,7 @@ MonoBehaviour:
   hitEffect: {fileID: 100000, guid: 2b55ffa5aab4e2c48bcdb135a37adba3, type: 2}
   healthRecoverScore: 50000
   playerShootingFrequency: 0.15
-  lightningGunDuration: 8
+  lightningGunDuration: 5
   playerShieldLength: 3
   playerShieldCooldown: 6
   playerLives: 3
@@ -1067,19 +1074,19 @@ MonoBehaviour:
   enemy2Speed: 900
   enemy2FireFreq: 5
   enemy2BaseHealth: 6
-  enemy2LaserScore: 500
+  enemy2LaserScore: 2000
   enemy2MissileScore: 1000
   enemy3Speed: 1100
   enemy3FireFreq: 5
   enemy3BaseHealth: 2
   enemy3ShieldHealth: 3
-  enemy3LaserScore: 1000
+  enemy3LaserScore: 2000
   enemy3MissileScore: 1000
   enemy4Speed: 600
   enemy4FireFreq: 5
   enemy4BaseHealth: 5
   enemy4ShieldHealth: 5
-  enemy4LaserScore: 2000
+  enemy4LaserScore: 3000
   enemy4MissileScore: 1000
 --- !u!114 &555410815
 MonoBehaviour:
@@ -1115,7 +1122,7 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 10000
+  spawnAtScore: 12000
   spawnAfter: 5
   xMinSpawn: -400
   xMaxSpawn: 400
@@ -1178,9 +1185,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTypes:
   - {fileID: 1814202497}
-  - {fileID: 1545338636}
-  - {fileID: 1948741963}
-  - {fileID: 775086618}
   objSpawnMinX: -600
   objSpawnMaxX: 600
   objSpawnMinY: -600
@@ -1350,7 +1354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &775086619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,6 +1521,51 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 809921980}
+--- !u!1 &825245193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 825245194}
+  - 114: {fileID: 825245195}
+  m_Layer: 0
+  m_Name: FifthEnemyCarrier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &825245194
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825245193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 12
+--- !u!114 &825245195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825245193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 194340, guid: d5fad98a42fc1304abda9cbcbb398422, type: 2}
+  pooledAmount: 5
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &930241598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,8 +1606,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject:
-  - {fileID: 172330, guid: 11d637efe916a9941b7ee01954e5bbf6, type: 2}
-  pooledAmount: 50
+  - {fileID: 159990, guid: 49c79c88af7df864ba976f23306f7968, type: 2}
+  - {fileID: 169566, guid: dd501967bc45bba4695f81f6889a8ac4, type: 2}
+  - {fileID: 100148, guid: 5ff727f0e4aad1e4a885619093d80134, type: 2}
+  - {fileID: 126522, guid: 0ad73f725093f794f9475a1825a9a4af, type: 2}
+  - {fileID: 106794, guid: 968cbfbd344e7ef49ae16621b90bb6e8, type: 2}
+  - {fileID: 181124, guid: a98a3faa62e29054f8db4b66097a4537, type: 2}
+  - {fileID: 174946, guid: f49a1ebbf3460cf45acae04e01a679f0, type: 2}
+  - {fileID: 187344, guid: ed6b58cb0be617d46a526aa4d9457e91, type: 2}
+  pooledAmount: 10
   waitTime: 0.0000001
   willGrow: 1
   pooledObjects: []
@@ -1666,6 +1722,7 @@ Transform:
   - {fileID: 1948741964}
   - {fileID: 775086620}
   - {fileID: 536503303}
+  - {fileID: 825245194}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &987033026 stripped
@@ -2487,8 +2544,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject:
-  - {fileID: 161636, guid: 698be1fea7b795f4dbff240ee7c3505e, type: 2}
-  pooledAmount: 50
+  - {fileID: 123018, guid: e4b6760ac852121498f026c77d71b394, type: 2}
+  - {fileID: 139156, guid: 44c608ecfc2bcc64e93fc60a5cd49ef2, type: 2}
+  - {fileID: 149830, guid: 060fe4d6b256521479980ef4ef2b6670, type: 2}
+  - {fileID: 138706, guid: e388093dd6c1aaa4f89a9587641a9134, type: 2}
+  - {fileID: 109692, guid: daf3cebf4fbcb384cb576f485be35389, type: 2}
+  - {fileID: 137944, guid: 03c7c7d29253cc74d9a60e85460f262e, type: 2}
+  - {fileID: 165808, guid: 81fc4fd4a661cd24195d960512a208fd, type: 2}
+  - {fileID: 144874, guid: 4c1034ca07cec9c438d5c12fc2905224, type: 2}
+  pooledAmount: 10
   waitTime: 0.0000001
   willGrow: 1
   pooledObjects: []
@@ -2858,7 +2922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1545338637
 Transform:
   m_ObjectHideFlags: 0
@@ -4497,8 +4561,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: []
-  pooledAmount: 5
+  pooledObject:
+  - {fileID: 117328, guid: 0b53e584c4345eb47923c5da67f08063, type: 2}
+  - {fileID: 114656, guid: 975306122b7da4347b50a1b471452bb8, type: 2}
+  - {fileID: 158264, guid: 0dd1dbeff58071d449f062fa81cb1432, type: 2}
+  - {fileID: 115906, guid: 088fa1b87ca24bc49853ba2ab111c14c, type: 2}
+  pooledAmount: 20
   waitTime: 0.0000001
   willGrow: 1
   pooledObjects: []
@@ -4987,7 +5055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1948741964
 Transform:
   m_ObjectHideFlags: 0

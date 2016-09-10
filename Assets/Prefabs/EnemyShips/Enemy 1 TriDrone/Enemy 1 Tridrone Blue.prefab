@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &116274
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -21,7 +21,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &116316
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -40,7 +40,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &138252
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -59,7 +59,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &145126
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -75,7 +75,7 @@ GameObject:
   m_IsActive: 0
 --- !u!1 &161214
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -115,6 +115,21 @@ GameObject:
   - 4: {fileID: 403364}
   m_Layer: 0
   m_Name: Tridrone Blue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &172540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 499410}
+  m_Layer: 0
+  m_Name: Enemy1Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +189,7 @@ Transform:
   - {fileID: 407914}
   - {fileID: 427690}
   m_Father: {fileID: 422856}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &407914
 Transform:
   m_ObjectHideFlags: 1
@@ -193,24 +208,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138252}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.36, y: -0.01, z: 2.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 27.199982, y: -0.19999696, z: -41}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 422856}
-  m_RootOrder: 1
+  m_Father: {fileID: 499410}
+  m_RootOrder: 0
 --- !u!4 &412886
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116274}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.66, z: 4.23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 0.399971, y: -13.199997, z: -84.600006}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 422856}
-  m_RootOrder: 5
+  m_Father: {fileID: 499410}
+  m_RootOrder: 4
 --- !u!4 &422856
 Transform:
   m_ObjectHideFlags: 1
@@ -221,12 +236,8 @@ Transform:
   m_LocalPosition: {x: 124.458115, y: 111.41257, z: -282.84726}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
+  - {fileID: 499410}
   - {fileID: 403364}
-  - {fileID: 409094}
-  - {fileID: 480720}
-  - {fileID: 442584}
-  - {fileID: 474134}
-  - {fileID: 412886}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &427690
@@ -247,36 +258,53 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.84}
-  m_LocalScale: {x: 8.5, y: 8.5, z: 8.5}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: -0.000030517578, y: 0, z: -96.80002}
+  m_LocalScale: {x: 170, y: 170, z: 170}
   m_Children: []
-  m_Father: {fileID: 422856}
-  m_RootOrder: 3
+  m_Father: {fileID: 499410}
+  m_RootOrder: 2
 --- !u!4 &474134
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.06, y: -0.65, z: 3.44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 21.199986, y: -13, z: -68.80002}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 422856}
-  m_RootOrder: 4
+  m_Father: {fileID: 499410}
+  m_RootOrder: 3
 --- !u!4 &480720
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116316}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.23, y: -0.01, z: 2.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: -24.600014, y: -0.19999696, z: -41}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
+  m_Father: {fileID: 499410}
+  m_RootOrder: 1
+--- !u!4 &499410
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172540}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_Children:
+  - {fileID: 409094}
+  - {fileID: 480720}
+  - {fileID: 442584}
+  - {fileID: 474134}
+  - {fileID: 412886}
   m_Father: {fileID: 422856}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!23 &2333788
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -637,7 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warpSpeed: 750
-  speed: 1000
+  speed: 500
 --- !u!114 &11486382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -652,6 +680,7 @@ MonoBehaviour:
   gun1: {fileID: 138252}
   gun2: {fileID: 116316}
   gun3: {fileID: 116274}
+  lookAtPoint: {fileID: 474134}
 --- !u!114 &11487506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -670,6 +699,9 @@ MonoBehaviour:
   centerX: 2000
   centerY: 0
   centerZ: 2000
+  maneuverRadius: 0
+  maneuverRadiusMin: 0
+  maneuverRadiusMax: 0
   player: {fileID: 0}
   gun1: {fileID: 0}
   gun2: {fileID: 0}

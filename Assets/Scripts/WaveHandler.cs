@@ -107,13 +107,13 @@ public class WaveHandler : MonoBehaviour
             {
                 tempScore = playerScore.score;
 
-                if (spawnRate >= 0)
+                if (spawnRate > 0)
                     spawnRate = spawnRate - .1f;
 
-                if (debrisSpawner.spawnFrequency >= 0)
+                if (debrisSpawner.spawnFrequency > 0)
                     debrisSpawner.spawnFrequency = debrisSpawner.spawnFrequency - .1f;
 
-                if (firstEnemySpawnCap <= firstEnemyFinalCap && secondEnemySpawnCap <= secondEnemyFinalCap && thirdEnemySpawnCap <= thirdEnemyFinalCap && fourthEnemySpawnCap <= fourthEnemyFinalCap)
+                if (firstEnemySpawnCap < firstEnemyFinalCap && secondEnemySpawnCap < secondEnemyFinalCap && thirdEnemySpawnCap < thirdEnemyFinalCap && fourthEnemySpawnCap < fourthEnemyFinalCap)
                 {
                     firstEnemySpawnCap++;
                     secondEnemySpawnCap++;
@@ -121,12 +121,19 @@ public class WaveHandler : MonoBehaviour
                     fourthEnemySpawnCap++;
                 }
 
-                if (publicVariableHandler.enemy4Speed <= 2000)
+                if (publicVariableHandler.enemy4Speed < 2000)
                 {
                     publicVariableHandler.enemy1Speed = publicVariableHandler.enemy1Speed + 100;
                     publicVariableHandler.enemy2Speed = publicVariableHandler.enemy2Speed + 100;
                     publicVariableHandler.enemy3Speed = publicVariableHandler.enemy3Speed + 100;
                     publicVariableHandler.enemy4Speed = publicVariableHandler.enemy4Speed + 100;
+                }
+                if (publicVariableHandler.enemy1FireFreq > .2f)
+                {
+                    publicVariableHandler.enemy1FireFreq = publicVariableHandler.enemy1FireFreq - .01f;
+                    publicVariableHandler.enemy2FireFreq = publicVariableHandler.enemy2FireFreq - .01f;
+                    publicVariableHandler.enemy3FireFreq = publicVariableHandler.enemy3FireFreq - .01f;
+                    publicVariableHandler.enemy4FireFreq = publicVariableHandler.enemy4FireFreq - .01f;
                 }
 
                 increaseDifficulty = false;

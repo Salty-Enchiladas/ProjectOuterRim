@@ -1052,6 +1052,7 @@ MonoBehaviour:
   gun1: {fileID: 133602}
   gun2: {fileID: 119724}
   gun3: {fileID: 193716}
+  lookAtPoint: {fileID: 0}
 --- !u!114 &11440764
 MonoBehaviour:
   m_ObjectHideFlags: 1

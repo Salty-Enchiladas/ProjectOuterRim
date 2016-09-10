@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &104966
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -17,7 +17,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &110824
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -33,7 +33,7 @@ GameObject:
   m_IsActive: 0
 --- !u!1 &120302
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -52,7 +52,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &142234
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -67,7 +67,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &148774
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -86,7 +86,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &160590
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -161,17 +161,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &199712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 411850}
+  m_Layer: 0
+  m_Name: Enemy1Guns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &405876
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.06, y: -0.65, z: 3.44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 21.200094, y: -13, z: 270.09995}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 407824}
+  m_Father: {fileID: 411850}
   m_RootOrder: 3
 --- !u!4 &407824
 Transform:
@@ -183,24 +198,38 @@ Transform:
   m_LocalPosition: {x: 124.458115, y: 111.41257, z: 540.1}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
+  - {fileID: 489132}
+  - {fileID: 411850}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &411850
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199712}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: -0, y: 0, z: 16.944998}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_Children:
   - {fileID: 482672}
   - {fileID: 458316}
   - {fileID: 428900}
   - {fileID: 405876}
   - {fileID: 447012}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 407824}
+  m_RootOrder: 1
 --- !u!4 &428900
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.84}
-  m_LocalScale: {x: 8.5, y: 8.5, z: 8.5}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 0.00007991004, y: 0, z: 242.09995}
+  m_LocalScale: {x: 170, y: 170, z: 170}
   m_Children: []
-  m_Father: {fileID: 407824}
+  m_Father: {fileID: 411850}
   m_RootOrder: 2
 --- !u!4 &447012
 Transform:
@@ -208,11 +237,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160590}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.66, z: 4.23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 0.40008143, y: -13.199997, z: 254.29994}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 407824}
+  m_Father: {fileID: 411850}
   m_RootOrder: 4
 --- !u!4 &458316
 Transform:
@@ -220,11 +249,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148774}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.23, y: -0.01, z: 2.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: -24.599903, y: -0.19999696, z: 297.89996}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
-  m_Father: {fileID: 407824}
+  m_Father: {fileID: 411850}
   m_RootOrder: 1
 --- !u!4 &459382
 Transform:
@@ -244,12 +273,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120302}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.36, y: -0.01, z: 2.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 489132}
-  m_Father: {fileID: 407824}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalPosition: {x: 27.200092, y: -0.19999696, z: 297.89996}
+  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_Children: []
+  m_Father: {fileID: 411850}
   m_RootOrder: 0
 --- !u!4 &487748
 Transform:
@@ -270,12 +298,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142234}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.3599998, y: -0.009999848, z: 2.0499997}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 487748}
   - {fileID: 459382}
-  m_Father: {fileID: 482672}
+  m_Father: {fileID: 407824}
   m_RootOrder: 0
 --- !u!23 &2307822
 MeshRenderer:
@@ -640,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warpSpeed: 750
-  speed: 1000
+  speed: 500
 --- !u!114 &11486208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -668,6 +696,7 @@ MonoBehaviour:
   gun1: {fileID: 120302}
   gun2: {fileID: 148774}
   gun3: {fileID: 160590}
+  lookAtPoint: {fileID: 405876}
 --- !u!114 &11492788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -686,6 +715,9 @@ MonoBehaviour:
   centerX: 2000
   centerY: 0
   centerZ: 2000
+  maneuverRadius: 0
+  maneuverRadiusMin: 0
+  maneuverRadiusMax: 0
   player: {fileID: 0}
   gun1: {fileID: 0}
   gun2: {fileID: 0}
