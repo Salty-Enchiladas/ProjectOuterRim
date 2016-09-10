@@ -47,14 +47,7 @@ public class ObjectPooling : MonoBehaviour
             for (int i = 0; i < pooledObject.Length; i++)
             {
                 GameObject obj = (GameObject)Instantiate(pooledObject[i]);
-                if (obj.tag == "Enemy")
-                {
-                    obj.transform.parent = animationObject.transform;
-                }
-                else
-                {
-                    obj.transform.parent = transform;
-                }
+                obj.transform.parent = transform;
                 pooledObjects.Add(obj);
                 return obj;
             }
@@ -68,14 +61,8 @@ public class ObjectPooling : MonoBehaviour
         for (int i = 0; i < pooledObject.Length; i++)
         {
             GameObject obj = (GameObject)Instantiate(pooledObject[i]);
-            if (obj.tag == "Enemy")
-            {
-                obj.transform.parent = animationObject.transform;
-            }
-            else
-            {
-                obj.transform.parent = transform;
-            }
+            obj.transform.parent = transform;
+            
             obj.SetActive(false);
             pooledObjects.Add(obj);
         }

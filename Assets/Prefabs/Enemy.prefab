@@ -1070,9 +1070,9 @@ MonoBehaviour:
   centerX: 2000
   centerY: 0
   centerZ: 2000
-  maneuverRadius: 2000
-  maneuverRadiusMin: 1750
-  maneuverRadiusMax: 2250
+  maneuverRadius: 0
+  maneuverRadiusMin: 0
+  maneuverRadiusMax: 0
   player: {fileID: 0}
   gun1: {fileID: 0}
   gun2: {fileID: 0}

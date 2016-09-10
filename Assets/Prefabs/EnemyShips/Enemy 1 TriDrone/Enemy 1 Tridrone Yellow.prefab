@@ -119,7 +119,7 @@ GameObject:
   - 65: {fileID: 6563694}
   - 114: {fileID: 11407316}
   - 82: {fileID: 8213416}
-  - 95: {fileID: 9512756}
+  - 114: {fileID: 11460174}
   m_Layer: 0
   m_Name: Enemy 1 Tridrone Yellow
   m_TagString: Enemy
@@ -559,23 +559,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &9512756
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172124}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 170db6b4de28e224e83cf987ffa1835e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11407316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,6 +634,19 @@ MonoBehaviour:
   maxFreq: 8
   laserPoolName: EnemyLasers
   canFire: 1
+--- !u!114 &11460174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b50cc832fad3b4b82da02f79b1bf0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warpSpeed: 750
+  speed: 1000
 --- !u!114 &11495898
 MonoBehaviour:
   m_ObjectHideFlags: 1
