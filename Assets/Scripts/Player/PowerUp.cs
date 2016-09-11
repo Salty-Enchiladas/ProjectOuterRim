@@ -52,15 +52,12 @@ public class PowerUp : MonoBehaviour
                 {
                     case 1:
                         player.GetComponent<ActivateShield>().ShieldLevel1(pickUpManager.leveled);
-                        print("Shield upgraded to level 1!");
                         break;
                     case 2:
                         player.GetComponent<ActivateShield>().ShieldLevel2(pickUpManager.leveled);
-                        print("Shield upgraded to level 2!");
                         break;
                     case 3:
                         player.GetComponent<ActivateShield>().ShieldLevel3(pickUpManager.leveled);
-                        print("Shield upgraded to level 3!");
                         break;
                 }
 
@@ -124,7 +121,6 @@ public class PowerUp : MonoBehaviour
         {
             if (other.name == "Colliders")
             {
-
                 hit = true;
                 ApplyPower();
                 Destroy(this.gameObject);

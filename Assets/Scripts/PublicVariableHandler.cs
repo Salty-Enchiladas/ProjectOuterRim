@@ -62,7 +62,6 @@ public class PublicVariableHandler : MonoBehaviour
     public float enemy3Speed;
     public float enemy3FireFreq;
     public int enemy3BaseHealth;
-    public int enemy3ShieldHealth;
     public int enemy3LaserScore;
     public int enemy3MissileScore;
 
@@ -73,4 +72,9 @@ public class PublicVariableHandler : MonoBehaviour
     public int enemy4ShieldHealth;
     public int enemy4LaserScore;
     public int enemy4MissileScore;
+
+    //Enemy5
+    public int enemy5BaseHealth;
+    public int enemy5ShieldHealth;
+    public int enemy5LaserScore;
 }

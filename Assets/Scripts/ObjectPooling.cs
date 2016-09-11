@@ -4,15 +4,18 @@ using System.Collections.Generic;
 
 public class ObjectPooling : MonoBehaviour
 {
-    public GameObject pooledObject;
+    public GameObject[] pooledObject;
     public int pooledAmount;
     public float waitTime = 0.001f;
     public bool willGrow = true;
 
     public List<GameObject> pooledObjects;
+    GameObject animationObject;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        animationObject = GameObject.Find("AnimationObject");
         pooledObjects = new List<GameObject>();
 
         for (int i = 0; i < pooledAmount; i++)
@@ -41,10 +44,13 @@ public class ObjectPooling : MonoBehaviour
 
         if (willGrow)
         {
-            GameObject obj = (GameObject)Instantiate(pooledObject);
-            obj.transform.parent = transform;
-            pooledObjects.Add(obj);
-            return obj;
+            for (int i = 0; i < pooledObject.Length; i++)
+            {
+                GameObject obj = (GameObject)Instantiate(pooledObject[i]);
+                obj.transform.parent = transform;
+                pooledObjects.Add(obj);
+                return obj;
+            }
         }
 
         return null;
@@ -52,10 +58,14 @@ public class ObjectPooling : MonoBehaviour
 
     IEnumerator InstantiatePool(float waitTime)
     {
-        GameObject obj = (GameObject)Instantiate(pooledObject);
-        obj.transform.parent = transform;
-        obj.SetActive(false);
-        pooledObjects.Add(obj);
+        for (int i = 0; i < pooledObject.Length; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(pooledObject[i]);
+            obj.transform.parent = transform;
+            
+            obj.SetActive(false);
+            pooledObjects.Add(obj);
+        }
 
         yield return new WaitForSeconds(waitTime);
     }

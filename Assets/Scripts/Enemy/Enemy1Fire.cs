@@ -21,16 +21,16 @@ public class Enemy1Fire : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
         switch (transform.parent.name)
         {
-            case "Enemy1":
+            case "Enemy1Guns":
                 fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy1FireFreq;
                 break;
-            case "Enemy2":
+            case "Enemy2Guns":
                 fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy2FireFreq;
                 break;
-            case "Enemy3":
+            case "Enemy3Guns":
                 fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy3FireFreq;
                 break;
-            case "Enemy4":
+            case "Enemy4Guns":
                 fireFreq = gameManager.GetComponent<PublicVariableHandler>().enemy4FireFreq;
                 break;
         }

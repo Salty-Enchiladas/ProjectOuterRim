@@ -5,6 +5,6 @@ public class MouseClick : MonoBehaviour
 {
 	void Update () 
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+       // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 	}
 }

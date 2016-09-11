@@ -36,7 +36,7 @@ public class Actor : MonoBehaviour
     GameObject playerTarget;
 
     private float OldTime = 0;
-    private float checkTime = 0;
+    //private float checkTime = 0;
     private float elapsedTime = 0;
     private float maneuverSpeed;
     private float strafeSpeed;
@@ -87,7 +87,7 @@ public class Actor : MonoBehaviour
         gun2 = GetComponent<EnemyStoreVariables>().gun2;
         gun3 = GetComponent<EnemyStoreVariables>().gun3;
 
-        lookAtPoint = transform.FindChild("LookAtPoint");
+        lookAtPoint = GetComponent<EnemyStoreVariables>().lookAtPoint;
     }
 
     private void Start()
@@ -143,7 +143,7 @@ public class Actor : MonoBehaviour
                 else if (randomInt == 1)
                 {
                     ChangeState(State.STRAFE);
-                } 
+                }
                 else if (randomInt == 2)
                 {
                     ChangeState(State.CROSS);
@@ -357,8 +357,6 @@ public class Actor : MonoBehaviour
                     centerX = _centerX;
                     centerY = _centerY;
                     centerZ = _centerZ;
-                    break;
-
                     break;
             }
         }

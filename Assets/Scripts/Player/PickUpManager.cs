@@ -100,8 +100,6 @@ public class PickUpManager : MonoBehaviour
 
     public void LevelUp(string powerUpType)
     {
-
-        print("YOU LEVELED UP!!!!!!!");
         leveled = true;
         switch (powerUpType)
         {

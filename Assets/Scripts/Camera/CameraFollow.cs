@@ -19,27 +19,5 @@ public class CameraFollow : MonoBehaviour {
 	void FixedUpdate () {
         transform.position = Vector3.Lerp(transform.position, new Vector3(playerTarget.transform.position.x + cameraOffset.x, playerTarget.transform.position.y + cameraOffset.y, playerTarget.transform.position.z + cameraOffset.z), Time.deltaTime * cameraSpeed);
 
-        if (snapMovement)
-        {
-
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
-            if (horizontal < -.5)
-            {
-                cameraOffset.x = 50;
-            }
-            if (horizontal > .5)
-            {
-                cameraOffset.x = -50;
-            }
-            if (vertical < -.5)
-            {
-                cameraOffset.y = 80;
-            }
-            if (vertical > .5)
-            {
-                cameraOffset.y = 0;
-            }
-        }
     }
 }

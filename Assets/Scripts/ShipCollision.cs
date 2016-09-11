@@ -7,7 +7,7 @@ public class ShipCollision : MonoBehaviour
     {
         if (other.tag == ("Player"))
         {
-            Application.LoadLevel("RebelGO");
+            //Application.LoadLevel("RebelGO");
         }
     }
 }

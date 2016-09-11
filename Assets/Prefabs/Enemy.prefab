@@ -1052,6 +1052,7 @@ MonoBehaviour:
   gun1: {fileID: 133602}
   gun2: {fileID: 119724}
   gun3: {fileID: 193716}
+  lookAtPoint: {fileID: 0}
 --- !u!114 &11440764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1070,9 +1071,9 @@ MonoBehaviour:
   centerX: 2000
   centerY: 0
   centerZ: 2000
-  maneuverRadius: 2000
-  maneuverRadiusMin: 1750
-  maneuverRadiusMax: 2250
+  maneuverRadius: 0
+  maneuverRadiusMin: 0
+  maneuverRadiusMax: 0
   player: {fileID: 0}
   gun1: {fileID: 0}
   gun2: {fileID: 0}

@@ -8,6 +8,6 @@ public class SetLaserType : MonoBehaviour
 	void Start ()
     {
         player = GameObject.Find("Player");
-        GetComponent<ObjectPooling>().pooledObject = player.GetComponent<StoreVariables>().laserColor;
+        GetComponent<ObjectPooling>().pooledObject[0] = player.GetComponent<StoreVariables>().laserColor;
 	}
 }
