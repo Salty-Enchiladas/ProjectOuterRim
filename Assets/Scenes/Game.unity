@@ -822,6 +822,7 @@ MonoBehaviour:
   secondEnemyPool: {fileID: 930241598}
   thirdEnemyPool: {fileID: 1478110998}
   fourthEnemyPool: {fileID: 357815564}
+  fifthEnemyPool: {fileID: 825245193}
   spawnRate: 0.5
   difficultyIncreaseScore: 15000
   minXSpawn: -2500
@@ -829,6 +830,7 @@ MonoBehaviour:
   minYSpawn: -1000
   maxYSpawn: 1000
   zSpawn: 10000
+  carrierSpawnRate: 30000
   secondEnemySpawnScore: 30000
   thirdEnemySpawnScore: 60000
   fourthEnemySpawnScore: 90000
@@ -1079,7 +1081,6 @@ MonoBehaviour:
   enemy3Speed: 1100
   enemy3FireFreq: 5
   enemy3BaseHealth: 2
-  enemy3ShieldHealth: 3
   enemy3LaserScore: 2000
   enemy3MissileScore: 1000
   enemy4Speed: 600
@@ -1088,6 +1089,9 @@ MonoBehaviour:
   enemy4ShieldHealth: 5
   enemy4LaserScore: 3000
   enemy4MissileScore: 1000
+  enemy5BaseHealth: 100
+  enemy5ShieldHealth: 50
+  enemy5LaserScore: 10000
 --- !u!114 &555410815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1562,7 +1566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject:
   - {fileID: 194340, guid: d5fad98a42fc1304abda9cbcbb398422, type: 2}
-  pooledAmount: 5
+  pooledAmount: 2
   waitTime: 0.0000001
   willGrow: 1
   pooledObjects: []

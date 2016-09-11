@@ -465,9 +465,10 @@ GameObject:
   - 54: {fileID: 5471972}
   - 65: {fileID: 6582558}
   - 114: {fileID: 11493308}
+  - 114: {fileID: 11433874}
   m_Layer: 0
-  m_Name: Organic Carrier
-  m_TagString: Enemy
+  m_Name: Enemy5
+  m_TagString: Carrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -607,8 +608,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194340}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 1346.1927, y: 449.4373, z: 89.20975}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 1346.1927, y: 449.4373, z: 11213}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 444296}
   - {fileID: 482936}
@@ -1675,9 +1676,9 @@ MonoBehaviour:
   meteorExplosionPrefab: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a,
     type: 2}
   player: {fileID: 0}
-  laserScore: 1000
-  missileScore: 500
-  baseHealth: 2
+  laserScore: 10000
+  missileScore: 10000
+  baseHealth: 100
   currentHealth: 0
 --- !u!114 &11410120
 MonoBehaviour:
@@ -1736,6 +1737,19 @@ MonoBehaviour:
   playerLives: 3
   gameOverScene: GameOver
   shieldActive: 0
+--- !u!114 &11433874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b50cc832fad3b4b82da02f79b1bf0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warpSpeed: 1500
+  speed: 300
 --- !u!114 &11435662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1779,7 +1793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9bdc51dcc2b8e4eb8ab95750b0f8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 0
+  startingHealth: 50
   currentHealth: 0
   colliders: {fileID: 0}
   meteorExplosionPrefab: {fileID: 0}
@@ -1824,7 +1838,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15958e410bc686b4f8dfe81e1d8a49ea, type: 3}
   m_Name: 
@@ -1906,6 +1920,7 @@ MonoBehaviour:
   gun1: {fileID: 105302}
   gun2: {fileID: 172746}
   gun3: {fileID: 108392}
+  lookAtPoint: {fileID: 0}
 --- !u!135 &13505140
 SphereCollider:
   m_ObjectHideFlags: 1

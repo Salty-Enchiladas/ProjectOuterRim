@@ -5,7 +5,6 @@ public class EnemyShield : MonoBehaviour
 {
     public int startingHealth;
     public int currentHealth;
-    public GameObject colliders;
     public GameObject meteorExplosionPrefab;
     GameObject gameManager;
     GameObject player;
@@ -14,18 +13,24 @@ public class EnemyShield : MonoBehaviour
     {
         player = GameObject.Find("Player");
         gameManager = GameObject.Find("GameManager");
+
         switch (transform.parent.name)
         {
-            case "Enemy3":
-                startingHealth = gameManager.GetComponent<PublicVariableHandler>().enemy3ShieldHealth;
-                break;
             case "Enemy4":
                 startingHealth = gameManager.GetComponent<PublicVariableHandler>().enemy4ShieldHealth;
                 break;
+            case "Enemy5":
+                startingHealth = gameManager.GetComponent<PublicVariableHandler>().enemy5ShieldHealth;
+                break;
         }
-        meteorExplosionPrefab = player.GetComponent<StoreVariables>().meteorExplosion;
+
         currentHealth = startingHealth;
         GetComponentInParent<Enemy1Collision>().enabled = false;
+        meteorExplosionPrefab = player.GetComponent<StoreVariables>().meteorExplosion;
+    }
+    public void OnSpawn()
+    {
+        currentHealth = startingHealth;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -33,18 +38,21 @@ public class EnemyShield : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             currentHealth--;
-            print(currentHealth + "EnemyShieldHealth");
             if (currentHealth <= 0)
             {
                 GetComponentInParent<Enemy1Collision>().enabled = true;
                 gameObject.SetActive(false);
             }
         }
-        else if (other.tag == "Meteor")
+
+        if (transform.parent.name != "Enemy5")
         {
-            Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
-            other.gameObject.SetActive(false);
-            gameObject.SetActive(false);
+            if (other.tag == "Meteor")
+            {
+                Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
+                other.gameObject.SetActive(false);
+                gameObject.SetActive(false);
+            }
         }
     }
 }

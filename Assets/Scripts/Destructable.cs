@@ -23,7 +23,6 @@ public class Destructable : MonoBehaviour
 		hitEffect = publicVariableHandler.hitEffect;
 		baseHealth = publicVariableHandler.meteorHealth;
 		currentHealth = baseHealth;
-		print (currentHealth + " is your health");
     }
     void OnTriggerEnter(Collider other)
     {
@@ -42,7 +41,6 @@ public class Destructable : MonoBehaviour
 	void LoseHealth()
 	{
 		currentHealth--;
-		print ("health after damage " + currentHealth);
 		if (currentHealth <= 0) 
 		{
 			Instantiate(explosion, transform.position, transform.rotation);

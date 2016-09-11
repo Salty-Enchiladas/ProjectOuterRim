@@ -8,6 +8,7 @@ public class WaveHandler : MonoBehaviour
     public GameObject secondEnemyPool;
     public GameObject thirdEnemyPool;
     public GameObject fourthEnemyPool;
+    public GameObject fifthEnemyPool;
 
     public float spawnRate;
     public int difficultyIncreaseScore;
@@ -17,6 +18,9 @@ public class WaveHandler : MonoBehaviour
     public float minYSpawn;
     public float maxYSpawn;
     public float zSpawn;
+
+    [Tooltip("Based on points")]
+    public int carrierSpawnRate;
 
     public int secondEnemySpawnScore;
     public int thirdEnemySpawnScore;
@@ -47,13 +51,16 @@ public class WaveHandler : MonoBehaviour
     private float lastSpawn;
 
     private int tempScore;
+    private int carrierTempScore;
 
     private bool increaseDifficulty;
+    private bool carrierSpawned;
 
     ObjectPooling firstEnemy;
     ObjectPooling secondEnemy;
     ObjectPooling thirdEnemy;
     ObjectPooling fourthEnemy;
+    ObjectPooling fifthEnemy;
 
     DebrisField debrisSpawner;
 
@@ -72,6 +79,7 @@ public class WaveHandler : MonoBehaviour
         secondEnemy = secondEnemyPool.GetComponent<ObjectPooling>();
         thirdEnemy = thirdEnemyPool.GetComponent<ObjectPooling>();
         fourthEnemy = fourthEnemyPool.GetComponent<ObjectPooling>();
+        fifthEnemy = fifthEnemyPool.GetComponent<ObjectPooling>();
         increaseDifficulty = true;
     }
 
@@ -99,6 +107,21 @@ public class WaveHandler : MonoBehaviour
         {
             poolObject = "Enemy4";
             Spawn(poolObject);
+        }
+
+        if (playerScore.score % carrierSpawnRate == 0 && playerScore.score > 0)
+        {
+            if (!carrierSpawned)
+            {
+                carrierTempScore = playerScore.score;
+                poolObject = "Enemy5";
+                Spawn(poolObject);
+                carrierSpawned = true;
+            }
+            if (carrierTempScore != playerScore.score)
+            {
+                carrierSpawned = false;
+            }
         }
 
         if (playerScore.score % difficultyIncreaseScore == 0 && playerScore.score > 0)
@@ -163,8 +186,8 @@ public class WaveHandler : MonoBehaviour
                 thirdEnemyCount++;
                 currentObject = thirdEnemy.GetPooledObject();
                 currentObject.name = objectPool;
-                shield = currentObject.transform.FindChild("Shield").gameObject;
-                shield.SetActive(true);
+                //shield = currentObject.transform.FindChild("Shield").gameObject;
+                //shield.SetActive(true);
                 break;
             case "Enemy4":
                 fourthEnemyCount++;
@@ -172,6 +195,13 @@ public class WaveHandler : MonoBehaviour
                 currentObject.name = objectPool;
                 shield = currentObject.transform.FindChild("Shield").gameObject;
                 shield.SetActive(true);
+                break;
+            case "Enemy5":
+                currentObject = fifthEnemy.GetPooledObject();
+                currentObject.name = "Enemy5";
+                shield = currentObject.transform.FindChild("Shield").gameObject;
+                shield.SetActive(true);
+                shield.GetComponent<EnemyShield>().OnSpawn();
                 break;
         }
 
@@ -185,5 +215,7 @@ public class WaveHandler : MonoBehaviour
         player.transform.position.y + Random.Range(minYSpawn,maxYSpawn), player.transform.position.z + zSpawn);
         currentObject.transform.rotation = transform.rotation;
         currentObject.SetActive(true);
+
+        currentObject.GetComponent<Enemy1Collision>().OnSpawned();
     }
 }

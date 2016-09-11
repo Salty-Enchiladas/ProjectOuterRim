@@ -51,47 +51,42 @@ public class Enemy1Collision : MonoBehaviour {
                 missileScore = publicVariableHandler.enemy4MissileScore;
                 baseHealth = publicVariableHandler.enemy4BaseHealth;
                 break;
+            case "Enemy5":
+                laserScore = publicVariableHandler.enemy5LaserScore;
+                baseHealth = publicVariableHandler.enemy5BaseHealth;
+                break;
         }
-
         currentHealth = baseHealth;
     }
 
+    public void OnSpawned()
+    {
+        currentHealth = baseHealth;
+    }
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Laser")
         {
-			Instantiate (hitEffect, col.transform.position, col.transform.rotation);
+            Instantiate(hitEffect, col.transform.position, col.transform.rotation);
             col.gameObject.SetActive(false);
             TookDamage();
         }
-        else if (col.gameObject.tag == "Missile")
+        else if (col.gameObject.tag == "Missile" && transform.name != "Enemy5")
         {
-			WasDestroyed();
+            WasDestroyed();
             col.gameObject.SetActive(false);
         }
-        else if (col.gameObject.tag == "Meteor")
+        if (transform.name != "Enemy5")
         {
-            Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
-            col.gameObject.SetActive(false);
-            //switch (transform.name)
-            //{
-            //    case "Enemy1":
-            //        gameManager.GetComponent<WaveHandler>().enemy1Count--;
-            //        break;
-            //    case "Enemy2":
-            //        gameManager.GetComponent<WaveHandler>().enemy2Count--;
-            //        break;
-            //    case "Enemy3":
-            //        gameManager.GetComponent<WaveHandler>().enemy3Count--;
-            //        break;
-            //    case "Enemy4":
-            //        gameManager.GetComponent<WaveHandler>().enemy4Count--;
-            //        break;
-            //}
-            Instantiate(explosion, transform.position, transform.rotation);
-            Instantiate(explosionSound, transform.position, transform.rotation);
-            gameObject.SetActive(false);
+            if (col.gameObject.tag == "Meteor")
+            {
+                Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
+                col.gameObject.SetActive(false);
+
+                WasDestroyed();
+            }
         }
+
     }
 
     public void TookDamage()
@@ -100,7 +95,6 @@ public class Enemy1Collision : MonoBehaviour {
         achievementManager.EnemyHit();
         if (currentHealth <= 0)
         {
-            print(currentHealth);
             WasDestroyed();
         }
     }

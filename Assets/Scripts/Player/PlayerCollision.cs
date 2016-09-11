@@ -72,7 +72,7 @@ public class PlayerCollision : MonoBehaviour
 
             CheckHealth();
         }
-        else if (col.gameObject.tag == "Meteor")
+        else if (col.gameObject.tag == "Meteor" || col.gameObject.tag == "Carrier")
         {
             LoseLife();
             pickUpManager.LoseLevel();

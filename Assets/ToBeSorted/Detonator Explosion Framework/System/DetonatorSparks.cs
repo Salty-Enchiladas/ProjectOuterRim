@@ -29,7 +29,6 @@ public class DetonatorSparks : DetonatorComponent
 
 	override public void Init()
 	{
-		print ("Init is happening");
 		//make sure there are materials at all
 		FillMaterials(false);
 		BuildSparks();
@@ -93,7 +92,6 @@ public class DetonatorSparks : DetonatorComponent
 
     public void Reset()
     {
-		print ("Reset called");
 		FillMaterials(true);
 		on = true;
 		size = _baseSize;
