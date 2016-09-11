@@ -823,7 +823,7 @@ MonoBehaviour:
   thirdEnemyPool: {fileID: 1478110998}
   fourthEnemyPool: {fileID: 357815564}
   fifthEnemyPool: {fileID: 825245193}
-  spawnRate: 0.5
+  spawnRate: 1
   difficultyIncreaseScore: 15000
   minXSpawn: -2500
   maxXspawn: 2500
@@ -831,9 +831,9 @@ MonoBehaviour:
   maxYSpawn: 1000
   zSpawn: 10000
   carrierSpawnRate: 30000
-  secondEnemySpawnScore: 30000
-  thirdEnemySpawnScore: 60000
-  fourthEnemySpawnScore: 90000
+  secondEnemySpawnScore: 100000
+  thirdEnemySpawnScore: 200000
+  fourthEnemySpawnScore: 300000
   firstEnemySpawnCap: 5
   secondEnemySpawnCap: 5
   thirdEnemySpawnCap: 5
@@ -1041,7 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorExplosion: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a, type: 2}
-  meteorHealth: 20
+  meteorHealth: 10
   laserLevel1Bar: {fileID: 1759693549}
   laserLevel2Bar: {fileID: 1481191325}
   laserLevel3Bar: {fileID: 1876432731}
@@ -1085,13 +1085,13 @@ MonoBehaviour:
   enemy3MissileScore: 1000
   enemy4Speed: 600
   enemy4FireFreq: 5
-  enemy4BaseHealth: 5
+  enemy4BaseHealth: 2
   enemy4ShieldHealth: 5
   enemy4LaserScore: 3000
   enemy4MissileScore: 1000
-  enemy5BaseHealth: 100
-  enemy5ShieldHealth: 50
-  enemy5LaserScore: 10000
+  enemy5BaseHealth: 70
+  enemy5ShieldHealth: 30
+  enemy5LaserScore: 15000
 --- !u!114 &555410815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1565,8 +1565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject:
-  - {fileID: 194340, guid: d5fad98a42fc1304abda9cbcbb398422, type: 2}
-  pooledAmount: 2
+  - {fileID: 115900, guid: 2e6b7514ac8d42a42be4da492721cff2, type: 2}
+  pooledAmount: 1
   waitTime: 0.0000001
   willGrow: 1
   pooledObjects: []

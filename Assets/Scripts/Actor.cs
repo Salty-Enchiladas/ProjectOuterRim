@@ -36,7 +36,7 @@ public class Actor : MonoBehaviour
     GameObject playerTarget;
 
     private float OldTime = 0;
-    private float checkTime = 0;
+    //private float checkTime = 0;
     private float elapsedTime = 0;
     private float maneuverSpeed;
     private float strafeSpeed;
@@ -357,8 +357,6 @@ public class Actor : MonoBehaviour
                     centerX = _centerX;
                     centerY = _centerY;
                     centerZ = _centerZ;
-                    break;
-
                     break;
             }
         }

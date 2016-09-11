@@ -136,7 +136,6 @@ public class FireScript : MonoBehaviour {
         }
         else if (!levelUp)
         {
-			print ("lost a laser level");
               foreach (GameObject go in player.GetComponent<StoreVariables>().upgradeWeapons)
             {
 				go.SetActive(false);

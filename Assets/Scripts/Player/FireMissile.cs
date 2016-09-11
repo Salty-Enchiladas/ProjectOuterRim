@@ -2,9 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class FireMissile : MonoBehaviour {
-
-
+public class FireMissile : MonoBehaviour
+{
     public GameObject missile;
     public GameObject missile1Img;
     public GameObject missile2Img;
@@ -139,14 +138,14 @@ public class FireMissile : MonoBehaviour {
         if (levelUp)
         {
             missileLevel1Bar.SetActive(levelUp);
-            recharge = recharge / 9;
+            missileRechargeLength = missileRechargeLength / 2;
             newRecharge = recharge;
             missileCooldown = missileCooldown / 3;
             newMissileCooldown = missileCooldown;
         }
         else if (!levelUp)
         {
-            recharge = recharge * 9;
+            missileRechargeLength = missileRechargeLength * 2;
             missileCooldown = missileCooldown * 3;
         }
     }
@@ -156,12 +155,12 @@ public class FireMissile : MonoBehaviour {
         if (levelUp)
         {
             missileLevel2Bar.SetActive(levelUp);
-            recharge = 0;
+            missileRechargeLength = missileRechargeLength / 2;
             missileCooldown = 0;
         }
         else if (!levelUp)
         {
-            recharge = newRecharge;
+            missileRechargeLength = newRecharge;
             missileCooldown = newMissileCooldown;
         }
 

@@ -921,7 +921,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 0
   currentHealth: 0
-  colliders: {fileID: 0}
   meteorExplosionPrefab: {fileID: 0}
 --- !u!114 &11460068
 MonoBehaviour:
@@ -4375,7 +4374,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 50
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -5844,7 +5843,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 50
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
