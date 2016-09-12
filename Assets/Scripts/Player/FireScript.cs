@@ -91,7 +91,7 @@ public class FireScript : MonoBehaviour {
         for(int i = 0; i < 20; i++)
         {
             yield return new WaitForSeconds(.3f);
-            heatLevel = heatLevel - .05f;            
+            heatLevel = heatLevel - .5f;            
         }        
         
         //print("Laser is cooled and ready for action!");

@@ -40,7 +40,7 @@ public class PublicVariableHandler : MonoBehaviour
     public float laserHeatLossAfterSeconds;
 
     //Enemy Variables
-
+	public float enemyAISpeed;
     public float maneuverSpeed;
     public float strafeSpeed;
 

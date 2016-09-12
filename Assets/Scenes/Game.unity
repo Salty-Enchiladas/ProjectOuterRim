@@ -823,25 +823,25 @@ MonoBehaviour:
   thirdEnemyPool: {fileID: 1478110998}
   fourthEnemyPool: {fileID: 357815564}
   fifthEnemyPool: {fileID: 825245193}
-  spawnRate: 1
-  difficultyIncreaseScore: 15000
-  minXSpawn: -2500
-  maxXspawn: 2500
+  spawnRate: 2
+  difficultyIncreaseScore: 5000
+  minXSpawn: -3000
+  maxXspawn: 3000
   minYSpawn: -1000
   maxYSpawn: 1000
   zSpawn: 10000
-  carrierSpawnRate: 30000
+  carrierSpawnRate: 50000
   secondEnemySpawnScore: 100000
   thirdEnemySpawnScore: 200000
   fourthEnemySpawnScore: 300000
-  firstEnemySpawnCap: 5
-  secondEnemySpawnCap: 5
-  thirdEnemySpawnCap: 5
-  fourthEnemySpawnCap: 5
-  firstEnemyFinalCap: 10
-  secondEnemyFinalCap: 10
-  thirdEnemyFinalCap: 10
-  fourthEnemyFinalCap: 10
+  firstEnemySpawnCap: 1
+  secondEnemySpawnCap: 1
+  thirdEnemySpawnCap: 1
+  fourthEnemySpawnCap: 1
+  firstEnemyFinalCap: 7
+  secondEnemyFinalCap: 7
+  thirdEnemyFinalCap: 7
+  fourthEnemyFinalCap: 7
   firstEnemyCount: 0
   secondEnemyCount: 0
   thirdEnemyCount: 0
@@ -1064,8 +1064,9 @@ MonoBehaviour:
   playerHealth: 9
   playerSpeed: 1000
   playerLaserHeatCap: 1
-  playerLaserHeatIncreaseAmount: 0.05
+  playerLaserHeatIncreaseAmount: 0.03
   laserHeatLossAfterSeconds: 1
+  enemyAISpeed: 500
   maneuverSpeed: 1
   strafeSpeed: 1.5
   enemy1Speed: 500
@@ -1126,7 +1127,7 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 12000
+  spawnAtScore: 24000
   spawnAfter: 5
   xMinSpawn: -400
   xMaxSpawn: 400
@@ -3085,7 +3086,7 @@ RectTransform:
   m_GameObject: {fileID: 1563848385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40.7, y: 32.91875, z: 20}
+  m_LocalScale: {x: 40.7, y: 36.5, z: 20}
   m_Children: []
   m_Father: {fileID: 63497047}
   m_RootOrder: 7

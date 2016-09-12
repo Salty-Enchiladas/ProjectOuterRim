@@ -126,6 +126,10 @@ public class WaveHandler : MonoBehaviour
 
         if (playerScore.score % difficultyIncreaseScore == 0 && playerScore.score > 0)
         {
+			if (playerScore.score >= 100000) 
+			{
+				difficultyIncreaseScore = difficultyIncreaseScore * 3;
+			}
             if (increaseDifficulty)
             {
                 tempScore = playerScore.score;
@@ -134,7 +138,7 @@ public class WaveHandler : MonoBehaviour
                     spawnRate = spawnRate - .1f;
 
                 if (debrisSpawner.spawnFrequency > 0)
-                    debrisSpawner.spawnFrequency = debrisSpawner.spawnFrequency - .1f;
+                    debrisSpawner.spawnFrequency = debrisSpawner.spawnFrequency - .02f;
 
                 if (firstEnemySpawnCap < firstEnemyFinalCap && secondEnemySpawnCap < secondEnemyFinalCap && thirdEnemySpawnCap < thirdEnemyFinalCap && fourthEnemySpawnCap < fourthEnemyFinalCap)
                 {
@@ -150,6 +154,7 @@ public class WaveHandler : MonoBehaviour
                     publicVariableHandler.enemy2Speed = publicVariableHandler.enemy2Speed + 100;
                     publicVariableHandler.enemy3Speed = publicVariableHandler.enemy3Speed + 100;
                     publicVariableHandler.enemy4Speed = publicVariableHandler.enemy4Speed + 100;
+					publicVariableHandler.enemyAISpeed = publicVariableHandler.enemyAISpeed + 50;
                 }
                 if (publicVariableHandler.enemy1FireFreq > .2f)
                 {
