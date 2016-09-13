@@ -1121,9 +1121,9 @@ MonoBehaviour:
   missilePickUp: {fileID: 198106, guid: acde87d815de6524db34cf21d114108a, type: 2}
   shieldPickUp: {fileID: 155664, guid: 5d501daed271a9245bd86763f5d8b608, type: 2}
   pickupSounds:
-  - {fileID: 8300000, guid: f1cbc985b74d1e743844f1a01fcc1afb, type: 3}
   - {fileID: 8300000, guid: a33d08cbbfb57a7498dfd51594b790f8, type: 3}
-  - {fileID: 8300000, guid: 470326cb67134ca449d25b18717b3a05, type: 3}
+  - {fileID: 8300000, guid: a33d08cbbfb57a7498dfd51594b790f8, type: 3}
+  - {fileID: 8300000, guid: a33d08cbbfb57a7498dfd51594b790f8, type: 3}
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
@@ -2393,7 +2393,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.065
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2425,15 +2425,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.65982974
+      value: 0.64003485
       objectReference: {fileID: 0}
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.1828879
+      value: 1.1474013
       objectReference: {fileID: 0}
     - target: {fileID: 497680, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.1682844
+      value: 1.1332359
       objectReference: {fileID: 0}
     - target: {fileID: 136698, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
       propertyPath: m_IsActive
@@ -3390,7 +3390,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.583
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3703,7 +3703,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.065
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3735,15 +3735,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.65982974
+      value: 0.64003485
       objectReference: {fileID: 0}
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.1828879
+      value: 1.1474013
       objectReference: {fileID: 0}
     - target: {fileID: 464308, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.1682844
+      value: 1.1332359
       objectReference: {fileID: 0}
     - target: {fileID: 174078, guid: 9950574412064a84ca2ff030c71cd593, type: 2}
       propertyPath: m_IsActive
@@ -4651,7 +4651,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.065
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4683,15 +4683,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.65982974
+      value: 0.64003485
       objectReference: {fileID: 0}
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.1828879
+      value: 1.1474013
       objectReference: {fileID: 0}
     - target: {fileID: 438322, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.1682844
+      value: 1.1332359
       objectReference: {fileID: 0}
     - target: {fileID: 127022, guid: 6f724ff67d8e9914ca0eed5b5b28631c, type: 2}
       propertyPath: m_IsActive

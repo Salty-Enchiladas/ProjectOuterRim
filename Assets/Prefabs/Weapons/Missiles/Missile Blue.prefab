@@ -933,13 +933,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fc040152fd20e2647898a5640ef73248, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.733
+  m_Volume: 0.22
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 39
-  DopplerLevel: 2
+  Priority: 35
+  DopplerLevel: 0.33
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -967,7 +967,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0.696
+      value: 0.42
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -989,7 +989,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 0.38
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1005,14 +1005,14 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 66c9352fc9331104383401b318d9b9ec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9a296a45092714941a40073dcb9d579a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.742
+  m_Volume: 0.57
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 41
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1041,7 +1041,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0.53
+      value: 0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1076,17 +1076,17 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145910}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce8d00fadadec364c97b211fda44f18b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.479
+  m_Volume: 0.877
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 60
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1115,7 +1115,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 0.57
       inSlope: 0
       outSlope: 0
       tangentMode: 0
