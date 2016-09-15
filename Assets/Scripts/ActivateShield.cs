@@ -13,20 +13,17 @@ public class ActivateShield : MonoBehaviour
 
     public bool onCooldown;
     public float shieldCooldown;
-    public float shieldLength;
-
-    float lastUse;
-    float lastActive;
 
     PublicVariableHandler publicVariableHandler;
+    Shield shieldScript;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
         publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
         shieldCooldown = publicVariableHandler.playerShieldCooldown;
-        shieldLength = publicVariableHandler.playerShieldLength;
         shield = GetComponent<StoreVariables>().shield;
+        shieldScript = shield.GetComponent<Shield>();
         shieldIcon = publicVariableHandler.shieldIcon;
 
         shieldLevel1Bar = publicVariableHandler.shieldLevel1Bar;
@@ -36,37 +33,17 @@ public class ActivateShield : MonoBehaviour
 
 	void Update () 
     {
-        if (Input.GetButtonUp("Fire3") && Time.time > lastUse + shieldCooldown)
+        if (Input.GetButtonUp("Fire3") && !onCooldown)
         {
-            if (!onCooldown)
-            {
-                shield.SetActive(true);
-                GetComponentInChildren<PlayerCollision>().shieldActive = true;
-                StartCoroutine(ShieldActive());
-            }
-        }
-        if (Time.time > lastUse + shieldCooldown)
-        {
-            shieldIcon.SetActive(true);
+            ShieldActive();
         }
 	}
 
-    public void ShieldDestroyed()
+    void ShieldActive()
     {
-        shield.SetActive(false);
+        shield.SetActive(true);
         onCooldown = true;
-        GetComponentInChildren<PlayerCollision>().shieldActive = false;
-    }
-
-    IEnumerator ShieldActive()
-    {
-        onCooldown = true;
-        yield return new WaitForSeconds(shieldLength);
-        lastUse = Time.time;
-        shield.SetActive(false);
         shieldIcon.SetActive(false);
-        GetComponentInChildren<PlayerCollision>().shieldActive = false;
-        onCooldown = false;
     }
 
     public void ShieldLevel1(bool levelUp)
@@ -74,15 +51,14 @@ public class ActivateShield : MonoBehaviour
         if (levelUp)
         {
             shieldLevel1Bar.SetActive(levelUp);
-			shield.SetActive (true);
-            StartCoroutine(ShieldActive());
-            shieldLength = shieldLength + 2;
-            shieldCooldown = shieldCooldown - 2;
+            ShieldActive();
+            shieldScript.startingHealth = shieldScript.startingHealth + 2;
+            shieldScript.currentHealth = shieldScript.startingHealth;
+
         }
         else if (!levelUp)
         {
-            shieldLength = shieldLength - 2;
-            shieldCooldown = shieldCooldown + 2;
+            shieldScript.startingHealth = shieldScript.startingHealth - 2;
         }
     }
 
@@ -91,15 +67,12 @@ public class ActivateShield : MonoBehaviour
         if (levelUp)
         {
             shieldLevel2Bar.SetActive(levelUp);
-			shield.SetActive (true);
-            StartCoroutine(ShieldActive());
-            shieldLength = shieldLength + 2;
-            shieldCooldown = shieldCooldown - 2;
+            ShieldActive();
+            shieldCooldown = shieldCooldown - 5;
         }
         else if (!levelUp)
         {
-            shieldLength = shieldLength - 2;
-            shieldCooldown = shieldCooldown + 2;
+            shieldCooldown = shieldCooldown + 5;
         }
     }
 
@@ -108,15 +81,26 @@ public class ActivateShield : MonoBehaviour
         if (levelUp)
         {
             shieldLevel3Bar.SetActive(levelUp);
-			shield.SetActive (true);
-            StartCoroutine(ShieldActive());
-            shieldLength = shieldLength + 2;
-            shieldCooldown = shieldCooldown - 2;
+            ShieldActive();
+            shieldScript.startingHealth = shieldScript.startingHealth + 3;
+            shieldScript.currentHealth = shieldScript.startingHealth;
+            shieldCooldown = shieldCooldown - 5;
         }
         else if (!levelUp)
         {
-            shieldLength = shieldLength - 2;
-            shieldCooldown = shieldCooldown + 2;
+            shieldScript.startingHealth = shieldScript.startingHealth - 3;
+            shieldCooldown = shieldCooldown + 5;
         }
+    }
+
+    public void StartMyCoroutine()
+    {
+        StartCoroutine(StartShieldCooldown());
+    }
+    IEnumerator StartShieldCooldown()
+    {
+        yield return new WaitForSeconds(2);
+        onCooldown = false;
+        shieldIcon.SetActive(true);
     }
 }

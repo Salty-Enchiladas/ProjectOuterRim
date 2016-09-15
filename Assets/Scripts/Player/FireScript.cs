@@ -88,10 +88,10 @@ public class FireScript : MonoBehaviour {
     IEnumerator OverHeating()
     {
         //print("laser cooling down");
-        for(int i = 0; i < 20; i++)
+        for(int i = 0; i < 23; i++)
         {
-            yield return new WaitForSeconds(.3f);
-            heatLevel = heatLevel - .5f;            
+            yield return new WaitForSeconds(.1f);
+            heatLevel = heatLevel - .05f;            
         }        
         
         //print("Laser is cooled and ready for action!");

@@ -30,7 +30,7 @@ public class PublicVariableHandler : MonoBehaviour
     public int healthRecoverScore;
     public float playerShootingFrequency;
     public float lightningGunDuration;
-    public float playerShieldLength;
+    public int playerShieldHealth;
     public float playerShieldCooldown;
     public int playerLives;
     public int playerHealth;

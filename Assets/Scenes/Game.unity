@@ -825,8 +825,8 @@ MonoBehaviour:
   fifthEnemyPool: {fileID: 825245193}
   spawnRate: 2
   difficultyIncreaseScore: 5000
-  minXSpawn: -3000
-  maxXspawn: 3000
+  minXSpawn: -2500
+  maxXspawn: 2500
   minYSpawn: -1000
   maxYSpawn: 1000
   zSpawn: 10000
@@ -1058,13 +1058,13 @@ MonoBehaviour:
   healthRecoverScore: 50000
   playerShootingFrequency: 0.15
   lightningGunDuration: 5
-  playerShieldLength: 3
-  playerShieldCooldown: 6
+  playerShieldHealth: 3
+  playerShieldCooldown: 15
   playerLives: 3
   playerHealth: 9
   playerSpeed: 1000
   playerLaserHeatCap: 1
-  playerLaserHeatIncreaseAmount: 0.03
+  playerLaserHeatIncreaseAmount: 0.06
   laserHeatLossAfterSeconds: 1
   enemyAISpeed: 500
   maneuverSpeed: 1
@@ -1742,11 +1742,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 987033026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 622a6f80f8cf60448827b790c081fb6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 86acf29148cc43b47aa46b43c5e49e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 100
-  maxSpeed: 150
+  speed: 10000
+  warpSpeed: 50000
 --- !u!1 &1032136427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,15 +2190,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 435364, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3246
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 435364, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 199
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 435364, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1213
+      value: 150000
       objectReference: {fileID: 0}
     - target: {fileID: 435364, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2226,15 +2226,15 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 56cd7f051c27cbd4782f92d9d893523e, type: 2}
     - target: {fileID: 435364, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_LocalScale.x
-      value: 5.2127714
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 435364, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_LocalScale.y
-      value: 5.212775
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 435364, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_LocalScale.z
-      value: 5.212775
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2332346, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -2243,6 +2243,10 @@ Prefab:
     - target: {fileID: 120122, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120122, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
+      propertyPath: m_Name
+      value: BossShip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 236044268ecd14e41bbb4da8c683dd88, type: 2}
