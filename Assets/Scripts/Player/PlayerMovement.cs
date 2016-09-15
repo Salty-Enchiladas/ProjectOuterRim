@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour {
        gameManager = GameObject.Find("GameManager");
        playerSpeed = gameManager.GetComponent<PublicVariableHandler>().playerSpeed;
        bossShip = GameObject.Find("BossShip");
-       bossShip.SetActive(false);
+      // bossShip.SetActive(false);
     }
     // Update is called once per frame
     void FixedUpdate()

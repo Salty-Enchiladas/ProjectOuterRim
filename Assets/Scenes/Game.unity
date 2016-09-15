@@ -823,7 +823,7 @@ MonoBehaviour:
   thirdEnemyPool: {fileID: 1478110998}
   fourthEnemyPool: {fileID: 357815564}
   fifthEnemyPool: {fileID: 825245193}
-  spawnRate: 2
+  spawnRate: 1.5
   difficultyIncreaseScore: 5000
   minXSpawn: -2500
   maxXspawn: 2500

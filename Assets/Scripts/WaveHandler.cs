@@ -217,7 +217,7 @@ public class WaveHandler : MonoBehaviour
         }
 
         currentObject.transform.position = new Vector3(player.transform.position.x + Random.Range(minXSpawn, maxXspawn),
-        player.transform.localPosition.y + Random.Range(minYSpawn,maxYSpawn), player.transform.localPosition.z + zSpawn);
+        player.transform.position.y + Random.Range(minYSpawn,maxYSpawn), player.transform.position.z + zSpawn);
         currentObject.transform.rotation = transform.rotation;
         currentObject.SetActive(true);
 
