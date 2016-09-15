@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class HighScoreHandler : MonoBehaviour {
 
+    public bool mainMenu;
+
     public GameObject newHSPanel;
 
     public List<Text> scoreList;
@@ -45,9 +47,19 @@ public class HighScoreHandler : MonoBehaviour {
         {
             if (currentScore > leaderboardInfo[j].Score)
             {
-                newHSPanel.SetActive(true);
-                restartButton.interactable = false;
-                quitButton.interactable = false;
+                if(!mainMenu)
+                    newHSPanel.SetActive(true);
+
+                if (restartButton)
+                    restartButton.interactable = false;
+                else
+                    Debug.LogError("No restart button assigned");
+
+                if(quitButton)
+                    quitButton.interactable = false;
+                else
+                    Debug.LogError("No quit button assigned");
+
                 rankToUpdate = j+1;
                 break;
             }
