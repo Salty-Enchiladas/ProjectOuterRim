@@ -32,7 +32,7 @@ public class CursorMovement : MonoBehaviour {
 
         MoveCursor();
 
-        if (Input.GetButtonUp("Submit") || Input.GetMouseButtonUp(0))
+        if (Input.GetButtonUp("Submit"))    // || Input.GetMouseButtonUp(0)
         {
             Click();
         }
