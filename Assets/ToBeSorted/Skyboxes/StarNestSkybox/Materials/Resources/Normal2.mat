@@ -18,12 +18,16 @@ Material:
     m_Floats:
       data:
         first:
+          name: _Tile
+        second: 675
+      data:
+        first:
           name: _CLAMPOUT
         second: 0
       data:
         first:
           name: _CamScroll
-        second: 3.27
+        second: 1
       data:
         first:
           name: _Iterations
@@ -40,10 +44,6 @@ Material:
         first:
           name: _StepSize
         second: 250
-      data:
-        first:
-          name: _Tile
-        second: 675
       data:
         first:
           name: _Brightness
@@ -68,7 +68,7 @@ Material:
       data:
         first:
           name: _Scroll
-        second: {r: 0, g: 0, b: 5, a: 0.01}
+        second: {r: 0, g: 0, b: 4.74, a: 0.01}
       data:
         first:
           name: _Center
