@@ -3842,7 +3842,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -5621,7 +5621,7 @@ ParticleSystem:
       minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -8985,7 +8985,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -12241,7 +12241,7 @@ ParticleSystem:
       minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -15686,7 +15686,7 @@ ParticleSystem:
       minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -26185,7 +26185,7 @@ ParticleSystem:
       minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -27800,7 +27800,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -30042,7 +30042,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -31958,7 +31958,7 @@ ParticleSystem:
       minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -42633,7 +42633,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -44747,7 +44747,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -46339,7 +46339,7 @@ ParticleSystem:
       minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -49385,7 +49385,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -51037,7 +51037,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -55015,7 +55015,7 @@ ParticleSystem:
       minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -58313,7 +58313,7 @@ ParticleSystem:
       minMaxState: 3
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
