@@ -99,7 +99,7 @@ public class ActivateShield : MonoBehaviour
     }
     IEnumerator StartShieldCooldown()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(shieldCooldown);
         onCooldown = false;
         shieldIcon.SetActive(true);
     }

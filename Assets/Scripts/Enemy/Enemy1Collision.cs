@@ -19,6 +19,7 @@ public class Enemy1Collision : MonoBehaviour {
     PublicVariableHandler publicVariableHandler;
     GameObject gameManager;
 	GameObject hitEffect;
+    PlayerCollision playerCollision;
 
     void Start()
     {
@@ -28,7 +29,6 @@ public class Enemy1Collision : MonoBehaviour {
         publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
         achievementManager = gameManager.GetComponent<AchievementManager>();
 		hitEffect = publicVariableHandler.hitEffect;
-
         switch (transform.name)
         {
             case "Enemy1":

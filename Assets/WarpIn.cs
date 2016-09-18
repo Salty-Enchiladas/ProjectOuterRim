@@ -30,8 +30,9 @@ public class WarpIn : MonoBehaviour
     bool MoveTo()
     {
         transform.position += Vector3.back * Time.deltaTime * speed;
-        if (transform.position.z <= -50000)
+        if (transform.position.z <= -300000)
         {
+            gameObject.SetActive(false);
             return true;
         }
         return false;

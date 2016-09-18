@@ -17,7 +17,6 @@ public class ArcReactorDemoGunController : MonoBehaviour {
 		if (Input.GetButtonDown("Fire2"))    // && recharge == 0
         {
 			launcher.LaunchRay();
-
 		}
 	
 	}

@@ -79,6 +79,12 @@ public class PlayerCollision : MonoBehaviour
             Instantiate(meteorExplosionPrefab, transform.position, transform.rotation);
             col.gameObject.SetActive(false);
         }
+        else if (col.gameObject.tag == "Enemy")
+        {
+            LoseLife();
+            pickUpManager.LoseLevel();
+            col.GetComponent<Enemy1Collision>().WasDestroyed();
+        }
     }
 
     IEnumerator CheckScore()

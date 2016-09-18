@@ -26,8 +26,14 @@ public class Shield : MonoBehaviour
 
         else if (other.tag == "Meteor")
         {
-			Instantiate (explosion, transform.position, transform.rotation);
+            Instantiate(explosion, transform.position, transform.rotation);
             other.gameObject.SetActive(false);
+            ShieldDestroyed();
+        }
+        else if (other.tag == "Enemy")
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+            other.GetComponent<Enemy1Collision>().WasDestroyed();
             ShieldDestroyed();
         }
     }
