@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,6 +9,7 @@ public class HighScoreHandler : MonoBehaviour {
     public bool mainMenu;
 
     public GameObject newHSPanel;
+    public GameObject confirmButton;
 
     public List<Text> scoreList;
     public List<Text> nameList;
@@ -47,8 +49,11 @@ public class HighScoreHandler : MonoBehaviour {
         {
             if (currentScore > leaderboardInfo[j].Score)
             {
-                if(!mainMenu)
+                if (!mainMenu)
+                {
                     newHSPanel.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(confirmButton);
+                }
 
                 if (restartButton)
                     restartButton.interactable = false;
