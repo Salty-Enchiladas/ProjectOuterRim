@@ -1004,7 +1004,7 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 151f9de9619e0994db993e3b63873273, type: 2}
+  - {fileID: 2100000, guid: 42addd1b32355f94faec6b525df89616, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

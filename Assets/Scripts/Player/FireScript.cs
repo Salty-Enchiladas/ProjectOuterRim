@@ -26,6 +26,13 @@ public class FireScript : MonoBehaviour {
     GameObject laserLevel2Bar;
     GameObject laserLevel3Bar;
 
+    AudioSource laserSound;
+
+    AudioClip noLevelSound;
+    AudioClip level1Sound;
+    AudioClip level2Sound;
+    AudioClip level3Sound;
+
     void Start()
     {
         laserPool = GameObject.Find("PlayerLasers").GetComponent<ObjectPooling>();
@@ -45,6 +52,12 @@ public class FireScript : MonoBehaviour {
 			fireFreq = .5f;
 		else if (transform.tag == "PodRight")
 			fireFreq = .5f;
+
+
+        //Set the clips through the handler
+
+        laserSound.clip = noLevelSound;
+
     }
 
     void Update()
@@ -63,6 +76,7 @@ public class FireScript : MonoBehaviour {
 
     void Fire()
     {
+        laserSound.Play();
 		if (heatLevel >= heatCap) 
 		{
 			fireFreq = fireFreq * 2;
