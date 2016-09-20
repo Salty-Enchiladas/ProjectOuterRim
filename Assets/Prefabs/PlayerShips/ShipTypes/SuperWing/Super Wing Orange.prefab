@@ -492,6 +492,8 @@ GameObject:
   - 135: {fileID: 13535944}
   - 23: {fileID: 2351610}
   - 114: {fileID: 11404508}
+  - 114: {fileID: 11432842}
+  - 82: {fileID: 8296016}
   m_Layer: 0
   m_Name: Gun1
   m_TagString: Untagged
@@ -1361,7 +1363,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5cc6f454f9129ba439ef4bd5b06780b6, type: 2}
+  - {fileID: 2100000, guid: 60a54354f70a1cc4193dfb65d14b417a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1387,7 +1389,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5cc6f454f9129ba439ef4bd5b06780b6, type: 2}
+  - {fileID: 2100000, guid: 60a54354f70a1cc4193dfb65d14b417a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1491,7 +1493,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2cdfdb18113ae4348918ab1e27af480f, type: 2}
+  - {fileID: 2100000, guid: 60a54354f70a1cc4193dfb65d14b417a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1595,7 +1597,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 32b0bf49916aec74486a8112da5cb353, type: 2}
+  - {fileID: 2100000, guid: 60a54354f70a1cc4193dfb65d14b417a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1751,14 +1753,14 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5cc6f454f9129ba439ef4bd5b06780b6, type: 2}
+  - {fileID: 2100000, guid: 60a54354f70a1cc4193dfb65d14b417a, type: 2}
   - {fileID: 2100000, guid: 2cdfdb18113ae4348918ab1e27af480f, type: 2}
   - {fileID: 2100000, guid: f7c6e7d70c4bd714d8ea5d23ad76dbba, type: 2}
-  - {fileID: 2100000, guid: 51b0bdcdd3ae3354e9185730ecbc4538, type: 2}
+  - {fileID: 2100000, guid: 90931b105f8d26047b5a1a4602b1fe25, type: 2}
   - {fileID: 2100000, guid: fde7f71a9e516bc419ae87d57c0c2d39, type: 2}
   - {fileID: 2100000, guid: b7b8f8c37b38c5f45bb89c8354f79e1e, type: 2}
-  - {fileID: 2100000, guid: b8d3db93cff9f994f9c92bf4d8884242, type: 2}
-  - {fileID: 2100000, guid: 792880f087dc10146a6ef6c944576395, type: 2}
+  - {fileID: 2100000, guid: 90931b105f8d26047b5a1a4602b1fe25, type: 2}
+  - {fileID: 2100000, guid: 90931b105f8d26047b5a1a4602b1fe25, type: 2}
   - {fileID: 2100000, guid: 1444edadc5cac8d47b5121410dade2b1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -1837,7 +1839,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2cdfdb18113ae4348918ab1e27af480f, type: 2}
+  - {fileID: 2100000, guid: 60a54354f70a1cc4193dfb65d14b417a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1889,7 +1891,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b5e8c55f42646a74a8e0efa4dfd5a8e0, type: 2}
+  - {fileID: 2100000, guid: 7a8c1dcc3c715c047ad475ca96b9af16, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1993,14 +1995,14 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5cc6f454f9129ba439ef4bd5b06780b6, type: 2}
+  - {fileID: 2100000, guid: 60a54354f70a1cc4193dfb65d14b417a, type: 2}
   - {fileID: 2100000, guid: 2cdfdb18113ae4348918ab1e27af480f, type: 2}
   - {fileID: 2100000, guid: f7c6e7d70c4bd714d8ea5d23ad76dbba, type: 2}
-  - {fileID: 2100000, guid: 51b0bdcdd3ae3354e9185730ecbc4538, type: 2}
-  - {fileID: 2100000, guid: fde7f71a9e516bc419ae87d57c0c2d39, type: 2}
+  - {fileID: 2100000, guid: 90931b105f8d26047b5a1a4602b1fe25, type: 2}
+  - {fileID: 2100000, guid: 90931b105f8d26047b5a1a4602b1fe25, type: 2}
   - {fileID: 2100000, guid: b7b8f8c37b38c5f45bb89c8354f79e1e, type: 2}
-  - {fileID: 2100000, guid: b8d3db93cff9f994f9c92bf4d8884242, type: 2}
-  - {fileID: 2100000, guid: 792880f087dc10146a6ef6c944576395, type: 2}
+  - {fileID: 2100000, guid: 90931b105f8d26047b5a1a4602b1fe25, type: 2}
+  - {fileID: 2100000, guid: 90931b105f8d26047b5a1a4602b1fe25, type: 2}
   - {fileID: 2100000, guid: 1444edadc5cac8d47b5121410dade2b1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -2380,6 +2382,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &8296016
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177714}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &9544306
 Animator:
   serializedVersion: 3
@@ -2519,6 +2595,18 @@ MonoBehaviour:
   heatCap: 0
   heatIncreaseAmount: 0
   heatResetTimer: 0
+--- !u!114 &11432842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81db0c625e2aa0447a1e8bc61424e971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserSound: {fileID: 0}
 --- !u!114 &11436378
 MonoBehaviour:
   m_ObjectHideFlags: 1

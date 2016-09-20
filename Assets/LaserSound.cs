@@ -3,19 +3,14 @@ using System.Collections;
 
 public class LaserSound : MonoBehaviour
 {
+    [HideInInspector]
     public AudioSource laserSound;
-
-    AudioClip noLevelSound;
-    AudioClip level1Sound;
-    AudioClip level2Sound;
-    AudioClip level3Sound;
-
+    GameObject gameManger;
     void Start()
     {
-        //Code for setting sounds from handler
-
-
-        laserSound.clip = noLevelSound;
+        gameManger = GameObject.Find("GameManager");
+        laserSound = GetComponent<AudioSource>();
+        laserSound.clip = gameManger.GetComponent<PublicVariableHandler>().laserNoLevelSound;
     }
 
     public void Shooting()
@@ -23,24 +18,8 @@ public class LaserSound : MonoBehaviour
         laserSound.Play();
     }
 
-    public void Level1()
+    public void LevelChange(AudioClip audioClip)
     {
-        laserSound.clip = level1Sound;
+        laserSound.clip = audioClip;
     }
-
-    public void Level2()
-    {
-        laserSound.clip = level2Sound;
-    }
-
-    public void level3()
-    {
-        laserSound.clip = level3Sound;
-    }
-
-    public void lostLevel()
-    {
-
-    }
-
 }

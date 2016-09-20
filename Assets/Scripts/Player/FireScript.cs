@@ -21,12 +21,12 @@ public class FireScript : MonoBehaviour {
     GameObject gameManager;
     AchievementManager achievementManager;
     PublicVariableHandler publicVariableHandler;
+    LaserSound laserSound;
+
     GameObject player;
     GameObject laserLevel1Bar;
     GameObject laserLevel2Bar;
     GameObject laserLevel3Bar;
-
-    AudioSource laserSound;
 
     AudioClip noLevelSound;
     AudioClip level1Sound;
@@ -52,11 +52,16 @@ public class FireScript : MonoBehaviour {
 			fireFreq = .5f;
 		else if (transform.tag == "PodRight")
 			fireFreq = .5f;
+        if (GetComponent<LaserSound>() != null)
+        {
+            laserSound = GetComponent<LaserSound>();
+        }
 
-
-        //Set the clips through the handler
-
-        laserSound.clip = noLevelSound;
+        noLevelSound = publicVariableHandler.laserNoLevelSound;
+        level1Sound = publicVariableHandler.laserLevel1Sound;
+        level2Sound = publicVariableHandler.laserLevel2Sound;
+        level3Sound = publicVariableHandler.laserLevel3Sound;
+        laserSound.laserSound.clip = noLevelSound;
 
     }
 
@@ -71,12 +76,14 @@ public class FireScript : MonoBehaviour {
             lastReset = Time.time;
             heatLevel = heatLevel - heatIncreaseAmount;
         }
-        //print("Laser heatlevel is at "+ heatLevel);
     }
 
     void Fire()
     {
-        laserSound.Play();
+        if (laserSound != null)
+        {
+            laserSound.Shooting();
+        }
 		if (heatLevel >= heatCap) 
 		{
 			fireFreq = fireFreq * 2;
@@ -118,10 +125,12 @@ public class FireScript : MonoBehaviour {
         {
             laserLevel1Bar.SetActive(levelUp);
             heatIncreaseAmount = heatIncreaseAmount / 2;
+            laserSound.LevelChange(level1Sound);
         }
         else if (!levelUp)
         {
             heatIncreaseAmount = heatIncreaseAmount * 2;
+            laserSound.LevelChange(noLevelSound);
         }
     }
 
@@ -131,10 +140,12 @@ public class FireScript : MonoBehaviour {
         {
             laserLevel2Bar.SetActive(levelUp);
             fireFreq = fireFreq / 2;
+            laserSound.LevelChange(level2Sound);
         }
         else if (!levelUp)
         {
             fireFreq = fireFreq * 2;
+            laserSound.LevelChange(level1Sound);
         }
     }
 
@@ -147,6 +158,7 @@ public class FireScript : MonoBehaviour {
             {
                 go.SetActive(true);
             }
+            laserSound.LevelChange(level3Sound);
         }
         else if (!levelUp)
         {
@@ -154,6 +166,7 @@ public class FireScript : MonoBehaviour {
             {
 				go.SetActive(false);
             }
+            laserSound.LevelChange(level2Sound);
         }
     }
 }

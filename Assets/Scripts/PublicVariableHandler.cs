@@ -7,6 +7,12 @@ public class PublicVariableHandler : MonoBehaviour
 	public GameObject meteorExplosion;
 	public int meteorHealth;
 
+    //Laser Sounds
+    public AudioClip laserNoLevelSound;
+    public AudioClip laserLevel1Sound;
+    public AudioClip laserLevel2Sound;
+    public AudioClip laserLevel3Sound;
+
     //User Interface Variables
     public GameObject laserLevel1Bar;
     public GameObject laserLevel2Bar;
