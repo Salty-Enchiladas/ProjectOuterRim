@@ -624,7 +624,6 @@ GameObject:
   - 33: {fileID: 3330674}
   - 135: {fileID: 13504206}
   - 23: {fileID: 2352232}
-  - 82: {fileID: 8212566}
   - 114: {fileID: 11494692}
   m_Layer: 0
   m_Name: Shield
@@ -774,7 +773,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 165636}
-  m_LocalRotation: {x: 0.00936049, y: 0.009696571, z: 0.39802548, w: 0.9172754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.9, y: 10.3, z: 93.3}
   m_LocalScale: {x: 0.25000015, y: 0.25000006, z: 0.25000018}
   m_Children:
@@ -1052,7 +1051,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111844}
-  m_LocalRotation: {x: 0.009360506, y: 0.0096965125, z: 0.39802545, w: 0.9172754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.6, y: 10.2, z: 94}
   m_LocalScale: {x: 0.25000003, y: 0.24999999, z: 0.25000015}
   m_Children:
@@ -2249,7 +2248,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2284,80 +2283,6 @@ AudioSource:
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!82 &8212566
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183386}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a94b4bdfd7963f94d91745bdd6e55bf6, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.529
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.471
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2979,15 +2904,15 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4292936991
       minMaxState: 0
     startSize:
-      scalar: 43.3
+      scalar: 15
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.113163985
+          value: 0.32666668
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -3103,7 +3028,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -4458,15 +4383,15 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4292827474
       minMaxState: 0
     startSize:
-      scalar: 68.6
+      scalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.23177843
+          value: 0.79499996
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -5018,7 +4943,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     z:
-      scalar: 703.8
+      scalar: 246.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5932,15 +5857,15 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294901779
       minMaxState: 0
     startSize:
-      scalar: 43.3
+      scalar: 15
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.113163985
+          value: 0.3266667
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -6056,7 +5981,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 100
     rotation3D: 0
   ShapeModule:
     serializedVersion: 2
@@ -6487,7 +6412,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     z:
-      scalar: 0
+      scalar: 0.56
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7411,15 +7336,15 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4291581765
       minMaxState: 0
     startSize:
-      scalar: 68.6
+      scalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.23177843
+          value: 0.79499996
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -7971,7 +7896,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     z:
-      scalar: 703.8
+      scalar: 246.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
