@@ -1039,7 +1039,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.605
+  m_Volume: 0.528
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1115,10 +1115,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteorExplosion: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a, type: 2}
   meteorHealth: 10
-  laserNoLevelSound: {fileID: 8300000, guid: 1b54b9b6383350844bc63bc202881293, type: 3}
-  laserLevel1Sound: {fileID: 8300000, guid: b8878c851941d2145bdf813d4ade5b6c, type: 3}
-  laserLevel2Sound: {fileID: 8300000, guid: 4156fd40a53cd3e43ad7151ed224ad91, type: 3}
-  laserLevel3Sound: {fileID: 8300000, guid: 831129b7c8fa8614486591982f672161, type: 3}
+  laserNoLevelSound: {fileID: 8300000, guid: 9a296a45092714941a40073dcb9d579a, type: 3}
+  laserLevel1Sound: {fileID: 8300000, guid: a8c82b3dd073d3a4589f528e85b5560b, type: 3}
+  laserLevel2Sound: {fileID: 8300000, guid: 8fb2a93bd17cea74ca6ffb03a5df0d79, type: 3}
+  laserLevel3Sound: {fileID: 8300000, guid: 52212d344f5f019409266df5986aba62, type: 3}
   laserLevel1Bar: {fileID: 1759693549}
   laserLevel2Bar: {fileID: 1481191325}
   laserLevel3Bar: {fileID: 1876432731}
@@ -3529,7 +3529,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591680875}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
