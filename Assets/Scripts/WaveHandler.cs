@@ -95,7 +95,6 @@ public class WaveHandler : MonoBehaviour
 
         if (playerScore.score >= secondEnemySpawnScore && secondEnemyCount <= secondEnemySpawnCap && Time.time > lastSpawn + spawnRate)
         {
-            bossShip.SetActive(true);
             poolObject = "Enemy2";
             Spawn(poolObject);
         }

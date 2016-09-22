@@ -48,21 +48,22 @@ public class FireScript : MonoBehaviour {
         laserLevel2Bar = publicVariableHandler.laserLevel2Bar;
         laserLevel3Bar = publicVariableHandler.laserLevel3Bar;
 		fireFreq = baseFireFreq;
+
 		if (transform.tag == "PodLeft")
 			fireFreq = .5f;
 		else if (transform.tag == "PodRight")
 			fireFreq = .5f;
+
         if (GetComponent<LaserSound>() != null)
         {
             laserSound = GetComponent<LaserSound>();
+            laserSound.laserSound.clip = noLevelSound;
         }
 
         noLevelSound = publicVariableHandler.laserNoLevelSound;
         level1Sound = publicVariableHandler.laserLevel1Sound;
         level2Sound = publicVariableHandler.laserLevel2Sound;
         level3Sound = publicVariableHandler.laserLevel3Sound;
-        laserSound.laserSound.clip = noLevelSound;
-
     }
 
     void Update()
@@ -125,12 +126,15 @@ public class FireScript : MonoBehaviour {
         {
             laserLevel1Bar.SetActive(levelUp);
             heatIncreaseAmount = heatIncreaseAmount / 2;
-            laserSound.LevelChange(level1Sound);
+            if (laserSound)
+                laserSound.LevelChange(level1Sound);
+            
         }
         else if (!levelUp)
         {
             heatIncreaseAmount = heatIncreaseAmount * 2;
-            laserSound.LevelChange(noLevelSound);
+            if (laserSound)
+                laserSound.LevelChange(noLevelSound);
         }
     }
 
@@ -140,12 +144,14 @@ public class FireScript : MonoBehaviour {
         {
             laserLevel2Bar.SetActive(levelUp);
             fireFreq = fireFreq / 2;
-            laserSound.LevelChange(level2Sound);
+            if (laserSound)
+                laserSound.LevelChange(level2Sound);
         }
         else if (!levelUp)
         {
             fireFreq = fireFreq * 2;
-            laserSound.LevelChange(level1Sound);
+            if (laserSound)
+                laserSound.LevelChange(level1Sound);
         }
     }
 
@@ -158,7 +164,9 @@ public class FireScript : MonoBehaviour {
             {
                 go.SetActive(true);
             }
-            laserSound.LevelChange(level3Sound);
+
+            if (laserSound)
+                laserSound.LevelChange(level3Sound);
         }
         else if (!levelUp)
         {
@@ -166,7 +174,9 @@ public class FireScript : MonoBehaviour {
             {
 				go.SetActive(false);
             }
-            laserSound.LevelChange(level2Sound);
+
+            if (laserSound)
+                laserSound.LevelChange(level2Sound);
         }
     }
 }
