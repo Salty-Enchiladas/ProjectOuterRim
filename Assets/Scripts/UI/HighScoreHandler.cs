@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,6 +9,7 @@ public class HighScoreHandler : MonoBehaviour {
     public bool mainMenu;
 
     public GameObject newHSPanel;
+    public GameObject confirmButton;
 
     public List<Text> scoreList;
     public List<Text> nameList;
@@ -43,27 +45,31 @@ public class HighScoreHandler : MonoBehaviour {
 
         yield return new WaitForSeconds(0.05f);
 
-        for(int j = 0; j < 10; j++)
+        if (!mainMenu)
         {
-            if (currentScore > leaderboardInfo[j].Score)
+            //EventSystem.current.SetSelectedGameObject(confirmButton);
+
+            for (int j = 0; j < 10; j++)
             {
-                if(!mainMenu)
+                if (currentScore > leaderboardInfo[j].Score)
+                {
                     newHSPanel.SetActive(true);
 
-                if (restartButton)
-                    restartButton.interactable = false;
-                else
-                    Debug.LogError("No restart button assigned");
+                    if (restartButton)
+                        restartButton.interactable = false;
+                    else
+                        Debug.LogError("No restart button assigned");
 
-                if(quitButton)
-                    quitButton.interactable = false;
-                else
-                    Debug.LogError("No quit button assigned");
+                    if (quitButton)
+                        quitButton.interactable = false;
+                    else
+                        Debug.LogError("No quit button assigned");
 
-                rankToUpdate = j+1;
-                break;
+                    rankToUpdate = j + 1;
+                    break;
+                }
             }
-        }        
+        }
 	}
 	
 	// Update is called once per frame

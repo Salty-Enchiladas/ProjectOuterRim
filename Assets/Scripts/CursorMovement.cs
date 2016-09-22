@@ -32,7 +32,7 @@ public class CursorMovement : MonoBehaviour {
 
         MoveCursor();
 
-        if (Input.GetButtonUp("Submit") || Input.GetMouseButtonUp(0))
+        if (Input.GetButtonUp("Submit"))        // || Input.GetMouseButtonUp(0)
         {
             Click();
         }
@@ -89,6 +89,10 @@ public class CursorMovement : MonoBehaviour {
         if (hit.collider.tag == "Button")
         {
             ExecuteEvents.Execute(hit.collider.gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+        }
+        else
+        {
+            //do nothing
         }
 
         //Ray ray = Camera.main.ScreenPointToRay(transform.position);

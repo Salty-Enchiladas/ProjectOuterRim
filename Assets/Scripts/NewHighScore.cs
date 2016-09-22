@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
 public class NewHighScore : MonoBehaviour {
 
     public GameObject newHSPanel;
+    public GameObject nextSelected;
 
     public List<Text> scoreList;
     public List<Text> nameList;
@@ -37,5 +39,7 @@ public class NewHighScore : MonoBehaviour {
 
         restartButton.interactable = true;
         quitButton.interactable = true;
+
+        //EventSystem.current.SetSelectedGameObject(nextSelected);
     }
 }
