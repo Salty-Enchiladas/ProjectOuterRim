@@ -3609,14 +3609,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songList:
-  - {fileID: 8300000, guid: b554fe7ffbe2a6a44bd768d2f8bd67f8, type: 3}
-  - {fileID: 8300000, guid: f1af4c52657639b4d9553f9ccf7bbc11, type: 3}
-  - {fileID: 8300000, guid: 2d7ada62161c21e4f9bea49038f75268, type: 3}
-  - {fileID: 8300000, guid: 59fa20b618ec94b43af66fa85242e45c, type: 3}
-  - {fileID: 8300000, guid: 505834dbbd35faf48861415c5c5dfa0a, type: 3}
-  - {fileID: 8300000, guid: 052bb0ed168c4e74a926d070e251f9ef, type: 3}
-  - {fileID: 8300000, guid: ce50738aa0a4d054e9305772fe1cc292, type: 3}
-  - {fileID: 8300000, guid: f7a58dafd831e034d92fc8d2963ee354, type: 3}
+  - {fileID: 8300000, guid: 1c547a448f4b5794a8ef3cd3c0e2d86d, type: 3}
+  - {fileID: 8300000, guid: 60a6d2e627739064cab77fe37543c53a, type: 3}
+  - {fileID: 8300000, guid: 7b31ad54931367542b2ee570151df0b9, type: 3}
+  - {fileID: 8300000, guid: eefc8f2884e7a0945a2d0d763af03234, type: 3}
   source: {fileID: 1591680882}
 --- !u!1 &1607794819
 GameObject:
