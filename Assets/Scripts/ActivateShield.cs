@@ -33,7 +33,7 @@ public class ActivateShield : MonoBehaviour
 
 	void Update () 
     {
-        if ((Input.GetButtonUp("Fire3") || Input.GetButtonUp("Shield")) && !onCooldown)
+        if (Input.GetButtonUp("Fire3") && !onCooldown)
         {
             ShieldActive();
         }

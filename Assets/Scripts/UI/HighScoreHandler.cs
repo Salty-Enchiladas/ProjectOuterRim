@@ -30,6 +30,7 @@ public class HighScoreHandler : MonoBehaviour {
 	// Use this for initialization
 	IEnumerator Start () 
     {
+        Time.timeScale = 1;
         currentScore = PlayerPrefs.GetInt("Score");
         leaderboardInfo = new List<LeaderboardInfo>(10);
 

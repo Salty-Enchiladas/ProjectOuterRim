@@ -12,6 +12,7 @@ public class CursorMovement : MonoBehaviour {
     float moveY;
 
     bool isCursorOver;
+    bool lockOn;
 
     Camera mainCam;
 
@@ -26,12 +27,15 @@ public class CursorMovement : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         joysticks = Input.GetJoystickNames();
 
         MoveCursor();
+    }
 
+    void Update()
+    {
         if (Input.GetButtonUp("Submit"))        // || Input.GetMouseButtonUp(0)
         {
             Click();
@@ -61,25 +65,33 @@ public class CursorMovement : MonoBehaviour {
     {
         if (joysticks.Length > 0)
         {
-            if (joysticks[0] != "")
-            {
-                moveX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-                moveY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+            moveX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            moveY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
-                transform.position += new Vector3(moveX, moveY, 0f);
-                transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, Screen.width), Mathf.Clamp(transform.position.y, 0, Screen.height), mainCam.nearClipPlane);
-            }
-            else if (joysticks[0] == "")
-            {
-                transform.position = Input.mousePosition;
-                transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, Screen.width), Mathf.Clamp(transform.position.y, 0, Screen.height), mainCam.nearClipPlane);
-            }
+            transform.position += new Vector3(moveX, moveY, 0f);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, Screen.width), Mathf.Clamp(transform.position.y, 0, Screen.height), mainCam.nearClipPlane);
+
+            //if (joysticks[0] != "")
+            //{
+            //    moveX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            //    moveY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+            //    transform.position += new Vector3(moveX, moveY, 0f);
+            //    transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, Screen.width), Mathf.Clamp(transform.position.y, 0, Screen.height), mainCam.nearClipPlane);
+            //}
+            //else if (joysticks[0] == "")
+            //{
+            //    transform.position = Input.mousePosition;
+            //    transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, Screen.width), Mathf.Clamp(transform.position.y, 0, Screen.height), mainCam.nearClipPlane);
+            //}
         }
         else
         {
             transform.position = Input.mousePosition;
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0f, Screen.width), Mathf.Clamp(transform.position.y, 0, Screen.height), mainCam.nearClipPlane);
         }
+
+        //StartCoroutine(LockOn());
     }
 
     void Click()
@@ -128,6 +140,29 @@ public class CursorMovement : MonoBehaviour {
         {
             isCursorOver = false;
             button.transform.localScale = new Vector3(2f, 2f, 2f);
+        }
+    }
+
+    IEnumerator LockOn()
+    {
+        if (!lockOn)
+        {
+            lockOn = true;
+
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Vector2.zero);
+
+            if (hit.collider.tag == "Button")
+            {
+                transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y, transform.position.z);                
+            }
+            else
+            {
+                //do nothing
+            }
+
+            yield return new WaitForSeconds(.15f);
+
+            lockOn = false;
         }
     }
 }

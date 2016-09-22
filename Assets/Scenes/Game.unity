@@ -563,12 +563,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 084558c2bc38a7943b39dac50792f815, type: 3}
+    m_FontSize: 170
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 50
+    m_MinSize: 1
+    m_MaxSize: 175
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -872,10 +872,10 @@ GameObject:
   - 114: {fileID: 555410809}
   - 114: {fileID: 555410814}
   - 114: {fileID: 555410816}
+  - 114: {fileID: 555410813}
   - 114: {fileID: 555410817}
   - 114: {fileID: 555410815}
   - 82: {fileID: 555410812}
-  - 114: {fileID: 555410813}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -908,17 +908,17 @@ MonoBehaviour:
   maxYSpawn: 1000
   zSpawn: 10000
   carrierSpawnRate: 50000
-  secondEnemySpawnScore: 100000
-  thirdEnemySpawnScore: 200000
-  fourthEnemySpawnScore: 300000
+  secondEnemySpawnScore: 30000
+  thirdEnemySpawnScore: 60000
+  fourthEnemySpawnScore: 90000
   firstEnemySpawnCap: 1
   secondEnemySpawnCap: 1
   thirdEnemySpawnCap: 1
   fourthEnemySpawnCap: 1
-  firstEnemyFinalCap: 7
-  secondEnemyFinalCap: 7
-  thirdEnemyFinalCap: 7
-  fourthEnemyFinalCap: 7
+  firstEnemyFinalCap: 6
+  secondEnemyFinalCap: 6
+  thirdEnemyFinalCap: 6
+  fourthEnemyFinalCap: 6
   firstEnemyCount: 0
   secondEnemyCount: 0
   thirdEnemyCount: 0
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240f36987677e184b97d7a4309060ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountdownFrom: 600
+  CountdownFrom: 300
   textbox: {fileID: 2015608284}
   thankYou: {fileID: 507656625}
   fadeOut: {fileID: 1494826401}
@@ -1076,9 +1076,9 @@ MonoBehaviour:
   shipIMG1: {fileID: 1760556309}
   shipIMG2: {fileID: 809921980}
   hitEffect: {fileID: 100000, guid: 2b55ffa5aab4e2c48bcdb135a37adba3, type: 2}
-  healthRecoverScore: 50000
+  healthRecoverScore: 100000
   playerShootingFrequency: 0.15
-  lightningGunDuration: 5
+  lightningGunDuration: 4
   playerShieldHealth: 3
   playerShieldCooldown: 15
   playerLives: 3
@@ -1095,21 +1095,21 @@ MonoBehaviour:
   enemy1BaseHealth: 2
   enemy1LaserScore: 1000
   enemy1MissileScore: 1000
-  enemy2Speed: 900
+  enemy2Speed: 450
   enemy2FireFreq: 5
   enemy2BaseHealth: 6
-  enemy2LaserScore: 2000
+  enemy2LaserScore: 1000
   enemy2MissileScore: 1000
   enemy3Speed: 1100
   enemy3FireFreq: 5
   enemy3BaseHealth: 2
-  enemy3LaserScore: 2000
+  enemy3LaserScore: 1000
   enemy3MissileScore: 1000
-  enemy4Speed: 600
+  enemy4Speed: 300
   enemy4FireFreq: 5
   enemy4BaseHealth: 2
   enemy4ShieldHealth: 5
-  enemy4LaserScore: 3000
+  enemy4LaserScore: 1000
   enemy4MissileScore: 1000
   enemy5BaseHealth: 70
   enemy5ShieldHealth: 30
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 24000
+  spawnAtScore: 20000
   spawnAfter: 5
   xMinSpawn: -400
   xMaxSpawn: 400
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   containerEndingX: 11
   capStartingX: -532
   capEndingX: -279
-  uiWaitTime: 3
+  uiWaitTime: 5
   lerpSpeed: 3
   containerStartPos: {x: 0, y: 0, z: 0}
   containerEndPos: {x: 11, y: 0, z: 0}
@@ -3399,7 +3399,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

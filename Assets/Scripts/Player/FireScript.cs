@@ -54,21 +54,22 @@ public class FireScript : MonoBehaviour {
 		else if (transform.tag == "PodRight")
 			fireFreq = .5f;
 
-        if (GetComponent<LaserSound>() != null)
-        {
-            laserSound = GetComponent<LaserSound>();
-            laserSound.laserSound.clip = noLevelSound;
-        }
-
         noLevelSound = publicVariableHandler.laserNoLevelSound;
         level1Sound = publicVariableHandler.laserLevel1Sound;
         level2Sound = publicVariableHandler.laserLevel2Sound;
         level3Sound = publicVariableHandler.laserLevel3Sound;
+
+        if (GetComponent<LaserSound>() != null)
+        {
+            laserSound = GetComponent<LaserSound>();
+        }
+
+        
     }
 
     void Update()
     {
-        if ((Input.GetButton("Fire1") || (Input.GetAxis("Laser")) != 0) && Time.time > lastShot + fireFreq)
+        if ((Input.GetButton("Fire1")) && Time.time > lastShot + fireFreq)
         {
             Fire();
         }
