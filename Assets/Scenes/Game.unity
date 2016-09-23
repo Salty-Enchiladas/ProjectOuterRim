@@ -968,7 +968,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.68
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1142,9 +1142,9 @@ MonoBehaviour:
   missilePickUp: {fileID: 198106, guid: acde87d815de6524db34cf21d114108a, type: 2}
   shieldPickUp: {fileID: 155664, guid: 5d501daed271a9245bd86763f5d8b608, type: 2}
   pickupSounds:
+  - {fileID: 8300000, guid: f1cbc985b74d1e743844f1a01fcc1afb, type: 3}
   - {fileID: 8300000, guid: a33d08cbbfb57a7498dfd51594b790f8, type: 3}
-  - {fileID: 8300000, guid: a33d08cbbfb57a7498dfd51594b790f8, type: 3}
-  - {fileID: 8300000, guid: a33d08cbbfb57a7498dfd51594b790f8, type: 3}
+  - {fileID: 8300000, guid: 7ce8a0af584d2da4b9ea15343dd2140c, type: 3}
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
