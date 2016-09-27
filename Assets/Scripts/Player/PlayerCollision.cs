@@ -22,6 +22,7 @@ public class PlayerCollision : MonoBehaviour
     public string gameOverScene;
 
     public bool shieldActive;
+    bool takingDamage;
 
     PlayerScore playerScoreOBJ;
 
@@ -59,18 +60,11 @@ public class PlayerCollision : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Enemy Laser")
-        {
-            StartCoroutine(DamageIndicator());
+        {            
             col.gameObject.SetActive(false);
-            playerHealth--;
-            pickUpManager.LoseLevel();
+            StartCoroutine(Immunity());
 
-            if (playerHealth % 3 == 0)
-            {
-                LoseLife();
-            }
-
-            CheckHealth();
+            
         }
         else if (col.gameObject.tag == "Meteor" || col.gameObject.tag == "Carrier")
         {
@@ -84,6 +78,25 @@ public class PlayerCollision : MonoBehaviour
             LoseLife();
             pickUpManager.LoseLevel();
             col.GetComponent<Enemy1Collision>().WasDestroyed();
+        }
+    }
+
+    IEnumerator Immunity()
+    {
+        if(!takingDamage)
+        {
+            takingDamage = true;
+            StartCoroutine(DamageIndicator());
+            playerHealth--;
+            pickUpManager.LoseLevel();
+            if (playerHealth % 3 == 0)
+            {
+                LoseLife();
+            }
+
+            CheckHealth();
+            yield return new WaitForSeconds(.5f);
+            takingDamage = false;
         }
     }
 

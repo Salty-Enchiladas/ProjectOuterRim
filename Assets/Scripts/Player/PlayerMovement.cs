@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
     public float playerSpeed;
-    public GameObject bossShip;
    // public float forwardSpeed;
     public float maxTurnAngle;
     [HideInInspector]
@@ -28,8 +27,7 @@ public class PlayerMovement : MonoBehaviour {
     {
        gameManager = GameObject.Find("GameManager");
        playerSpeed = gameManager.GetComponent<PublicVariableHandler>().playerSpeed;
-       bossShip = GameObject.Find("BossShip");
-      // bossShip.SetActive(false);
+       maxTurnAngle = gameManager.GetComponent<PublicVariableHandler>().maxTurnAngle;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -73,15 +71,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if (transform.position.x > 9000 || transform.position.x < -9000 || transform.position.y > 6000 || transform.position.y < -6000)
         {
-            Camera.main.farClipPlane = 100000;
-            StartCoroutine(BossShip());
+            Camera.main.farClipPlane = 100000;            
         }
-    }
-
-    IEnumerator BossShip()
-    {
-        bossShip.SetActive(true);
-        yield return new WaitForSeconds(.3f);
     }
 
     //IEnumerator TurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncrease()

@@ -69,7 +69,7 @@ public class FireScript : MonoBehaviour {
 
     void Update()
     {
-        if ((Input.GetButton("Fire1")) && Time.time > lastShot + fireFreq)
+        if ((Input.GetButton("Fire1") || Input.GetAxis("Laser") != 0) && Time.time > lastShot + fireFreq)
         {
             Fire();
         }

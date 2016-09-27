@@ -900,17 +900,17 @@ MonoBehaviour:
   fourthEnemyPool: {fileID: 357815564}
   fifthEnemyPool: {fileID: 825245193}
   bossShip: {fileID: 0}
-  spawnRate: 1.5
+  spawnRate: 1.2
   difficultyIncreaseScore: 5000
-  minXSpawn: -2500
-  maxXspawn: 2500
-  minYSpawn: -1000
-  maxYSpawn: 1000
+  minXSpawn: -4000
+  maxXspawn: 4000
+  minYSpawn: -2000
+  maxYSpawn: 2000
   zSpawn: 10000
-  carrierSpawnRate: 50000
-  secondEnemySpawnScore: 30000
-  thirdEnemySpawnScore: 60000
-  fourthEnemySpawnScore: 90000
+  carrierSpawnRate: 15000
+  secondEnemySpawnScore: 10000
+  thirdEnemySpawnScore: 20000
+  fourthEnemySpawnScore: 30000
   firstEnemySpawnCap: 1
   secondEnemySpawnCap: 1
   thirdEnemySpawnCap: 1
@@ -1083,11 +1083,12 @@ MonoBehaviour:
   playerShieldCooldown: 15
   playerLives: 3
   playerHealth: 9
-  playerSpeed: 1000
+  playerSpeed: 700
+  maxTurnAngle: 10
   playerLaserHeatCap: 1
   playerLaserHeatIncreaseAmount: 0.06
   laserHeatLossAfterSeconds: 1
-  enemyAISpeed: 500
+  enemyAISpeed: 700
   maneuverSpeed: 1
   strafeSpeed: 1.5
   enemy1Speed: 500
@@ -1095,7 +1096,7 @@ MonoBehaviour:
   enemy1BaseHealth: 2
   enemy1LaserScore: 1000
   enemy1MissileScore: 1000
-  enemy2Speed: 450
+  enemy2Speed: 350
   enemy2FireFreq: 5
   enemy2BaseHealth: 6
   enemy2LaserScore: 1000
@@ -1111,8 +1112,8 @@ MonoBehaviour:
   enemy4ShieldHealth: 5
   enemy4LaserScore: 1000
   enemy4MissileScore: 1000
-  enemy5BaseHealth: 70
-  enemy5ShieldHealth: 30
+  enemy5BaseHealth: 65
+  enemy5ShieldHealth: 25
   enemy5LaserScore: 15000
 --- !u!114 &555410815
 MonoBehaviour:
@@ -1148,7 +1149,7 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 20000
+  spawnAtScore: 10000
   spawnAfter: 5
   xMinSpawn: -400
   xMaxSpawn: 400
@@ -1211,23 +1212,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTypes:
   - {fileID: 1814202497}
-  objSpawnMinX: -600
-  objSpawnMaxX: 600
-  objSpawnMinY: -600
-  objSpawnMaxY: 600
+  objSpawnMinX: -3000
+  objSpawnMaxX: 3000
+  objSpawnMinY: -1250
+  objSpawnMaxY: 1250
   spawnFrequency: 2
-  objSpawnZ: 7000
+  objSpawnZ: 15500
   sizes:
-  - {x: 5, y: 5, z: 5}
-  - {x: 15, y: 15, z: 15}
-  - {x: 25, y: 25, z: 25}
-  - {x: 55, y: 55, z: 55}
-  - {x: 90, y: 90, z: 90}
-  - {x: 56, y: 34, z: 45}
+  - {x: 50, y: 50, z: 50}
+  - {x: 200, y: 200, z: 200}
+  - {x: 350, y: 350, z: 350}
+  - {x: 400, y: 400, z: 400}
+  - {x: 600, y: 600, z: 600}
+  - {x: 225, y: 225, z: 225}
+  - {x: 150, y: 150, z: 150}
   - {x: 100, y: 100, z: 100}
-  - {x: 60, y: 60, z: 60}
-  - {x: 80, y: 80, z: 80}
-  - {x: 90, y: 90, z: 90}
+  - {x: 1600, y: 1600, z: 1600}
+  - {x: 700, y: 700, z: 700}
 --- !u!4 &568474989
 Transform:
   m_ObjectHideFlags: 0
@@ -3340,7 +3341,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 1
-  far clip plane: 100000
+  far clip plane: 15000
   field of view: 60
   orthographic: 0
   orthographic size: 25
@@ -3363,7 +3364,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591680875}
-  m_LocalRotation: {x: 0.15339841, y: 0, z: 0, w: 0.9881644}
+  m_LocalRotation: {x: 0.043619394, y: 0, z: 0, w: 0.99904823}
   m_LocalPosition: {x: 0, y: 35, z: -300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3385,8 +3386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  cameraSpeed: 4.5
-  cameraOffset: {x: 0, y: 100, z: -300}
+  cameraSpeed: 3
+  cameraOffset: {x: 0, y: 15, z: -300}
   snapMovement: 0
 --- !u!82 &1591680882
 AudioSource:
@@ -3401,7 +3402,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.75
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   Priority: 76
@@ -3470,11 +3471,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1591680875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2291aabb6aaf62e4b939f913c918029f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c77ceb1f4535054d9130e36b8952ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   songList:
-  - {fileID: 8300000, guid: 1c547a448f4b5794a8ef3cd3c0e2d86d, type: 3}
   - {fileID: 8300000, guid: 60a6d2e627739064cab77fe37543c53a, type: 3}
   - {fileID: 8300000, guid: 7b31ad54931367542b2ee570151df0b9, type: 3}
   - {fileID: 8300000, guid: eefc8f2884e7a0945a2d0d763af03234, type: 3}

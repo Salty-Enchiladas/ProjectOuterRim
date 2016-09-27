@@ -14,11 +14,13 @@ public class Enemy1Fire : MonoBehaviour
 
     ObjectPooling laserObject;
     GameObject gameManager;
+    GameObject player;
 
     void Start()
     {
         laserObject = GameObject.Find(laserPoolName).GetComponent<ObjectPooling>();
         gameManager = GameObject.Find("GameManager");
+        player = GameObject.Find("Player");
         switch (transform.parent.name)
         {
             case "Enemy1Guns":
@@ -56,6 +58,9 @@ public class Enemy1Fire : MonoBehaviour
         {
             return;
         }
+
+        if(transform.position.z > player.transform.position.z + 500)
+            transform.LookAt(player.transform);
 
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
