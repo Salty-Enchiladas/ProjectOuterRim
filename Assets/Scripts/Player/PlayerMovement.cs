@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
     public float playerSpeed;
-    public GameObject bossShip;
    // public float forwardSpeed;
     public float maxTurnAngle;
     [HideInInspector]
@@ -28,7 +27,6 @@ public class PlayerMovement : MonoBehaviour {
     {
        gameManager = GameObject.Find("GameManager");
        playerSpeed = gameManager.GetComponent<PublicVariableHandler>().playerSpeed;
-       bossShip = GameObject.Find("BossShip");
       // bossShip.SetActive(false);
     }
     // Update is called once per frame

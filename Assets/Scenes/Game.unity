@@ -903,7 +903,7 @@ MonoBehaviour:
   fifthEnemyPool: {fileID: 825245193}
   bossShip: {fileID: 0}
   spawnRate: 1.2
-  difficultyIncreaseScore: 1000
+  difficultyIncreaseScore: 5000
   minXSpawn: -2500
   maxXspawn: 2500
   minYSpawn: -1000
@@ -1044,12 +1044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240f36987677e184b97d7a4309060ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountdownFrom: 300
-  textbox: {fileID: 0}
-  thankYou: {fileID: 0}
-  fadeOut: {fileID: 1494826401}
-  aplh: 0
-  done: 0
 --- !u!114 &555410814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,7 +1083,7 @@ MonoBehaviour:
   playerShieldCooldown: 15
   playerLives: 3
   playerHealth: 9
-  playerSpeed: 1000
+  playerSpeed: 700
   playerLaserHeatCap: 1
   playerLaserHeatIncreaseAmount: 0.06
   laserHeatLossAfterSeconds: 1
@@ -1156,7 +1150,7 @@ MonoBehaviour:
   laserLevel: 0
   missileLevel: 0
   shieldLevel: 0
-  spawnAtScore: 1000
+  spawnAtScore: 10000
   spawnAfter: 5
   xMinSpawn: -400
   xMaxSpawn: 400
@@ -3630,11 +3624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fda7c66f4e26264a83ca8a2454693d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatBar: {fileID: 1641560774}
-  player: {fileID: 0}
-  gun: {fileID: 0}
-  fireScript: {fileID: 0}
-  yPos: 0
 --- !u!1 &1660281895
 GameObject:
   m_ObjectHideFlags: 0

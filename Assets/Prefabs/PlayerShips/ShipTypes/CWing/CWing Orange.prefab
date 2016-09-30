@@ -2473,10 +2473,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
 --- !u!114 &11402798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2654,10 +2650,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
 --- !u!114 &11438842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2670,7 +2662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -2691,10 +2682,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
 --- !u!114 &11465226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2707,10 +2694,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
 --- !u!114 &11485474
 MonoBehaviour:
   m_ObjectHideFlags: 1
