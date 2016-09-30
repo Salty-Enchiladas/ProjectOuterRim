@@ -57,11 +57,11 @@ public class FireMissile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetAxis("Fire2") > 0)
         {
             FindEnemy();
         }
-        if (((Input.GetButtonUp("Fire2")) && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0))   // || (Input.GetAxis("Secondary")) != 0)
+        if (((Input.GetAxis("Fire2") > 0) && Time.time > (lastShot + missileCooldown) && hasTarget && missileCount > 0))   // || (Input.GetAxis("Secondary")) != 0)
         {
             Missile();
         }
@@ -70,31 +70,31 @@ public class FireMissile : MonoBehaviour
         //    StartCoroutine(FlashNoTarget());
         //}
 
-        switch (missileCount)
-        {
-            case 3:
-                missile1Img.SetActive(true);
-                missile2Img.SetActive(true);
-                missile3Img.SetActive(true);
-                break;
-            case 2:
-                missile1Img.SetActive(true);
-                missile2Img.SetActive(true);
-                missile3Img.SetActive(false);
-                break;
-            case 1:
-                missile1Img.SetActive(true);
-                missile2Img.SetActive(false);
-                missile3Img.SetActive(false);
-                break;
-            case 0:
-                missile1Img.SetActive(false);
-                missile2Img.SetActive(false);
-                missile3Img.SetActive(false);
-                break;
-            default:
-                break;
-        }
+        //switch (missileCount)
+        //{
+        //    case 3:
+        //        missile1Img.SetActive(true);
+        //        missile2Img.SetActive(true);
+        //        missile3Img.SetActive(true);
+        //        break;
+        //    case 2:
+        //        missile1Img.SetActive(true);
+        //        missile2Img.SetActive(true);
+        //        missile3Img.SetActive(false);
+        //        break;
+        //    case 1:
+        //        missile1Img.SetActive(true);
+        //        missile2Img.SetActive(false);
+        //        missile3Img.SetActive(false);
+        //        break;
+        //    case 0:
+        //        missile1Img.SetActive(false);
+        //        missile2Img.SetActive(false);
+        //        missile3Img.SetActive(false);
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
     void Missile()
