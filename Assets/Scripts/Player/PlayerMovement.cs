@@ -74,14 +74,7 @@ public class PlayerMovement : MonoBehaviour {
         if (transform.position.x > 9000 || transform.position.x < -9000 || transform.position.y > 6000 || transform.position.y < -6000)
         {
             Camera.main.farClipPlane = 100000;
-            StartCoroutine(BossShip());
         }
-    }
-
-    IEnumerator BossShip()
-    {
-        bossShip.SetActive(true);
-        yield return new WaitForSeconds(.3f);
     }
 
     //IEnumerator TurboThrusterBoosterSuperMegaTurboThrusterBoosterSuperMegaSpeedIncrease()

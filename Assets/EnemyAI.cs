@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour
         newSpawn = true;
     }
 	
-	void Update ()
+	void FixedUpdate ()
     {
         playerPosition = new Vector3(Random.Range(player.transform.position.x - 100, player.transform.position.x + 100), Random.Range(player.transform.position.y - 100, player.transform.position.y + 100), player.transform.position.z);
         if (transform.tag == "Carrier")
@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour
             speed = 500;
         }
 
-        if (Vector3.Distance(transform.position, player.transform.position) > 5000)  //If the AI is furthure than 500 meters from the player.
+        if (Vector3.Distance(transform.position, player.transform.position) > 7000)  //If the AI is furthure than 500 meters from the player.
         {
             transform.LookAt(player.transform);
             transform.position = Vector3.MoveTowards(transform.position, playerPosition, warpSpeed);     //Warp In
@@ -41,13 +41,13 @@ public class EnemyAI : MonoBehaviour
 
         if (warped) //If you are warped in.
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);    //Move forward
-        }
+            transform.position = Vector3.Lerp(transform.position, new Vector3 (playerPosition.x, playerPosition.y, playerPosition.z - 1000f), 0.25f * Time.deltaTime);    //Move forward
 
-        if (transform.position.z <= -250)   //If you go to far, shut off.
-        {
-            waveHandler.firstEnemyCount--;
-            gameObject.SetActive(false);
+            if (transform.position.z <= -250)   //If you go to far, shut off.
+            {
+                waveHandler.firstEnemyCount--;
+                gameObject.SetActive(false);
+            }
         }
     }
 }

@@ -180,11 +180,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b7d522476be9b4f94d625fa6045977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 3
   powerUpLength: 10
   shieldType: 
   laserType: 
   missileType: 
+  healthType: 
 --- !u!114 &11476026
 MonoBehaviour:
   m_ObjectHideFlags: 1

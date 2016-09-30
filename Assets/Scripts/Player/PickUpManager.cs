@@ -9,6 +9,7 @@ public class PickUpManager : MonoBehaviour
     public GameObject laserPickUp;
     public GameObject missilePickUp;
     public GameObject shieldPickUp;
+    public GameObject healthPickUp;
 	AudioSource audioSource;
 	public AudioClip[] pickupSounds;
 
@@ -96,6 +97,11 @@ public class PickUpManager : MonoBehaviour
         Random.Range(player.transform.position.y + yMinSpawn, player.transform.position.y + yMaxSpawn),
         Random.Range(player.transform.position.z + zSpawnMin, player.transform.position.z + zSpawnMax));
         Instantiate(shieldPickUp, spawnPoint, Quaternion.identity);
+
+        spawnPoint = new Vector3(Random.Range(player.transform.position.x + xMinSpawn, player.transform.position.x + xMaxSpawn),
+        Random.Range(player.transform.position.y + yMinSpawn, player.transform.position.y + yMaxSpawn),
+        Random.Range(player.transform.position.z + zSpawnMin, player.transform.position.z + zSpawnMax));
+        Instantiate(healthPickUp, spawnPoint, Quaternion.identity);
     }
 
     public void LevelUp(string powerUpType)
@@ -103,11 +109,13 @@ public class PickUpManager : MonoBehaviour
         leveled = true;
         switch (powerUpType)
         {
-		case "shield":
+            case "health":
+                audioSource.clip = pickupSounds[3];
+                audioSource.Play();
+                break;
+            case "shield":
 			audioSource.clip = pickupSounds [2];
 			audioSource.Play ();
-                if (shieldLevel < 3)
-                    shieldLevel++;
                 break;
             case "laser":
 			audioSource.clip = pickupSounds [0];
@@ -127,27 +135,6 @@ public class PickUpManager : MonoBehaviour
     public void LoseLevel()
     {
         leveled = false;
-
-        if (shieldLevel > 0)
-        {
-            shieldLevel--;
-            switch (shieldLevel)
-            {
-                case 0:
-                    shieldLevel1Bar.SetActive(false);
-                    player.GetComponent<ActivateShield>().ShieldLevel1(leveled);
-                    break;
-                case 1:
-                    shieldLevel2Bar.SetActive(false);
-                    player.GetComponent<ActivateShield>().ShieldLevel2(leveled);
-                    break;
-                case 2:
-                    shieldLevel3Bar.SetActive(false);
-                    player.GetComponent<ActivateShield>().ShieldLevel3(leveled);
-                    break;
-
-            }
-        }
 
         if (laserLevel > 0)
         {

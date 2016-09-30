@@ -6,7 +6,7 @@ public class ChooseShipButton : MonoBehaviour {
     public GameObject shipContainer;
 
     ShipWrangler _shipWrangler;
-
+    bool hasMoved;
 	// Use this for initialization
 	void Start () {
         _shipWrangler = shipContainer.GetComponent<ShipWrangler>();
@@ -14,8 +14,23 @@ public class ChooseShipButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        if (Input.GetAxis("Horizontal") < -.99f && !hasMoved)
+        {
+            hasMoved = true;
+            PreviousShip();
+        }
+        else if (Input.GetAxis("Horizontal") > .99f && !hasMoved)
+        {
+            hasMoved = true;
+            NextShip();
+        }
+        else if (Input.GetAxis("Horizontal") > -.05f && Input.GetAxis("Horizontal") < .05f)
+        {
+            hasMoved = false;
+        }
+
+
+    }
 
     public void NextShip()
     {

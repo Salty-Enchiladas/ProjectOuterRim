@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PublicVariableHandler : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PublicVariableHandler : MonoBehaviour
     public AudioClip laserLevel3Sound;
 
     //User Interface Variables
+    public Image fadeOut;
     public GameObject laserLevel1Bar;
     public GameObject laserLevel2Bar;
     public GameObject laserLevel3Bar;
@@ -33,6 +35,7 @@ public class PublicVariableHandler : MonoBehaviour
 
     //Player Variables
 	public GameObject hitEffect;
+    public AudioClip hitSound;
     public int healthRecoverScore;
     public float playerShootingFrequency;
     public float lightningGunDuration;

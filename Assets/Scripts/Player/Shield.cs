@@ -43,14 +43,12 @@ public class Shield : MonoBehaviour
         currentHealth--;
         if (currentHealth <= 0)
         {
-            player.GetComponent<ActivateShield>().StartMyCoroutine();
             gameObject.SetActive(false);
         }
     }
 
     void ShieldDestroyed()
     {
-        player.GetComponent<ActivateShield>().StartMyCoroutine();
         gameObject.SetActive(false);
     }
 }

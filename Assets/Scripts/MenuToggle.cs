@@ -12,12 +12,11 @@ public class MenuToggle : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
+    // Update is called once per frame
+    void Update()
+    {
+    }
     public void ToggleMenu()
     {
         deactivate.SetActive(false);

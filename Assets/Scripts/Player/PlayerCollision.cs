@@ -30,6 +30,10 @@ public class PlayerCollision : MonoBehaviour
     GameObject player;
     GameObject gameManager;
     PublicVariableHandler publicVariableHandler;
+    bool takingDamage;
+    AudioSource source;
+    Image fadeOut;
+    float aplh = 0;
 
     void Start()
     {
@@ -39,7 +43,9 @@ public class PlayerCollision : MonoBehaviour
         gameManager = GameObject.Find("GameManager");
         pickUpManager = gameManager.GetComponent<PickUpManager>();
         publicVariableHandler = gameManager.GetComponent<PublicVariableHandler>();
+        source = gameManager.GetComponent<AudioSource>();
 
+        fadeOut = publicVariableHandler.fadeOut;
         greenHealthRing = GameObject.Find("GreenHealthRing");
         yellowHealthRing = GameObject.Find("YellowHealthRing");
         redHealthRing = GameObject.Find("RedHealthRing");
@@ -62,6 +68,7 @@ public class PlayerCollision : MonoBehaviour
         {
             StartCoroutine(DamageIndicator());
             col.gameObject.SetActive(false);
+            StartCoroutine(Immunity());
             playerHealth--;
             pickUpManager.LoseLevel();
 
@@ -87,16 +94,24 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
+    IEnumerator Immunity()
+    {
+        if (!takingDamage)
+        {
+            takingDamage = true;
+            StartCoroutine(DamageIndicator());
+            playerHealth--;
+            pickUpManager.LoseLevel();
+            yield return new WaitForSeconds(.5f);
+            takingDamage = false;
+        }
+    }
+
     IEnumerator CheckScore()
     {
         if (playerScoreOBJ.score % healthScore == 0 && playerScoreOBJ.score != 0)
         {
             playerHealth++;
-
-            if (playerHealth % 3 == 1)
-            {
-                GainLife();
-            }
 
             CheckHealth();
             yield return new WaitForSeconds(10f);
@@ -112,6 +127,8 @@ public class PlayerCollision : MonoBehaviour
 
     IEnumerator DamageIndicator()
     {
+        source.clip = publicVariableHandler.hitSound;
+        source.Play();
         if (!damageIndicatorIMG.activeInHierarchy)
         {
             damageIndicatorIMG.SetActive(true);
@@ -124,35 +141,10 @@ public class PlayerCollision : MonoBehaviour
     {
         if (playerLives == 0)
         {
-            SceneManager.LoadScene(gameOverScene);
+            StartCoroutine(GameOver());
         }
         else
         {
-            if (playerHealth % 3 == 0)
-            {
-                greenHealthRing.SetActive(true);
-                yellowHealthRing.SetActive(false);
-                redHealthRing.SetActive(false);
-            }
-            else if (playerHealth % 3 == 2)
-            {
-                greenHealthRing.SetActive(false);
-                yellowHealthRing.SetActive(true);
-                redHealthRing.SetActive(false);
-            }
-            else if (playerHealth % 3 == 1)
-            {
-                greenHealthRing.SetActive(false);
-                yellowHealthRing.SetActive(false);
-                redHealthRing.SetActive(true);
-            }
-            else if (playerHealth % 3 == 4)
-            {
-                greenHealthRing.SetActive(false);
-                yellowHealthRing.SetActive(false);
-                redHealthRing.SetActive(false);                
-            }
-
             if (playerLives % 3 == 0)
             {
                 lifeImage1.SetActive(true);
@@ -177,17 +169,46 @@ public class PlayerCollision : MonoBehaviour
         {
             playerLives--;
 
-            greenHealthRing.SetActive(true);
-            yellowHealthRing.SetActive(false);
-            redHealthRing.SetActive(false);
+            //greenHealthRing.SetActive(true);
+            //yellowHealthRing.SetActive(false);
+            //redHealthRing.SetActive(false);
 
             Instantiate(explosion, transform.position, transform.rotation);
             Instantiate(explosionSound, transform.position, transform.rotation);
         }
     }
 
-    void GainLife()
+    public void GainLife()
     {
         playerLives++;
     }
+
+    public static class CoroutineUtil
+    {
+        public static IEnumerator WaitForRealSeconds(float time)
+        {
+            float start = Time.realtimeSinceStartup;
+            while (Time.realtimeSinceStartup < start + time)
+            {
+                yield return null;
+            }
+        }
+    }
+
+    IEnumerator GameOver()
+    {
+        //yield return new WaitUntil(FadeOut);
+        for (int i = 0; i < 20; i++)
+        {
+            aplh = aplh + .075f;
+            if (Time.timeScale >= .1f)
+            {
+                fadeOut.color = new Color(0, 0, 0, aplh);
+                Time.timeScale -= .1f;
+            }
+            yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(3f));
+            SceneManager.LoadScene("GameOver");
+        }
+    }
+
 }

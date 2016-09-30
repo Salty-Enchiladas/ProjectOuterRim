@@ -4,17 +4,11 @@ using System.Collections;
 public class FireScript : MonoBehaviour {
 
     public GameObject laser;
-    [HideInInspector]
-    public float heatLevel;
-    public float heatCap;
-    public float heatIncreaseAmount;
 	float baseFireFreq;
     float fireFreq;
 
     float lastShot;
     float laserTimer;
-    public float heatResetTimer;
-    float lastReset;
 
     bool overHeated;
     ObjectPooling laserPool;
@@ -41,9 +35,6 @@ public class FireScript : MonoBehaviour {
         achievementManager = gameManager.GetComponent<AchievementManager>();
         player = GameObject.Find("Player");
         baseFireFreq = publicVariableHandler.playerShootingFrequency;
-        heatCap = publicVariableHandler.playerLaserHeatCap;
-        heatIncreaseAmount = publicVariableHandler.playerLaserHeatIncreaseAmount;
-        heatResetTimer = publicVariableHandler.laserHeatLossAfterSeconds;
         laserLevel1Bar = publicVariableHandler.laserLevel1Bar;
         laserLevel2Bar = publicVariableHandler.laserLevel2Bar;
         laserLevel3Bar = publicVariableHandler.laserLevel3Bar;
@@ -69,14 +60,9 @@ public class FireScript : MonoBehaviour {
 
     void Update()
     {
-        if ((Input.GetButton("Fire1")) && Time.time > lastShot + fireFreq)
+        if ((Input.GetAxis("Fire1") > 0) && Time.time > lastShot + fireFreq)
         {
             Fire();
-        }
-        else if(Time.time > lastReset + heatResetTimer && heatLevel > 0)
-        {
-            lastReset = Time.time;
-            heatLevel = heatLevel - heatIncreaseAmount;
         }
     }
 
@@ -86,12 +72,6 @@ public class FireScript : MonoBehaviour {
         {
             laserSound.Shooting();
         }
-		if (heatLevel >= heatCap) 
-		{
-			fireFreq = fireFreq * 2;
-			StartCoroutine(OverHeating());
-		}
-            heatLevel = heatLevel + heatIncreaseAmount;
             achievementManager.LaserShot();
             lastShot = Time.time;
 
@@ -107,33 +87,17 @@ public class FireScript : MonoBehaviour {
             obj.SetActive(true);
         }      
     
-
-    IEnumerator OverHeating()
-    {
-        //print("laser cooling down");
-        for(int i = 0; i < 23; i++)
-        {
-            yield return new WaitForSeconds(.1f);
-            heatLevel = heatLevel - .05f;            
-        }        
-        
-        //print("Laser is cooled and ready for action!");
-		fireFreq = baseFireFreq;
-        overHeated = false;
-    }
     public void LaserLevel1(bool levelUp)
     {
         if (levelUp)
         {
             laserLevel1Bar.SetActive(levelUp);
-            heatIncreaseAmount = heatIncreaseAmount / 2;
             if (laserSound)
                 laserSound.LevelChange(level1Sound);
             
         }
         else if (!levelUp)
         {
-            heatIncreaseAmount = heatIncreaseAmount * 2;
             if (laserSound)
                 laserSound.LevelChange(noLevelSound);
         }

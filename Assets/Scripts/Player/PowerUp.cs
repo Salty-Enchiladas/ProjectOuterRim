@@ -5,12 +5,13 @@ public class PowerUp : MonoBehaviour
 {
     public enum PowerUpType
     {
+        HEALTH,
         SHIELD,
         LASER,
         Missile,
     }
 
-    public PowerUpType type = PowerUpType.SHIELD;
+    public PowerUpType type = PowerUpType.HEALTH;
     PickUpManager pickUpManager;
     public int powerUpLength;
     GameObject player;
@@ -31,6 +32,9 @@ public class PowerUp : MonoBehaviour
     [HideInInspector]
     public string missileType;
 
+    [HideInInspector]
+    public string healthType;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -42,25 +46,16 @@ public class PowerUp : MonoBehaviour
     {
         switch (type)
         {
-            case PowerUpType.SHIELD:
+            case PowerUpType.HEALTH:
+                healthType = "health";
+                pickUpManager.LevelUp(healthType);
+                player.GetComponentInChildren<PlayerCollision>().GainLife();
+                break;
 
+            case PowerUpType.SHIELD:
                 shieldType = "shield";
                 pickUpManager.LevelUp(shieldType);
-                shieldLevel = pickUpManager.shieldLevel;
-
-                switch (shieldLevel)
-                {
-                    case 1:
-                        player.GetComponent<ActivateShield>().ShieldLevel1(pickUpManager.leveled);
-                        break;
-                    case 2:
-                        player.GetComponent<ActivateShield>().ShieldLevel2(pickUpManager.leveled);
-                        break;
-                    case 3:
-                        player.GetComponent<ActivateShield>().ShieldLevel3(pickUpManager.leveled);
-                        break;
-                }
-
+                player.GetComponent<StoreVariables>().shield.SetActive(true);
                 break;
 
             case PowerUpType.LASER:
