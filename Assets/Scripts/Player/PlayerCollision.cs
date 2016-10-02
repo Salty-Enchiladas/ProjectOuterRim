@@ -139,7 +139,7 @@ public class PlayerCollision : MonoBehaviour
 
     void CheckHealth()
     {
-        if (playerLives == 0)
+        if (playerLives <= 0)
         {
             StartCoroutine(GameOver());
         }
