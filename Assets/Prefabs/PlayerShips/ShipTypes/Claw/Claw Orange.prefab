@@ -379,6 +379,7 @@ GameObject:
   - 54: {fileID: 5416142}
   - 114: {fileID: 11480758}
   - 114: {fileID: 11428100}
+  - 114: {fileID: 11442174}
   m_Layer: 0
   m_Name: Claw Orange
   m_TagString: Untagged
@@ -1495,10 +1496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11421266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1606,6 +1604,17 @@ MonoBehaviour:
       m_RotationOrder: 4
     maxSnapBackDistance: 100
   globalSpaceTransform: {fileID: 0}
+--- !u!114 &11442174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11444138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1640,10 +1649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11453126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1656,10 +1662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11467290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1672,10 +1675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11476322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1702,7 +1702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0

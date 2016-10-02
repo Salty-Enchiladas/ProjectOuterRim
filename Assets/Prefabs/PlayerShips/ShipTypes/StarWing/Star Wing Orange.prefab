@@ -418,6 +418,7 @@ GameObject:
   - 54: {fileID: 5477782}
   - 114: {fileID: 11409404}
   - 114: {fileID: 11424864}
+  - 114: {fileID: 11404506}
   m_Layer: 0
   m_Name: Star Wing Orange
   m_TagString: Untagged
@@ -1370,6 +1371,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &11404506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11409404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1382,7 +1394,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -1428,10 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11417430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1444,10 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11419922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1509,10 +1514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11427348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1658,10 +1660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!135 &13506736
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -81,6 +81,7 @@ GameObject:
   - 54: {fileID: 5414426}
   - 114: {fileID: 11436518}
   - 114: {fileID: 11491672}
+  - 114: {fileID: 11466970}
   m_Layer: 0
   m_Name: CWing White
   m_TagString: Untagged
@@ -2410,10 +2411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11409638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2451,10 +2449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11423112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2482,10 +2477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11436518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2498,7 +2490,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -2602,10 +2593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11466762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2618,6 +2606,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserSound: {fileID: 0}
+--- !u!114 &11466970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11477022
 MonoBehaviour:
   m_ObjectHideFlags: 1

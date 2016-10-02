@@ -188,7 +188,6 @@ GameObject:
   - 33: {fileID: 3351410}
   - 135: {fileID: 13511106}
   - 23: {fileID: 2391970}
-  - 82: {fileID: 8278562}
   - 114: {fileID: 11409330}
   m_Layer: 0
   m_Name: Shield
@@ -300,6 +299,7 @@ GameObject:
   - 54: {fileID: 5489978}
   - 114: {fileID: 11495368}
   - 114: {fileID: 11436362}
+  - 114: {fileID: 11435652}
   m_Layer: 0
   m_Name: Metal Blade Red
   m_TagString: Untagged
@@ -1306,80 +1306,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &8278562
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149650}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a94b4bdfd7963f94d91745bdd6e55bf6, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.529
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.471
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!95 &9565512
 Animator:
   serializedVersion: 3
@@ -1457,10 +1383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11423218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1473,10 +1396,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
+--- !u!114 &11435652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11436362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1513,10 +1444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11456074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1542,10 +1470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11461720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1702,7 +1627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0

@@ -79,6 +79,7 @@ GameObject:
   - 54: {fileID: 5469922}
   - 114: {fileID: 11411644}
   - 114: {fileID: 11442652}
+  - 114: {fileID: 11450832}
   m_Layer: 0
   m_Name: Organic Red
   m_TagString: Untagged
@@ -220,7 +221,6 @@ GameObject:
   - 33: {fileID: 3392120}
   - 135: {fileID: 13574734}
   - 23: {fileID: 2310134}
-  - 82: {fileID: 8208072}
   - 114: {fileID: 11457892}
   m_Layer: 0
   m_Name: Shield
@@ -1416,80 +1416,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 50, y: 120, z: 50}
   m_Center: {x: 0, y: 38.51, z: 0}
---- !u!82 &8208072
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148386}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a94b4bdfd7963f94d91745bdd6e55bf6, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.529
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.471
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!82 &8268350
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1576,7 +1502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -1597,10 +1522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11426720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1652,6 +1574,17 @@ MonoBehaviour:
   lightningGun: {fileID: 189378}
   laserColor: {fileID: 158440, guid: 8d4f9d14fe7437b4b9f522281e4472fb, type: 2}
   missileColor: {fileID: 157856, guid: e7b40c124712f9c4dba68ad96e383e89, type: 2}
+--- !u!114 &11450832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11452864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1664,10 +1597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11457892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1811,10 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11490500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1827,10 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11496818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2170,12 +2094,12 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 68.6
+      scalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.23177843
+          value: 0.79499996
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2727,7 +2651,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     z:
-      scalar: 703.8
+      scalar: 256
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3644,12 +3568,12 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 215.68
+      scalar: 40
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.022718841
+          value: 0.12249999
           inSlope: 0
           outSlope: 0
           tangentMode: 0

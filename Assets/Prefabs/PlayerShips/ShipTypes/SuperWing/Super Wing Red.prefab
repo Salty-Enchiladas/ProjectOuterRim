@@ -553,6 +553,7 @@ GameObject:
   - 54: {fileID: 5461654}
   - 114: {fileID: 11417410}
   - 114: {fileID: 11499760}
+  - 114: {fileID: 11469422}
   m_Layer: 0
   m_Name: Super Wing Red
   m_TagString: Untagged
@@ -2590,10 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11417410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2606,7 +2604,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -2678,10 +2675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11442018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2812,6 +2806,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launcher: {fileID: 11448832}
+--- !u!114 &11469422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11484478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2839,10 +2844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11496462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2855,10 +2857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11499760
 MonoBehaviour:
   m_ObjectHideFlags: 1

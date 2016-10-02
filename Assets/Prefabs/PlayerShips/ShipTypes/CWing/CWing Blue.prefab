@@ -701,6 +701,7 @@ GameObject:
   - 54: {fileID: 5468604}
   - 114: {fileID: 11477516}
   - 114: {fileID: 11430804}
+  - 114: {fileID: 11471678}
   m_Layer: 0
   m_Name: CWing Blue
   m_TagString: Untagged
@@ -2532,10 +2533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11468878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2570,6 +2568,17 @@ MonoBehaviour:
   lightningGunDuration: 0
   missileCount: 3
   missileMax: 3
+--- !u!114 &11471678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11473120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2582,10 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11477134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2612,10 +2618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11477516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2628,7 +2631,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -2674,10 +2676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!135 &13506122
 SphereCollider:
   m_ObjectHideFlags: 1

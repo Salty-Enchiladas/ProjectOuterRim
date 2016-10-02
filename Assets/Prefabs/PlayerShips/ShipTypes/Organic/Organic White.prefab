@@ -360,6 +360,7 @@ GameObject:
   - 54: {fileID: 5469544}
   - 114: {fileID: 11401966}
   - 114: {fileID: 11425182}
+  - 114: {fileID: 11403360}
   m_Layer: 0
   m_Name: Organic White
   m_TagString: Untagged
@@ -448,7 +449,6 @@ GameObject:
   - 33: {fileID: 3341476}
   - 135: {fileID: 13516368}
   - 23: {fileID: 2380166}
-  - 82: {fileID: 8265774}
   - 114: {fileID: 11405080}
   m_Layer: 0
   m_Name: Shield
@@ -673,7 +673,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.8, z: 17}
+  m_LocalPosition: {x: -0, y: 0.9, z: 2.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449394}
@@ -1490,80 +1490,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &8265774
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199010}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a94b4bdfd7963f94d91745bdd6e55bf6, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.529
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.471
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &11401464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1591,7 +1517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -1600,6 +1525,17 @@ MonoBehaviour:
   clampX: 10000
   clampY: 10000
   invertVertical: 0
+--- !u!114 &11403360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11405080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1651,10 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11415114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1736,10 +1669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11425182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1789,10 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11440034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1830,10 +1757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11499590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2170,12 +2094,12 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 68.6
+      scalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.23177843
+          value: 0.79499996
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2727,7 +2651,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     z:
-      scalar: 703.8
+      scalar: 256.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3644,12 +3568,12 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 215.68
+      scalar: 40
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0.022718841
+          value: 0.12249999
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -3792,7 +3716,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 60
+      scalar: 68.87
       maxCurve:
         serializedVersion: 2
         m_Curve:

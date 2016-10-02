@@ -135,7 +135,6 @@ GameObject:
   - 33: {fileID: 3369764}
   - 135: {fileID: 13533892}
   - 23: {fileID: 2383830}
-  - 82: {fileID: 8201312}
   - 114: {fileID: 11499214}
   m_Layer: 0
   m_Name: Shield
@@ -259,6 +258,7 @@ GameObject:
   - 54: {fileID: 5482102}
   - 114: {fileID: 11440440}
   - 114: {fileID: 11444062}
+  - 114: {fileID: 11444220}
   m_Layer: 0
   m_Name: Dark Wing Green
   m_TagString: Untagged
@@ -1796,80 +1796,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: de8579b83b11c784abd6483a200bf2ab, type: 3}
---- !u!82 &8201312
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 121364}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a94b4bdfd7963f94d91745bdd6e55bf6, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.529
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0.471
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!82 &8237666
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2101,7 +2027,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -2134,6 +2059,17 @@ MonoBehaviour:
   lightningGun: {fileID: 101078}
   laserColor: {fileID: 165434, guid: 2e8fdad0009633242970ae3d52603b79, type: 2}
   missileColor: {fileID: 143826, guid: 85207ef3c2c9725488a3a50c23d33a97, type: 2}
+--- !u!114 &11444220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11454010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2194,10 +2130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11473654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2210,10 +2143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11477554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2226,10 +2156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11480196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2242,10 +2169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
+  target: {fileID: 0}
 --- !u!114 &11482890
 MonoBehaviour:
   m_ObjectHideFlags: 1
