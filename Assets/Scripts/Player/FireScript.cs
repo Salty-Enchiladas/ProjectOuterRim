@@ -27,6 +27,9 @@ public class FireScript : MonoBehaviour {
     AudioClip level2Sound;
     AudioClip level3Sound;
 
+    [HideInInspector]
+    public Transform target;
+
     void Start()
     {
         laserPool = GameObject.Find("PlayerLasers").GetComponent<ObjectPooling>();
@@ -62,7 +65,13 @@ public class FireScript : MonoBehaviour {
     {
         if ((Input.GetAxis("Fire1") > 0) && Time.time > lastShot + fireFreq)
         {
-            Fire();
+            if (target == null || target.tag != "Enemy")
+                Fire();
+            else
+            {
+                transform.LookAt(target);
+                Fire();
+            }
         }
     }
 

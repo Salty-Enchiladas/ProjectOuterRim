@@ -670,6 +670,7 @@ GameObject:
   - 54: {fileID: 5442154}
   - 114: {fileID: 11410778}
   - 114: {fileID: 11403872}
+  - 114: {fileID: 11457868}
   m_Layer: 0
   m_Name: CWing Purple
   m_TagString: Untagged
@@ -1185,7 +1186,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -532.7, y: 11.3, z: -1226.7}
+  m_LocalPosition: {x: -35.36595, y: 47.002296, z: -70.387794}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419760}
@@ -2473,10 +2474,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
 --- !u!114 &11403872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2513,10 +2510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
 --- !u!114 &11410778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2529,7 +2522,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 200
-  bossShip: {fileID: 0}
   maxTurnAngle: 0
   horizontalTurnAngle: -0
   moveX: 0
@@ -2646,6 +2638,17 @@ MonoBehaviour:
       m_RotationOrder: 4
     maxSnapBackDistance: 100
   globalSpaceTransform: {fileID: 0}
+--- !u!114 &11457868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eef9f28a9c0b804ba08fcfdcb28d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11460454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2658,10 +2661,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
 --- !u!114 &11470152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2749,10 +2748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 0}
-  heatLevel: 0
-  heatCap: 0
-  heatIncreaseAmount: 0
-  heatResetTimer: 0
 --- !u!135 &13513244
 SphereCollider:
   m_ObjectHideFlags: 1
