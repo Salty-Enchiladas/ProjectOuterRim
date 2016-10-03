@@ -57,8 +57,6 @@ public class FireScript : MonoBehaviour {
         {
             laserSound = GetComponent<LaserSound>();
         }
-
-        
     }
 
     void Update()
@@ -103,7 +101,6 @@ public class FireScript : MonoBehaviour {
             laserLevel1Bar.SetActive(levelUp);
             if (laserSound)
                 laserSound.LevelChange(level1Sound);
-            
         }
         else if (!levelUp)
         {

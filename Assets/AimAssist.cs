@@ -21,11 +21,19 @@ public class AimAssist : MonoBehaviour
     }
 	void Update ()
     {
-        foundTarget = Physics.CapsuleCast(transform.position, transform.position + (transform.forward * 1), 1, transform.forward, out hit);
-        if (hit.transform.tag == "Enemy")
+        foundTarget = Physics.CapsuleCast(transform.position, transform.position + (transform.forward * 1), .05f, transform.forward, out hit);
+
+        if (foundTarget)
         {
-            gun1Script.target = hit.transform;
-            gun2Script.target = hit.transform;
+            if (hit.transform.tag == "Enemy")
+            {
+                gun1Script.target = hit.transform;
+                gun2Script.target = hit.transform;
+            }
+            else
+            {
+                //Do nothing
+            }
         }
 	}
 }
