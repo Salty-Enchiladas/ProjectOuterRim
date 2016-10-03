@@ -24,7 +24,7 @@ public class ChooseShipButton : MonoBehaviour {
             hasMoved = true;
             NextShip();
         }
-        else if (Input.GetAxis("Horizontal") > -.05f && Input.GetAxis("Horizontal") < .05f)
+        else if (Input.GetAxis("Horizontal") > -.09f && Input.GetAxis("Horizontal") < .09f)
         {
             hasMoved = false;
         }

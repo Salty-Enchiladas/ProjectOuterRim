@@ -25,6 +25,7 @@ TagManager:
   - PodRight
   - PowerUpLasers
   - Carrier
+  - ShipWrangler
   layers:
   - Default
   - TransparentFX

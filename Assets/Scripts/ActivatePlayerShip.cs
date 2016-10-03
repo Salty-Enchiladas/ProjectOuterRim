@@ -5,11 +5,19 @@ using System.Collections.Generic;
 public class ActivatePlayerShip : MonoBehaviour {
 
     public bool debugMode;
-    public GameObject[] shipPrefabs;
+    public List<GameObject> shipPrefabs;
     public GameObject player;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        Object[] subListObjects = Resources.LoadAll("ShipTypes", typeof(GameObject));
+        print(subListObjects.Length);
+        foreach (GameObject go in subListObjects)
+        {
+            shipPrefabs.Add(go);
+        }
+
         if (!debugMode)
         {
             if (PlayerPrefs.GetString("Ship") == "")
@@ -19,7 +27,7 @@ public class ActivatePlayerShip : MonoBehaviour {
             }
             else
             {
-                for (int i = 0; i < shipPrefabs.Length; i++)
+                for (int i = 0; i < shipPrefabs.Count; i++)
                 {
                 
                     if (shipPrefabs[i].name == PlayerPrefs.GetString("Ship"))

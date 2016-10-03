@@ -22,15 +22,18 @@ public class EnemyAI : MonoBehaviour
 		speed = gameManager.GetComponent<PublicVariableHandler> ().enemyAISpeed;
 		
         newSpawn = true;
+        if (transform.tag == "Carrier")
+        {
+            speed = 300;
+        }
+
+        
     }
 	
 	void FixedUpdate ()
     {
+
         playerPosition = new Vector3(Random.Range(player.transform.position.x - 100, player.transform.position.x + 100), Random.Range(player.transform.position.y - 100, player.transform.position.y + 100), player.transform.position.z);
-        if (transform.tag == "Carrier")
-        {
-            speed = 500;
-        }
 
         if (Vector3.Distance(transform.position, player.transform.position) > 7000)  //If the AI is furthure than 500 meters from the player.
         {

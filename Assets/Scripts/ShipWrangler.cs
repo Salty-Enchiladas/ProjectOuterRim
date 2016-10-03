@@ -1,20 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class ShipWrangler : MonoBehaviour {
 
-    public GameObject[] ships;
+    public List<GameObject> ships;
     public int currentShip;
+    bool hasMoved;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+    {
+        Transform[] children;
+        children = transform.GetComponentsInChildren<Transform>();
+        foreach (Transform t in children)
+        {
+            if (t.tag == "ShipWrangler")
+            {
+                ships.Add(t.gameObject);
+                t.gameObject.SetActive(false);
+            }
+        }
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
         DisplayShip();
-	}    
+
+        if (Input.GetAxis("Horizontal") < -.99f && !hasMoved)
+        {
+            hasMoved = true;
+            PreviousSelection();
+        }
+        else if (Input.GetAxis("Horizontal") > .99f && !hasMoved)
+        {
+            hasMoved = true;
+            NextSelection();
+        }
+        else if (Input.GetAxis("Horizontal") > -.05f && Input.GetAxis("Horizontal") < .05f)
+        {
+            hasMoved = false;
+        }
+    }    
 
     public GameObject CurrentShip
     {
@@ -24,7 +51,7 @@ public class ShipWrangler : MonoBehaviour {
 
     public void NextSelection()
     {
-        if (currentShip == ships.Length - 1)
+        if (currentShip == ships.Count - 1)
         {
             currentShip = 0;
         }
@@ -38,7 +65,7 @@ public class ShipWrangler : MonoBehaviour {
     {
         if (currentShip == 0)
         {
-            currentShip = ships.Length - 1;
+            currentShip = ships.Count - 1;
         }
         else
         {
@@ -48,7 +75,7 @@ public class ShipWrangler : MonoBehaviour {
 
     void DisplayShip()
     {
-        for (int i = 0; i < ships.Length; i++)
+        for (int i = 0; i < ships.Count; i++)
         {
             if (i == currentShip)
             {
