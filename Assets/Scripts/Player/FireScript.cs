@@ -69,6 +69,8 @@ public class FireScript : MonoBehaviour {
             {
                 transform.LookAt(target);
                 Fire();
+                target = null;
+                transform.rotation = Quaternion.identity;
             }
         }
     }
