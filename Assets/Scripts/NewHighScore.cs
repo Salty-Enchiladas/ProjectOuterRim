@@ -19,7 +19,15 @@ public class NewHighScore : MonoBehaviour {
     public Button restartButton;
     public Button quitButton;
 
+    GameObject eventSys;
+    EventSystem es;
     string playerName;
+
+    void Start()
+    {
+        eventSys = GameObject.Find("EventSystem");
+        es = eventSys.GetComponent<EventSystem>();
+    }
 
     public void UpdateRank()
     {
@@ -38,6 +46,7 @@ public class NewHighScore : MonoBehaviour {
         newHSPanel.SetActive(false);
 
         restartButton.interactable = true;
+        es.SetSelectedGameObject(restartButton.gameObject);
         quitButton.interactable = true;
 
         //EventSystem.current.SetSelectedGameObject(nextSelected);

@@ -8,6 +8,10 @@ public class InitialWrangler : MonoBehaviour {
     //, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
 
     int currentCharacter;
+    bool hasMoved;
+
+    public GameObject activatePrevious;
+    public GameObject activateNext;
 
     public int CurrentCharacter
     {
@@ -48,6 +52,47 @@ public class InitialWrangler : MonoBehaviour {
         if (gameObject.GetComponent<Text>())
         {
             gameObject.GetComponent<Text>().text = possibleInitials[currentCharacter].ToString();
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetAxis("Vertical") < -.99f && !hasMoved)
+        {
+            hasMoved = true;
+            PreviousCharacter();
+        }
+        else if (Input.GetAxis("Vertical") > .99f && !hasMoved)
+        {
+            hasMoved = true;
+            NextCharacter();
+        }
+        else if (Input.GetAxis("Vertical") > -.05f && Input.GetAxis("Vertical") < .05f)
+        {
+            hasMoved = false;
+        }
+
+        if (Input.GetButtonDown("Fire3"))
+        {
+            if (activateNext.transform.parent != null)
+            {
+                activateNext.transform.parent.gameObject.SetActive(true);
+            }
+            activateNext.SetActive(true);
+            enabled = false;
+        }
+        if (Input.GetButtonDown("Fire4"))
+        {
+            if (transform.name == "Initial1")
+            {
+                //Do nothing
+            }
+            else
+            {
+                activatePrevious.SetActive(true);
+                activatePrevious.GetComponent<InitialWrangler>().enabled = true;
+                gameObject.SetActive(false);
+            }
         }
     }
 }
