@@ -438,7 +438,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 165950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 604.6, y: 32.7, z: -374.1}
+  m_LocalPosition: {x: 1015, y: 32.7, z: -374.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480194}
@@ -1523,8 +1523,8 @@ MonoBehaviour:
   shield: {fileID: 131010}
   meteorExplosion: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a, type: 2}
   lightningGun: {fileID: 199542}
-  laserColor: {fileID: 0}
-  missileColor: {fileID: 0}
+  laserColor: {fileID: 174594, guid: 653804ebb40bfe24296eac47db49cb67, type: 2}
+  missileColor: {fileID: 143826, guid: 85207ef3c2c9725488a3a50c23d33a97, type: 2}
 --- !u!114 &11498970
 MonoBehaviour:
   m_ObjectHideFlags: 1
