@@ -31,3 +31,7 @@ ExportedObj/
 Icon?
 ehthumbs.db
 Thumbs.db
+*.meta
+*.meta
+Assets/ActivatePrevious.cs.meta
+Assets/ActivatePrevious.cs.meta
