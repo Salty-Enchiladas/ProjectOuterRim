@@ -80,18 +80,18 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Illum
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _Texture
         second:
           m_Texture: {fileID: 2800000, guid: 71340b2dd589cd84c99e67258d4818c9, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: -0.54, y: -8.44}
+      data:
+        first:
+          name: _Illum
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -143,10 +143,6 @@ Material:
         second: 0
       data:
         first:
-          name: _Emission
-        second: 1
-      data:
-        first:
           name: _Inside
         second: 0
       data:
@@ -165,6 +161,10 @@ Material:
         first:
           name: _Strength
         second: 3.05
+      data:
+        first:
+          name: _Emission
+        second: 1
     m_Colors:
       data:
         first:
