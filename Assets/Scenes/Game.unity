@@ -3366,7 +3366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cameraSpeed: 4.5
-  cameraOffset: {x: 0, y: 50, z: -300}
+  cameraOffset: {x: 0, y: 100, z: -250}
   snapMovement: 0
 --- !u!82 &1591680882
 AudioSource:
@@ -5350,7 +5350,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 4.1
-  m_Range: 8000
+  m_Range: 1000
   m_SpotAngle: 79
   m_CookieSize: 10
   m_Shadows:
@@ -5378,8 +5378,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2121521051}
-  m_LocalRotation: {x: 0.29507583, y: 0.18337047, z: 0.057812292, w: 0.9359291}
-  m_LocalPosition: {x: 8236, y: 3128, z: 27591}
+  m_LocalRotation: {x: 0.5716206, y: 0, z: 0, w: 0.8205181}
+  m_LocalPosition: {x: -8.7, y: 53.5, z: -193.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

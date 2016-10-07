@@ -347,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &173442
 GameObject:
   m_ObjectHideFlags: 1
@@ -1752,8 +1752,8 @@ MonoBehaviour:
   shield: {fileID: 169530}
   meteorExplosion: {fileID: 100000, guid: 809320482fb694b6e8149a226202b86a, type: 2}
   lightningGun: {fileID: 106232}
-  laserColor: {fileID: 0}
-  missileColor: {fileID: 0}
+  laserColor: {fileID: 165434, guid: 2e8fdad0009633242970ae3d52603b79, type: 2}
+  missileColor: {fileID: 120438, guid: a82e2840f8a9ed6488a5601f3763c97d, type: 2}
 --- !u!114 &11450708
 MonoBehaviour:
   m_ObjectHideFlags: 1
