@@ -12,7 +12,7 @@ public class ActivatePlayerShip : MonoBehaviour {
 	void Start ()
     {
         Object[] subListObjects = Resources.LoadAll("ShipTypes", typeof(GameObject));
-        print(subListObjects.Length);
+
         foreach (GameObject go in subListObjects)
         {
             shipPrefabs.Add(go);

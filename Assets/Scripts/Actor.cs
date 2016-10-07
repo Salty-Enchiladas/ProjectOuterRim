@@ -285,25 +285,26 @@ public class Actor : MonoBehaviour
 
                         if (transform.position.z < playerTarget.transform.position.z - 200)
                         {
-                            switch (transform.name)
-                            {
-                                case "Enemy1":
-                                    _waveHandler.firstEnemyCount--;
-                                    gameObject.SetActive(false);
-                                    break;
-                                case "Enemy2":
-                                    _waveHandler.secondEnemyCount--;
-                                    gameObject.SetActive(false);
-                                    break;
-                                case "Enemy3":
-                                    _waveHandler.thirdEnemyCount--;
-                                    gameObject.SetActive(false);
-                                    break;
-                                case "Enemy4":
-                                    _waveHandler.fourthEnemyCount--;
-                                    gameObject.SetActive(false);
-                                    break;
-                            }
+                            transform.position = gameManager.GetComponent<WaveManager>().ChooseLocation();
+                            //switch (transform.name)
+                            //{
+                            //    case "Enemy1":
+                            //        _waveHandler.firstEnemyCount--;
+                            //        gameObject.SetActive(false);
+                            //        break;
+                            //    case "Enemy2":
+                            //        _waveHandler.secondEnemyCount--;
+                            //        gameObject.SetActive(false);
+                            //        break;
+                            //    case "Enemy3":
+                            //        _waveHandler.thirdEnemyCount--;
+                            //        gameObject.SetActive(false);
+                            //        break;
+                            //    case "Enemy4":
+                            //        _waveHandler.fourthEnemyCount--;
+                            //        gameObject.SetActive(false);
+                            //        break;
+                            //}
                         }
                     }
 

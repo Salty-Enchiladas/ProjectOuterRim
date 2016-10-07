@@ -49,7 +49,7 @@ public class EnemyAI : MonoBehaviour
             if (transform.position.z <= -250)   //If you go to far, shut off.
             {
                 waveHandler.firstEnemyCount--;
-                gameObject.SetActive(false);
+                transform.position = gameManager.GetComponent<WaveManager>().ChooseLocation();
             }
         }
     }
