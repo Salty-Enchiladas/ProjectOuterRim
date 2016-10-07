@@ -8,11 +8,13 @@ public class ActivatePrevious : MonoBehaviour
 
 	void Update ()
     {
-        if (Input.GetButtonDown("Fire4"))
+        if (Input.GetButtonDown("Fire4") || Input.GetKeyDown(KeyCode.Backspace))
         {
             activatePrevious.SetActive(true);
             activatePrevious.GetComponent<InitialWrangler>().enabled = true;
-            gameObject.SetActive(false);
+            
+            if(transform.name == "Confirm")
+                gameObject.SetActive(false);
         }
 	}
 }

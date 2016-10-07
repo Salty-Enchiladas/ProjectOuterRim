@@ -27,12 +27,12 @@ public class ShipWrangler : MonoBehaviour {
 	void Update () {
         DisplayShip();
 
-        if (Input.GetAxis("Horizontal") < -.99f && !hasMoved)
+        if (Input.GetAxis("Horizontal") < -.99f && !hasMoved || Input.GetKeyDown(KeyCode.A))
         {
             hasMoved = true;
             PreviousSelection();
         }
-        else if (Input.GetAxis("Horizontal") > .99f && !hasMoved)
+        else if (Input.GetAxis("Horizontal") > .99f && !hasMoved || Input.GetKeyDown(KeyCode.D))
         {
             hasMoved = true;
             NextSelection();

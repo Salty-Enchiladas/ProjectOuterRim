@@ -57,12 +57,12 @@ public class InitialWrangler : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") < -.99f && !hasMoved)
+        if (Input.GetAxis("Vertical") < -.99f && !hasMoved || Input.GetKeyDown(KeyCode.W))
         {
             hasMoved = true;
             PreviousCharacter();
         }
-        else if (Input.GetAxis("Vertical") > .99f && !hasMoved)
+        else if (Input.GetAxis("Vertical") > .99f && !hasMoved || Input.GetKeyDown(KeyCode.S))
         {
             hasMoved = true;
             NextCharacter();
@@ -72,7 +72,7 @@ public class InitialWrangler : MonoBehaviour {
             hasMoved = false;
         }
 
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire3") || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             if (activateNext.transform.parent != null)
             {
@@ -81,8 +81,9 @@ public class InitialWrangler : MonoBehaviour {
             activateNext.SetActive(true);
             enabled = false;
         }
-        if (Input.GetButtonDown("Fire4"))
+        if (Input.GetButtonDown("Fire4") || Input.GetKeyDown(KeyCode.Backspace))
         {
+
             if (transform.name == "Initial1")
             {
                 //Do nothing
