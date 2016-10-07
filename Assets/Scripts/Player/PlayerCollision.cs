@@ -180,6 +180,7 @@ public class PlayerCollision : MonoBehaviour
 
     public void GainLife()
     {
+        if(playerLives < 3)
         playerLives++;
     }
 
