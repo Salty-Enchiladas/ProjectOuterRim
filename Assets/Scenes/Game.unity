@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 555410808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96823c677024b314089fdd8c781226f7, type: 3}
+  m_Script: {fileID: 11500000, guid: a1b19857c32a7594eb1d4cd654df66ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentHPUsed: 0
@@ -1111,15 +1111,15 @@ MonoBehaviour:
   - {fileID: 1478111000}
   - {fileID: 357815566}
   carrierEnemies:
-  - {fileID: 825245193}
-  spawnCarrierAt: 3
+  - {fileID: 114826, guid: c2608b2973b46604d80071d45a87c13d, type: 2}
+  spawnCarrierAt: 4
   spawnLocation: {x: 0, y: 0, z: 0}
   sectorCompleteAt: 4
   quadrentCompleteAt: 16
   minXSpawn: -5000
   maxXspawn: 5000
-  minYSpawn: -2500
-  maxYSpawn: 2500
+  minYSpawn: -2000
+  maxYSpawn: 2000
   zSpawn: 11000
   activeEnemies: []
   waveStartingText: {fileID: 1457899846}

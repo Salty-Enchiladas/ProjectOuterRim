@@ -170,11 +170,11 @@ public class WaveManager : MonoBehaviour
             StartCoroutine(SectorCompleted());
             yield return new WaitForSeconds(3);
         }
-        if (waveCount % spawnCarrierAt == 0 && waveCount != 0)
-        {
-            print("Carrier spawned");
-            Instantiate(carrierEnemies[Random.Range(0, carrierEnemies.Length)], spawnLocation, Quaternion.identity);
-        }
+        //if (waveCount % spawnCarrierAt == 0 && waveCount != 0)
+        //{
+        //    print("Carrier spawned");
+        //    Instantiate(carrierEnemies[Random.Range(0, carrierEnemies.Length)], spawnLocation, Quaternion.identity);
+        //}
         //if (waveCount % spawnKamikazeAt == 0 && waveCount != 0)
         //{
         //    Instantiate(kamikazeEnemies[Random.Range(0, carrierEnemies.Length)], new Vector3(player.transform.position.x + Random.Range(minXSpawn, maxXspawn),
