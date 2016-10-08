@@ -31,7 +31,7 @@ Material:
       data:
         first:
           name: _Iterations
-        second: 10.8
+        second: 16
       data:
         first:
           name: _Volsteps
@@ -39,7 +39,7 @@ Material:
       data:
         first:
           name: _Formuparam
-        second: 700
+        second: 348.64
       data:
         first:
           name: _StepSize
@@ -47,19 +47,19 @@ Material:
       data:
         first:
           name: _Brightness
-        second: 29.3
+        second: 0.9
       data:
         first:
           name: _Darkmatter
-        second: 0
+        second: 94.48
       data:
         first:
           name: _Distfading
-        second: 43.64
+        second: 99.58
       data:
         first:
           name: _Saturation
-        second: 50
+        second: 15.3
     m_Colors:
       data:
         first:
@@ -67,13 +67,13 @@ Material:
         second: {r: 0.35294116, g: 0.35294116, b: 0.35294116, a: 1}
       data:
         first:
+          name: _Rotation
+        second: {r: 0, g: 0, b: 0, a: 0.01}
+      data:
+        first:
           name: _Scroll
-        second: {r: 0, g: 0, b: 4.74, a: 0.01}
+        second: {r: 0, g: 0, b: 3.94, a: 1.23}
       data:
         first:
           name: _Center
         second: {r: 0.3, g: 0.75, b: 0, a: 0}
-      data:
-        first:
-          name: _Rotation
-        second: {r: 0, g: 0, b: 0, a: 0.01}

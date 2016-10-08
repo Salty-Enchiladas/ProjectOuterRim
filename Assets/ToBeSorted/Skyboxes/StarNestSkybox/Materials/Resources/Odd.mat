@@ -129,6 +129,14 @@ Material:
         second: 0
       data:
         first:
+          name: _Speed
+        second: 0
+      data:
+        first:
+          name: _Tile
+        second: 850
+      data:
+        first:
           name: _CamScroll
         second: -55
       data:
@@ -147,10 +155,6 @@ Material:
         first:
           name: _StepSize
         second: -300
-      data:
-        first:
-          name: _Tile
-        second: 850
       data:
         first:
           name: _Brightness
@@ -178,10 +182,6 @@ Material:
       data:
         first:
           name: _Yscroll
-        second: 0
-      data:
-        first:
-          name: _Speed
         second: 0
       data:
         first:

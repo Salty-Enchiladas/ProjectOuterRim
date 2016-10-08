@@ -25,8 +25,8 @@ Material:
     m_Floats:
       data:
         first:
-          name: _CLAMPOUT
-        second: 0
+          name: _Tile
+        second: 700
       data:
         first:
           name: _CamScroll
@@ -47,10 +47,6 @@ Material:
         first:
           name: _StepSize
         second: 130
-      data:
-        first:
-          name: _Tile
-        second: 700
       data:
         first:
           name: _Brightness
@@ -83,7 +79,7 @@ Material:
       data:
         first:
           name: _Scroll
-        second: {r: 3, g: 1, b: 10, a: 0.01}
+        second: {r: 3, g: 1, b: 0.6, a: 0.01}
       data:
         first:
           name: _Center

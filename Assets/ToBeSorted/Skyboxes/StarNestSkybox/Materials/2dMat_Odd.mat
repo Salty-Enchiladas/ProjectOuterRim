@@ -25,6 +25,10 @@ Material:
     m_Floats:
       data:
         first:
+          name: _Tile
+        second: 850
+      data:
+        first:
           name: _CamScroll
         second: -831
       data:
@@ -43,10 +47,6 @@ Material:
         first:
           name: _StepSize
         second: -300
-      data:
-        first:
-          name: _Tile
-        second: 850
       data:
         first:
           name: _Brightness
