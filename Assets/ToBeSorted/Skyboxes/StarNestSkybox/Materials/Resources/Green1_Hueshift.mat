@@ -129,6 +129,10 @@ Material:
         second: 0
       data:
         first:
+          name: _Tile
+        second: 1194.6
+      data:
+        first:
           name: _CLAMPOUT
         second: 0
       data:
@@ -151,10 +155,6 @@ Material:
         first:
           name: _StepSize
         second: 254.6
-      data:
-        first:
-          name: _Tile
-        second: 1194.6
       data:
         first:
           name: _Brightness

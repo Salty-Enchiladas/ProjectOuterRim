@@ -129,6 +129,10 @@ Material:
         second: 0
       data:
         first:
+          name: _Tile
+        second: 796.96
+      data:
+        first:
           name: _CamScroll
         second: 55
       data:
@@ -147,10 +151,6 @@ Material:
         first:
           name: _StepSize
         second: 312.2
-      data:
-        first:
-          name: _Tile
-        second: 796.96
       data:
         first:
           name: _Brightness
