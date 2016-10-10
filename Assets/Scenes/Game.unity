@@ -1221,8 +1221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b19857c32a7594eb1d4cd654df66ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHPAllowed: 30
   currentHPUsed: 0
-  AllowHPIncreaseAmount: 10
+  AllowHPIncreaseAmount: 4
   regularEnemyPool:
   - {fileID: 11046876}
   - {fileID: 930241600}

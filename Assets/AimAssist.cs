@@ -21,7 +21,7 @@ public class AimAssist : MonoBehaviour
     }
 	void Update ()
     {
-        foundTarget = Physics.SphereCast(transform.position, 200f, transform.forward, out hit, 7000f);
+        foundTarget = Physics.SphereCast(transform.position, 150f, transform.forward, out hit, 7000f);
 
         if (foundTarget)
         {

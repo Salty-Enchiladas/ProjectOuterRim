@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class WaveManager : MonoBehaviour
 {
     //This Wave Manager spawns enemies based upon their health. It checks what the allowed health amount you set is and spawns enemies until it hits that amount.
-
+    [Tooltip("This is the max hp ever allowed.")]
+    public int maxHPAllowed;
     [Tooltip("Total allowed Health Points. changing this will increase the amount of ships that could spawn.")]
      int AllowedHP;
     [Tooltip("How much total Health Points are active right now. This correlates to how many ships are active.")]
@@ -161,7 +162,10 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator WaveStarting()
     {
-        AllowedHP += AllowHPIncreaseAmount;
+        if (AllowedHP < maxHPAllowed)
+        {
+            AllowedHP += AllowHPIncreaseAmount;
+        }
 
         if(waveCount % sectorCompleteAt == 0 && waveCount != 0 && sectorCompleteAt != 0)
         {

@@ -77,6 +77,7 @@ public class FireScript : MonoBehaviour {
 
     void Fire()
     {
+        target = null;
         if (laserSound != null)
         {
             laserSound.Shooting();
