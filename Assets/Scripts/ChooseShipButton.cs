@@ -28,8 +28,6 @@ public class ChooseShipButton : MonoBehaviour {
         {
             hasMoved = false;
         }
-
-
     }
 
     public void NextShip()

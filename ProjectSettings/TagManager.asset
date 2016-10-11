@@ -10,7 +10,6 @@ TagManager:
   - Enemy Laser
   - Enemy
   - Button
-  - Destructable Piece
   - Gun
   - Bullet
   - Game Manager
@@ -26,6 +25,17 @@ TagManager:
   - PowerUpLasers
   - Carrier
   - ShipWrangler
+  - Claw
+  - DeathAdder
+  - Organic
+  - TriDrone
+  - Ranger
+  - StarWing
+  - CWing
+  - MetalBlade
+  - SuperWing
+  - DarkWing
+  - InvisiBlade
   layers:
   - Default
   - TransparentFX

@@ -6,26 +6,29 @@ public class ShipWrangler : MonoBehaviour {
     public List<GameObject> ships;
     public int currentShip;
     bool hasMoved;
+    public List<GameObject> origShips;
 
 	// Use this for initialization
 	void Start ()
     {
-        Transform[] children;
-        children = transform.GetComponentsInChildren<Transform>();
-        foreach (Transform t in children)
-        {
-            if (t.tag == "ShipWrangler")
-            {
-                ships.Add(t.gameObject);
-                t.gameObject.SetActive(false);
-            }
-        }
-        
-	}
+        origShips = ships;
+        DisplayShip();
+        //Transform[] children;
+        //children = transform.GetComponentsInChildren<Transform>();
+        //foreach (Transform t in children)
+        //{
+        //    if (t.tag == "ShipWrangler")
+        //    {
+        //        ships.Add(t.gameObject);
+        //        t.gameObject.SetActive(false);
+        //    }
+        //}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        DisplayShip();
+        //DisplayShip();
 
         if (Input.GetAxis("Horizontal") < -.99f && !hasMoved)
         {
@@ -54,10 +57,12 @@ public class ShipWrangler : MonoBehaviour {
         if (currentShip == ships.Count - 1)
         {
             currentShip = 0;
+            DisplayShip();
         }
         else
         {
             currentShip++;
+            DisplayShip();
         }
     }
 
@@ -66,10 +71,12 @@ public class ShipWrangler : MonoBehaviour {
         if (currentShip == 0)
         {
             currentShip = ships.Count - 1;
+            DisplayShip();
         }
         else
         {
             currentShip--;
+            DisplayShip();
         }
     }
 
