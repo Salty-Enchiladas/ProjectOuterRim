@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 555410808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f424b88a9671625429c4d7014f83e36a, type: 3}
+  m_Script: {fileID: 11500000, guid: d70ddc7352f256e4fa9e0df89a767621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHPAllowed: 30
@@ -1230,7 +1230,7 @@ MonoBehaviour:
   - {fileID: 1478111000}
   - {fileID: 357815566}
   carrierEnemies:
-  - {fileID: 114826, guid: c2608b2973b46604d80071d45a87c13d, type: 2}
+  - {fileID: 115900, guid: 2e6b7514ac8d42a42be4da492721cff2, type: 2}
   spawnCarrierAt: 5
   spawnLocation: {x: 0, y: 0, z: 0}
   sectorCompleteAt: 4

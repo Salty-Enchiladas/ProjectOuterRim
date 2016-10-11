@@ -33,15 +33,8 @@ public class NewHighScore : MonoBehaviour {
     {
         playerName = initial1.text + initial2.text + initial3.text;
 
-        GameObject.Find("Manager").GetComponent<HighScoreHandler>().UpdateLeaderboardInfo(PlayerPrefs.GetInt("Score"), playerName, HighScoreHandler.rankToUpdate-1);
-
-        //PlayerPrefs.SetInt("Rank" + HighScoreHandler.rankToUpdate.ToString() + "Score", PlayerPrefs.GetInt("Score"));
-        //PlayerPrefs.SetString("Rank" + HighScoreHandler.rankToUpdate.ToString() + "Name", playerName);
-
-        //PlayerPrefs.Save();
-
-        //scoreList[HighScoreHandler.rankToUpdate-1].text = PlayerPrefs.GetInt("Rank" + HighScoreHandler.rankToUpdate.ToString() + "Score").ToString();
-        //nameList[HighScoreHandler.rankToUpdate-1].text = PlayerPrefs.GetString("Rank" + HighScoreHandler.rankToUpdate.ToString() + "Name");
+        //GameObject.Find("Manager").GetComponent<HighScoreHandler>().UpdateLeaderboardInfo(PlayerPrefs.GetInt("Score"), playerName, HighScoreHandler.rankToUpdate-1);
+        HighScores.AddNewHighScore(playerName, PlayerPrefs.GetInt("Score"));
 
         newHSPanel.SetActive(false);
 

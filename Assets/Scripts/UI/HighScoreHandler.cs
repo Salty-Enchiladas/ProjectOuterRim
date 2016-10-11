@@ -75,15 +75,15 @@ public class HighScoreHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown("r")) 
+        if (Input.GetKeyDown("r"))
         {
-            for(int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 scoreString = "Rank" + i.ToString() + "Score";
                 nameString = "Rank" + i.ToString() + "Name";
 
                 PlayerPrefs.SetInt(scoreString, 0);
-                PlayerPrefs.SetString(nameString, "");                
+                PlayerPrefs.SetString(nameString, "");
 
                 leaderboardInfo[i - 1].Score = PlayerPrefs.GetInt(scoreString);
                 leaderboardInfo[i - 1].Name = PlayerPrefs.GetString(nameString);
@@ -91,7 +91,7 @@ public class HighScoreHandler : MonoBehaviour {
                 UpdateLeaderboardGraphics();
             }
         }
-	}
+    }
 
     public void UpdateLeaderboardInfo(int score, string name, int index)
     {
@@ -138,8 +138,8 @@ public class HighScoreHandler : MonoBehaviour {
 
 public class LeaderboardInfo
 {
-    int score;
-    string name;
+    public int score;
+    public string name;
 
     public LeaderboardInfo(int aScore, string aName)
     {
