@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1ee2095ff814f4c8f1d8148eaa9c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missileSpeed: 2500
+  missileSpeed: 1500
   target: {fileID: 0}
 --- !u!114 &11497722
 MonoBehaviour:
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180120}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db27baa30b076e8458d6a2c4c33ca1b1, type: 3}
   m_Name: 
