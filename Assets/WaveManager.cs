@@ -7,13 +7,13 @@ public class WaveManager : MonoBehaviour
 {
     //This Wave Manager spawns enemies based upon their health. It checks what the allowed health amount you set is and spawns enemies until it hits that amount.
     [Tooltip("This is the max hp ever allowed.")]
-    public int maxHPAllowed;
-    [Tooltip("Total allowed Health Points. changing this will increase the amount of ships that could spawn.")]
-     int AllowedHP;
-    [Tooltip("How much total Health Points are active right now. This correlates to how many ships are active.")]
-    public int currentHPUsed;
+    public float maxHPAllowed;
+    [Tooltip("Total allowed Health Pofloats. changing this will increase the amount of ships that could spawn.")]
+     float AllowedHP;
+    [Tooltip("How much total Health Pofloats are active right now. This correlates to how many ships are active.")]
+    public float currentHPUsed;
     [Tooltip("How much will the Allowed HP increase by every wave complete.")]
-    public int AllowHPIncreaseAmount;
+    public float AllowHPIncreaseAmount;
     [Tooltip("This array should be populated with the pools of all the basic enemies in order from hardest to easiest. This excludes Kamikaze and Carrier ships.")]
     public ObjectPooling[] regularEnemyPool;
     [Tooltip("This array should be populated with all the enemy carrier PREFABS.")]
@@ -21,14 +21,14 @@ public class WaveManager : MonoBehaviour
     //[Tooltip("This array should be populated with all the enemy kamikaze PREFABS.")]
     //public GameObject[] kamikazeEnemies;
     [Tooltip("This number refers to a wave. If you want the carrier to spawn every 10 waves you would put 10 in here.")]
-    public int spawnCarrierAt;
+    public float spawnCarrierAt;
     //[Tooltip("This number refers to a wave. If you want the kamikaze to spawn every 10 waves you would put 10 in here.")]
-    //public int spawnKamikazeAt;
+    //public float spawnKamikazeAt;
     [HideInInspector]
     public Vector3 spawnLocation;
 
-    public int sectorCompleteAt;
-    public int quadrentCompleteAt;
+    public float sectorCompleteAt;
+    public float quadrentCompleteAt;
 
     public float minXSpawn;
     public float maxXspawn;
@@ -51,9 +51,9 @@ public class WaveManager : MonoBehaviour
     private bool canSpawn;
     private bool sectorWasCompleted;
     private int newEnemyCount;  //This increases the pool size.
-    private int waveCount;
-    int sectorNum;
-    int quadNum;
+    private float waveCount;
+    float sectorNum;
+    float quadNum;
     int badgeAmt;
 
 	void Start ()
@@ -167,13 +167,6 @@ public class WaveManager : MonoBehaviour
             AllowedHP += AllowHPIncreaseAmount;
         }
 
-        if(waveCount % sectorCompleteAt == 0 && waveCount != 0 && sectorCompleteAt != 0)
-        {
-            print("SectorCompleted");
-            sectorWasCompleted = true;
-            StartCoroutine(SectorCompleted());
-            yield return new WaitForSeconds(3);
-        }
         //if (waveCount % spawnCarrierAt == 0 && waveCount != 0)
         //{
         //    print("Carrier spawned");
@@ -181,23 +174,29 @@ public class WaveManager : MonoBehaviour
         //}
         //if (waveCount % spawnKamikazeAt == 0 && waveCount != 0)
         //{
-        //    Instantiate(kamikazeEnemies[Random.Range(0, carrierEnemies.Length)], new Vector3(player.transform.position.x + Random.Range(minXSpawn, maxXspawn),
+        //        Instantiate(kamikazeEnemies[Random.Range(0, carrierEnemies.Length)], new Vector3(player.transform.position.x + Random.Range(minXSpawn, maxXspawn),
         //        player.transform.position.y + Random.Range(minYSpawn, maxYSpawn), player.transform.position.z + zSpawn), Quaternion.identity);
         //}
         if (newEnemyCount < regularEnemyPool.Length)
         {
             newEnemyCount++;
         }
-
-        if (!sectorWasCompleted)
-        {
             waveCount++;
-            waveStartingText.gameObject.SetActive(true);
-            waveStartingText.text = "Wave " + waveCount;
+
+        if (waveCount % sectorCompleteAt == 0 && waveCount != 0 && sectorCompleteAt != 0)
+        {
+            print("WaveCount is: " + waveCount + "A sector is complete at: " + sectorCompleteAt + "Modulation Resutls: " + waveCount % sectorCompleteAt);
+            print("SectorCompleted");
+            sectorWasCompleted = true;
+            StartCoroutine(SectorCompleted());
             yield return new WaitForSeconds(3);
-            waveStartingText.gameObject.SetActive(false);
         }
 
+
+        waveStartingText.gameObject.SetActive(true);
+        waveStartingText.text = "Wave " + waveCount;
+        yield return new WaitForSeconds(3);
+        waveStartingText.gameObject.SetActive(false);
         canSpawn = true;
         Spawn();
     }

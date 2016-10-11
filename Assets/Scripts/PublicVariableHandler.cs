@@ -4,8 +4,11 @@ using UnityEngine.UI;
 
 public class PublicVariableHandler : MonoBehaviour
 {
-	//Meteor Variables
-	public GameObject meteorExplosion;
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Public Variables
+
+    //Meteor Variables
+    public GameObject meteorExplosion;
 	public int meteorHealth;
 
     //Laser Sounds
@@ -86,4 +89,9 @@ public class PublicVariableHandler : MonoBehaviour
     public int enemy5BaseHealth;
     public int enemy5ShieldHealth;
     public int enemy5LaserScore;
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Adjust Difficulty Code and Variables
 }

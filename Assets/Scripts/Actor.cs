@@ -101,18 +101,18 @@ public class Actor : MonoBehaviour
         playerTarget = GameObject.Find("PlayerTarget");
         gameManager = GameObject.Find("GameManager");
 
-        switch (transform.name)
+        switch (transform.parent.name)
         {
-            case "Enemy1":
+            case "FirstEnemyShips":
                 speed = gameManager.GetComponent<PublicVariableHandler>().enemy1Speed;
                 break;
-            case "Enemy2":
+            case "SecondEnemyShips":
                 speed = gameManager.GetComponent<PublicVariableHandler>().enemy2Speed;
                 break;
-            case "Enemy3":
+            case "ThirdEnemyShips":
                 speed = gameManager.GetComponent<PublicVariableHandler>().enemy3Speed;
                 break;
-            case "Enemy4":
+            case "FourthEnemyShips":
                 speed = gameManager.GetComponent<PublicVariableHandler>().enemy4Speed;
                 break;
         }

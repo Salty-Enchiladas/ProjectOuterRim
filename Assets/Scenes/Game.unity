@@ -1291,7 +1291,7 @@ MonoBehaviour:
   playerLaserHeatCap: 1
   playerLaserHeatIncreaseAmount: 0.06
   laserHeatLossAfterSeconds: 1
-  enemyAISpeed: 700
+  enemyAISpeed: 500
   maneuverSpeed: 1
   strafeSpeed: 1.5
   enemy1Speed: 500
