@@ -579,6 +579,58 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!1 &247407050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 247407051}
+  - 114: {fileID: 247407052}
+  m_Layer: 0
+  m_Name: EleventhEnemyShips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &247407051
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247407050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 19
+--- !u!114 &247407052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247407050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 159058, guid: 53b5b5f331098b549b608a756fce8adc, type: 2}
+  - {fileID: 133944, guid: 09ddf4623f33a6e4a927fdc63999cb9e, type: 2}
+  - {fileID: 149238, guid: db58ee67f35dd574b9ba5477f5132199, type: 2}
+  - {fileID: 171716, guid: d66ed6d5b345df042a965524f0184443, type: 2}
+  - {fileID: 111080, guid: 532d76637b3dbbe4698370cd9f7a09f9, type: 2}
+  - {fileID: 122910, guid: e007c00ad41214f478e32f938a7f63c8, type: 2}
+  - {fileID: 153530, guid: 1476e1416bd3b6945a73608cd7d542b2, type: 2}
+  - {fileID: 180292, guid: b3f9adefd20ee0346b8a9e8f902097ba, type: 2}
+  pooledAmount: 10
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1001 &256987714
 Prefab:
   m_ObjectHideFlags: 0
@@ -752,6 +804,58 @@ MonoBehaviour:
   - {fileID: 118924, guid: b343cce3e7a85664aa6b9329c5ccc67f, type: 2}
   - {fileID: 154014, guid: e33b1975efaf93146957ca67460069bc, type: 2}
   - {fileID: 190918, guid: c12d4f41cf1753647a9c79e39163e931, type: 2}
+  pooledAmount: 10
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
+--- !u!1 &382709021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 382709022}
+  - 114: {fileID: 382709023}
+  m_Layer: 0
+  m_Name: EighthEnemyShips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &382709022
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 382709021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 16
+--- !u!114 &382709023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 382709021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 193016, guid: f6ccf8392cc3cc945a0c1de208e60edc, type: 2}
+  - {fileID: 192516, guid: 0376a3168ee3bd44ebcfaef1501f6f9d, type: 2}
+  - {fileID: 192724, guid: 2279185ec324239408d3ad2fcb18fd25, type: 2}
+  - {fileID: 103864, guid: 6e63ab093de9ced438295d8ffa60ec0d, type: 2}
+  - {fileID: 196692, guid: a5a3fe8aa9598ce4f8c8a0cfccdec480, type: 2}
+  - {fileID: 175530, guid: 17207b7c01d185e4791c209930854bf4, type: 2}
+  - {fileID: 183604, guid: 2fb6808e481f36343bc18f3bb270c85f, type: 2}
+  - {fileID: 197396, guid: 9108f77c0ecb5a842a2de0f7a33dc7e7, type: 2}
   pooledAmount: 10
   waitTime: 0.0000001
   willGrow: 1
@@ -962,6 +1066,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: []
   pooledAmount: 300
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
+--- !u!1 &546545479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 546545480}
+  - 114: {fileID: 546545481}
+  m_Layer: 0
+  m_Name: FifthEnemyShips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &546545480
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546545479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 13
+--- !u!114 &546545481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546545479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 150238, guid: 87d9fe815779c9540a694b3810ea299f, type: 2}
+  - {fileID: 132060, guid: c6c29333c584a8a44a7e063af68f1726, type: 2}
+  - {fileID: 115900, guid: 2e6b7514ac8d42a42be4da492721cff2, type: 2}
+  - {fileID: 197782, guid: cbc89bf4a89bdbd48b751b18210f1261, type: 2}
+  - {fileID: 122096, guid: 5508a727d8097244388755107212ce99, type: 2}
+  - {fileID: 114826, guid: c2608b2973b46604d80071d45a87c13d, type: 2}
+  - {fileID: 158700, guid: 832e3e4dcf3dd804da9e309d2170eee9, type: 2}
+  - {fileID: 188124, guid: 4f177a1e5b5422647aaf059570f53fe8, type: 2}
+  pooledAmount: 10
   waitTime: 0.0000001
   willGrow: 1
   pooledObjects: []
@@ -1229,6 +1385,14 @@ MonoBehaviour:
   - {fileID: 930241600}
   - {fileID: 1478111000}
   - {fileID: 357815566}
+  - {fileID: 546545481}
+  - {fileID: 1434193692}
+  - {fileID: 1636401025}
+  - {fileID: 382709023}
+  - {fileID: 1033441396}
+  - {fileID: 1131345387}
+  - {fileID: 247407052}
+  - {fileID: 1714836073}
   carrierEnemies: []
   spawnCarrierAt: 5
   spawnLocation: {x: 0, y: 0, z: 0}
@@ -1428,12 +1592,12 @@ MonoBehaviour:
   - {x: 200, y: 200, z: 200}
   - {x: 350, y: 350, z: 350}
   - {x: 400, y: 400, z: 400}
-  - {x: 600, y: 600, z: 600}
+  - {x: 90, y: 90, z: 90}
   - {x: 225, y: 225, z: 225}
   - {x: 150, y: 150, z: 150}
   - {x: 100, y: 100, z: 100}
-  - {x: 1600, y: 1600, z: 1600}
-  - {x: 700, y: 700, z: 700}
+  - {x: 200, y: 200, z: 200}
+  - {x: 45, y: 45, z: 45}
 --- !u!4 &568474989
 Transform:
   m_ObjectHideFlags: 0
@@ -2155,6 +2319,14 @@ Transform:
   - {fileID: 775086620}
   - {fileID: 536503303}
   - {fileID: 825245194}
+  - {fileID: 546545480}
+  - {fileID: 1434193691}
+  - {fileID: 1636401024}
+  - {fileID: 382709022}
+  - {fileID: 1033441395}
+  - {fileID: 1131345386}
+  - {fileID: 247407051}
+  - {fileID: 1714836072}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &1032136427
@@ -2230,6 +2402,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1032136427}
+--- !u!1 &1033441394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1033441395}
+  - 114: {fileID: 1033441396}
+  m_Layer: 0
+  m_Name: NinethEnemyShips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1033441395
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033441394}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 17
+--- !u!114 &1033441396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033441394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 190502, guid: 11d3185f84073d2429673331960fe23e, type: 2}
+  - {fileID: 186786, guid: 3d6b20d8e930ed5499e18c1d28c25cb9, type: 2}
+  - {fileID: 105908, guid: 41b2d6c3c2fae86449b082bcc40d09dc, type: 2}
+  - {fileID: 105972, guid: 9a0d6fd3065951444ad8bebe716dc579, type: 2}
+  - {fileID: 170496, guid: e66cd5ee6ef5ade4d8dda49fc3b2d4ff, type: 2}
+  - {fileID: 127518, guid: 5e4c3c139ebeef445b71a264023527b5, type: 2}
+  - {fileID: 122038, guid: 6fd57aa78d4da7a42940a73324f903d4, type: 2}
+  - {fileID: 118884, guid: 581adb8ab5b6c6546847dffa52367cf6, type: 2}
+  pooledAmount: 10
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &1052219907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +2521,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1052219907}
+--- !u!1 &1131345385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1131345386}
+  - 114: {fileID: 1131345387}
+  m_Layer: 0
+  m_Name: TenthEnemyShips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1131345386
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131345385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 18
+--- !u!114 &1131345387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131345385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 138708, guid: 7f388b998ec572449a5551323515e13d, type: 2}
+  - {fileID: 177208, guid: fbfcd2035320e1743ad4a3505ac6575e, type: 2}
+  - {fileID: 190040, guid: 215e627387858284998edc3715256d26, type: 2}
+  - {fileID: 123162, guid: 19eee115ebfc13f4c937019ab3203b68, type: 2}
+  - {fileID: 135878, guid: 505c4c399369f0a4cb7cd7dbc9b1f7e3, type: 2}
+  - {fileID: 176586, guid: b86a48f0dff80dd44a64eff06d63d11f, type: 2}
+  - {fileID: 158538, guid: ca98f696be6a5904b8894c9b6eb76170, type: 2}
+  - {fileID: 139548, guid: 6d54d1720bbf2ef44acc6e7d6042280a, type: 2}
+  pooledAmount: 10
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &1135065730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,6 +3133,58 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89589379be3b20c40a7899e7fc0e91a5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1434193690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1434193691}
+  - 114: {fileID: 1434193692}
+  m_Layer: 0
+  m_Name: SixthEnemyShips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434193691
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1434193690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 14
+--- !u!114 &1434193692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1434193690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 165832, guid: 8ad1ba901d8b8e543b6dc46485f946eb, type: 2}
+  - {fileID: 113626, guid: c7fefe2239eab1f438dc8b8b138384b2, type: 2}
+  - {fileID: 188606, guid: 2b2eab7556e5c6344abbc3f686eeeaa5, type: 2}
+  - {fileID: 147218, guid: 1c7862962821d6b408b89ca83f1d8ddd, type: 2}
+  - {fileID: 109294, guid: 60ffe41b11ec6b647adda7a2f1601e80, type: 2}
+  - {fileID: 138984, guid: a7c9f04b7f239134ba2f6a78cb3652a1, type: 2}
+  - {fileID: 165482, guid: 6cb1458de8e09d141a1af6fe7efb564c, type: 2}
+  - {fileID: 100096, guid: e2da0b8e208d3a841bda7be7103650a9, type: 2}
+  pooledAmount: 10
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &1454868657
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,6 +4557,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1607794819}
+--- !u!1 &1636401023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1636401024}
+  - 114: {fileID: 1636401025}
+  m_Layer: 0
+  m_Name: SeventhEnemyShips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1636401024
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636401023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 15
+--- !u!114 &1636401025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636401023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 161094, guid: 8f77915f0d232b24fb14b17acf64c6b4, type: 2}
+  - {fileID: 181556, guid: 2513c7325c22a90458beb71eb164ebb1, type: 2}
+  - {fileID: 162258, guid: 3128edcbc034a8144a2db7e18ab98dd9, type: 2}
+  - {fileID: 157628, guid: ef225dcc9bbb25b43a0702342a1307ff, type: 2}
+  - {fileID: 155910, guid: 7b2dab8a6d21cb94093e9fc7e123e993, type: 2}
+  - {fileID: 142994, guid: 380114503e4b0204dbe7c2ae183cb3e6, type: 2}
+  - {fileID: 181874, guid: 4ebd2316947d869459a6667b9bca34ab, type: 2}
+  - {fileID: 114712, guid: 840fe132b89638146b7b1f092d025726, type: 2}
+  pooledAmount: 10
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &1641560772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4808,6 +5188,54 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cf7126f929d1e1448a7b42572fd2a5a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1714836071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1714836072}
+  - 114: {fileID: 1714836073}
+  m_Layer: 0
+  m_Name: 'TwelvethEnemyShips '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1714836072
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714836071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 986097446}
+  m_RootOrder: 20
+--- !u!114 &1714836073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714836071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66660a5e36fd8db4fb043f994e607fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject:
+  - {fileID: 100886, guid: 2a79580b14b696e439e682e7d6d1e45c, type: 2}
+  - {fileID: 118986, guid: e736aa6b505203d4ea8aed1a5bf5e484, type: 2}
+  - {fileID: 117976, guid: 1c0367ffde61ecf46bb7ca4e4c704fee, type: 2}
+  - {fileID: 114004, guid: 64f5907005cd25844a4fd3a8c93a7dca, type: 2}
+  pooledAmount: 10
+  waitTime: 0.0000001
+  willGrow: 1
+  pooledObjects: []
 --- !u!1 &1716084575
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,7 +46,6 @@ GameObject:
   - 114: {fileID: 11401402}
   - 82: {fileID: 8211652}
   - 136: {fileID: 13647782}
-  - 165: {fileID: 16514438}
   m_Layer: 0
   m_Name: Laser Pink
   m_TagString: Laser
@@ -131,12 +130,12 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186514}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b8878c851941d2145bdf813d4ade5b6c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.03
+  m_Volume: 0.34
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -383,15 +382,6 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!165 &16514438
-AudioHighPassFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186514}
-  m_Enabled: 0
-  m_CutoffFrequency: 150
-  m_HighpassResonanceQ: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

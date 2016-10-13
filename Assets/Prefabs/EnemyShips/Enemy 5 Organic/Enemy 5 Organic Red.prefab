@@ -401,7 +401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &404168
 Transform:
   m_ObjectHideFlags: 1
@@ -434,7 +434,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188124}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: -325, y: 126, z: 3154}
+  m_LocalPosition: {x: -175, y: 126, z: 3154}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 454014}
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   player: {fileID: 0}
   laserScore: 15000
   missileScore: 15000
-  baseHealth: 100
+  baseHealth: 10
   currentHealth: 0
 --- !u!114 &11446744
 MonoBehaviour:
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188124}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68b50cc832fad3b4b82da02f79b1bf0d, type: 3}
   m_Name: 
@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15958e410bc686b4f8dfe81e1d8a49ea, type: 3}
   m_Name: 
