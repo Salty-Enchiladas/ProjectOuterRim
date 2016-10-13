@@ -59,10 +59,10 @@ public class FireScript : MonoBehaviour {
         }
     }
 
-    void Update()
+    public void StartFire()
     {
-        if ((Input.GetAxis("Fire1") > 0) && Time.time > lastShot + fireFreq)
-        {
+    //    if ((Input.GetAxis("Fire1") > 0) && Time.time > lastShot + fireFreq)
+    //    {
             if (target == null || target.tag != "Enemy")
                 Fire();
             else
@@ -72,10 +72,10 @@ public class FireScript : MonoBehaviour {
                 target = null;
                 transform.rotation = Quaternion.identity;
             }
-        }
+        //}
     }
 
-    void Fire()
+     void Fire()
     {
         target = null;
         if (laserSound != null)
