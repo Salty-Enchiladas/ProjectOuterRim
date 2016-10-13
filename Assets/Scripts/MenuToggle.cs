@@ -17,10 +17,28 @@ public class MenuToggle : MonoBehaviour {
     void Update()
     {
     }
+
+    public void ToggleMenu(GameObject nextSelected)
+    {
+        deactivate.SetActive(false);
+        activate.SetActive(true);
+        if(nextSelected != null)
+            EventSystem.current.SetSelectedGameObject(nextSelected);
+    }
+
     public void ToggleMenu()
     {
         deactivate.SetActive(false);
         activate.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(nextSelected);
+        if (nextSelected != null)
+            EventSystem.current.SetSelectedGameObject(nextSelected);
+    }
+
+    public static void ToggleMenu(GameObject deactivate, GameObject activate, GameObject nextSelected)
+    {
+        deactivate.SetActive(false);
+        activate.SetActive(true);
+        if (nextSelected != null)
+            EventSystem.current.SetSelectedGameObject(nextSelected);
     }
 }

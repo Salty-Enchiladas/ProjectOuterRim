@@ -23,4 +23,11 @@ public class ToggleObject : MonoBehaviour {
         shipLight.SetActive(!shipLight.activeInHierarchy);
         _object.SetActive(!_object.activeInHierarchy);
     }
+
+    public static void Toggle(GameObject lights, GameObject shipLight, GameObject _object)
+    {
+        lights.SetActive(!lights.activeInHierarchy);
+        shipLight.SetActive(!shipLight.activeInHierarchy);
+        _object.SetActive(!_object.activeInHierarchy);
+    }
 }

@@ -14,21 +14,6 @@ public class ChooseShipButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetAxis("Horizontal") < -.99f && !hasMoved)
-        {
-            hasMoved = true;
-            PreviousShip();
-        }
-        else if (Input.GetAxis("Horizontal") > .99f && !hasMoved)
-        {
-            hasMoved = true;
-            NextShip();
-        }
-        else if (Input.GetAxis("Horizontal") > -.09f && Input.GetAxis("Horizontal") < .09f)
-        {
-            hasMoved = false;
-        }
-
 
     }
 
@@ -46,7 +31,7 @@ public class ChooseShipButton : MonoBehaviour {
     {
     //    if (_shipWrangler.CurrentShip.GetComponent<ShipUnlocking>().unlocked == true)
     //    {
-            PlayerPrefs.SetString("Ship", _shipWrangler.CurrentShip.name);
+            PlayerPrefs.SetString("Ship", ChooseShipTracker.currentShipName);
             GetComponent<LoadLevel>().LevelLoad();
        // }
     }

@@ -19,15 +19,15 @@ public class ShipUnlocking : MonoBehaviour
 
     void Update()
     {
-        if (unlocked)
-        {
-            playButton.SetActive(true);
-            lockedButton.SetActive(false);
-        }
-        else if (!unlocked)
-        {
-            playButton.SetActive(false);
-            lockedButton.SetActive(true);
-        }
+        //if (unlocked)
+        //{
+        //    playButton.SetActive(true);
+        //    lockedButton.SetActive(false);
+        //}
+        //else if (!unlocked)
+        //{
+        //    playButton.SetActive(false);
+        //    lockedButton.SetActive(true);
+        //}
     }
 }
