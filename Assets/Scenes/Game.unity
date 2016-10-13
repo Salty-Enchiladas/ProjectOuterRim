@@ -1218,10 +1218,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 555410808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f424b88a9671625429c4d7014f83e36a, type: 3}
+  m_Script: {fileID: 11500000, guid: a1b19857c32a7594eb1d4cd654df66ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHPAllowed: 30
+  maxHPAllowed: 40
   currentHPUsed: 0
   AllowHPIncreaseAmount: 5
   regularEnemyPool:
@@ -1229,11 +1229,10 @@ MonoBehaviour:
   - {fileID: 930241600}
   - {fileID: 1478111000}
   - {fileID: 357815566}
-  carrierEnemies:
-  - {fileID: 114826, guid: c2608b2973b46604d80071d45a87c13d, type: 2}
-  spawnCarrierAt: 5
+  carrierEnemies: []
+  spawnCarrierAt: 0
   spawnLocation: {x: 0, y: 0, z: 0}
-  sectorCompleteAt: 4
+  sectorCompleteAt: 5
   quadrentCompleteAt: 16
   minXSpawn: -5000
   maxXspawn: 5000
@@ -1292,6 +1291,7 @@ MonoBehaviour:
   playerLaserHeatIncreaseAmount: 0.06
   laserHeatLossAfterSeconds: 1
   enemyAISpeed: 500
+  actorSpeed: 600
   maneuverSpeed: 1
   strafeSpeed: 1.5
   enemy1Speed: 500
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   enemy1BaseHealth: 2
   enemy1LaserScore: 1000
   enemy1MissileScore: 1000
-  enemy2Speed: 450
+  enemy2Speed: 600
   enemy2FireFreq: 3
   enemy2BaseHealth: 6
   enemy2LaserScore: 1000

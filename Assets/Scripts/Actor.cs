@@ -94,7 +94,7 @@ public class Actor : MonoBehaviour
     {
         enemyZClamp = Random.Range(700f, 1000f);
         enemyXPos = Random.Range(-250f, 250f);
-        lerpSpeed = Random.Range(0.25f, 1f);
+        lerpSpeed = Random.Range(0.5f, 1f);
         maneuverRadius = Random.Range(maneuverRadiusMin, maneuverRadiusMax);
 
         player = GameObject.Find("Player");
@@ -107,12 +107,14 @@ public class Actor : MonoBehaviour
                 speed = gameManager.GetComponent<PublicVariableHandler>().enemy1Speed;
                 break;
             case "SecondEnemyShips":
+                print("secondenemyships");
                 speed = gameManager.GetComponent<PublicVariableHandler>().enemy2Speed;
                 break;
             case "ThirdEnemyShips":
                 speed = gameManager.GetComponent<PublicVariableHandler>().enemy3Speed;
                 break;
             case "FourthEnemyShips":
+                print("fourthenemyships");
                 speed = gameManager.GetComponent<PublicVariableHandler>().enemy4Speed;
                 break;
         }

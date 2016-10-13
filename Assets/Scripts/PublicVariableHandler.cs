@@ -53,6 +53,7 @@ public class PublicVariableHandler : MonoBehaviour
 
     //Enemy Variables
 	public float enemyAISpeed;
+    public float actorSpeed;
     public float maneuverSpeed;
     public float strafeSpeed;
 
@@ -93,5 +94,12 @@ public class PublicVariableHandler : MonoBehaviour
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //Adjust Difficulty Code and Variables
+    //Adjust Difficulty Code and Variables\
+
+    public void IncreaseDifficulty()
+    {
+        //Ship Speed
+        //Fire Rate
+        //Super Mega Charged Particle Photon Laser of Death Speed Script
+    }
 }
