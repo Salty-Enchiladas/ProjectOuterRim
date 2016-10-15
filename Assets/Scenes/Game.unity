@@ -594,7 +594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &247407051
 Transform:
   m_ObjectHideFlags: 0
@@ -823,7 +823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &382709022
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,7 +1084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &546545480
 Transform:
   m_ObjectHideFlags: 0
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c89b11619691b42a112ea14c427dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHPAllowed: 40
+  maxHPAllowed: 75
   currentHPUsed: 0
   AllowHPIncreaseAmount: 5
   regularEnemyPool:
@@ -1385,14 +1385,6 @@ MonoBehaviour:
   - {fileID: 930241600}
   - {fileID: 1478111000}
   - {fileID: 357815566}
-  - {fileID: 546545481}
-  - {fileID: 1434193692}
-  - {fileID: 1636401025}
-  - {fileID: 382709023}
-  - {fileID: 1033441396}
-  - {fileID: 1131345387}
-  - {fileID: 247407052}
-  - {fileID: 1714836073}
   carrierEnemies: []
   spawnCarrierAt: 5
   spawnLocation: {x: 0, y: 0, z: 0}
@@ -2417,7 +2409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1033441395
 Transform:
   m_ObjectHideFlags: 0
@@ -2536,7 +2528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1131345386
 Transform:
   m_ObjectHideFlags: 0
@@ -3148,7 +3140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1434193691
 Transform:
   m_ObjectHideFlags: 0
@@ -4572,7 +4564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1636401024
 Transform:
   m_ObjectHideFlags: 0
@@ -5203,7 +5195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1714836072
 Transform:
   m_ObjectHideFlags: 0

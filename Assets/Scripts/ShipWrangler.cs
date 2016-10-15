@@ -6,6 +6,7 @@ public class ShipWrangler : MonoBehaviour {
     public List<GameObject> ships;
     public int currentShip;
     bool hasMoved;
+    bool cycling;
 
 	// Use this for initialization
 	void Start ()
@@ -29,13 +30,11 @@ public class ShipWrangler : MonoBehaviour {
 
         if (Input.GetAxis("Horizontal") < -.99f && !hasMoved || Input.GetKeyDown(KeyCode.A))
         {
-            hasMoved = true;
-            PreviousSelection();
+            CallCycle("left");
         }
         else if (Input.GetAxis("Horizontal") > .99f && !hasMoved || Input.GetKeyDown(KeyCode.D))
         {
-            hasMoved = true;
-            NextSelection();
+            CallCycle("right");
         }
         else if (Input.GetAxis("Horizontal") > -.09f && Input.GetAxis("Horizontal") < .09f)
         {
@@ -85,6 +84,31 @@ public class ShipWrangler : MonoBehaviour {
             {
                 ships[i].SetActive(false);
             }
+        }
+    }
+
+    void CallCycle(string direction)
+    {
+        StartCoroutine(Cycle(direction));
+    }
+
+    IEnumerator Cycle(string direction)
+    {
+        if(!cycling)
+        {
+            cycling = true;
+            if(direction == "left")
+            {
+                hasMoved = true;
+                PreviousSelection();
+            }
+            else if(direction == "right")
+            {
+                hasMoved = true;
+                NextSelection();
+            }
+            yield return new WaitForSeconds(0.25f);
+            cycling = false;
         }
     }
 }

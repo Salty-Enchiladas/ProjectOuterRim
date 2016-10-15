@@ -55,6 +55,7 @@ public class HighScoreHandler : MonoBehaviour {
                 if (currentScore > leaderboardInfo[j].Score)
                 {
                     newHSPanel.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(confirmButton);
 
                     if (restartButton)
                         restartButton.interactable = false;
@@ -68,6 +69,10 @@ public class HighScoreHandler : MonoBehaviour {
 
                     rankToUpdate = j + 1;
                     break;
+                }
+                else
+                {
+                    EventSystem.current.SetSelectedGameObject(restartButton.gameObject);
                 }
             }
         }
